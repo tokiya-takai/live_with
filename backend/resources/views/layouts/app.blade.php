@@ -1,0 +1,9 @@
+<html>
+<head>
+  <title>Docker</title>
+</head>
+<body>
+  <h1>Docker</h1>
+  @yield('content')
+</body>
+</html>
