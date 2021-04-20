@@ -1,8 +1,67 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+// PC Layout
+$theme_color: #402F2F;
+$inset: #312e2e;
+$white: #f4f4f4;
+$box-shadow: 0px -4px 3px -1px #aaa inset;
 
-// Variables
-@import 'variables';
+body {
+  font-family: 'Playfair Display', serif;
+}
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@media (min-width: 768px){
+  header {
+    position: relative;
+    height: 10vh;
+    width: 100vw;
+    background-color: $theme_color;
+    display: flex;
+    .header-logo {
+      height: 8vh;
+      width: 50%;
+      a {
+        img {
+          height: 100%;
+          margin-left: 1vw;
+          margin-top: 1vh;
+          margin-bottom: 1vh;
+        }
+      }
+    }
+    .header-nav {
+      height: 10vh;
+      width: 50%;
+      color: $white;
+      .header-nav-list {
+        height: 10vh;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        li {
+          width: 15%;
+          text-align: center;
+          &:last-child {
+            margin-right: 3vw;
+          }
+        }
+      }
+    }
+  }
+  .py-4 {
+    height: 90vh;
+    background: url('images/live-with-background.jpg');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .content {
+      width: 60vw;
+      height: 80vh;
+      background-color: $white;
+      border-radius: 5px;
+      -ms-box-shadow: $box-shadow;
+      -moz-box-shadow: $box-shadow;
+      -webkit-box-shadow: $box-shadow;
+      -o-box-shadow: $box-shadow;
+      box-shadow: $box-shadow;
+    }
+  }
+}
