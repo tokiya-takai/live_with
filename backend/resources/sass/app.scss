@@ -1,6 +1,6 @@
 // PC Layout
 $theme_color: #402F2F;
-$inset: #312e2e;
+$inset: #5f5f5f;
 $white: #f4f4f4;
 $box-shadow: 0px -4px 3px -1px #aaa inset;
 
@@ -62,6 +62,71 @@ body {
       -webkit-box-shadow: $box-shadow;
       -o-box-shadow: $box-shadow;
       box-shadow: $box-shadow;
+      #my-list {
+        width: 60vw;
+        height: 80vh;
+        .my-list-header {
+          height: 10%;
+          padding: 0 1vw;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid #aaa;
+          h1 {
+            font-size: 25px;
+            font-weight: bold;
+          }
+        }
+        .shoes-list {
+          height: 90%;
+          overflow: scroll;
+          ul {
+            width: 70%;
+            height: 100%;
+            margin: 0 auto;
+            button {
+              width: 100%;
+              li {
+                height: 13vh;
+                width: 100%;
+                margin-top: 3vh;
+                border-radius: 3px;
+                border: 1px solid rgb(201, 201, 201, 0.1);
+                box-shadow: 4px 4px 8px -1px #aaa;
+                display: flex;
+                align-items: center;
+                &:hover {
+                  opacity: 0.7;
+                  background-color: rgba(187,187,187,0.1);
+                }
+                figure {
+                  width: 15%;
+                  height: 100%;
+                  object-fit: contain;
+                  img {
+                    height: 100%;
+                  }
+                }
+                figcaption {
+                  width: 85%;
+                  height: 100%;
+                  padding: 0 10px;
+                  .shoe-name {
+                    font-size: 20px;
+                    height: 50%;
+                    padding-top: 3vh;
+                  }
+                  .last-maintenance {
+                    height: 50%;
+                    text-align: end;
+                    padding-top: 3vh;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
