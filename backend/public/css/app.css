@@ -39,15 +39,17 @@ body {
   header .header-nav .header-nav-list li {
     width: 15%;
     text-align: center;
+    font-size: 20px;
   }
 
   header .header-nav .header-nav-list li:last-child {
-    margin-right: 3vw;
+    margin: 0 3vw;
   }
 
   .py-4 {
     height: 90vh;
     background: url(/images/live-with-background.jpg?5b1ef75643579dba40732f58054d0b42);
+    background-size: cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -109,6 +111,7 @@ body {
 
   .py-4 .content #my-list .shoes-list ul a button li,
   .py-4 .content #show-shoe .shoes-list ul a button li {
+    position: relative;
     height: 13vh;
     width: 100%;
     margin-top: 3vh;
@@ -123,6 +126,16 @@ body {
   .py-4 .content #show-shoe .shoes-list ul a button li:hover {
     opacity: 0.7;
     background-color: rgba(187, 187, 187, 0.1);
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button li:last-child::after,
+  .py-4 .content #show-shoe .shoes-list ul a button li:last-child::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    height: 20px;
+    width: 1px;
   }
 
   .py-4 .content #my-list .shoes-list ul a button li figure,
@@ -199,6 +212,175 @@ body {
 
   .py-4 .content .show-shoe-body .show-shoe-content {
     padding: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  header {
+    height: 10vh;
+    width: 100vw;
+    background-color: #402F2F;
+  }
+
+  header .header-logo {
+    height: 7vh;
+    width: 80vw;
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  header .header-logo a img {
+    height: 100%;
+  }
+
+  header .header-nav {
+    color: #f4f4f4;
+  }
+
+  header .header-nav .header-nav-list {
+    width: 80vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .py-4 {
+    height: 90vh;
+    background: url(/images/live-with-background.jpg?5b1ef75643579dba40732f58054d0b42);
+    background-size: cover;
+  }
+
+  .py-4 .content #my-list .my-list-header {
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+  }
+
+  .py-4 .content #my-list .my-list-header h1 {
+    height: 5vh;
+    width: 50vw;
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 1vh;
+    padding-left: 2vw;
+    background-color: #f4f4f4;
+  }
+
+  .py-4 .content #my-list .my-list-header button {
+    height: 5vh;
+    width: 100%;
+    padding-top: 1vh;
+    padding-right: 2vw;
+    background-color: #f4f4f4;
+    text-align: end;
+  }
+
+  .py-4 .content #my-list .shoes-list {
+    width: 94vw;
+    height: 80vh;
+    margin: 0 auto;
+    overflow: scroll;
+  }
+
+  .py-4 .content #my-list .shoes-list ul {
+    width: 94vw;
+    height: 80vh;
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button {
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button li {
+    position: relative;
+    display: flex;
+    padding: 10px;
+    margin-top: 1vh;
+    border-radius: 3px;
+    border: 1px solid rgba(201, 201, 201, 0.1);
+    box-shadow: 4px 4px 8px -1px #aaa;
+    background-color: #f4f4f4;
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button li figure {
+    width: 20%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button li figure img {
+    width: 100%;
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button li:hover {
+    opacity: 0.7;
+    background-color: rgba(187, 187, 187, 0.1);
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button li:last-child::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    height: 20px;
+    width: 1px;
+  }
+
+  .py-4 .content #show-shoe {
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+  }
+
+  .py-4 .content #show-shoe .show-shoe-header {
+    position: absolute;
+    top: 20vh;
+    height: 3vh;
+    width: 100vw;
+    background-color: #f4f4f4;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .py-4 .content #show-shoe .show-shoe-header h1 {
+    line-height: 3vh;
+  }
+
+  .py-4 .content #show-shoe .show-shoe-body .show-shoe-body-header {
+    padding-top: 3vh;
+    height: 30vh;
+  }
+
+  .py-4 .content #show-shoe .show-shoe-body .show-shoe-body-header figure {
+    width: 30vw;
+    height: 30vw;
+    margin: 0 auto;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+
+  .py-4 .content #show-shoe .show-shoe-body .show-shoe-body-header figure img {
+    width: 100%;
+  }
+
+  .py-4 .content #show-shoe .show-shoe-body .show-shoe-body-header figcaption {
+    width: 95vw;
+    margin: 8vh auto 0 auto;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #aaa;
+    border-radius: 3px;
+  }
+
+  .py-4 .content #show-shoe .show-shoe-content {
+    width: 95vw;
+    height: 58vh;
+    margin: 0 auto;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: #f4f4f4;
+    overflow: scroll;
   }
 }
 
