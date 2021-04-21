@@ -224,7 +224,7 @@ body {
     font-size: 30px;
     height: 10vh;
     text-align: center;
-    padding-top: 2vh;
+    padding-top: 5vh;
   }
 
   .py-4 .content .card h1 {
@@ -235,6 +235,36 @@ body {
     width: 50vw;
     height: 50vh;
     margin: 5vh auto;
+  }
+
+  .py-4 .content .card .card-body .logged-message {
+    width: 100%;
+    margin-top: 10vh;
+  }
+
+  .py-4 .content .card .card-body .logged-message p {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 3vh;
+  }
+
+  .py-4 .content .card .card-body .logged-message p a {
+    line-height: 10vh;
+    border-bottom: 1px solid #aaa;
+    font-weight: bold;
+  }
+
+  .py-4 .content .card .card-body .logged-message figure {
+    height: 10vh;
+    width: 100%;
+    margin-top: 2vh;
+    text-align: center;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+
+  .py-4 .content .card .card-body .logged-message figure img {
+    height: 100%;
   }
 
   .py-4 .content .card .card-body form {
@@ -281,6 +311,24 @@ body {
     background-color: #6299ff;
     border-radius: 3px;
     box-shadow: 3px 3px 5px -1px #aaa;
+  }
+
+  .py-4 .content .card .card-body form .mb-0 .offset-md-4 {
+    text-align: end;
+  }
+
+  .py-4 .content .card .card-body form .mb-0 .offset-md-4 .btn-primary {
+    height: 5vh;
+    width: 7vw;
+    text-align: center;
+    color: #f4f4f4;
+    background-color: #6299ff;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px -1px #aaa;
+  }
+
+  .py-4 .content .card .card-body .register {
+    height: 60vh;
   }
 }
 

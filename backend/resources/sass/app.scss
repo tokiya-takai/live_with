@@ -177,7 +177,7 @@ body {
           padding: 10px;
         }
       }
-      //login page
+      //login page and register page
       .card {
         width: 60vw;
         height: 80vh;
@@ -185,7 +185,7 @@ body {
           font-size: 30px;
           height: 10vh;
           text-align: center;
-          padding-top: 2vh;
+          padding-top: 5vh;
         }
         h1 {
           text-align: center;
@@ -194,6 +194,32 @@ body {
           width: 50vw;
           height: 50vh;
           margin: 5vh auto;
+          // logged in page
+          .logged-message {
+            width: 100%;
+            margin-top: 10vh;
+            p {
+              font-size: 20px;
+              text-align: center;
+              margin-top: 3vh;
+              a {
+                line-height: 10vh;
+                border-bottom: 1px solid #aaa;
+                font-weight: bold;
+              }
+            }
+            figure {
+              height: 10vh;
+              width: 100%;
+              margin-top: 2vh;
+              text-align: center;
+              object-fit: contain;
+              img {
+                height: 100%;
+              }
+            }
+          }
+          // logged in page end
           form {
             height: 50vh;
             padding: 30px;
@@ -233,8 +259,25 @@ body {
                   box-shadow: 3px 3px 5px -1px #aaa;
                 }
               }
+              // register only
+              .offset-md-4 {
+                text-align: end;
+                .btn-primary {
+                  height: 5vh;
+                  width: 7vw;
+                  text-align: center;
+                  color: $white;
+                  background-color: rgb(98, 153, 255);
+                  border-radius: 3px;
+                  box-shadow: 3px 3px 5px -1px #aaa;
+                }
+              }
             }
           }
+          .register {
+            height: 60vh;
+          }
+          // register only end
         }
       }
     }
