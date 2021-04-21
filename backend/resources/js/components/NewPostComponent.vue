@@ -1,5 +1,6 @@
 <template>
-    <form action="posts.create" method="post" enctype="multipart/form-data" class="new-post-form">
+    <form action="/posts/create" method="post" enctype="multipart/form-data" class="new-post-form">
+        <input type="hidden" name="_token" v-bind:value="csrf">
         <div class="form-header">
             <div class="file-area">
                 <div v-if="url" class="upload-file">
@@ -36,6 +37,12 @@
             fileSelected(){
                 const file = this.$refs.preview.files[0];
                 this.url = URL.createObjectURL(file)
+            }
+        },
+        props:  {
+            csrf: {
+                type: String,
+                required: true,
             }
         }
     }

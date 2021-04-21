@@ -13,4 +13,5 @@ Route::get('/', [App\Http\Controllers\PostsController::class, 'index'])->name('i
 Route::get('/posts', [App\Http\Controllers\PostsController::class, 'index']);
 Route::get('/posts/show',[App\Http\Controllers\PostsController::class, 'show'])->name('posts.show');
 Route::get('/posts/new', [App\Http\Controllers\PostsController::class, 'new'])->name('posts.new');
+Route::post('/posts/create', [App\Http\Controllers\PostsController::class, 'create']);
 

@@ -16,4 +16,9 @@ class Post extends Model
 
     protected $table = "posts";
     protected $fillable = ["file_name","file_path"];
+
+    public static $rules = array(
+        'user_id' => 'required',
+        'title' => 'required',
+    );
 }
