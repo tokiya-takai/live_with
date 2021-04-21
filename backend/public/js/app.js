@@ -1861,9 +1861,28 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
+  data: function data() {
+    return {
+      url: ""
+    };
+  },
+  methods: {
+    fileSelected: function fileSelected() {
+      var file = this.$refs.preview.files[0];
+      this.url = URL.createObjectURL(file);
+    }
   }
 });
 
@@ -37421,29 +37440,70 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "form",
+    {
+      staticClass: "new-post-form",
+      attrs: {
+        action: "posts.create",
+        method: "post",
+        enctype: "multipart/form-data"
+      }
+    },
+    [
+      _c("div", { staticClass: "form-header" }, [
+        _c("div", { staticClass: "file-area" }, [
+          _vm.url
+            ? _c("div", { staticClass: "upload-file" }, [
+                _c("img", { attrs: { src: _vm.url } })
+              ])
+            : _c("div", { staticClass: "upload-file" }, [_c("span")])
+        ]),
+        _vm._v(" "),
+        _c("input", {
+          ref: "preview",
+          staticClass: "upload-btn",
+          attrs: { type: "file", accept: "image/*" },
+          on: { change: _vm.fileSelected }
+        })
+      ]),
+      _vm._v(" "),
+      _vm._m(0),
+      _vm._v(" "),
+      _vm._m(1)
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
+    return _c("div", { staticClass: "form-body" }, [
+      _c("div", { staticClass: "new-post-title" }, [
+        _c("input", {
+          attrs: {
+            type: "text",
+            name: "title",
+            placeholder: "Brand name, title, etc.",
+            maxlength: "30"
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "new-post-content" }, [
+        _c("textarea", {
+          attrs: { name: "content", placeholder: "Details", maxlength: "1000" }
+        })
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "submit-btn" }, [
+      _c("input", { attrs: { type: "submit", value: "SEND" } })
     ])
   }
 ]

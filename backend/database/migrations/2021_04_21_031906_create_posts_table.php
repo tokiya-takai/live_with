@@ -17,7 +17,8 @@ class CreatePostsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('image');
+            $table->string('file_name');
+            $table->string('file_path');
             $table->string('title');
             $table->string('content');
             $table->timestamps();

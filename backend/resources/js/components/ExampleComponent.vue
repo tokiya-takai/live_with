@@ -1,23 +1,42 @@
 <template>
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">Example Component</div>
-
-                    <div class="card-body">
-                        I'm an example component.
-                    </div>
+    <form action="posts.create" method="post" enctype="multipart/form-data" class="new-post-form">
+        <div class="form-header">
+            <div class="file-area">
+                <div v-if="url" class="upload-file">
+                    <img :src="url">
+                </div>
+                <div v-else class="upload-file">
+                    <span></span>
                 </div>
             </div>
+            <input type="file" accept="image/*" ref="preview" v-on:change="fileSelected" class="upload-btn">
         </div>
-    </div>
+        <div class="form-body">
+            <div class="new-post-title">
+                <input type="text" name="title" placeholder="Brand name, title, etc." maxlength="30">
+            </div>
+            <div class="new-post-content">
+                <textarea name="content" placeholder="Details" maxlength="1000"></textarea>
+            </div>
+        </div>
+        <div class="submit-btn">
+            <input type="submit" value="SEND">
+        </div>
+    </form>
 </template>
 
 <script>
     export default {
-        mounted() {
-            console.log('Component mounted.')
+        data() {
+            return {
+                url:""
+            }
+        },
+        methods:{
+            fileSelected(){
+                const file = this.$refs.preview.files[0];
+                this.url = URL.createObjectURL(file)
+            }
         }
     }
 </script>

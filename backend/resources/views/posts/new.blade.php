@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    new
+  <example-component></example-component>
 @endsection

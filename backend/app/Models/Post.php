@@ -13,4 +13,7 @@ class Post extends Model
     {
         return $this->hasOne('App\Models\User');
     }
+
+    protected $table = "posts";
+    protected $fillable = ["file_name","file_path"];
 }
