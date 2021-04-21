@@ -1,0 +1,205 @@
+body {
+  font-family: "Playfair Display", serif;
+}
+
+@media (min-width: 768px) {
+  header {
+    position: relative;
+    height: 10vh;
+    width: 100vw;
+    background-color: #402F2F;
+    display: flex;
+  }
+
+  header .header-logo {
+    height: 8vh;
+    width: 50%;
+  }
+
+  header .header-logo a img {
+    height: 100%;
+    margin-left: 1vw;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+  }
+
+  header .header-nav {
+    height: 10vh;
+    width: 50%;
+    color: #f4f4f4;
+  }
+
+  header .header-nav .header-nav-list {
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  header .header-nav .header-nav-list li {
+    width: 15%;
+    text-align: center;
+  }
+
+  header .header-nav .header-nav-list li:last-child {
+    margin-right: 3vw;
+  }
+
+  .py-4 {
+    height: 90vh;
+    background: url(/images/live-with-background.jpg?5b1ef75643579dba40732f58054d0b42);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .py-4 .content {
+    width: 60vw;
+    height: 80vh;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    -ms-box-shadow: 0px -4px 3px -1px #aaa inset;
+    -o-box-shadow: 0px -4px 3px -1px #aaa inset;
+    box-shadow: 0px -4px 3px -1px #aaa inset;
+  }
+
+  .py-4 .content #my-list,
+  .py-4 .content #show-shoe {
+    width: 60vw;
+    height: 80vh;
+  }
+
+  .py-4 .content #my-list .my-list-header,
+  .py-4 .content #my-list .show-shoe-header,
+  .py-4 .content #show-shoe .my-list-header,
+  .py-4 .content #show-shoe .show-shoe-header {
+    height: 10%;
+    padding: 0 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #aaa;
+  }
+
+  .py-4 .content #my-list .my-list-header h1,
+  .py-4 .content #my-list .show-shoe-header h1,
+  .py-4 .content #show-shoe .my-list-header h1,
+  .py-4 .content #show-shoe .show-shoe-header h1 {
+    font-size: 25px;
+    font-weight: bold;
+  }
+
+  .py-4 .content #my-list .shoes-list,
+  .py-4 .content #show-shoe .shoes-list {
+    height: 90%;
+    overflow: scroll;
+  }
+
+  .py-4 .content #my-list .shoes-list ul,
+  .py-4 .content #show-shoe .shoes-list ul {
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button,
+  .py-4 .content #show-shoe .shoes-list ul a button {
+    width: 100%;
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button li,
+  .py-4 .content #show-shoe .shoes-list ul a button li {
+    height: 13vh;
+    width: 100%;
+    margin-top: 3vh;
+    border-radius: 3px;
+    border: 1px solid rgba(201, 201, 201, 0.1);
+    box-shadow: 4px 4px 8px -1px #aaa;
+    display: flex;
+    align-items: center;
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button li:hover,
+  .py-4 .content #show-shoe .shoes-list ul a button li:hover {
+    opacity: 0.7;
+    background-color: rgba(187, 187, 187, 0.1);
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button li figure,
+  .py-4 .content #show-shoe .shoes-list ul a button li figure {
+    width: 15%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button li figure img,
+  .py-4 .content #show-shoe .shoes-list ul a button li figure img {
+    height: 100%;
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button li figcaption,
+  .py-4 .content #show-shoe .shoes-list ul a button li figcaption {
+    width: 85%;
+    height: 100%;
+    padding: 0 10px;
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button li figcaption .shoe-name,
+  .py-4 .content #show-shoe .shoes-list ul a button li figcaption .shoe-name {
+    font-size: 20px;
+    height: 50%;
+    padding-top: 3vh;
+  }
+
+  .py-4 .content #my-list .shoes-list ul a button li figcaption .last-maintenance,
+  .py-4 .content #show-shoe .shoes-list ul a button li figcaption .last-maintenance {
+    height: 50%;
+    text-align: end;
+    padding-top: 3vh;
+  }
+
+  .py-4 .content .show-shoe-body {
+    width: 80%;
+    height: 60vh;
+    margin: 3vh auto 0 auto;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid rgba(201, 201, 201, 0.1);
+    box-shadow: 4px 4px 8px -1px #aaa;
+    overflow: scroll;
+  }
+
+  .py-4 .content .show-shoe-body .show-shoe-body-header {
+    display: flex;
+  }
+
+  .py-4 .content .show-shoe-body .show-shoe-body-header figure {
+    width: 10vw;
+    height: 10vw;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+
+  .py-4 .content .show-shoe-body .show-shoe-body-header figure img {
+    height: 100%;
+  }
+
+  .py-4 .content .show-shoe-body .show-shoe-body-header figcaption {
+    width: 100%;
+    padding: 0 1vw 0 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .py-4 .content .show-shoe-body .show-shoe-body-header figcaption p {
+    font-size: 20px;
+  }
+
+  .py-4 .content .show-shoe-body .show-shoe-content {
+    padding: 10px;
+  }
+}
+
+
