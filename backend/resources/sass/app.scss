@@ -69,6 +69,30 @@ body {
       #my-list, #show-shoe {
         width: 60vw;
         height: 80vh;
+        position: relative;
+        // new post button and edit button
+        .new-post-btn {
+          z-index: 1;
+          display: block;
+          position: absolute;
+          width: 8vw;
+          height: 8vw;
+          border-radius: 50%;
+          background-color: $theme_color;
+          left: 51vw;
+          top: 60vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          button {
+            color: $white;
+            font-size: 25px;
+          }
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+        // new post button and edit buton end
         .my-list-header, .show-shoe-header {
           height: 10%;
           padding: 0 1vw;

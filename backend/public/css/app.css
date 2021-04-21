@@ -70,6 +70,34 @@ body {
   .py-4 .content #show-shoe {
     width: 60vw;
     height: 80vh;
+    position: relative;
+  }
+
+  .py-4 .content #my-list .new-post-btn,
+  .py-4 .content #show-shoe .new-post-btn {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    width: 8vw;
+    height: 8vw;
+    border-radius: 50%;
+    background-color: #402F2F;
+    left: 51vw;
+    top: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .py-4 .content #my-list .new-post-btn button,
+  .py-4 .content #show-shoe .new-post-btn button {
+    color: #f4f4f4;
+    font-size: 25px;
+  }
+
+  .py-4 .content #my-list .new-post-btn:hover,
+  .py-4 .content #show-shoe .new-post-btn:hover {
+    opacity: 0.8;
   }
 
   .py-4 .content #my-list .my-list-header,

@@ -2,6 +2,7 @@
 
 @section('content')
     <div id="my-list">
+        <a href="#" class="new-post-btn"><button>New</button></a>
         <div class="my-list-header">
             <h1>MyShoes</h1>
             <button class="filter">Filter</button>
