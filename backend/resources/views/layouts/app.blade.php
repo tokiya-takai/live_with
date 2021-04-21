@@ -14,13 +14,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <!-- Styles -->
-    <link href="css/destyle.css" rel="stylesheet">
+    <link href="{{ asset('css/destyle.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
         <header>
-            <div class="header-logo"><a href="#"><img src="images/header-logo.png?<?php echo date("YmdHis");?>" alt="LiveWith"></a></div>
+            <div class="header-logo"><a href="#"><img src="{{ asset('images/header-logo.png') }}?<?php echo date("YmdHis");?>" alt="LiveWith"></a></div>
             <nav class="header-nav">
                 <ul class="header-nav-list">
                     <!-- Authentication Links -->
