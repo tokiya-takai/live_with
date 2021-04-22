@@ -113,53 +113,51 @@ body {
             width: 80%;
             height: 100%;
             margin: 0 auto;
-            a {
-              button {
+            li {
+              width: 100%;
+              a button {
+                position: relative;
+                height: 13vh;
                 width: 100%;
-                li {
-                  position: relative;
-                  height: 13vh;
-                  width: 100%;
-                  margin-top: 3vh;
-                  border-radius: 3px;
-                  border: 1px solid rgb(201, 201, 201, 0.1);
-                  box-shadow: 4px 4px 8px -1px #aaa;
-                  display: flex;
-                  align-items: center;
-                  &:hover {
-                    opacity: 0.7;
-                    background-color: rgba(187,187,187,0.1);
-                  }
-                  &:last-child::after {
-                    position: absolute;
-                    content: "";
-                    top: 100%;
-                    left: 0;
-                    height: 20px;
-                    width: 1px;
-                  }
-                  figure {
-                    width: 15%;
+                margin-top: 3vh;
+                border-radius: 3px;
+                border: 1px solid rgb(201, 201, 201, 0.1);
+                box-shadow: 4px 4px 8px -1px #aaa;
+                display: flex;
+                align-items: center;
+                &:hover {
+                  opacity: 0.7;
+                  background-color: rgba(187,187,187,0.1);
+                }
+                &:last-child::after {
+                  position: absolute;
+                  content: "";
+                  top: 100%;
+                  left: 0;
+                  height: 20px;
+                  width: 1px;
+                }
+                figure {
+                  width: 15%;
+                  height: 100%;
+                  object-fit: contain;
+                  img {
                     height: 100%;
-                    object-fit: contain;
-                    img {
-                      height: 100%;
-                    }
                   }
-                  figcaption {
-                    width: 85%;
-                    height: 100%;
-                    padding: 0 10px;
-                    .shoe-name {
-                      font-size: 20px;
-                      height: 50%;
-                      padding-top: 3vh;
-                    }
-                    .last-maintenance {
-                      height: 50%;
-                      text-align: end;
-                      padding-top: 3vh;
-                    }
+                }
+                figcaption {
+                  width: 85%;
+                  height: 100%;
+                  padding: 0 10px;
+                  .shoe-name {
+                    font-size: 20px;
+                    height: 50%;
+                    padding-top: 3vh;
+                  }
+                  .last-maintenance {
+                    height: 50%;
+                    text-align: end;
+                    padding-top: 3vh;
                   }
                 }
               }
@@ -465,38 +463,36 @@ body {
           ul {
             width: 94vw;
             height: 80vh;
-            a {
-              button {
-                width: 100%;
-                border-bottom: 1px solid #aaa;
-                li {
-                  position: relative;
-                  display: flex;
-                  padding: 10px;
-                  margin-top: 1vh;
-                  border-radius: 3px;
-                  border: 1px solid rgb(201, 201, 201, 0.1);
-                  box-shadow: 4px 4px 8px -1px #aaa;
-                  background-color: $white;
-                  figure {
-                    width: 20%;
-                    object-fit: contain;
-                    img {
-                      width: 100%;
-                    }
+            li {
+              width: 100%;
+              border-bottom: 1px solid #aaa;
+              a button {
+                position: relative;
+                display: flex;
+                padding: 10px;
+                margin-top: 1vh;
+                border-radius: 3px;
+                border: 1px solid rgb(201, 201, 201, 0.1);
+                box-shadow: 4px 4px 8px -1px #aaa;
+                background-color: $white;
+                figure {
+                  width: 20%;
+                  object-fit: contain;
+                  img {
+                    width: 100%;
                   }
-                  &:hover {
-                    opacity: 0.7;
-                    background-color: rgba(187,187,187,0.1);
-                  }
-                  &:last-child::after {
-                    position: absolute;
-                    content: "";
-                    top: 100%;
-                    left: 0;
-                    height: 20px;
-                    width: 1px;
-                  }
+                }
+                &:hover {
+                  opacity: 0.7;
+                  background-color: rgba(187,187,187,0.1);
+                }
+                &:last-child::after {
+                  position: absolute;
+                  content: "";
+                  top: 100%;
+                  left: 0;
+                  height: 20px;
+                  width: 1px;
                 }
               }
             }

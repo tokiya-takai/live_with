@@ -9,8 +9,8 @@
         </div>
         <div class="shoes-list">
             <ul>
-                <a href="{{ route('posts.show') }}"><button>
-                    <li>
+                <li>
+                    <a href="{{ route('posts.show') }}"><button>
                         <figure>
                             <img src="{{ asset('images/test-image.jpeg') }}" alt="shoe">
                         </figure>
@@ -18,8 +18,8 @@
                             <p class="shoe-name">チャーチ　バーウッド</p>
                             <p class="last-maintenance">最後のメンテンナンス 2021/01/01</p>
                         </figcaption>
-                    </li>
-                </button></a>
+                    </button></a>
+                </li>
             </ul>
         </div>
     </div>

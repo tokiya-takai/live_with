@@ -133,13 +133,13 @@ body {
     margin: 0 auto;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button,
-  .py-4 .content #show-shoe .shoes-list ul a button {
+  .py-4 .content #my-list .shoes-list ul li,
+  .py-4 .content #show-shoe .shoes-list ul li {
     width: 100%;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li,
-  .py-4 .content #show-shoe .shoes-list ul a button li {
+  .py-4 .content #my-list .shoes-list ul li a button,
+  .py-4 .content #show-shoe .shoes-list ul li a button {
     position: relative;
     height: 13vh;
     width: 100%;
@@ -151,14 +151,14 @@ body {
     align-items: center;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li:hover,
-  .py-4 .content #show-shoe .shoes-list ul a button li:hover {
+  .py-4 .content #my-list .shoes-list ul li a button:hover,
+  .py-4 .content #show-shoe .shoes-list ul li a button:hover {
     opacity: 0.7;
     background-color: rgba(187, 187, 187, 0.1);
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li:last-child::after,
-  .py-4 .content #show-shoe .shoes-list ul a button li:last-child::after {
+  .py-4 .content #my-list .shoes-list ul li a button:last-child::after,
+  .py-4 .content #show-shoe .shoes-list ul li a button:last-child::after {
     position: absolute;
     content: "";
     top: 100%;
@@ -167,35 +167,35 @@ body {
     width: 1px;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li figure,
-  .py-4 .content #show-shoe .shoes-list ul a button li figure {
+  .py-4 .content #my-list .shoes-list ul li a button figure,
+  .py-4 .content #show-shoe .shoes-list ul li a button figure {
     width: 15%;
     height: 100%;
     -o-object-fit: contain;
        object-fit: contain;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li figure img,
-  .py-4 .content #show-shoe .shoes-list ul a button li figure img {
+  .py-4 .content #my-list .shoes-list ul li a button figure img,
+  .py-4 .content #show-shoe .shoes-list ul li a button figure img {
     height: 100%;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li figcaption,
-  .py-4 .content #show-shoe .shoes-list ul a button li figcaption {
+  .py-4 .content #my-list .shoes-list ul li a button figcaption,
+  .py-4 .content #show-shoe .shoes-list ul li a button figcaption {
     width: 85%;
     height: 100%;
     padding: 0 10px;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li figcaption .shoe-name,
-  .py-4 .content #show-shoe .shoes-list ul a button li figcaption .shoe-name {
+  .py-4 .content #my-list .shoes-list ul li a button figcaption .shoe-name,
+  .py-4 .content #show-shoe .shoes-list ul li a button figcaption .shoe-name {
     font-size: 20px;
     height: 50%;
     padding-top: 3vh;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li figcaption .last-maintenance,
-  .py-4 .content #show-shoe .shoes-list ul a button li figcaption .last-maintenance {
+  .py-4 .content #my-list .shoes-list ul li a button figcaption .last-maintenance,
+  .py-4 .content #show-shoe .shoes-list ul li a button figcaption .last-maintenance {
     height: 50%;
     text-align: end;
     padding-top: 3vh;
@@ -551,12 +551,12 @@ body {
     height: 80vh;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button {
+  .py-4 .content #my-list .shoes-list ul li {
     width: 100%;
     border-bottom: 1px solid #aaa;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li {
+  .py-4 .content #my-list .shoes-list ul li a button {
     position: relative;
     display: flex;
     padding: 10px;
@@ -567,22 +567,22 @@ body {
     background-color: #f4f4f4;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li figure {
+  .py-4 .content #my-list .shoes-list ul li a button figure {
     width: 20%;
     -o-object-fit: contain;
        object-fit: contain;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li figure img {
+  .py-4 .content #my-list .shoes-list ul li a button figure img {
     width: 100%;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li:hover {
+  .py-4 .content #my-list .shoes-list ul li a button:hover {
     opacity: 0.7;
     background-color: rgba(187, 187, 187, 0.1);
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li:last-child::after {
+  .py-4 .content #my-list .shoes-list ul li a button:last-child::after {
     position: absolute;
     content: "";
     top: 100%;

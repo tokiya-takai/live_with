@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Auth; 
 use Illuminate\Http\Request;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
@@ -10,7 +11,10 @@ class PostsController extends Controller
 {
     public function index()
     {
-        return view("posts.index");
+        $userId = Auth::id();
+        $posts = Post::where('user_id',$userId);
+
+        return view("posts.index", ['posts'=>$posts]);
     }
 
     public function show()
