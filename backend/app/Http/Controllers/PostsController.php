@@ -25,13 +25,31 @@ class PostsController extends Controller
 
     public function create(Request $request)
     {
+        // Validate title Column
         $this->validate($request, Post::$rules);
+
         $post = new Post;
-        $file_name = $request->file('file_name');
-        $form = $request->all();
-        unset($form['_token']);
+        
+        // Insert data other than image file.
+        $postData = $request->except('file');
+        $post->fill($postData);
+        unset($postData['_token']);
+
+        // Check if the file exists.
+        $fileData = $request->file('file');
+        if($fileData->isValid()) {
+            // Insert file name
+            $post->file_name = $fileData->getClientOriginalName();
+
+            // Save file and insert the saved file path
+            $filePath = $fileData->store('public/temp');
+            $post->file_path = str_replace('public/', 'storage/', $filePath);
+        }
+        // Insert current user ID
         $post->user_id = $request->user()->id;
-        $post->fill($form)->save();
+
+        // Save and return to home page
+        $post->save();
         return redirect('/');
     }
 }

@@ -2,7 +2,7 @@
 
 @section('content')
   <div id="show-shoe">
-    <a href="#" class="new-post-btn"><button>Edit</button></a>
+    <a href=" {{ route('posts.edit') }}" class="new-post-btn"><button>Edit</button></a>
     <div class="show-shoe-header">
       <h1>チャーチ　バーウッド</h1>
     </div>
