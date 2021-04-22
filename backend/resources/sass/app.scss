@@ -69,6 +69,30 @@ body {
       #my-list, #show-shoe {
         width: 60vw;
         height: 80vh;
+        position: relative;
+        // new post button and edit button
+        .new-post-btn {
+          z-index: 1;
+          display: block;
+          position: absolute;
+          width: 8vw;
+          height: 8vw;
+          border-radius: 50%;
+          background-color: $theme_color;
+          left: 51vw;
+          top: 60vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          button {
+            color: $white;
+            font-size: 25px;
+          }
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+        // new post button and edit buton end
         .my-list-header, .show-shoe-header {
           height: 10%;
           padding: 0 1vw;
@@ -278,6 +302,97 @@ body {
             height: 60vh;
           }
           // register only end
+        }
+      }
+      .new-post-form {
+        .form-header {
+          width: 60vw;
+          height: 20vh;
+          background: url('images/shoes-background.jpg');
+          background-size: cover;
+          display: flex;
+          align-items: center;
+          .file-area {
+            width: 30%;
+            height: 25vh;
+            position: relative;
+            .upload-file {
+              position: absolute;
+              top: 10vh;
+              left: 5vw;
+              width: 20vh;
+              height: 20vh;
+              margin: 0 auto;
+              object-fit: contain;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img {
+                width: 100%;
+                height: 100%;
+              }
+              div {
+                width: 100%;
+                height: 100%;
+                background-color: $white;
+                border: 1px solid #aaa;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: rgb(148, 148, 148);
+              }
+            }
+          }
+          .upload-btn {
+            margin-top: 31vh;
+          }
+        }
+        .form-body {
+          width: 50vw;
+          height: 30vh;
+          margin: 10vh auto 0 auto;
+          .new-post-title {
+            width: 40vw;
+            margin: 0 auto;
+            input {
+              width: 100%;
+              height: 5vh;
+              border-radius: 3px;
+              border: 1px solid rgb(201, 201, 201, 0.1);
+              box-shadow: 4px 4px 8px -1px #aaa;
+            }
+          }
+          .new-post-content {
+            width: 40vw;
+            height: 30vh;
+            margin: 0 auto;
+            textarea {
+              width: 40vw;
+              height: 25vh;
+              resize: none;
+              margin-top: 5vh;
+              border-radius: 3px;
+              border: 1px solid rgb(201, 201, 201, 0.1);
+              box-shadow: 4px 4px 8px -1px #aaa;
+              overflow: scroll;
+            }
+          }
+        }
+        .submit-btn {
+          width: 50vw;
+          margin: 10vh auto 0 auto;
+          text-align: center;
+          input {
+            width: 6vw;
+            height: 3vw;
+            color: $white;
+            background-color: $theme_color;
+            border-radius: 3px;
+            box-shadow: 4px 4px 8px -1px #aaa;
+            &:hover {
+              opacity: 0.8;
+            }
+          }
         }
       }
     }

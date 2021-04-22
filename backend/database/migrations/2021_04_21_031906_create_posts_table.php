@@ -16,8 +16,9 @@ class CreatePostsTable extends Migration
         Schema::create('posts', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
-            $table->integer('user_id')->unsigned();
-            $table->string('image');
+            $table->unsignedBigInteger('user_id');
+            $table->string('file_name');
+            $table->string('file_path');
             $table->string('title');
             $table->string('content');
             $table->timestamps();
