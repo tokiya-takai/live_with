@@ -37475,7 +37475,7 @@ var render = function() {
         _c("input", {
           ref: "preview",
           staticClass: "upload-btn",
-          attrs: { type: "file", accept: "image/*" },
+          attrs: { type: "file", name: "file_name", accept: "image/*" },
           on: { change: _vm.fileSelected }
         })
       ]),

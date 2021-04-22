@@ -9,16 +9,18 @@ class Post extends Model
 {
     use HasFactory;
 
+    
     public function user()
     {
-        return $this->hasOne('App\Models\User');
+        return $this->belongsTo('App\Models\User');
     }
 
+    protected $guarded = array('id','content','file_name','file_path');
+    
     protected $table = "posts";
     protected $fillable = ["file_name","file_path"];
 
     public static $rules = array(
-        'user_id' => 'required',
         'title' => 'required',
     );
 }

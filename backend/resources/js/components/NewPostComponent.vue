@@ -10,7 +10,7 @@
                     <div><span>NO IMAGE</span></div>
                 </div>
             </div>
-            <input type="file" accept="image/*" ref="preview" v-on:change="fileSelected" class="upload-btn">
+            <input type="file" name="file_name" accept="image/*" ref="preview" v-on:change="fileSelected" class="upload-btn">
         </div>
         <div class="form-body">
             <div class="new-post-title">
@@ -44,6 +44,6 @@
                 type: String,
                 required: true,
             }
-        }
+        },
     }
 </script>

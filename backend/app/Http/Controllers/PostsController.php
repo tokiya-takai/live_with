@@ -25,10 +25,12 @@ class PostsController extends Controller
 
     public function create(Request $request)
     {
-        // $this->validate($request, Post::$rules);
+        $this->validate($request, Post::$rules);
         $post = new Post;
+        $file_name = $request->file('file_name');
         $form = $request->all();
-        unset($form['__token']);
+        unset($form['_token']);
+        $post->user_id = $request->user()->id;
         $post->fill($form)->save();
         return redirect('/');
     }
