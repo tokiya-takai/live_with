@@ -7,7 +7,7 @@
                     <img :src="url">
                 </div>
                 <div v-else class="upload-file">
-                    <span></span>
+                    <div><span>NO IMAGE</span></div>
                 </div>
             </div>
             <input type="file" accept="image/*" ref="preview" v-on:change="fileSelected" class="upload-btn">

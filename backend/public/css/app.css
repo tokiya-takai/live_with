@@ -393,12 +393,15 @@ body {
     height: 100%;
   }
 
-  .py-4 .content .new-post-form .form-header .file-area .upload-file span {
-    display: block;
+  .py-4 .content .new-post-form .form-header .file-area .upload-file div {
     width: 100%;
     height: 100%;
     background-color: #f4f4f4;
     border: 1px solid #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #949494;
   }
 
   .py-4 .content .new-post-form .form-header .upload-btn {
