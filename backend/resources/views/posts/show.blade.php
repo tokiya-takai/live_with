@@ -4,21 +4,20 @@
   <div id="show-shoe">
     <a href=" {{ route('posts.edit') }}" class="new-post-btn"><button>Edit</button></a>
     <div class="show-shoe-header">
-      <h1>チャーチ　バーウッド</h1>
+      <h1>{{ $item->title }}</h1>
     </div>
     <div class="show-shoe-body">
       <div class="show-shoe-body-header">
         <figure>
-          <img src="{{ asset('images/test-image.jpeg') }}" alt="shoe">
+          <img src="{{ asset('storage/image/'.$item->file_path) }}" alt="shoe">
         </figure>
         <figcaption>
-          <p class="last-maintenance">最後のメンテンナンス</p><p>2020/01/01</p>
+          <p class="last-maintenance">最後のメンテンナンス</p><p>{{ $item->created_at }}</p>
         </figcaption>
       </div>
       <div class="show-shoe-content">
         <p>
-          作業内容：
-          
+          {{ $item->content }}
         </p>
       </div>
     </div>
