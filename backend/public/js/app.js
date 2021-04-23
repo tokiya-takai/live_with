@@ -1889,7 +1889,11 @@ __webpack_require__.r(__webpack_exports__);
     csrf: {
       type: String,
       required: true
-    }
+    },
+    title: String,
+    content: String,
+    path: String,
+    day: String
   }
 });
 
@@ -37586,7 +37590,7 @@ var render = function() {
     {
       staticClass: "edit-post-form",
       attrs: {
-        action: "/posts/edit",
+        action: "/posts/update/{id}",
         method: "post",
         enctype: "multipart/form-data"
       }
@@ -37603,7 +37607,9 @@ var render = function() {
             ? _c("div", { staticClass: "upload-file" }, [
                 _c("img", { attrs: { src: _vm.url } })
               ])
-            : _c("div", { staticClass: "upload-file" }, [_vm._m(0)])
+            : _c("div", { staticClass: "upload-file" }, [
+                _c("img", { attrs: { src: "/storage/image/" + _vm.path } })
+              ])
         ]),
         _vm._v(" "),
         _c("input", {
@@ -37614,42 +37620,36 @@ var render = function() {
         })
       ]),
       _vm._v(" "),
-      _vm._m(1),
+      _c("div", { staticClass: "form-body" }, [
+        _c("div", { staticClass: "new-post-title" }, [
+          _c("input", {
+            attrs: {
+              type: "text",
+              name: "title",
+              placeholder: "Brand name, title, etc.",
+              maxlength: "30"
+            },
+            domProps: { value: _vm.title }
+          })
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "new-post-content" }, [
+          _c("textarea", {
+            attrs: {
+              name: "content",
+              placeholder: "Details",
+              maxlength: "1000"
+            },
+            domProps: { value: _vm.content }
+          })
+        ])
+      ]),
       _vm._v(" "),
-      _vm._m(2)
+      _vm._m(0)
     ]
   )
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("span", [_vm._v("NO IMAGE")])])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-body" }, [
-      _c("div", { staticClass: "new-post-title" }, [
-        _c("input", {
-          attrs: {
-            type: "text",
-            name: "title",
-            placeholder: "Brand name, title, etc.",
-            maxlength: "30"
-          }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "new-post-content" }, [
-        _c("textarea", {
-          attrs: { name: "content", placeholder: "Details", maxlength: "1000" }
-        })
-      ])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

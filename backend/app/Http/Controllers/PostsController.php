@@ -55,4 +55,10 @@ class PostsController extends Controller
         $post->save();
         return redirect('/');
     }
+
+    public function edit($id)
+    {
+        $item = Post::find($id);
+        return view('posts.edit', ['item'=>$item]);
+    }
 }
