@@ -9,17 +9,19 @@
         </div>
         <div class="shoes-list">
             <ul>
-                <li>
-                    <a href="{{ route('posts.show') }}"><button>
-                        <figure>
-                            <img src="{{ asset('images/test-image.jpeg') }}" alt="shoe">
-                        </figure>
-                        <figcaption>
-                            <p class="shoe-name">チャーチ　バーウッド</p>
-                            <p class="last-maintenance">最後のメンテンナンス 2021/01/01</p>
-                        </figcaption>
-                    </button></a>
-                </li>
+                @foreach ($items as $item)
+                    <li>
+                        <a href="{{ route('posts.show', ['id'=>$item->id]) }}"><button>
+                            <figure>
+                                <img src="{{ asset('storage/image/'.$item->file_path) }}" alt="shoe">
+                            </figure>
+                            <figcaption>
+                                <p class="shoe-name">{{ $item->title }}</p>
+                                <p class="last-maintenance">最後のメンテンナンス {{ $item->created_at }}</p>
+                            </figcaption>
+                        </button></a>
+                    </li>
+                @endforeach
             </ul>
         </div>
     </div>
