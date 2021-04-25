@@ -18,7 +18,7 @@
 <body>
     <div id="app">
         <header>
-            <div class="header-logo"><a href="#"><img src="{{ asset('images/header-logo.png') }}?<?php echo date("YmdHis");?>" alt="LiveWith"></a></div>
+            <div class="header-logo"><a href="/"><img src="{{ asset('images/header-logo.png') }}?<?php echo date("YmdHis");?>" alt="LiveWith"></a></div>
             <nav class="header-nav">
                 <ul class="header-nav-list">
                     <!-- Authentication Links -->
