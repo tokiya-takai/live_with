@@ -138,11 +138,12 @@ body {
                   width: 1px;
                 }
                 figure {
-                  width: 15%;
-                  height: 100%;
-                  object-fit: contain;
+                  width: 13vh;
+                  height: 13vh;
                   img {
                     height: 100%;
+                    width: 100%;
+                    object-fit: contain;
                   }
                 }
                 figcaption {
@@ -180,9 +181,10 @@ body {
           figure {
             width: 10vw;
             height: 10vw;
-            object-fit: contain;
             img {
               height: 100%;
+              width: 100%;
+              object-fit: contain;
             }
           }
           figcaption {

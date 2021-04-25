@@ -169,15 +169,16 @@ body {
 
   .py-4 .content #my-list .shoes-list ul li a button figure,
   .py-4 .content #show-shoe .shoes-list ul li a button figure {
-    width: 15%;
-    height: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
+    width: 13vh;
+    height: 13vh;
   }
 
   .py-4 .content #my-list .shoes-list ul li a button figure img,
   .py-4 .content #show-shoe .shoes-list ul li a button figure img {
     height: 100%;
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 
   .py-4 .content #my-list .shoes-list ul li a button figcaption,
@@ -219,12 +220,13 @@ body {
   .py-4 .content .show-shoe-body .show-shoe-body-header figure {
     width: 10vw;
     height: 10vw;
-    -o-object-fit: contain;
-       object-fit: contain;
   }
 
   .py-4 .content .show-shoe-body .show-shoe-body-header figure img {
     height: 100%;
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 
   .py-4 .content .show-shoe-body .show-shoe-body-header figcaption {
