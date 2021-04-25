@@ -627,7 +627,7 @@ body {
           overflow: scroll;
         }
       }
-      .new-post-form {
+      .new-post-form, .edit-post-form {
         height: 90vh;
         position: relative;
         .form-header {
