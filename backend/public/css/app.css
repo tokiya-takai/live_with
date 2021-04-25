@@ -552,15 +552,16 @@ body {
     height: 10vh;
     width: 100vw;
     display: flex;
+    justify-content: center;
     align-items: center;
   }
 
   .py-4 .content #my-list .my-list-header h1 {
     height: 5vh;
     width: 50vw;
+    padding-top: 5px;
     font-size: 25px;
     font-weight: bold;
-    padding-top: 1vh;
     padding-left: 2vw;
     background-color: #f4f4f4;
   }
@@ -568,7 +569,6 @@ body {
   .py-4 .content #my-list .my-list-header button {
     height: 5vh;
     width: 100%;
-    padding-top: 1vh;
     padding-right: 2vw;
     background-color: #f4f4f4;
     text-align: end;
@@ -591,6 +591,7 @@ body {
     height: 10vh;
     background-color: #f4f4f4;
     border-bottom: 1px solid #aaa;
+    border-radius: 3px;
   }
 
   .py-4 .content #my-list .shoes-list ul li a button {
