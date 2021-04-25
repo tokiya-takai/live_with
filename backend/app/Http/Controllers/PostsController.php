@@ -30,11 +30,89 @@ class PostsController extends Controller
 
     public function create(Request $request)
     {
+        $post = new Post;
+
         // Validate title Column
         $this->validate($request, Post::$rules);
 
-        $post = new Post;
-        
+        // Insert data.
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->user_id = $request->user()->id;
+
+        // Check if the file exists.
+        if($request->hasFile('file')) {
+            if($request->file('file')->isvalid()){
+                $fileData = $request->file('file');
+                // // Insert file name
+                $filePath = $fileData->store('public/image');
+                $filePath = str_replace('public/image/', '', $filePath);
+    
+                $post->file_path = $filePath;
+                $post->file_name = $fileData->getClientOriginalName();
+            }
+        }
+
+        // Save and return to home page
+        $post->save();
+        return redirect('/');
+    }
+
+    public function edit($id)
+    {
+        $item = Post::find($id);
+        return view('posts.edit', ['item'=>$item]);
+    }
+
+    public function update(Request $request)
+    {
+        $post = Post::find($request->id);
+
+        // Validate title Column
+        $this->validate($request, Post::$rules);
+
+        // Insert data.
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->user_id = $request->user()->id;
+
+        // Check if the file exists.
+        if($request->hasFile('file')) {
+            if($request->file('file')->isvalid()){
+                $fileData = $request->file('file');
+                // // Insert file name
+                $filePath = $fileData->store('public/image');
+                $filePath = str_replace('public/image/', '', $filePath);
+    
+                $post->file_path = $filePath;
+                $post->file_name = $fileData->getClientOriginalName();
+            }
+        }
+
+        // Save and return to home page
+        $post->save();
+        return redirect('/');
+
+        // $response = $this->savePost($request, $post);
+        // if ($request){
+        //     redirect('/');
+        // }else{
+        //     $item = [
+        //         'id'=>$request->id,
+        //         'title'=>$request->title,
+        //         'content'=>$request->content,
+        //         'file_path'=>$request->file_path,
+        //         'created_at'=>$request->created_at,
+        //     ];
+        //     view('posts.edit', ['item'=>$item]);
+        // }
+    }
+
+    private function savePost($request, $post)
+    {
+        // Validate title Column
+        $this->validate($request, Post::$rules);
+
         // Insert data.
         $post->title = $request->title;
         $post->content = $request->content;
@@ -53,12 +131,6 @@ class PostsController extends Controller
 
         // Save and return to home page
         $post->save();
-        return redirect('/');
-    }
-
-    public function edit($id)
-    {
-        $item = Post::find($id);
-        return view('posts.edit', ['item'=>$item]);
+        return true;
     }
 }

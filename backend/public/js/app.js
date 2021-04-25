@@ -1876,7 +1876,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      url: ""
+      url: "",
+      action: "/posts/update/" + this.id
     };
   },
   methods: {
@@ -1890,6 +1891,7 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       required: true
     },
+    id: String,
     title: String,
     content: String,
     path: String,
@@ -37590,7 +37592,7 @@ var render = function() {
     {
       staticClass: "edit-post-form",
       attrs: {
-        action: "/posts/update/{id}",
+        action: _vm.action,
         method: "post",
         enctype: "multipart/form-data"
       }

@@ -18,4 +18,5 @@ Route::get('/posts/new', [App\Http\Controllers\PostsController::class, 'new'])->
 Route::post('/posts/create', [App\Http\Controllers\PostsController::class, 'create']);
 
 Route::get('/posts/edit/{id}', [App\Http\Controllers\PostsController::class, 'edit'])->name('posts.edit');
+Route::post('/posts/update/{id}', [App\Http\Controllers\PostsController::class, 'update'])->name('posts.update');
 

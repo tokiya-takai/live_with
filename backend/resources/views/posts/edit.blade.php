@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-  <edit-post-component :csrf="{{json_encode(csrf_token())}}" 
+  <edit-post-component :csrf="{{json_encode(csrf_token())}}"
+  id="{{ $item->id }}"
   title="{{ $item->title }}"
   content="{{ $item->content }}"
   path="{{ $item->file_path }}"

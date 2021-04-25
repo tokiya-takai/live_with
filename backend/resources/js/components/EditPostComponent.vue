@@ -1,5 +1,5 @@
 <template>
-    <form action="/posts/update/{id}" method="post" enctype="multipart/form-data" class="edit-post-form">
+    <form :action="action" method="post" enctype="multipart/form-data" class="edit-post-form">
         <input type="hidden" name="_token" v-bind:value="csrf">
         <div class="form-header">
             <div class="file-area">
@@ -30,7 +30,8 @@
     export default {
         data() {
             return {
-                url:""
+                url:"",
+                action: "/posts/update/" + this.id,
             }
         },
         methods:{
@@ -44,6 +45,7 @@
                 type: String,
                 required: true,
             },
+            id: String,
             title: String,
             content: String,
             path: String,
