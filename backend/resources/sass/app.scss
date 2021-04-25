@@ -152,6 +152,7 @@ body {
                   padding: 0 10px;
                   .shoe-name {
                     font-size: 20px;
+                    font-weight: bold;
                     height: 50%;
                     padding-top: 3vh;
                   }
@@ -437,6 +438,30 @@ body {
     .content {
       // Home page
       #my-list {
+        position: relative;
+        // new post button and edit button
+        .new-post-btn {
+          z-index: 1;
+          display: block;
+          position: absolute;
+          width: 13vh;
+          height: 13vh;
+          border-radius: 50%;
+          background-color: $theme_color;
+          left: 70vw;
+          top: 75vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          button {
+            color: $white;
+            font-size: 25px;
+          }
+          &:hover {
+            background-color: $theme_color_hover;
+          }
+        }
+        // new post button and edit buton end
         .my-list-header {
           height: 10vh;
           width: 100vw;
@@ -470,21 +495,42 @@ body {
             height: 80vh;
             li {
               width: 100%;
+              height: 10vh;
+              background-color: $white;
               border-bottom: 1px solid #aaa;
               a button {
+                width: 100%;
+                height: 100%;
                 position: relative;
                 display: flex;
-                padding: 10px;
+                align-items: center;
                 margin-top: 1vh;
                 border-radius: 3px;
                 border: 1px solid rgb(201, 201, 201, 0.1);
                 box-shadow: 4px 4px 8px -1px #aaa;
-                background-color: $white;
                 figure {
-                  width: 20%;
-                  object-fit: contain;
+                  width: 9vh;
+                  height: 9vh;
                   img {
                     width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                  }
+                }
+                figcaption {
+                  height: 100%;
+                  padding: 2vw;
+                  p {
+                    &:first-child {
+                      font-size: 18px;
+                      font-weight: bold;
+                      overflow: hidden;
+                      height: 70%;
+                    }
+                    &:last-child {
+                      font-size: 14px;
+                      height: 30%;
+                    }
                   }
                 }
                 &:hover {
@@ -496,7 +542,7 @@ body {
                   content: "";
                   top: 100%;
                   left: 0;
-                  height: 20px;
+                  height: 150px;
                   width: 1px;
                 }
               }

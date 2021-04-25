@@ -191,6 +191,7 @@ body {
   .py-4 .content #my-list .shoes-list ul li a button figcaption .shoe-name,
   .py-4 .content #show-shoe .shoes-list ul li a button figcaption .shoe-name {
     font-size: 20px;
+    font-weight: bold;
     height: 50%;
     padding-top: 3vh;
   }
@@ -519,6 +520,34 @@ body {
     background-size: cover;
   }
 
+  .py-4 .content #my-list {
+    position: relative;
+  }
+
+  .py-4 .content #my-list .new-post-btn {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    width: 13vh;
+    height: 13vh;
+    border-radius: 50%;
+    background-color: #402F2F;
+    left: 70vw;
+    top: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .py-4 .content #my-list .new-post-btn button {
+    color: #f4f4f4;
+    font-size: 25px;
+  }
+
+  .py-4 .content #my-list .new-post-btn:hover {
+    background-color: #694e4e;
+  }
+
   .py-4 .content #my-list .my-list-header {
     height: 10vh;
     width: 100vw;
@@ -559,28 +588,50 @@ body {
 
   .py-4 .content #my-list .shoes-list ul li {
     width: 100%;
+    height: 10vh;
+    background-color: #f4f4f4;
     border-bottom: 1px solid #aaa;
   }
 
   .py-4 .content #my-list .shoes-list ul li a button {
+    width: 100%;
+    height: 100%;
     position: relative;
     display: flex;
-    padding: 10px;
+    align-items: center;
     margin-top: 1vh;
     border-radius: 3px;
     border: 1px solid rgba(201, 201, 201, 0.1);
     box-shadow: 4px 4px 8px -1px #aaa;
-    background-color: #f4f4f4;
   }
 
   .py-4 .content #my-list .shoes-list ul li a button figure {
-    width: 20%;
-    -o-object-fit: contain;
-       object-fit: contain;
+    width: 9vh;
+    height: 9vh;
   }
 
   .py-4 .content #my-list .shoes-list ul li a button figure img {
     width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+
+  .py-4 .content #my-list .shoes-list ul li a button figcaption {
+    height: 100%;
+    padding: 2vw;
+  }
+
+  .py-4 .content #my-list .shoes-list ul li a button figcaption p:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    overflow: hidden;
+    height: 70%;
+  }
+
+  .py-4 .content #my-list .shoes-list ul li a button figcaption p:last-child {
+    font-size: 14px;
+    height: 30%;
   }
 
   .py-4 .content #my-list .shoes-list ul li a button:hover {
@@ -593,7 +644,7 @@ body {
     content: "";
     top: 100%;
     left: 0;
-    height: 20px;
+    height: 150px;
     width: 1px;
   }
 
