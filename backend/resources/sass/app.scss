@@ -1,4 +1,5 @@
 $theme_color: #402F2F;
+$theme_color_hover: #694e4e;
 $inset: #5f5f5f;
 $white: #f4f4f4;
 $box-shadow: 0px -4px 3px -1px #aaa inset;
@@ -89,7 +90,7 @@ body {
             font-size: 25px;
           }
           &:hover {
-            opacity: 0.8;
+            background-color: $theme_color_hover;
           }
         }
         // new post button and edit buton end
@@ -112,53 +113,53 @@ body {
             width: 80%;
             height: 100%;
             margin: 0 auto;
-            a {
-              button {
+            li {
+              width: 100%;
+              a button {
+                position: relative;
+                height: 13vh;
                 width: 100%;
-                li {
-                  position: relative;
+                margin-top: 3vh;
+                border-radius: 3px;
+                border: 1px solid rgb(201, 201, 201, 0.1);
+                box-shadow: 4px 4px 8px -1px #aaa;
+                display: flex;
+                align-items: center;
+                &:hover {
+                  opacity: 0.7;
+                  background-color: rgba(187,187,187,0.1);
+                }
+                &:last-child::after {
+                  position: absolute;
+                  content: "";
+                  top: 100%;
+                  left: 0;
+                  height: 20px;
+                  width: 1px;
+                }
+                figure {
+                  width: 13vh;
                   height: 13vh;
-                  width: 100%;
-                  margin-top: 3vh;
-                  border-radius: 3px;
-                  border: 1px solid rgb(201, 201, 201, 0.1);
-                  box-shadow: 4px 4px 8px -1px #aaa;
-                  display: flex;
-                  align-items: center;
-                  &:hover {
-                    opacity: 0.7;
-                    background-color: rgba(187,187,187,0.1);
-                  }
-                  &:last-child::after {
-                    position: absolute;
-                    content: "";
-                    top: 100%;
-                    left: 0;
-                    height: 20px;
-                    width: 1px;
-                  }
-                  figure {
-                    width: 15%;
+                  img {
                     height: 100%;
+                    width: 100%;
                     object-fit: contain;
-                    img {
-                      height: 100%;
-                    }
                   }
-                  figcaption {
-                    width: 85%;
-                    height: 100%;
-                    padding: 0 10px;
-                    .shoe-name {
-                      font-size: 20px;
-                      height: 50%;
-                      padding-top: 3vh;
-                    }
-                    .last-maintenance {
-                      height: 50%;
-                      text-align: end;
-                      padding-top: 3vh;
-                    }
+                }
+                figcaption {
+                  width: 85%;
+                  height: 100%;
+                  padding: 0 10px;
+                  .shoe-name {
+                    font-size: 20px;
+                    font-weight: bold;
+                    height: 50%;
+                    padding-top: 3vh;
+                  }
+                  .last-maintenance {
+                    height: 50%;
+                    text-align: end;
+                    padding-top: 3vh;
                   }
                 }
               }
@@ -171,7 +172,7 @@ body {
         width: 80%;
         height: 60vh;
         margin: 3vh auto 0 auto;
-        padding: 5px;
+        padding: 5px 5px 150px 5px;
         border-radius: 3px;
         border: 1px solid rgb(201, 201, 201, 0.1);
         box-shadow: 4px 4px 8px -1px #aaa;
@@ -181,9 +182,10 @@ body {
           figure {
             width: 10vw;
             height: 10vw;
-            object-fit: contain;
             img {
               height: 100%;
+              width: 100%;
+              object-fit: contain;
             }
           }
           figcaption {
@@ -199,6 +201,9 @@ body {
         }
         .show-shoe-content {
           padding: 10px;
+          p {
+            white-space:pre-wrap;
+          }
         }
       }
       //login page and register page
@@ -304,7 +309,7 @@ body {
           // register only end
         }
       }
-      .new-post-form {
+      .new-post-form, .edit-post-form {
         .form-header {
           width: 60vw;
           height: 20vh;
@@ -433,6 +438,30 @@ body {
     .content {
       // Home page
       #my-list {
+        position: relative;
+        // new post button
+        .new-post-btn {
+          z-index: 1;
+          display: block;
+          position: absolute;
+          width: 13vh;
+          height: 13vh;
+          border-radius: 50%;
+          background-color: $theme_color;
+          left: 70vw;
+          top: 75vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          button {
+            color: $white;
+            font-size: 25px;
+          }
+          &:hover {
+            background-color: $theme_color_hover;
+          }
+        }
+        // new post button end
         .my-list-header {
           height: 10vh;
           width: 100vw;
@@ -464,38 +493,57 @@ body {
           ul {
             width: 94vw;
             height: 80vh;
-            a {
-              button {
+            li {
+              width: 100%;
+              height: 10vh;
+              background-color: $white;
+              border-bottom: 1px solid #aaa;
+              a button {
                 width: 100%;
-                border-bottom: 1px solid #aaa;
-                li {
-                  position: relative;
-                  display: flex;
-                  padding: 10px;
-                  margin-top: 1vh;
-                  border-radius: 3px;
-                  border: 1px solid rgb(201, 201, 201, 0.1);
-                  box-shadow: 4px 4px 8px -1px #aaa;
-                  background-color: $white;
-                  figure {
-                    width: 20%;
+                height: 100%;
+                position: relative;
+                display: flex;
+                align-items: center;
+                margin-top: 1vh;
+                border-radius: 3px;
+                border: 1px solid rgb(201, 201, 201, 0.1);
+                box-shadow: 4px 4px 8px -1px #aaa;
+                figure {
+                  width: 9vh;
+                  height: 9vh;
+                  img {
+                    width: 100%;
+                    height: 100%;
                     object-fit: contain;
-                    img {
-                      width: 100%;
+                  }
+                }
+                figcaption {
+                  height: 100%;
+                  padding: 2vw;
+                  p {
+                    &:first-child {
+                      font-size: 18px;
+                      font-weight: bold;
+                      overflow: hidden;
+                      height: 70%;
+                    }
+                    &:last-child {
+                      font-size: 14px;
+                      height: 30%;
                     }
                   }
-                  &:hover {
-                    opacity: 0.7;
-                    background-color: rgba(187,187,187,0.1);
-                  }
-                  &:last-child::after {
-                    position: absolute;
-                    content: "";
-                    top: 100%;
-                    left: 0;
-                    height: 20px;
-                    width: 1px;
-                  }
+                }
+                &:hover {
+                  opacity: 0.7;
+                  background-color: rgba(187,187,187,0.1);
+                }
+                &:last-child::after {
+                  position: absolute;
+                  content: "";
+                  top: 100%;
+                  left: 0;
+                  height: 150px;
+                  width: 1px;
                 }
               }
             }
@@ -507,6 +555,29 @@ body {
         position: relative;
         width: 100vw;
         height: 80vh;
+        // edit post button
+        .new-post-btn {
+          z-index: 1;
+          display: block;
+          position: absolute;
+          width: 13vh;
+          height: 13vh;
+          border-radius: 50%;
+          background-color: $theme_color;
+          left: 70vw;
+          top: 75vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          button {
+            color: $white;
+            font-size: 25px;
+          }
+          &:hover {
+            background-color: $theme_color_hover;
+          }
+        }
+        // edit post button end
         .show-shoe-header {
           position: absolute;
           top: 20vh;
@@ -534,10 +605,15 @@ body {
             }
             figcaption {
               width: 95vw;
+              height: 4vh;
               margin: 8vh auto 0 auto;
               background-color: $white;
               border-bottom: 1px solid #aaa;
               border-radius: 3px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0 5vw;
             }
           }
         }
@@ -546,7 +622,7 @@ body {
           height: 58vh;
           margin: 0 auto;
           border-radius: 3px;
-          padding: 5px;
+          padding: 5vw 5vw 20vh 5vw;
           background-color: $white;
           overflow: scroll;
         }

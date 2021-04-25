@@ -20,7 +20,8 @@ class Post extends Model
     protected $table = "posts";
     protected $fillable = ["file_name","file_path"];
 
-    public static $rules = array(
-        'title' => 'required',
-    );
+    public static $rules = [
+        'title' => ['required'],
+        'content' => ['max:1000']
+    ];
 }

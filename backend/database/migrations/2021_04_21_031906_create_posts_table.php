@@ -20,7 +20,7 @@ class CreatePostsTable extends Migration
             $table->string('file_name');
             $table->string('file_path');
             $table->string('title');
-            $table->string('content');
+            $table->text('content');
             $table->timestamps();
 
             $table->foreign('user_id')

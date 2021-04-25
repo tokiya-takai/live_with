@@ -97,7 +97,7 @@ body {
 
   .py-4 .content #my-list .new-post-btn:hover,
   .py-4 .content #show-shoe .new-post-btn:hover {
-    opacity: 0.8;
+    background-color: #694e4e;
   }
 
   .py-4 .content #my-list .my-list-header,
@@ -133,13 +133,13 @@ body {
     margin: 0 auto;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button,
-  .py-4 .content #show-shoe .shoes-list ul a button {
+  .py-4 .content #my-list .shoes-list ul li,
+  .py-4 .content #show-shoe .shoes-list ul li {
     width: 100%;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li,
-  .py-4 .content #show-shoe .shoes-list ul a button li {
+  .py-4 .content #my-list .shoes-list ul li a button,
+  .py-4 .content #show-shoe .shoes-list ul li a button {
     position: relative;
     height: 13vh;
     width: 100%;
@@ -151,14 +151,14 @@ body {
     align-items: center;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li:hover,
-  .py-4 .content #show-shoe .shoes-list ul a button li:hover {
+  .py-4 .content #my-list .shoes-list ul li a button:hover,
+  .py-4 .content #show-shoe .shoes-list ul li a button:hover {
     opacity: 0.7;
     background-color: rgba(187, 187, 187, 0.1);
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li:last-child::after,
-  .py-4 .content #show-shoe .shoes-list ul a button li:last-child::after {
+  .py-4 .content #my-list .shoes-list ul li a button:last-child::after,
+  .py-4 .content #show-shoe .shoes-list ul li a button:last-child::after {
     position: absolute;
     content: "";
     top: 100%;
@@ -167,35 +167,37 @@ body {
     width: 1px;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li figure,
-  .py-4 .content #show-shoe .shoes-list ul a button li figure {
-    width: 15%;
+  .py-4 .content #my-list .shoes-list ul li a button figure,
+  .py-4 .content #show-shoe .shoes-list ul li a button figure {
+    width: 13vh;
+    height: 13vh;
+  }
+
+  .py-4 .content #my-list .shoes-list ul li a button figure img,
+  .py-4 .content #show-shoe .shoes-list ul li a button figure img {
     height: 100%;
+    width: 100%;
     -o-object-fit: contain;
        object-fit: contain;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li figure img,
-  .py-4 .content #show-shoe .shoes-list ul a button li figure img {
-    height: 100%;
-  }
-
-  .py-4 .content #my-list .shoes-list ul a button li figcaption,
-  .py-4 .content #show-shoe .shoes-list ul a button li figcaption {
+  .py-4 .content #my-list .shoes-list ul li a button figcaption,
+  .py-4 .content #show-shoe .shoes-list ul li a button figcaption {
     width: 85%;
     height: 100%;
     padding: 0 10px;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li figcaption .shoe-name,
-  .py-4 .content #show-shoe .shoes-list ul a button li figcaption .shoe-name {
+  .py-4 .content #my-list .shoes-list ul li a button figcaption .shoe-name,
+  .py-4 .content #show-shoe .shoes-list ul li a button figcaption .shoe-name {
     font-size: 20px;
+    font-weight: bold;
     height: 50%;
     padding-top: 3vh;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li figcaption .last-maintenance,
-  .py-4 .content #show-shoe .shoes-list ul a button li figcaption .last-maintenance {
+  .py-4 .content #my-list .shoes-list ul li a button figcaption .last-maintenance,
+  .py-4 .content #show-shoe .shoes-list ul li a button figcaption .last-maintenance {
     height: 50%;
     text-align: end;
     padding-top: 3vh;
@@ -205,7 +207,7 @@ body {
     width: 80%;
     height: 60vh;
     margin: 3vh auto 0 auto;
-    padding: 5px;
+    padding: 5px 5px 150px 5px;
     border-radius: 3px;
     border: 1px solid rgba(201, 201, 201, 0.1);
     box-shadow: 4px 4px 8px -1px #aaa;
@@ -219,12 +221,13 @@ body {
   .py-4 .content .show-shoe-body .show-shoe-body-header figure {
     width: 10vw;
     height: 10vw;
-    -o-object-fit: contain;
-       object-fit: contain;
   }
 
   .py-4 .content .show-shoe-body .show-shoe-body-header figure img {
     height: 100%;
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 
   .py-4 .content .show-shoe-body .show-shoe-body-header figcaption {
@@ -241,6 +244,10 @@ body {
 
   .py-4 .content .show-shoe-body .show-shoe-content {
     padding: 10px;
+  }
+
+  .py-4 .content .show-shoe-body .show-shoe-content p {
+    white-space: pre-wrap;
   }
 
   .py-4 .content .card {
@@ -359,7 +366,8 @@ body {
     height: 60vh;
   }
 
-  .py-4 .content .new-post-form .form-header {
+  .py-4 .content .new-post-form .form-header,
+  .py-4 .content .edit-post-form .form-header {
     width: 60vw;
     height: 20vh;
     background: url(/images/shoes-background.jpg?64980a0f8e5503ed1f8a5b4c53dc1d98);
@@ -368,13 +376,15 @@ body {
     align-items: center;
   }
 
-  .py-4 .content .new-post-form .form-header .file-area {
+  .py-4 .content .new-post-form .form-header .file-area,
+  .py-4 .content .edit-post-form .form-header .file-area {
     width: 30%;
     height: 25vh;
     position: relative;
   }
 
-  .py-4 .content .new-post-form .form-header .file-area .upload-file {
+  .py-4 .content .new-post-form .form-header .file-area .upload-file,
+  .py-4 .content .edit-post-form .form-header .file-area .upload-file {
     position: absolute;
     top: 10vh;
     left: 5vw;
@@ -388,12 +398,14 @@ body {
     align-items: center;
   }
 
-  .py-4 .content .new-post-form .form-header .file-area .upload-file img {
+  .py-4 .content .new-post-form .form-header .file-area .upload-file img,
+  .py-4 .content .edit-post-form .form-header .file-area .upload-file img {
     width: 100%;
     height: 100%;
   }
 
-  .py-4 .content .new-post-form .form-header .file-area .upload-file div {
+  .py-4 .content .new-post-form .form-header .file-area .upload-file div,
+  .py-4 .content .edit-post-form .form-header .file-area .upload-file div {
     width: 100%;
     height: 100%;
     background-color: #f4f4f4;
@@ -404,22 +416,26 @@ body {
     color: #949494;
   }
 
-  .py-4 .content .new-post-form .form-header .upload-btn {
+  .py-4 .content .new-post-form .form-header .upload-btn,
+  .py-4 .content .edit-post-form .form-header .upload-btn {
     margin-top: 31vh;
   }
 
-  .py-4 .content .new-post-form .form-body {
+  .py-4 .content .new-post-form .form-body,
+  .py-4 .content .edit-post-form .form-body {
     width: 50vw;
     height: 30vh;
     margin: 10vh auto 0 auto;
   }
 
-  .py-4 .content .new-post-form .form-body .new-post-title {
+  .py-4 .content .new-post-form .form-body .new-post-title,
+  .py-4 .content .edit-post-form .form-body .new-post-title {
     width: 40vw;
     margin: 0 auto;
   }
 
-  .py-4 .content .new-post-form .form-body .new-post-title input {
+  .py-4 .content .new-post-form .form-body .new-post-title input,
+  .py-4 .content .edit-post-form .form-body .new-post-title input {
     width: 100%;
     height: 5vh;
     border-radius: 3px;
@@ -427,13 +443,15 @@ body {
     box-shadow: 4px 4px 8px -1px #aaa;
   }
 
-  .py-4 .content .new-post-form .form-body .new-post-content {
+  .py-4 .content .new-post-form .form-body .new-post-content,
+  .py-4 .content .edit-post-form .form-body .new-post-content {
     width: 40vw;
     height: 30vh;
     margin: 0 auto;
   }
 
-  .py-4 .content .new-post-form .form-body .new-post-content textarea {
+  .py-4 .content .new-post-form .form-body .new-post-content textarea,
+  .py-4 .content .edit-post-form .form-body .new-post-content textarea {
     width: 40vw;
     height: 25vh;
     resize: none;
@@ -444,13 +462,15 @@ body {
     overflow: scroll;
   }
 
-  .py-4 .content .new-post-form .submit-btn {
+  .py-4 .content .new-post-form .submit-btn,
+  .py-4 .content .edit-post-form .submit-btn {
     width: 50vw;
     margin: 10vh auto 0 auto;
     text-align: center;
   }
 
-  .py-4 .content .new-post-form .submit-btn input {
+  .py-4 .content .new-post-form .submit-btn input,
+  .py-4 .content .edit-post-form .submit-btn input {
     width: 6vw;
     height: 3vw;
     color: #f4f4f4;
@@ -459,7 +479,8 @@ body {
     box-shadow: 4px 4px 8px -1px #aaa;
   }
 
-  .py-4 .content .new-post-form .submit-btn input:hover {
+  .py-4 .content .new-post-form .submit-btn input:hover,
+  .py-4 .content .edit-post-form .submit-btn input:hover {
     opacity: 0.8;
   }
 }
@@ -497,6 +518,34 @@ body {
     height: 90vh;
     background: url(/images/live-with-background.jpg?5b1ef75643579dba40732f58054d0b42);
     background-size: cover;
+  }
+
+  .py-4 .content #my-list {
+    position: relative;
+  }
+
+  .py-4 .content #my-list .new-post-btn {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    width: 13vh;
+    height: 13vh;
+    border-radius: 50%;
+    background-color: #402F2F;
+    left: 70vw;
+    top: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .py-4 .content #my-list .new-post-btn button {
+    color: #f4f4f4;
+    font-size: 25px;
+  }
+
+  .py-4 .content #my-list .new-post-btn:hover {
+    background-color: #694e4e;
   }
 
   .py-4 .content #my-list .my-list-header {
@@ -537,43 +586,65 @@ body {
     height: 80vh;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button {
+  .py-4 .content #my-list .shoes-list ul li {
     width: 100%;
+    height: 10vh;
+    background-color: #f4f4f4;
     border-bottom: 1px solid #aaa;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li {
+  .py-4 .content #my-list .shoes-list ul li a button {
+    width: 100%;
+    height: 100%;
     position: relative;
     display: flex;
-    padding: 10px;
+    align-items: center;
     margin-top: 1vh;
     border-radius: 3px;
     border: 1px solid rgba(201, 201, 201, 0.1);
     box-shadow: 4px 4px 8px -1px #aaa;
-    background-color: #f4f4f4;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li figure {
-    width: 20%;
+  .py-4 .content #my-list .shoes-list ul li a button figure {
+    width: 9vh;
+    height: 9vh;
+  }
+
+  .py-4 .content #my-list .shoes-list ul li a button figure img {
+    width: 100%;
+    height: 100%;
     -o-object-fit: contain;
        object-fit: contain;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li figure img {
-    width: 100%;
+  .py-4 .content #my-list .shoes-list ul li a button figcaption {
+    height: 100%;
+    padding: 2vw;
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li:hover {
+  .py-4 .content #my-list .shoes-list ul li a button figcaption p:first-child {
+    font-size: 18px;
+    font-weight: bold;
+    overflow: hidden;
+    height: 70%;
+  }
+
+  .py-4 .content #my-list .shoes-list ul li a button figcaption p:last-child {
+    font-size: 14px;
+    height: 30%;
+  }
+
+  .py-4 .content #my-list .shoes-list ul li a button:hover {
     opacity: 0.7;
     background-color: rgba(187, 187, 187, 0.1);
   }
 
-  .py-4 .content #my-list .shoes-list ul a button li:last-child::after {
+  .py-4 .content #my-list .shoes-list ul li a button:last-child::after {
     position: absolute;
     content: "";
     top: 100%;
     left: 0;
-    height: 20px;
+    height: 150px;
     width: 1px;
   }
 
@@ -581,6 +652,30 @@ body {
     position: relative;
     width: 100vw;
     height: 80vh;
+  }
+
+  .py-4 .content #show-shoe .new-post-btn {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    width: 13vh;
+    height: 13vh;
+    border-radius: 50%;
+    background-color: #402F2F;
+    left: 70vw;
+    top: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .py-4 .content #show-shoe .new-post-btn button {
+    color: #f4f4f4;
+    font-size: 25px;
+  }
+
+  .py-4 .content #show-shoe .new-post-btn:hover {
+    background-color: #694e4e;
   }
 
   .py-4 .content #show-shoe .show-shoe-header {
@@ -616,10 +711,15 @@ body {
 
   .py-4 .content #show-shoe .show-shoe-body .show-shoe-body-header figcaption {
     width: 95vw;
+    height: 4vh;
     margin: 8vh auto 0 auto;
     background-color: #f4f4f4;
     border-bottom: 1px solid #aaa;
     border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
   }
 
   .py-4 .content #show-shoe .show-shoe-content {
@@ -627,7 +727,7 @@ body {
     height: 58vh;
     margin: 0 auto;
     border-radius: 3px;
-    padding: 5px;
+    padding: 5vw 5vw 20vh 5vw;
     background-color: #f4f4f4;
     overflow: scroll;
   }

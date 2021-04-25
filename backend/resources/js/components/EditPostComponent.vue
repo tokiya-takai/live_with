@@ -1,5 +1,5 @@
 <template>
-    <form action="/posts/create" method="post" enctype="multipart/form-data" class="new-post-form">
+    <form :action="action" method="post" enctype="multipart/form-data" class="edit-post-form">
         <input type="hidden" name="_token" v-bind:value="csrf">
         <div class="form-header">
             <div class="file-area">
@@ -7,17 +7,17 @@
                     <img :src="url">
                 </div>
                 <div v-else class="upload-file">
-                    <div><span>NO IMAGE</span></div>
+                    <img :src="'/storage/image/' + path">
                 </div>
             </div>
             <input type="file" name="file" accept="image/*" ref="preview" v-on:change="fileSelected" class="upload-btn">
         </div>
         <div class="form-body">
             <div class="new-post-title">
-                <input type="text" name="title" placeholder="Brand name, title, etc." maxlength="30">
+                <input type="text" name="title" placeholder="Brand name, title, etc." maxlength="30" :value="title">
             </div>
             <div class="new-post-content">
-                <textarea name="content" placeholder="Details" maxlength="1000"></textarea>
+                <textarea name="content" placeholder="Details" maxlength="1000" :value="content"></textarea>
             </div>
         </div>
         <div class="submit-btn">
@@ -30,7 +30,8 @@
     export default {
         data() {
             return {
-                url:""
+                url:"",
+                action: "/posts/update/" + this.id,
             }
         },
         methods:{
@@ -43,7 +44,12 @@
             csrf: {
                 type: String,
                 required: true,
-            }
+            },
+            id: String,
+            title: String,
+            content: String,
+            path: String,
+            day: String,
         },
     }
 </script>

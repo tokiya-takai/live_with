@@ -9,17 +9,23 @@
         </div>
         <div class="shoes-list">
             <ul>
-                <a href="{{ route('posts.show') }}"><button>
+                @foreach ($items as $item)
                     <li>
-                        <figure>
-                            <img src="{{ asset('images/test-image.jpeg') }}" alt="shoe">
-                        </figure>
-                        <figcaption>
-                            <p class="shoe-name">チャーチ　バーウッド</p>
-                            <p class="last-maintenance">最後のメンテンナンス 2021/01/01</p>
-                        </figcaption>
+                        <a href="{{ route('posts.show', ['id'=>$item->id]) }}"><button>
+                            <figure>
+                                @if ($item->file_path == "")
+                                    <img src="{{ asset('images/no-image.jpg') }}" alt="no image">
+                                @else
+                                    <img src="{{ asset('storage/image/'.$item->file_path) }}" alt="shoe">
+                                @endif
+                            </figure>
+                            <figcaption>
+                                <p class="shoe-name">{{ $item->title }}</p>
+                                <p class="last-maintenance">最後のメンテンナンス {{ $item->created_at->format('Y/m/d') }}</p>
+                            </figcaption>
+                        </button></a>
                     </li>
-                </button></a>
+                @endforeach
             </ul>
         </div>
     </div>
