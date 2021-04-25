@@ -12,7 +12,7 @@
           <img src="{{ asset('storage/image/'.$item->file_path) }}" alt="shoe">
         </figure>
         <figcaption>
-          <p class="last-maintenance">最後のメンテンナンス</p><p>{{ $item->created_at }}</p>
+          <p class="last-maintenance">最後のメンテンナンス</p><p>{{ $item->created_at->format('Y/m/d') }}</p>
         </figcaption>
       </div>
       <div class="show-shoe-content">

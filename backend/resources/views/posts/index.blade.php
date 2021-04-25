@@ -17,7 +17,7 @@
                             </figure>
                             <figcaption>
                                 <p class="shoe-name">{{ $item->title }}</p>
-                                <p class="last-maintenance">最後のメンテンナンス {{ $item->created_at }}</p>
+                                <p class="last-maintenance">最後のメンテンナンス {{ $item->created_at->format('Y/m/d') }}</p>
                             </figcaption>
                         </button></a>
                     </li>
