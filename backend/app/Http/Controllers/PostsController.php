@@ -31,7 +31,6 @@ class PostsController extends Controller
     public function create(Request $request)
     {
         $post = new Post;
-
         $post = $this->savePost($request, $post);
         if ($post->save()){
             return redirect('/');

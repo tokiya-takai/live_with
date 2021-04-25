@@ -16,9 +16,7 @@
         </figcaption>
       </div>
       <div class="show-shoe-content">
-        <p>
-          {{ $item->content }}
-        </p>
+        <p>{{ $item->content }}</p>
       </div>
     </div>
   </div>

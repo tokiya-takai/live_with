@@ -172,7 +172,7 @@ body {
         width: 80%;
         height: 60vh;
         margin: 3vh auto 0 auto;
-        padding: 5px;
+        padding: 5px 5px 150px 5px;
         border-radius: 3px;
         border: 1px solid rgb(201, 201, 201, 0.1);
         box-shadow: 4px 4px 8px -1px #aaa;
@@ -439,7 +439,7 @@ body {
       // Home page
       #my-list {
         position: relative;
-        // new post button and edit button
+        // new post button
         .new-post-btn {
           z-index: 1;
           display: block;
@@ -461,7 +461,7 @@ body {
             background-color: $theme_color_hover;
           }
         }
-        // new post button and edit buton end
+        // new post button end
         .my-list-header {
           height: 10vh;
           width: 100vw;
@@ -555,6 +555,29 @@ body {
         position: relative;
         width: 100vw;
         height: 80vh;
+        // edit post button
+        .new-post-btn {
+          z-index: 1;
+          display: block;
+          position: absolute;
+          width: 13vh;
+          height: 13vh;
+          border-radius: 50%;
+          background-color: $theme_color;
+          left: 70vw;
+          top: 75vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          button {
+            color: $white;
+            font-size: 25px;
+          }
+          &:hover {
+            background-color: $theme_color_hover;
+          }
+        }
+        // edit post button end
         .show-shoe-header {
           position: absolute;
           top: 20vh;
@@ -582,10 +605,15 @@ body {
             }
             figcaption {
               width: 95vw;
+              height: 4vh;
               margin: 8vh auto 0 auto;
               background-color: $white;
               border-bottom: 1px solid #aaa;
               border-radius: 3px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0 5vw;
             }
           }
         }
@@ -594,7 +622,7 @@ body {
           height: 58vh;
           margin: 0 auto;
           border-radius: 3px;
-          padding: 5px;
+          padding: 5vw 5vw 20vh 5vw;
           background-color: $white;
           overflow: scroll;
         }

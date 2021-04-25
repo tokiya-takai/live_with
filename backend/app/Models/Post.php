@@ -21,6 +21,7 @@ class Post extends Model
     protected $fillable = ["file_name","file_path"];
 
     public static $rules = [
-        'title' => ['required']
+        'title' => ['required'],
+        'content' => ['max:1000']
     ];
 }

@@ -207,7 +207,7 @@ body {
     width: 80%;
     height: 60vh;
     margin: 3vh auto 0 auto;
-    padding: 5px;
+    padding: 5px 5px 150px 5px;
     border-radius: 3px;
     border: 1px solid rgba(201, 201, 201, 0.1);
     box-shadow: 4px 4px 8px -1px #aaa;
@@ -654,6 +654,30 @@ body {
     height: 80vh;
   }
 
+  .py-4 .content #show-shoe .new-post-btn {
+    z-index: 1;
+    display: block;
+    position: absolute;
+    width: 13vh;
+    height: 13vh;
+    border-radius: 50%;
+    background-color: #402F2F;
+    left: 70vw;
+    top: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .py-4 .content #show-shoe .new-post-btn button {
+    color: #f4f4f4;
+    font-size: 25px;
+  }
+
+  .py-4 .content #show-shoe .new-post-btn:hover {
+    background-color: #694e4e;
+  }
+
   .py-4 .content #show-shoe .show-shoe-header {
     position: absolute;
     top: 20vh;
@@ -687,10 +711,15 @@ body {
 
   .py-4 .content #show-shoe .show-shoe-body .show-shoe-body-header figcaption {
     width: 95vw;
+    height: 4vh;
     margin: 8vh auto 0 auto;
     background-color: #f4f4f4;
     border-bottom: 1px solid #aaa;
     border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
   }
 
   .py-4 .content #show-shoe .show-shoe-content {
@@ -698,7 +727,7 @@ body {
     height: 58vh;
     margin: 0 auto;
     border-radius: 3px;
-    padding: 5px;
+    padding: 5vw 5vw 20vh 5vw;
     background-color: #f4f4f4;
     overflow: scroll;
   }
