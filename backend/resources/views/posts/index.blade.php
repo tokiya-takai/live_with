@@ -13,7 +13,11 @@
                     <li>
                         <a href="{{ route('posts.show', ['id'=>$item->id]) }}"><button>
                             <figure>
-                                <img src="{{ asset('storage/image/'.$item->file_path) }}" alt="shoe">
+                                @if ($item->file_path == "")
+                                    <img src="{{ asset('images/no-image.jpg') }}" alt="no image">
+                                @else
+                                    <img src="{{ asset('storage/image/'.$item->file_path) }}" alt="shoe">
+                                @endif
                             </figure>
                             <figcaption>
                                 <p class="shoe-name">{{ $item->title }}</p>
