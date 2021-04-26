@@ -613,6 +613,26 @@ body {
     height: 80vh;
   }
 
+  .py-4 .content #my-list .shoes-list ul .items-leave-active,
+  .py-4 .content #my-list .shoes-list ul .items-enter-active {
+    transition: opacity 0.5s, transform 0.5s ease;
+  }
+
+  .py-4 .content #my-list .shoes-list ul .items-leave-to,
+  .py-4 .content #my-list .shoes-list ul .items-enter {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  .py-4 .content #my-list .shoes-list ul .items-leave,
+  .py-4 .content #my-list .shoes-list ul .items-enter-to {
+    opacity: 1;
+  }
+
+  .py-4 .content #my-list .shoes-list ul .items-move {
+    transition: transform 0.5s;
+  }
+
   .py-4 .content #my-list .shoes-list ul li {
     width: 100%;
     height: 10vh;
