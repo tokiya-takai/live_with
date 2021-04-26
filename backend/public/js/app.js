@@ -1944,21 +1944,36 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       action: "/posts/show/",
-      sortOrder: 1
+      sortOrder: 1,
+      filter: "New Order"
     };
   },
   props: {
-    items: Object
+    items: Array
   },
   computed: {
     // 配列の要素順番を逆順にする
-    reverseItems: function reverseItems() {
-      return this.items.slice().reverse();
+    // reverseItems() {
+    //   return this.items.slice().reverse(); 
+    // },
+    sortedItemsByCreatedAt: function sortedItemsByCreatedAt() {
+      var _this = this;
+
+      return this.items.sort(function (a, b) {
+        return a.created_at < b.created_at ? -_this.sortOrder : a.created_at > b.created_at ? _this.sortOrder : 0;
+      });
+      ;
     }
   },
   methods: {
     changeOrder: function changeOrder() {
       this.sortOrder = this.sortOrder > 0 ? -1 : 1;
+
+      if (this.sortOrder < 1) {
+        this.filter = "Registration order";
+      } else {
+        this.filter = "New Order";
+      }
     }
   },
   filters: {
@@ -59266,46 +59281,55 @@ var render = function() {
       _c("h1", [_vm._v("MyShoes")]),
       _vm._v(" "),
       _c("button", { staticClass: "filter", on: { click: _vm.changeOrder } }, [
-        _vm._v("Filter")
+        _vm._v(_vm._s(_vm.filter))
       ])
     ]),
     _vm._v(" "),
-    _c("div", { staticClass: "shoes-list" }, [
-      _c(
-        "ul",
-        _vm._l(_vm.items, function(item) {
-          return _c("li", { key: item.created_at }, [
-            _c("a", { attrs: { href: _vm.action + item.id.toFixed() } }, [
-              _c("button", [
-                _c("figure", [
-                  item.file_path == ""
-                    ? _c("img", {
-                        attrs: { src: "images/no-image.jpg", alt: "no image" }
-                      })
-                    : _c("img", {
-                        attrs: { src: "storage/image/" + item.file_path }
-                      })
-                ]),
-                _vm._v(" "),
-                _c("figcaption", [
-                  _c("p", { staticClass: "shoe-name" }, [
-                    _vm._v(_vm._s(item.title))
+    _c(
+      "div",
+      { staticClass: "shoes-list" },
+      [
+        _c(
+          "transition-group",
+          { attrs: { name: "items", tag: "ul" } },
+          _vm._l(_vm.sortedItemsByCreatedAt, function(item) {
+            return _c("li", { key: item.id }, [
+              _c("a", { attrs: { href: _vm.action + item.id.toFixed() } }, [
+                _c("button", [
+                  _c("figure", [
+                    item.file_path == ""
+                      ? _c("img", {
+                          attrs: {
+                            src: _vm.images / _vm.no - _vm.image.jpg,
+                            alt: "no image"
+                          }
+                        })
+                      : _c("img", {
+                          attrs: { src: "storage/image/" + item.file_path }
+                        })
                   ]),
                   _vm._v(" "),
-                  _c("p", { staticClass: "last-maintenance" }, [
-                    _vm._v(
-                      "最後のメンテンナンス " +
-                        _vm._s(_vm._f("moment")(item.created_at))
-                    )
+                  _c("figcaption", [
+                    _c("p", { staticClass: "shoe-name" }, [
+                      _vm._v(_vm._s(item.title))
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticClass: "last-maintenance" }, [
+                      _vm._v(
+                        "最後のメンテナンス : " +
+                          _vm._s(_vm._f("moment")(item.created_at))
+                      )
+                    ])
                   ])
                 ])
               ])
             ])
-          ])
-        }),
-        0
-      )
-    ])
+          }),
+          0
+        )
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = [
@@ -71694,7 +71718,7 @@ Vue.compile = compileToFunctions;
 /******/ 					__webpack_require__.m[moduleId] = moreModules[moduleId];
 /******/ 				}
 /******/ 			}
-/******/ 			if(runtime) runtime(__webpack_require__);
+/******/ 			if(runtime) var result = runtime(__webpack_require__);
 /******/ 			if(parentChunkLoadingFunction) parentChunkLoadingFunction(data);
 /******/ 			for(;i < chunkIds.length; i++) {
 /******/ 				chunkId = chunkIds[i];
@@ -71703,7 +71727,7 @@ Vue.compile = compileToFunctions;
 /******/ 				}
 /******/ 				installedChunks[chunkIds[i]] = 0;
 /******/ 			}
-/******/ 			__webpack_require__.O();
+/******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
 /******/ 		var chunkLoadingGlobal = self["webpackChunk"] = self["webpackChunk"] || [];

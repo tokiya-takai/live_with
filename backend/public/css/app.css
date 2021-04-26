@@ -133,6 +133,33 @@ body {
     margin: 0 auto;
   }
 
+  .py-4 .content #my-list .shoes-list ul .items-leave-active,
+  .py-4 .content #my-list .shoes-list ul .items-enter-active,
+  .py-4 .content #show-shoe .shoes-list ul .items-leave-active,
+  .py-4 .content #show-shoe .shoes-list ul .items-enter-active {
+    transition: opacity 0.5s, transform 0.5s ease;
+  }
+
+  .py-4 .content #my-list .shoes-list ul .items-leave-to,
+  .py-4 .content #my-list .shoes-list ul .items-enter,
+  .py-4 .content #show-shoe .shoes-list ul .items-leave-to,
+  .py-4 .content #show-shoe .shoes-list ul .items-enter {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  .py-4 .content #my-list .shoes-list ul .items-leave,
+  .py-4 .content #my-list .shoes-list ul .items-enter-to,
+  .py-4 .content #show-shoe .shoes-list ul .items-leave,
+  .py-4 .content #show-shoe .shoes-list ul .items-enter-to {
+    opacity: 1;
+  }
+
+  .py-4 .content #my-list .shoes-list ul .items-move,
+  .py-4 .content #show-shoe .shoes-list ul .items-move {
+    transition: transform 0.5s;
+  }
+
   .py-4 .content #my-list .shoes-list ul li,
   .py-4 .content #show-shoe .shoes-list ul li {
     width: 100%;
