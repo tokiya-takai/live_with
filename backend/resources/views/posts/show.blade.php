@@ -9,7 +9,11 @@
     <div class="show-shoe-body">
       <div class="show-shoe-body-header">
         <figure>
-          <img src="{{ asset('storage/image/'.$item->file_path) }}" alt="shoe">
+          @if ($item->file_path == null)
+            <img src="{{ asset('images/no-image.jpg') }}" alt="no image">
+          @else
+            <img src="{{ asset('storage/image/'.$item->file_path) }}" alt="shoe">
+          @endif
         </figure>
         <figcaption>
           <p class="last-maintenance">最後のメンテンナンス</p><p>{{ $item->created_at->format('Y/m/d') }}</p>

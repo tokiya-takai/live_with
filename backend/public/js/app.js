@@ -1873,6 +1873,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -59201,7 +59202,9 @@ var render = function() {
                 _c("img", { attrs: { src: _vm.url } })
               ])
             : _c("div", { staticClass: "upload-file" }, [
-                _c("img", { attrs: { src: "/storage/image/" + _vm.path } })
+                _vm.path == ""
+                  ? _c("div", [_c("span", [_vm._v("NO IMAGE")])])
+                  : _c("img", { attrs: { src: "/storage/image/" + _vm.path } })
               ])
         ]),
         _vm._v(" "),
@@ -59297,12 +59300,9 @@ var render = function() {
               _c("a", { attrs: { href: _vm.action + item.id.toFixed() } }, [
                 _c("button", [
                   _c("figure", [
-                    item.file_path == ""
+                    item.file_path == null
                       ? _c("img", {
-                          attrs: {
-                            src: _vm.images / _vm.no - _vm.image.jpg,
-                            alt: "no image"
-                          }
+                          attrs: { src: "images/no-image.jpg", alt: "no image" }
                         })
                       : _c("img", {
                           attrs: { src: "storage/image/" + item.file_path }
@@ -59423,7 +59423,7 @@ var staticRenderFns = [
             type: "text",
             name: "title",
             placeholder: "Brand name, title, etc.",
-            maxlength: "30"
+            maxlength: "50"
           }
         })
       ]),

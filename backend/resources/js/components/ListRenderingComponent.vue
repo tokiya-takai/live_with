@@ -10,7 +10,7 @@
         <li v-for="item in sortedItemsByCreatedAt" v-bind:key="item.id">
           <a :href="action + item.id.toFixed()"><button>
             <figure>
-                <img v-if="item.file_path == ''" v-bind:src="images/no-image.jpg" alt="no image">
+                <img v-if="item.file_path == null" v-bind:src="'images/no-image.jpg'" alt="no image">
                 <img v-else :src="'storage/image/' + item.file_path">
             </figure>
             <figcaption>

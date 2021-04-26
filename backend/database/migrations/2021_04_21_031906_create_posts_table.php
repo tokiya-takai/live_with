@@ -17,10 +17,10 @@ class CreatePostsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedBigInteger('user_id');
-            $table->string('file_name');
-            $table->string('file_path');
+            $table->string('file_name')->nullable();
+            $table->string('file_path')->nullable();
             $table->string('title');
-            $table->text('content');
+            $table->text('content')->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')

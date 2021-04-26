@@ -190,7 +190,7 @@ body {
     content: "";
     top: 100%;
     left: 0;
-    height: 20px;
+    height: 13vw;
     width: 1px;
   }
 
@@ -418,8 +418,6 @@ body {
     width: 20vh;
     height: 20vh;
     margin: 0 auto;
-    -o-object-fit: contain;
-       object-fit: contain;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -429,6 +427,8 @@ body {
   .py-4 .content .edit-post-form .form-header .file-area .upload-file img {
     width: 100%;
     height: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
 
   .py-4 .content .new-post-form .form-header .file-area .upload-file div,
@@ -682,18 +682,18 @@ body {
     height: 30%;
   }
 
-  .py-4 .content #my-list .shoes-list ul li a button:hover {
-    opacity: 0.7;
-    background-color: rgba(187, 187, 187, 0.1);
-  }
-
-  .py-4 .content #my-list .shoes-list ul li a button:last-child::after {
+  .py-4 .content #my-list .shoes-list ul li a button figcaption p:last-child::after {
     position: absolute;
     content: "";
     top: 100%;
     left: 0;
-    height: 150px;
+    height: 17vh;
     width: 1px;
+  }
+
+  .py-4 .content #my-list .shoes-list ul li a button:hover {
+    opacity: 0.7;
+    background-color: rgba(187, 187, 187, 0.1);
   }
 
   .py-4 .content #show-shoe {
