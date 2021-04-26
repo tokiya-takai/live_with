@@ -21,6 +21,7 @@
  
  Vue.component('new-post-component', require('./components/NewPostComponent.vue').default);
  Vue.component('edit-post-component', require('./components/EditPostComponent.vue').default);
+ Vue.component('list-rendering-component', require('./components/ListRenderingComponent.vue').default);
  /**
   * Next, we will create a fresh Vue application instance and attach it to
   * the page. Then, you may begin adding components to this application
