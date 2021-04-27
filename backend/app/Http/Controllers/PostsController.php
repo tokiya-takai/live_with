@@ -12,9 +12,14 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $userId = Auth::id();
-        $items = Post::where('user_id',$userId)->get();
-        return view("posts.index",compact('items'));
+        $userSignedIn = Auth::check();
+        if ($userSignedIn){
+            $userId = Auth::id();
+            $items = Post::where('user_id',$userId)->get();
+            return view("posts.index",compact('items'));
+        } else {
+            return view('posts.guest');
+        }
     }
 
     public function show($id)
