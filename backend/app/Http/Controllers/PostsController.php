@@ -12,14 +12,20 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $userId = Auth::id();
-        $items = Post::where('user_id',$userId)->get();
-        return view("posts.index",compact('items'));
+        $userSignedIn = Auth::check();
+        if ($userSignedIn){
+            $userId = Auth::id();
+            $items = Post::where('user_id',$userId)->get();
+            return view("posts.index",compact('items'));
+        } else {
+            return view('posts.guest');
+        }
     }
 
     public function show($id)
     {
         $item = Post::find($id);
+        isCorrectUser($item);
         return view("posts.show", compact('item'));
     }
 
@@ -45,12 +51,14 @@ class PostsController extends Controller
     public function edit($id)
     {
         $item = Post::find($id);
+        isCorrectUser($item);
         return view('posts.edit', ['item'=>$item]);
     }
 
     public function update(Request $request)
     {
         $post = Post::find($request->id);
+        isCorrectUser($post);
 
         $post = $this->savePost($request, $post);
         if ($post->save()){
@@ -85,5 +93,12 @@ class PostsController extends Controller
            }
        }
         return $post;
+    }
+
+    private function isCorrectUser($item)
+    {
+        if ($item->user_id != Auth::id()){
+            return redirect('/');
+        }
     }
 }

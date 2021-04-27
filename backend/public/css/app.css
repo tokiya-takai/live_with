@@ -100,6 +100,37 @@ body {
     background-color: #694e4e;
   }
 
+  .py-4 .content #my-list .guest-header,
+  .py-4 .content #show-shoe .guest-header {
+    height: 20vh;
+    padding: 0 1vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .py-4 .content #my-list .guest-header h1,
+  .py-4 .content #show-shoe .guest-header h1 {
+    font-size: 30px;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+  }
+
+  .py-4 .content #my-list .guest-body,
+  .py-4 .content #show-shoe .guest-body {
+    height: 60vh;
+    padding-bottom: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .py-4 .content #my-list .guest-body p,
+  .py-4 .content #show-shoe .guest-body p {
+    font-size: 25px;
+  }
+
   .py-4 .content #my-list .my-list-header,
   .py-4 .content #my-list .show-shoe-header,
   .py-4 .content #show-shoe .my-list-header,
