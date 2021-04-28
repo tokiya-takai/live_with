@@ -83,13 +83,14 @@ class PostsController extends Controller
        // Check if the file exists.
        if($request->hasFile('file')) {
            if($request->file('file')->isvalid()){
-               $fileData = $request->file('file');
+                $fileData = $request->file('file');
                // // Insert file name
-               $filePath = $fileData->store('public/image');
-               $filePath = str_replace('public/image/', '', $filePath);
+                $filePath = $fileData->store('public/image');
+                $filePath = str_replace('public/image/', '', $filePath);
+                // $filepath = Storage::disk('s3')->putFile('/shoe_images',$fileData, 'public');
    
-               $post->file_path = $filePath;
-               $post->file_name = $fileData->getClientOriginalName();
+                $post->file_path = $filePath;
+                $post->file_name = $fileData->getClientOriginalName();
            }
        }
         return $post;
