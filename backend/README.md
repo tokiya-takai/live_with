@@ -92,3 +92,7 @@ Error: Class 'League\Flysystem\AwsS3v3\AwsS3Adapter' not foundが解決できず
 league/flysystem-aws-s3-v3をrequireしたが、同エラーが未解決。バージョンの不整合の仮説のもと、^1.0 , ^2.0 , 1.0.29を検証した。<br />
 ->結果　解決せず<br />
 原因 : 模索中
+
+### レスポンシブ
+
+・スマートフォンの場合、機種によるレイアウトの乱れがあるため、対応する。
