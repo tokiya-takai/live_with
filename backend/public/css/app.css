@@ -578,6 +578,116 @@ body {
     background-size: cover;
   }
 
+  .py-4 .content {
+    overflow: hidden;
+  }
+
+  .py-4 .content .card {
+    width: 95vw;
+    height: 80vh;
+    background-color: #f4f4f4;
+    margin: 2.5vh auto;
+    border-radius: 3px;
+  }
+
+  .py-4 .content .card .card-header {
+    font-size: 30px;
+    height: 10vh;
+    text-align: center;
+    padding-top: 5vh;
+  }
+
+  .py-4 .content .card h1 {
+    text-align: center;
+    padding-bottom: 1vh;
+    border-bottom: 1px solid #aaa;
+  }
+
+  .py-4 .content .card .card-body {
+    width: 95vw;
+    height: 50vh;
+    margin: 5vh auto;
+  }
+
+  .py-4 .content .card .card-body form {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .py-4 .content .card .card-body form .form-group .col-md-6 {
+    width: 100%;
+    margin-top: 5vh;
+  }
+
+  .py-4 .content .card .card-body form .form-group .col-md-6 .form-control {
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+  }
+
+  .py-4 .content .card .card-body form .mb-0 {
+    height: 15vh;
+  }
+
+  .py-4 .content .card .card-body form .mb-0 .col-md-8,
+  .py-4 .content .card .card-body form .mb-0 .col-md-6 {
+    width: 100%;
+    height: 15vh;
+  }
+
+  .py-4 .content .card .card-body form .mb-0 .col-md-8 div,
+  .py-4 .content .card .card-body form .mb-0 .col-md-6 div {
+    width: 100%;
+    text-align: left;
+  }
+
+  .py-4 .content .card .card-body form .mb-0 .col-md-8 div a,
+  .py-4 .content .card .card-body form .mb-0 .col-md-6 div a {
+    line-height: 5vh;
+    border-bottom: 1px solid #aaa;
+  }
+
+  .py-4 .content .card .card-body form .mb-0 .col-md-8 button,
+  .py-4 .content .card .card-body form .mb-0 .col-md-6 button {
+    width: 20vw;
+    height: 5vh;
+    margin: 10vh 33vw;
+    text-align: center;
+    color: #f4f4f4;
+    background-color: #6299ff;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px -1px #aaa;
+  }
+
+  .py-4 .content .card .card-body .logged-message {
+    width: 100%;
+    margin-top: 10vh;
+  }
+
+  .py-4 .content .card .card-body .logged-message p {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 3vh;
+  }
+
+  .py-4 .content .card .card-body .logged-message p a {
+    line-height: 10vh;
+    border-bottom: 1px solid #aaa;
+    font-weight: bold;
+  }
+
+  .py-4 .content .card .card-body .logged-message figure {
+    height: 10vh;
+    width: 100%;
+    margin-top: 2vh;
+    text-align: center;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+
+  .py-4 .content .card .card-body .logged-message figure img {
+    height: 100%;
+  }
+
   .py-4 .content #my-list {
     position: relative;
   }
@@ -604,6 +714,35 @@ body {
 
   .py-4 .content #my-list .new-post-btn:hover {
     background-color: #694e4e;
+  }
+
+  .py-4 .content #my-list .guest-header {
+    height: 30vh;
+    display: flex;
+    align-items: flex-end;
+    font-size: 35px;
+    border-bottom: 1px solid #aaa;
+  }
+
+  .py-4 .content #my-list .guest-header h1 {
+    line-height: 7vh;
+    width: 95vw;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 3px 3px 0 0;
+  }
+
+  .py-4 .content #my-list .guest-body {
+    height: 30vh;
+    width: 95vw;
+    margin: 0 auto;
+    padding-bottom: 5vh;
+    background-color: #f4f4f4;
+    border-radius: 0 0 3px 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .py-4 .content #my-list .my-list-header {
