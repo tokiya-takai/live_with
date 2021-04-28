@@ -7,7 +7,7 @@
     </div>
     <div class="shoes-list">
       <transition-group name="items" tag="ul">
-        <li v-for="item in sortedItemsByCreatedAt" v-bind:key="item.id">
+        <li v-for="item in sortedItemsByUpdateDate" v-bind:key="item.id">
           <a :href="action + item.id.toFixed()"><button>
             <figure>
                 <img v-if="item.file_path == null" v-bind:src="'images/no-image.jpg'" alt="no image">
@@ -15,7 +15,7 @@
             </figure>
             <figcaption>
               <p class="shoe-name">{{ item.title }}</p>
-              <p class="last-maintenance">最後のメンテナンス : {{ item.created_at | moment }}</p>
+              <p class="last-maintenance">最後のメンテナンス : {{ item.update_date | moment }}</p>
             </figcaption>
           </button></a>
         </li>
@@ -30,16 +30,16 @@ export default {
       return {
           action: "/posts/show/",
           sortOrder: 1,
-          filter: "New Order",
+          filter: "Update Order",
       }
   },
   props:  {
     items: Array,
   },
   computed: {
-    sortedItemsByCreatedAt(){
+    sortedItemsByUpdateDate(){
         return this.items.sort((a, b) => {
-          return (a.created_at < b.created_at) ? -this.sortOrder : (a.created_at > b.created_at) ? this.sortOrder : 0;
+          return (a.update_date < b.update_date) ? -this.sortOrder : (a.update_date > b.update_date) ? this.sortOrder : 0;
         });;
     }
   },
@@ -49,7 +49,7 @@ export default {
       if (this.sortOrder < 1) {
         this.filter = "Registration order";
       }else{
-        this.filter = "New Order";
+        this.filter = "Update Order";
       }
     }
   },

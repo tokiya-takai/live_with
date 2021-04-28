@@ -25,7 +25,7 @@ class PostsController extends Controller
     public function show($id)
     {
         $item = Post::find($id);
-        isCorrectUser($item);
+        $this->isCorrectUser($item);
         return view("posts.show", compact('item'));
     }
 
@@ -51,14 +51,14 @@ class PostsController extends Controller
     public function edit($id)
     {
         $item = Post::find($id);
-        isCorrectUser($item);
+        $this->isCorrectUser($item);
         return view('posts.edit', ['item'=>$item]);
     }
 
     public function update(Request $request)
     {
         $post = Post::find($request->id);
-        isCorrectUser($post);
+        $this->isCorrectUser($post);
 
         $post = $this->savePost($request, $post);
         if ($post->save()){
@@ -79,6 +79,7 @@ class PostsController extends Controller
        $post->title = $request->title;
        $post->content = $request->content;
        $post->user_id = $request->user()->id;
+       $post->update_date = date("Y/m/d H:i:s");
 
        // Check if the file exists.
        if($request->hasFile('file')) {

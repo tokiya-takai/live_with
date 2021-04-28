@@ -1946,18 +1946,18 @@ __webpack_require__.r(__webpack_exports__);
     return {
       action: "/posts/show/",
       sortOrder: 1,
-      filter: "New Order"
+      filter: "Update Order"
     };
   },
   props: {
     items: Array
   },
   computed: {
-    sortedItemsByCreatedAt: function sortedItemsByCreatedAt() {
+    sortedItemsByUpdateDate: function sortedItemsByUpdateDate() {
       var _this = this;
 
       return this.items.sort(function (a, b) {
-        return a.created_at < b.created_at ? -_this.sortOrder : a.created_at > b.created_at ? _this.sortOrder : 0;
+        return a.update_date < b.update_date ? -_this.sortOrder : a.update_date > b.update_date ? _this.sortOrder : 0;
       });
       ;
     }
@@ -1969,7 +1969,7 @@ __webpack_require__.r(__webpack_exports__);
       if (this.sortOrder < 1) {
         this.filter = "Registration order";
       } else {
-        this.filter = "New Order";
+        this.filter = "Update Order";
       }
     }
   },
@@ -59291,7 +59291,7 @@ var render = function() {
         _c(
           "transition-group",
           { attrs: { name: "items", tag: "ul" } },
-          _vm._l(_vm.sortedItemsByCreatedAt, function(item) {
+          _vm._l(_vm.sortedItemsByUpdateDate, function(item) {
             return _c("li", { key: item.id }, [
               _c("a", { attrs: { href: _vm.action + item.id.toFixed() } }, [
                 _c("button", [
@@ -59313,7 +59313,7 @@ var render = function() {
                     _c("p", { staticClass: "last-maintenance" }, [
                       _vm._v(
                         "最後のメンテナンス : " +
-                          _vm._s(_vm._f("moment")(item.created_at))
+                          _vm._s(_vm._f("moment")(item.update_date))
                       )
                     ])
                   ])
