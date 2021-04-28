@@ -37,10 +37,6 @@ export default {
     items: Array,
   },
   computed: {
-  // 配列の要素順番を逆順にする
-    // reverseItems() {
-    //   return this.items.slice().reverse(); 
-    // },
     sortedItemsByCreatedAt(){
         return this.items.sort((a, b) => {
           return (a.created_at < b.created_at) ? -this.sortOrder : (a.created_at > b.created_at) ? this.sortOrder : 0;

@@ -1953,10 +1953,6 @@ __webpack_require__.r(__webpack_exports__);
     items: Array
   },
   computed: {
-    // 配列の要素順番を逆順にする
-    // reverseItems() {
-    //   return this.items.slice().reverse(); 
-    // },
     sortedItemsByCreatedAt: function sortedItemsByCreatedAt() {
       var _this = this;
 
