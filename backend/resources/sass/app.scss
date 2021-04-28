@@ -479,6 +479,99 @@ body {
     background: url('images/live-with-background.jpg');
     background-size: cover;
     .content {
+      overflow: hidden;
+      // logged in page
+      .card {
+        width: 95vw;
+        height: 80vh;
+        background-color: $white;
+        margin: 2.5vh auto;
+        border-radius: 3px;
+        .card-header {
+          font-size: 30px;
+          height: 10vh;
+          text-align: center;
+          padding-top: 5vh;
+        }
+        h1 {
+          text-align: center;
+          padding-bottom: 1vh;
+          border-bottom: 1px solid #aaa;
+        }
+        .card-body {
+          width: 95vw;
+          height: 50vh;
+          margin: 5vh auto;
+          form {
+            width: 90%;
+            margin: 0 auto;
+            .form-group {
+              .col-md-6 {
+                width: 100%;
+                margin-top: 5vh;
+                .form-control {
+                  width: 100%;
+                  border-bottom: 1px solid #aaa;
+                }
+              }
+            }
+            .mb-0 {
+              height: 15vh;
+              .col-md-8, .col-md-6 {
+                width: 100%;
+                height: 15vh;
+                div {
+                  width: 100%;
+                  text-align: left;
+                  a {
+                    line-height: 5vh;
+                    border-bottom: 1px solid #aaa;
+                  }
+                }
+                button {
+                  width: 20vw;
+                  height: 5vh;
+                  margin: 10vh 33vw;
+                  text-align: center;
+                  color: $white;
+                  background-color: rgb(98, 153, 255);
+                  border-radius: 3px;
+                  box-shadow: 3px 3px 5px -1px #aaa;
+                }
+              }
+              // register only
+
+              // register only end
+            }
+          }
+          // logged in page
+          .logged-message {
+            width: 100%;
+            margin-top: 10vh;
+            p {
+              font-size: 20px;
+              text-align: center;
+              margin-top: 3vh;
+              a {
+                line-height: 10vh;
+                border-bottom: 1px solid #aaa;
+                font-weight: bold;
+              }
+            }
+            figure {
+              height: 10vh;
+              width: 100%;
+              margin-top: 2vh;
+              text-align: center;
+              object-fit: contain;
+              img {
+                height: 100%;
+              }
+            }
+          }
+        }
+      }
+      // logged in page end
       // Home page
       #my-list {
         position: relative;
@@ -504,6 +597,34 @@ body {
             background-color: $theme_color_hover;
           }
         }
+        // guest page
+        .guest-header {
+          height: 30vh;
+          display: flex;
+          align-items: flex-end;
+          font-size: 35px;
+          border-bottom: 1px solid #aaa;
+          h1 {
+            line-height: 7vh;
+            width: 95vw;
+            background-color: $white;
+            text-align: center;
+            margin: 0 auto;
+            border-radius: 3px 3px 0 0;
+          }
+        }
+        .guest-body {
+          height: 30vh;
+          width: 95vw;
+          margin: 0 auto;
+          padding-bottom: 5vh;
+          background-color: $white;
+          border-radius: 0 0 3px 3px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        // guest page end
         // new post button end
         .my-list-header {
           height: 10vh;
