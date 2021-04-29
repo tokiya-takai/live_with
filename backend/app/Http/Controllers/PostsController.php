@@ -37,14 +37,7 @@ class PostsController extends Controller
     public function create(Request $request)
     {
         $post = new Post;
-        $post = $this->savePost($request, $post);
-        if ($post->save()){
-            return redirect('/');
-        }else{
-            $item = $request;
-            $item->file_path = $post->file_path;
-            return view('posts.edit', ['item'=>$item]);
-        }
+        $this->savePost($request, $post);
         return redirect('/');
     }
 
@@ -60,14 +53,8 @@ class PostsController extends Controller
         $post = Post::find($request->id);
         $this->isCorrectUser($post);
 
-        $post = $this->savePost($request, $post);
-        if ($post->save()){
-            return redirect('/');
-        }else{
-            $item = $request;
-            $item->file_path = $post->file_path;
-            return view('posts.edit', ['item'=>$item]);
-        }
+        $this->savePost($request, $post);
+        return redirect('/');
     }
 
     private function savePost($request, $post)
@@ -86,14 +73,13 @@ class PostsController extends Controller
            if($request->file('file')->isvalid()){
                $fileData = $request->file('file');
                // // Insert file name
-               $filePath = $fileData->store('public/image');
-               $filePath = str_replace('public/image/', '', $filePath);
-   
-               $post->file_path = $filePath;
+               $filePath = Storage::disk('s3')->putFile('myprefix', $fileData, 'public');
+               $post->file_path = Storage::disk('s3')->url($filePath);
                $post->file_name = $fileData->getClientOriginalName();
            }
        }
-        return $post;
+       $post->save();
+        return;
     }
 
     private function isCorrectUser($item)

@@ -59200,7 +59200,7 @@ var render = function() {
             : _c("div", { staticClass: "upload-file" }, [
                 _vm.path == ""
                   ? _c("div", [_c("span", [_vm._v("NO IMAGE")])])
-                  : _c("img", { attrs: { src: "/storage/image/" + _vm.path } })
+                  : _c("img", { attrs: { src: _vm.path } })
               ])
         ]),
         _vm._v(" "),
@@ -59300,9 +59300,7 @@ var render = function() {
                       ? _c("img", {
                           attrs: { src: "images/no-image.jpg", alt: "no image" }
                         })
-                      : _c("img", {
-                          attrs: { src: "storage/image/" + item.file_path }
-                        })
+                      : _c("img", { attrs: { src: item.file_path } })
                   ]),
                   _vm._v(" "),
                   _c("figcaption", [

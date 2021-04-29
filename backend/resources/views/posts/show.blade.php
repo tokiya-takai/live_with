@@ -12,7 +12,7 @@
           @if ($item->file_path == null)
             <img src="{{ asset('images/no-image.jpg') }}" alt="no image">
           @else
-            <img src="{{ asset('storage/image/'.$item->file_path) }}" alt="shoe">
+            <img src="{{ $item->file_path }}" alt="shoe">
           @endif
         </figure>
         <figcaption>

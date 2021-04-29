@@ -8,7 +8,7 @@
                 </div>
                 <div v-else class="upload-file">
                     <div v-if="path == ''"><span>NO IMAGE</span></div>
-                    <img v-else :src="'/storage/image/' + path">
+                    <img v-else :src="path">
                 </div>
             </div>
             <input type="file" name="file" accept="image/*" ref="preview" v-on:change="fileSelected" class="upload-btn">
