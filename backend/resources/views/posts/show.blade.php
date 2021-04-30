@@ -7,6 +7,11 @@
       <h1>{{ $item->title }}</h1>
     </div>
     <div class="show-shoe-body">
+      <div>
+        <form action="/posts/delete" method="delete">
+          <button>削除</button>
+        </form>
+      </div>
       <div class="show-shoe-body-header">
         <figure>
           @if ($item->file_path == null)
