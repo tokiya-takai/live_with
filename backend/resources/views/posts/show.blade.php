@@ -7,9 +7,9 @@
       <h1>{{ $item->title }}</h1>
     </div>
     <div class="show-shoe-body">
-      <div>
-        <form action="/posts/delete" method="delete">
-          <button>削除</button>
+      <div class="delete-btn">
+        <form action="/posts/delete" method="delete" id="delete">
+          <input type="submit" value="削除">
         </form>
       </div>
       <div class="show-shoe-body-header">
