@@ -57,6 +57,13 @@ class PostsController extends Controller
         return redirect('/');
     }
 
+    public function delete($id)
+    {
+        $post = Post::find($id);
+        $post->delete();
+        return redirect('/');
+    }
+
     private function savePost($request, $post)
     {
        // Validate title Column

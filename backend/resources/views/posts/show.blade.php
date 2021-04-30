@@ -8,7 +8,8 @@
     </div>
     <div class="show-shoe-body">
       <div class="delete-btn">
-        <form action="/posts/delete" method="delete" id="delete">
+        <form action="{{ route('posts.delete', ['id'=>$item->id]) }}" method="post" id="delete">
+          @csrf
           <input type="submit" value="削除">
         </form>
       </div>
