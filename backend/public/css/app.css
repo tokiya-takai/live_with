@@ -270,6 +270,23 @@ body {
     border: 1px solid rgba(201, 201, 201, 0.1);
     box-shadow: 4px 4px 8px -1px #aaa;
     overflow: scroll;
+    position: relative;
+  }
+
+  .py-4 .content .show-shoe-body .delete-btn {
+    float: left;
+    position: absolute;
+    width: 100%;
+    text-align: right;
+  }
+
+  .py-4 .content .show-shoe-body .delete-btn form input {
+    color: #aaa;
+    margin-right: 5%;
+  }
+
+  .py-4 .content .show-shoe-body .delete-btn form input:hover {
+    opacity: 0.8;
   }
 
   .py-4 .content .show-shoe-body .show-shoe-body-header {

@@ -7,6 +7,12 @@
       <h1>{{ $item->title }}</h1>
     </div>
     <div class="show-shoe-body">
+      <div class="delete-btn">
+        <form action="{{ route('posts.delete', ['id'=>$item->id]) }}" method="post" id="delete">
+          @csrf
+          <input type="submit" value="削除">
+        </form>
+      </div>
       <div class="show-shoe-body-header">
         <figure>
           @if ($item->file_path == null)

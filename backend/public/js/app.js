@@ -2080,6 +2080,22 @@ var app = new Vue({
   el: '#app'
 });
 
+function deletePost() {
+  var form = document.getElementById('delete');
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    if (window.confirm('削除された内容は元に戻せません。\n削除しますか？')) {
+      document.getElementById('delete').submit();
+      return;
+    } else {
+      return;
+    }
+  });
+}
+
+window.addEventListener('load', deletePost);
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

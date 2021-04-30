@@ -31,4 +31,18 @@
  const app = new Vue({
      el: '#app',
  });
+
+function deletePost() {
+    const form = document.getElementById('delete');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        if (window.confirm('削除された内容は元に戻せません。\n削除しますか？')) {
+            document.getElementById('delete').submit();
+            return;
+        } else {
+            return;
+        }
+    });
+}
+window.addEventListener('load', deletePost);
  
