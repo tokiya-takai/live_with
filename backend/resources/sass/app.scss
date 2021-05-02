@@ -918,6 +918,105 @@ body {
             }
           }
         }
+        #show-shoe {
+          height: 100%;
+          display: grid;
+          grid-template-columns: 10px 1fr 10px;
+          grid-template-rows:
+                  [head] 30px
+                  [body] auto;
+          position: relative;
+          .new-post-btn {
+            position: fixed;
+            top: calc(100vh - 110px);
+            left: calc(100vw - 110px);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: $theme_color;
+            button {
+              width: 100%;
+              height: 100%;
+              color: $white;
+              font-size: 25px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            &:hover {
+              background-color: $theme_color_hover;
+            }
+          }
+          .show-shoe-header {
+            grid-rows: head;
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #aaa;
+          }
+          .show-shoe-body {
+            width: 100%;
+            grid-rows: body;
+            grid-column: 2 / -2;
+            display: grid;
+            grid-template-rows:
+                  [delete] 20px
+                  [image] 120px
+                  [content] auto;
+            .delete-btn {
+              grid-row: delete;
+              text-align: right;
+              color: #aaa;
+              &:hover {
+                opacity: 0.8;
+              }
+            }
+            .show-shoe-body-header {
+              grid-row: image;
+              width: 100%;
+              height: 100px;
+              display: flex;
+              figure {
+                width: 100px;
+                height: 100px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                object-fit: contain;
+                img {
+                  width: 100%;
+                  height: 100%;
+                }
+              }
+              figcaption {
+                display: flex;
+                flex-flow: column;
+                padding-left: 5px;
+                p {
+                  height: 50px;
+                }
+                .last-maintenance {
+                  padding-top: 25px;
+                }
+              }
+            }
+            .show-shoe-content {
+              grid-row: content;
+              height: 100%;
+              p {
+                // The rationale of 320px is as follows.
+                // header 100px, margin of content-body 25 * 2, title 30px, delete 20px, image row 120px
+                height: calc(100vh - 320px);
+                overflow: scroll;
+                white-space: pre-wrap;
+                padding-bottom: 150px;
+              }
+            }
+          }
+        }
       }
     }
   }
