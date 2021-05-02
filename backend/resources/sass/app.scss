@@ -525,9 +525,23 @@ body {
         -webkit-box-shadow: $box-shadow;
         -o-box-shadow: $box-shadow;
         box-shadow: $box-shadow;
-        // index.blade.php (ListRenderingComponent.vue)
         #my-list {
           position: relative;
+          height: calc(100% - 30px);
+          // guest.blade.php
+          .guest-header {
+            height: 30px;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          .guest-body {
+            height: 100%;
+            font-size: 14px;
+            text-align: center;
+          }
+          // New button
           .new-post-btn {
             position: fixed;
             top: calc(100vh - 110px);
@@ -549,6 +563,7 @@ body {
               background-color: $theme_color_hover;
             }
           }
+          // index.blade.php (ListRenderingComponent.vue)
           .my-list-header {
             height: 30px;
             display: flex;

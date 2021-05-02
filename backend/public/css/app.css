@@ -629,6 +629,21 @@ body {
 
   #app main .content #my-list {
     position: relative;
+    height: calc(100% - 30px);
+  }
+
+  #app main .content #my-list .guest-header {
+    height: 30px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #app main .content #my-list .guest-body {
+    height: 100%;
+    font-size: 14px;
+    text-align: center;
   }
 
   #app main .content #my-list .new-post-btn {
