@@ -607,6 +607,138 @@ body {
     white-space: nowrap;
     overflow: hidden;
   }
+
+  #app main {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 5vw 1fr 5vw;
+    grid-template-rows: [margin_top] 25px [content_body] auto [margin_bottom] 25px;
+    height: calc(100vh - 100px);
+    background: url(/images/live-with-background.jpg?5b1ef75643579dba40732f58054d0b42);
+  }
+
+  #app main .content {
+    grid-column: 2/-2;
+    grid-row: content_body;
+    background-color: #f4f4f4;
+    border-radius: 3px;
+    -ms-box-shadow: 0px -4px 3px -1px #aaa inset;
+    -o-box-shadow: 0px -4px 3px -1px #aaa inset;
+    box-shadow: 0px -4px 3px -1px #aaa inset;
+  }
+
+  #app main .content #my-list {
+    position: relative;
+  }
+
+  #app main .content #my-list .new-post-btn {
+    position: fixed;
+    top: calc(100vh - 110px);
+    left: calc(100vw - 110px);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #402F2F;
+  }
+
+  #app main .content #my-list .new-post-btn button {
+    width: 100%;
+    height: 100%;
+    color: #f4f4f4;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #app main .content #my-list .new-post-btn:hover {
+    background-color: #694e4e;
+  }
+
+  #app main .content #my-list .my-list-header {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
+    border-bottom: 1px solid #aaa;
+  }
+
+  #app main .content #my-list .my-list-header h1 {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  #app main .content #my-list .shoes-list {
+    overflow: scroll;
+  }
+
+  #app main .content #my-list .shoes-list ul .items-leave-active,
+  #app main .content #my-list .shoes-list ul .items-enter-active {
+    transition: opacity 0.5s, transform 0.5s ease;
+  }
+
+  #app main .content #my-list .shoes-list ul .items-leave-to,
+  #app main .content #my-list .shoes-list ul .items-enter {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  #app main .content #my-list .shoes-list ul .items-leave,
+  #app main .content #my-list .shoes-list ul .items-enter-to {
+    opacity: 1;
+  }
+
+  #app main .content #my-list .shoes-list ul .items-move {
+    transition: transform 0.5s;
+  }
+
+  #app main .content #my-list .shoes-list ul li {
+    width: 90%;
+    height: 60px;
+    margin: 10px auto;
+    border-radius: 3px;
+    border: 1px solid rgba(201, 201, 201, 0.1);
+    box-shadow: 4px 4px 8px -1px #aaa;
+  }
+
+  #app main .content #my-list .shoes-list ul li a button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  #app main .content #my-list .shoes-list ul li a button figure img {
+    width: 50px;
+  }
+
+  #app main .content #my-list .shoes-list ul li a button figcaption {
+    padding-left: 10px;
+  }
+
+  #app main .content #my-list .shoes-list ul li a button figcaption .shoe-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 1024px) and (max-width: 374px) {
+  #app main .content #my-list .shoes-list ul li a button figcaption .shoe-name {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content #my-list .shoes-list ul li a button figcaption .last-maintenance {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) and (max-width: 374px) {
+  #app main .content #my-list .shoes-list ul li a button figcaption .last-maintenance {
+    font-size: 12px;
+  }
 }
 
 

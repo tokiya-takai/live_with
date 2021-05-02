@@ -504,5 +504,121 @@ body {
         }
       }
     }
+    main {
+      grid-column: 1 / -1;
+      //Duplicate the same grid as the body
+      display: grid;
+      grid-template-columns: 5vw 1fr 5vw;
+      grid-template-rows:
+              [margin_top] 25px
+              [content_body] auto
+              [margin_bottom] 25px;
+      height: calc(100vh - 100px);
+      background: url('images/live-with-background.jpg');
+      .content {
+        grid-column: 2 / -2;
+        grid-row: content_body;
+        background-color: $white;
+        border-radius: 3px;
+        -ms-box-shadow: $box-shadow;
+        -moz-box-shadow: $box-shadow;
+        -webkit-box-shadow: $box-shadow;
+        -o-box-shadow: $box-shadow;
+        box-shadow: $box-shadow;
+        // index.blade.php (ListRenderingComponent.vue)
+        #my-list {
+          position: relative;
+          .new-post-btn {
+            position: fixed;
+            top: calc(100vh - 110px);
+            left: calc(100vw - 110px);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: $theme_color;
+            button {
+              width: 100%;
+              height: 100%;
+              color: $white;
+              font-size: 25px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            &:hover {
+              background-color: $theme_color_hover;
+            }
+          }
+          .my-list-header {
+            height: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5px;
+            border-bottom: 1px solid #aaa;
+            h1 {
+              font-size: 18px;
+              font-weight: bold;
+            }
+          }
+          .shoes-list {
+            overflow: scroll;
+            ul {
+              .items-leave-active,
+              .items-enter-active {
+                  transition: opacity .5s, transform .5s ease;
+              }
+              .items-leave-to,
+              .items-enter {
+                  opacity: 0;
+                  transform: translateX(50px);
+              }
+              .items-leave,
+              .items-enter-to {
+                  opacity: 1;
+              }
+              .items-move {
+                  transition: transform .5s;
+              }
+              li {
+                width: 90%;
+                height: 60px;
+                margin: 10px auto;
+                border-radius: 3px;
+                border: 1px solid rgb(201, 201, 201, 0.1);
+                box-shadow: 4px 4px 8px -1px #aaa;
+                a button {
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  figure {
+                    img {
+                      width: 50px;
+                    }
+                  }
+                  figcaption {
+                    padding-left: 10px;
+                    .shoe-name {
+                      font-size: 18px;
+                      @media (max-width: 374px) {
+                        font-size: 15px;
+                      }
+                      font-weight: bold;
+                    }
+                    .last-maintenance {
+                      font-size: 14px;
+                      @media (max-width: 374px) {
+                        font-size: 12px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
