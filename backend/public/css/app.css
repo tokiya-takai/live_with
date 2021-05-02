@@ -920,6 +920,7 @@ body {
   #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row3 {
     grid-row: row3;
     grid-column: 1/-1;
+    text-align: center;
   }
 
   #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row4 {
