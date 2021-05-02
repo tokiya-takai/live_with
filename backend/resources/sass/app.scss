@@ -811,6 +811,113 @@ body {
             }
           }
         }
+        // new.blade.php
+        .new-post-form, .edit-post-form {
+          height: 100%;
+          display: grid;
+          grid-template-columns: 10px 1fr 10px;
+          grid-template-rows:
+                [image] 25%
+                [content] 60%
+                [button] 15%;
+          .form-header {
+            grid-row: image;
+            grid-column: 2 / -2;
+            text-align: center;
+            .file-area {
+              width: 100%;
+              height: 75%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              .upload-file {
+                width: 100px;
+                height: 100px;
+                @media (max-width: 3750px) {
+                  width: 85px;
+                  height: 85px;
+                }
+                @media (max-width: 320px) {
+                  width: 70px;
+                  height: 70px;
+                }
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                object-fit: contain;
+                img {
+                  width: 100%;
+                }
+                div {
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border: 1px solid #aaa;
+                  span {
+                    color: #aaa;
+                  }
+                }
+              }
+            }
+            input {
+              height: 25%;
+              font-size: 12px;
+              padding-left: 20px;
+            }
+          }
+          .form-body {
+            grid-row: content;
+            grid-column: 2 / -2;
+            .new-post-title {
+              width: 90%;
+              height: 40px;
+              margin: 10px auto;
+              padding: 0 5px;
+              border-radius: 3px;
+              border: 1px solid rgb(201, 201, 201, 0.1);
+              box-shadow: 4px 4px 8px -1px #aaa;
+              input {
+                width: 100%;
+                height: 40px;
+                font-size: 18px;
+              }
+            }
+            .new-post-content {
+              width: 90%;
+              height: 75%;
+              margin: 10px auto;
+              padding: 5px;
+              border-radius: 3px;
+              border: 1px solid rgb(201, 201, 201, 0.1);
+              box-shadow: 4px 4px 8px -1px #aaa;
+              textarea {
+                width: calc(100% - 10px);
+                height: calc(100% - 10px);
+                font-size: 18px;
+                resize: none;
+                overflow: scroll;
+              }
+            }
+          }
+          .submit-btn {
+            grid-row: button;
+            grid-column: 2 / -2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            input {
+              width: 80px;
+              height: 40px;
+              text-align: center;
+              color: $white;
+              background-color: rgb(98, 153, 255);
+              border-radius: 3px;
+              box-shadow: 4px 4px 8px -1px #aaa;
+            }
+          }
+        }
       }
     }
   }

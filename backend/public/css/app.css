@@ -962,4 +962,158 @@ body {
   }
 }
 
+@media (max-width: 1024px) {
+  #app main .content .new-post-form,
+  #app main .content .edit-post-form {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 10px 1fr 10px;
+    grid-template-rows: [image] 25% [content] 60% [button] 15%;
+  }
+
+  #app main .content .new-post-form .form-header,
+  #app main .content .edit-post-form .form-header {
+    grid-row: image;
+    grid-column: 2/-2;
+    text-align: center;
+  }
+
+  #app main .content .new-post-form .form-header .file-area,
+  #app main .content .edit-post-form .form-header .file-area {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #app main .content .new-post-form .form-header .file-area .upload-file,
+  #app main .content .edit-post-form .form-header .file-area .upload-file {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+}
+
+@media (max-width: 1024px) and (max-width: 3750px) {
+  #app main .content .new-post-form .form-header .file-area .upload-file,
+  #app main .content .edit-post-form .form-header .file-area .upload-file {
+    width: 85px;
+    height: 85px;
+  }
+}
+
+@media (max-width: 1024px) and (max-width: 320px) {
+  #app main .content .new-post-form .form-header .file-area .upload-file,
+  #app main .content .edit-post-form .form-header .file-area .upload-file {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content .new-post-form .form-header .file-area .upload-file img,
+  #app main .content .edit-post-form .form-header .file-area .upload-file img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content .new-post-form .form-header .file-area .upload-file div,
+  #app main .content .edit-post-form .form-header .file-area .upload-file div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #aaa;
+  }
+
+  #app main .content .new-post-form .form-header .file-area .upload-file div span,
+  #app main .content .edit-post-form .form-header .file-area .upload-file div span {
+    color: #aaa;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content .new-post-form .form-header input,
+  #app main .content .edit-post-form .form-header input {
+    height: 25%;
+    font-size: 12px;
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content .new-post-form .form-body,
+  #app main .content .edit-post-form .form-body {
+    grid-row: content;
+    grid-column: 2/-2;
+  }
+
+  #app main .content .new-post-form .form-body .new-post-title,
+  #app main .content .edit-post-form .form-body .new-post-title {
+    width: 90%;
+    height: 40px;
+    margin: 10px auto;
+    padding: 0 5px;
+    border-radius: 3px;
+    border: 1px solid rgba(201, 201, 201, 0.1);
+    box-shadow: 4px 4px 8px -1px #aaa;
+  }
+
+  #app main .content .new-post-form .form-body .new-post-title input,
+  #app main .content .edit-post-form .form-body .new-post-title input {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  #app main .content .new-post-form .form-body .new-post-content,
+  #app main .content .edit-post-form .form-body .new-post-content {
+    width: 90%;
+    height: 75%;
+    margin: 10px auto;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid rgba(201, 201, 201, 0.1);
+    box-shadow: 4px 4px 8px -1px #aaa;
+  }
+
+  #app main .content .new-post-form .form-body .new-post-content textarea,
+  #app main .content .edit-post-form .form-body .new-post-content textarea {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    font-size: 18px;
+    resize: none;
+    overflow: scroll;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content .new-post-form .submit-btn,
+  #app main .content .edit-post-form .submit-btn {
+    grid-row: button;
+    grid-column: 2/-2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #app main .content .new-post-form .submit-btn input,
+  #app main .content .edit-post-form .submit-btn input {
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    color: #f4f4f4;
+    background-color: #6299ff;
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px -1px #aaa;
+  }
+}
+
 
