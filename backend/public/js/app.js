@@ -2096,19 +2096,15 @@ function deletePost() {
 
 window.addEventListener('load', deletePost);
 
-function calculateHeight() {
-  var setFillHeight = function setFillHeight() {
-    var vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
-  }; // 画面のサイズ変動があった時に高さを再計算する
+var setFillHeight = function setFillHeight() {
+  var vh = window.innerHeight * 0.01;
+  document.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
+}; // 画面のサイズ変動があった時に高さを再計算する
 
 
-  window.addEventListener('resize', setFillHeight); // 初期化
+window.addEventListener('resize', setFillHeight); // 初期化
 
-  setFillHeight();
-}
-
-window.addEventListener('load', calculateHeight);
+setFillHeight();
 
 /***/ }),
 
