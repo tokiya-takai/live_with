@@ -629,11 +629,12 @@ body {
 
   #app main .content #my-list {
     position: relative;
-    height: calc(100% - 30px);
+    height: 100%;
   }
 
   #app main .content #my-list .guest-header {
     height: 30px;
+    margin-top: 30px;
     font-size: 25px;
     display: flex;
     justify-content: center;
@@ -641,7 +642,8 @@ body {
   }
 
   #app main .content #my-list .guest-body {
-    height: 100%;
+    height: calc(100% - 60px);
+    padding-top: 5px;
     font-size: 14px;
     text-align: center;
   }
