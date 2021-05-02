@@ -45,4 +45,30 @@ function deletePost() {
     });
 }
 window.addEventListener('load', deletePost);
- 
+
+function prohibitScrolling() {
+    const textarea = document.querySelector('textarea');
+    const shoesList = document.querySelectorAll("shoes-list");
+
+    textarea.scrollTop = 1;
+    window.addEventListener('touchmove', function(event) {
+        if ((event.target === textarea && textarea.scrollTop !== 0 && textarea.scrollTop + textarea.clientHeight !== textarea.scrollHeight)
+            || (event.target === shoesList && shoesList.scrollTop !== 0 && shoesList.scrollTop + shoesList.clientHeight !== shoesList.scrollHeight)) {
+          event.stopPropagation();
+        }
+        else {
+          event.preventDefault();
+        }
+    });
+    
+    textarea.addEventListener('scroll', function(event) {
+        if (textarea.scrollTop === 0) {
+          textarea.scrollTop = 1;
+        }
+        else if (textarea.scrollTop + textarea.clientHeight === textarea.scrollHeight) {
+          textarea.scrollTop = textarea.scrollTop - 1;
+        }
+    });
+
+}
+window.addEventListener('load', prohibitScrolling);
