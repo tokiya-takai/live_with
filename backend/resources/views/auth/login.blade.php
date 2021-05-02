@@ -5,7 +5,7 @@
     <div class="card-header">{{ __('Login') }}</div>
     <h1>Hey, how is going? I’m happy to see you again. </h1>
     <div class="card-body">
-        <form method="POST" action="{{ route('login') }}">
+        <form method="POST" action="{{ route('login') }}" class="login">
             @csrf
 
             <div class="form-group row">

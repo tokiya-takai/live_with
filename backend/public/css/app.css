@@ -756,4 +756,123 @@ body {
   }
 }
 
+@media (max-width: 1024px) {
+  #app main .content .card {
+    height: 100%;
+    padding-top: 20px;
+  }
+
+  #app main .content .card .card-header {
+    height: 30px;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  #app main .content .card h1 {
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+  }
+
+  #app main .content .card .card-body {
+    width: 90%;
+    height: calc(100% - 70px);
+    margin: 0 auto;
+  }
+
+  #app main .content .card .card-body .login {
+    height: 100%;
+  }
+
+  #app main .content .card .card-body .login .form-group {
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+  }
+
+  #app main .content .card .card-body .login .form-group .col-md-6 {
+    width: 100%;
+    height: 50px;
+  }
+
+  #app main .content .card .card-body .login .form-group .col-md-6 .form-control {
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    border-bottom: 1px solid #aaa;
+  }
+
+  #app main .content .card .card-body .login .mb-0 {
+    height: calc(100% - 180px);
+  }
+
+  #app main .content .card .card-body .login .mb-0 .offset-md-4 {
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 70px auto;
+    grid-template-rows: [password] 20px [button] auto;
+    align-items: center;
+  }
+
+  #app main .content .card .card-body .login .mb-0 .offset-md-4 div {
+    grid-row: password;
+    grid-column: 1/-1;
+  }
+
+  #app main .content .card .card-body .login .mb-0 .offset-md-4 button {
+    grid-row: button;
+    grid-column: 2/-2;
+    width: 70px;
+    height: 40px;
+    text-align: center;
+    color: #f4f4f4;
+    background-color: #6299ff;
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px -1px #aaa;
+  }
+
+  #app main .content .card .card-body .register {
+    height: 100%;
+  }
+
+  #app main .content .card .card-body .register .form-group {
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+  }
+
+  #app main .content .card .card-body .register .form-group .col-md-6 {
+    width: 100%;
+    height: 50px;
+  }
+
+  #app main .content .card .card-body .register .form-group .col-md-6 .form-control {
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    border-bottom: 1px solid #aaa;
+  }
+
+  #app main .content .card .card-body .register .mb-0 {
+    height: calc(100% - 240px);
+  }
+
+  #app main .content .card .card-body .register .mb-0 .offset-md-4 {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #app main .content .card .card-body .register .mb-0 .offset-md-4 button {
+    width: 70px;
+    height: 40px;
+    text-align: center;
+    color: #f4f4f4;
+    background-color: #6299ff;
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px -1px #aaa;
+  }
+}
+
 
