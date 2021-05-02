@@ -3,7 +3,7 @@ body {
   color: #1f1f1f;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1025px) {
   header {
     position: relative;
     height: 10vh;
@@ -513,6 +513,7 @@ body {
   .py-4 .content .edit-post-form .form-body .new-post-title input {
     width: 100%;
     height: 5vh;
+    padding-left: 10px;
     border-radius: 3px;
     border: 1px solid rgba(201, 201, 201, 0.1);
     box-shadow: 4px 4px 8px -1px #aaa;
@@ -531,6 +532,7 @@ body {
     height: 25vh;
     resize: none;
     margin-top: 5vh;
+    padding: 10px;
     border-radius: 3px;
     border: 1px solid rgba(201, 201, 201, 0.1);
     box-shadow: 4px 4px 8px -1px #aaa;
@@ -560,523 +562,698 @@ body {
   }
 }
 
-@media (max-width: 767px) {
-  header {
-    height: 10vh;
+@media (max-width: 1024px) {
+  body {
     width: 100vw;
+    height: 100vh;
+  }
+
+  #app {
+    display: grid;
+    grid-template-columns: 5vw 1fr 5vw;
+    grid-template-rows: [head] 100px [body] auto;
+  }
+
+  #app header {
+    grid-row: head;
+    grid-column: 1/-1;
     background-color: #402F2F;
-  }
-
-  header .header-logo {
-    height: 7vh;
-    width: 80vw;
-    text-align: center;
-    margin: 0 auto;
-  }
-
-  header .header-logo a img {
-    height: 100%;
-  }
-
-  header .header-nav {
-    color: #f4f4f4;
-  }
-
-  header .header-nav .header-nav-list {
-    width: 80vw;
-    margin: 0 auto;
     display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #app header div a img {
+    width: 150px;
+  }
+
+  #app header nav {
+    width: 150px;
+    height: 30px;
+  }
+
+  #app header nav ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: row;
     justify-content: space-around;
-  }
-
-  .py-4 {
-    height: 90vh;
-    background: url(/images/live-with-background.jpg?5b1ef75643579dba40732f58054d0b42);
-    background-size: cover;
-  }
-
-  .py-4 .content .card {
-    width: 95vw;
-    height: 80vh;
-    background-color: #f4f4f4;
-    margin: 2.5vh auto;
-    border-radius: 3px;
-  }
-
-  .py-4 .content .card .card-header {
-    font-size: 30px;
-    height: 10vh;
-    text-align: center;
-    padding-top: 5vh;
-  }
-
-  .py-4 .content .card h1 {
-    text-align: center;
-    padding-bottom: 1vh;
-    border-bottom: 1px solid #aaa;
-  }
-
-  .py-4 .content .card .card-body {
-    width: 95vw;
-    height: 50vh;
-    margin: 5vh auto;
-  }
-
-  .py-4 .content .card .card-body form {
-    width: 90%;
-    margin: 0 auto;
-  }
-
-  .py-4 .content .card .card-body form .form-group .col-md-6 {
-    width: 100%;
-    margin-top: 5vh;
-  }
-
-  .py-4 .content .card .card-body form .form-group .col-md-6 .form-control {
-    width: 100%;
-    border-bottom: 1px solid #aaa;
-  }
-
-  .py-4 .content .card .card-body form .mb-0 {
-    height: 15vh;
-  }
-
-  .py-4 .content .card .card-body form .mb-0 .col-md-8,
-  .py-4 .content .card .card-body form .mb-0 .col-md-6 {
-    width: 100%;
-    height: 15vh;
-  }
-
-  .py-4 .content .card .card-body form .mb-0 .col-md-8 div,
-  .py-4 .content .card .card-body form .mb-0 .col-md-6 div {
-    width: 100%;
-    text-align: left;
-  }
-
-  .py-4 .content .card .card-body form .mb-0 .col-md-8 div a,
-  .py-4 .content .card .card-body form .mb-0 .col-md-6 div a {
-    line-height: 5vh;
-    border-bottom: 1px solid #aaa;
-  }
-
-  .py-4 .content .card .card-body form .mb-0 .col-md-8 button,
-  .py-4 .content .card .card-body form .mb-0 .col-md-6 button {
-    width: 20vw;
-    height: 5vh;
-    margin: 10vh 33vw;
-    text-align: center;
     color: #f4f4f4;
-    background-color: #6299ff;
+  }
+
+  #app header nav ul li {
+    width: 75px;
+    height: 100%;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  #app main {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: 5vw 1fr 5vw;
+    grid-template-rows: [margin_top] 25px [content_body] auto [margin_bottom] 25px;
+    height: calc(100vh - 100px);
+    background: url(/images/live-with-background.jpg?5b1ef75643579dba40732f58054d0b42);
+  }
+
+  #app main .content {
+    grid-column: 2/-2;
+    grid-row: content_body;
+    background-color: #f4f4f4;
     border-radius: 3px;
-    box-shadow: 3px 3px 5px -1px #aaa;
+    -ms-box-shadow: 0px -4px 3px -1px #aaa inset;
+    -o-box-shadow: 0px -4px 3px -1px #aaa inset;
+    box-shadow: 0px -4px 3px -1px #aaa inset;
   }
 
-  .py-4 .content .card .card-body .logged-message {
-    width: 100%;
-    margin-top: 10vh;
-  }
-
-  .py-4 .content .card .card-body .logged-message p {
-    font-size: 20px;
-    text-align: center;
-    margin-top: 3vh;
-  }
-
-  .py-4 .content .card .card-body .logged-message p a {
-    line-height: 10vh;
-    border-bottom: 1px solid #aaa;
-    font-weight: bold;
-  }
-
-  .py-4 .content .card .card-body .logged-message figure {
-    height: 10vh;
-    width: 100%;
-    margin-top: 2vh;
-    text-align: center;
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
-
-  .py-4 .content .card .card-body .logged-message figure img {
+  #app main .content #my-list {
+    position: relative;
     height: 100%;
   }
 
-  .py-4 .content #my-list {
-    position: relative;
-  }
-
-  .py-4 .content #my-list .new-post-btn {
-    z-index: 1;
-    display: block;
-    position: fixed;
-    width: 13vh;
-    height: 13vh;
-    border-radius: 50%;
-    background-color: #402F2F;
-    left: 70vw;
-    top: 85vh;
+  #app main .content #my-list .guest-header {
+    height: 30px;
+    margin-top: 30px;
+    font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .py-4 .content #my-list .new-post-btn button {
-    color: #f4f4f4;
-    font-size: 25px;
+  #app main .content #my-list .guest-body {
+    height: calc(100% - 60px);
+    padding-top: 5px;
+    font-size: 14px;
+    text-align: center;
   }
 
-  .py-4 .content #my-list .new-post-btn:hover {
+  #app main .content #my-list .new-post-btn {
+    position: fixed;
+    z-index: 1;
+    top: calc(100vh - 110px);
+    left: calc(100vw - 110px);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #402F2F;
+  }
+
+  #app main .content #my-list .new-post-btn button {
+    width: 100%;
+    height: 100%;
+    color: #f4f4f4;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #app main .content #my-list .new-post-btn:hover {
     background-color: #694e4e;
   }
 
-  .py-4 .content #my-list .guest-header {
-    height: 30vh;
+  #app main .content #my-list .my-list-header {
+    height: 30px;
     display: flex;
-    align-items: flex-end;
-    font-size: 35px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5px;
     border-bottom: 1px solid #aaa;
   }
 
-  .py-4 .content #my-list .guest-header h1 {
-    line-height: 7vh;
-    width: 95vw;
-    background-color: #f4f4f4;
-    text-align: center;
-    margin: 0 auto;
-    border-radius: 3px 3px 0 0;
-  }
-
-  .py-4 .content #my-list .guest-body {
-    height: 30vh;
-    width: 95vw;
-    margin: 0 auto;
-    padding-bottom: 5vh;
-    background-color: #f4f4f4;
-    border-radius: 0 0 3px 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .py-4 .content #my-list .my-list-header {
-    height: 10vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .py-4 .content #my-list .my-list-header h1 {
-    height: 5vh;
-    width: 50vw;
-    padding-top: 5px;
-    font-size: 25px;
+  #app main .content #my-list .my-list-header h1 {
+    font-size: 18px;
     font-weight: bold;
-    padding-left: 2vw;
-    background-color: #f4f4f4;
   }
 
-  .py-4 .content #my-list .my-list-header button {
-    height: 5vh;
-    width: 100%;
-    padding-right: 2vw;
-    background-color: #f4f4f4;
-    text-align: end;
-  }
-
-  .py-4 .content #my-list .shoes-list {
-    width: 94vw;
-    height: 80vh;
-    margin: 0 auto;
+  #app main .content #my-list .shoes-list {
     overflow: scroll;
   }
 
-  .py-4 .content #my-list .shoes-list ul {
-    width: 94vw;
-    height: 80vh;
+  #app main .content #my-list .shoes-list ul {
+    height: calc(100vh - 180px);
   }
 
-  .py-4 .content #my-list .shoes-list ul .items-leave-active,
-  .py-4 .content #my-list .shoes-list ul .items-enter-active {
+  #app main .content #my-list .shoes-list ul .items-leave-active,
+  #app main .content #my-list .shoes-list ul .items-enter-active {
     transition: opacity 0.5s, transform 0.5s ease;
   }
 
-  .py-4 .content #my-list .shoes-list ul .items-leave-to,
-  .py-4 .content #my-list .shoes-list ul .items-enter {
+  #app main .content #my-list .shoes-list ul .items-leave-to,
+  #app main .content #my-list .shoes-list ul .items-enter {
     opacity: 0;
     transform: translateX(50px);
   }
 
-  .py-4 .content #my-list .shoes-list ul .items-leave,
-  .py-4 .content #my-list .shoes-list ul .items-enter-to {
+  #app main .content #my-list .shoes-list ul .items-leave,
+  #app main .content #my-list .shoes-list ul .items-enter-to {
     opacity: 1;
   }
 
-  .py-4 .content #my-list .shoes-list ul .items-move {
+  #app main .content #my-list .shoes-list ul .items-move {
     transition: transform 0.5s;
   }
 
-  .py-4 .content #my-list .shoes-list ul li {
-    width: 100%;
-    height: 10vh;
-    background-color: #f4f4f4;
-    border-bottom: 1px solid #aaa;
-    border-radius: 3px;
-  }
-
-  .py-4 .content #my-list .shoes-list ul li a button {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-top: 1vh;
+  #app main .content #my-list .shoes-list ul li {
+    width: 90%;
+    height: 60px;
+    margin: 10px auto;
     border-radius: 3px;
     border: 1px solid rgba(201, 201, 201, 0.1);
     box-shadow: 4px 4px 8px -1px #aaa;
+    position: relative;
   }
 
-  .py-4 .content #my-list .shoes-list ul li a button figure {
-    width: 9vh;
-    height: 9vh;
-  }
-
-  .py-4 .content #my-list .shoes-list ul li a button figure img {
-    width: 100%;
-    height: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
-  }
-
-  .py-4 .content #my-list .shoes-list ul li a button figcaption {
-    height: 100%;
-    padding: 2vw;
-  }
-
-  .py-4 .content #my-list .shoes-list ul li a button figcaption p:first-child {
-    font-size: 18px;
-    font-weight: bold;
-    overflow: hidden;
-    height: 70%;
-  }
-
-  .py-4 .content #my-list .shoes-list ul li a button figcaption p:last-child {
-    font-size: 14px;
-    height: 30%;
-  }
-
-  .py-4 .content #my-list .shoes-list ul li a button figcaption p:last-child::after {
+  #app main .content #my-list .shoes-list ul li:last-child::after {
     position: absolute;
     content: "";
     top: 100%;
     left: 0;
-    height: 17vh;
+    height: 130px;
     width: 1px;
   }
 
-  .py-4 .content #my-list .shoes-list ul li a button:hover {
-    opacity: 0.7;
-    background-color: rgba(187, 187, 187, 0.1);
+  #app main .content #my-list .shoes-list ul li a button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
   }
 
-  .py-4 .content #show-shoe {
-    position: relative;
-    width: 100vw;
-    height: 80vh;
+  #app main .content #my-list .shoes-list ul li a button figure img {
+    width: 50px;
   }
 
-  .py-4 .content #show-shoe .new-post-btn {
-    z-index: 1;
-    display: block;
-    position: absolute;
-    width: 13vh;
-    height: 13vh;
-    border-radius: 50%;
-    background-color: #402F2F;
-    left: 70vw;
-    top: 75vh;
+  #app main .content #my-list .shoes-list ul li a button figcaption {
+    padding-left: 10px;
+  }
+
+  #app main .content #my-list .shoes-list ul li a button figcaption .shoe-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 1024px) and (max-width: 374px) {
+  #app main .content #my-list .shoes-list ul li a button figcaption .shoe-name {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content #my-list .shoes-list ul li a button figcaption .last-maintenance {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 1024px) and (max-width: 374px) {
+  #app main .content #my-list .shoes-list ul li a button figcaption .last-maintenance {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content .card {
+    height: 100%;
+    padding-top: 20px;
+  }
+
+  #app main .content .card .card-header {
+    height: 30px;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  #app main .content .card h1 {
+    font-size: 14px;
+    text-align: center;
+    line-height: 20px;
+  }
+
+  #app main .content .card .card-body {
+    width: 90%;
+    height: calc(100% - 70px);
+    margin: 0 auto;
+  }
+
+  #app main .content .card .card-body .login {
+    height: 100%;
+  }
+
+  #app main .content .card .card-body .login .form-group {
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+  }
+
+  #app main .content .card .card-body .login .form-group .col-md-6 {
+    width: 100%;
+    height: 50px;
+  }
+
+  #app main .content .card .card-body .login .form-group .col-md-6 .form-control {
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    border-bottom: 1px solid #aaa;
+  }
+
+  #app main .content .card .card-body .login .mb-0 {
+    height: calc(100% - 180px);
+  }
+
+  #app main .content .card .card-body .login .mb-0 .offset-md-4 {
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 70px auto;
+    grid-template-rows: [password] 20px [button] auto;
+    align-items: center;
+  }
+
+  #app main .content .card .card-body .login .mb-0 .offset-md-4 div {
+    grid-row: password;
+    grid-column: 1/-1;
+  }
+
+  #app main .content .card .card-body .login .mb-0 .offset-md-4 button {
+    grid-row: button;
+    grid-column: 2/-2;
+    width: 70px;
+    height: 40px;
+    text-align: center;
+    color: #f4f4f4;
+    background-color: #6299ff;
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px -1px #aaa;
+  }
+
+  #app main .content .card .card-body .register {
+    height: 100%;
+  }
+
+  #app main .content .card .card-body .register .form-group {
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+  }
+
+  #app main .content .card .card-body .register .form-group .col-md-6 {
+    width: 100%;
+    height: 50px;
+  }
+
+  #app main .content .card .card-body .register .form-group .col-md-6 .form-control {
+    width: 100%;
+    height: 30px;
+    margin-top: 20px;
+    border-bottom: 1px solid #aaa;
+  }
+
+  #app main .content .card .card-body .register .mb-0 {
+    height: calc(100% - 240px);
+  }
+
+  #app main .content .card .card-body .register .mb-0 .offset-md-4 {
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  .py-4 .content #show-shoe .new-post-btn button {
-    color: #f4f4f4;
-    font-size: 25px;
-  }
-
-  .py-4 .content #show-shoe .new-post-btn:hover {
-    background-color: #694e4e;
-  }
-
-  .py-4 .content #show-shoe .show-shoe-header {
-    position: absolute;
-    top: 20vh;
-    height: 3vh;
-    width: 100vw;
-    background-color: #f4f4f4;
+  #app main .content .card .card-body .register .mb-0 .offset-md-4 button {
+    width: 70px;
+    height: 40px;
     text-align: center;
-    font-weight: bold;
+    color: #f4f4f4;
+    background-color: #6299ff;
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px -1px #aaa;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content .container {
+    height: 100%;
   }
 
-  .py-4 .content #show-shoe .show-shoe-header h1 {
-    line-height: 3vh;
+  #app main .content .container .justify-content-center {
+    height: 100%;
   }
 
-  .py-4 .content #show-shoe .show-shoe-body .show-shoe-body-header {
-    padding-top: 3vh;
-    height: 30vh;
+  #app main .content .container .justify-content-center .col-md-8 {
+    height: 100%;
   }
 
-  .py-4 .content #show-shoe .show-shoe-body .show-shoe-body-header figure {
-    width: 30vw;
-    height: 30vw;
-    margin: 0 auto;
+  #app main .content .container .justify-content-center .col-md-8 .card {
+    height: 100%;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body {
+    height: calc(100% - 30px);
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message {
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 150px auto;
+    grid-template-rows: [row1] 11% [row2] 11% [row3] 11% [row4] 11% [row5] 11% [row6] 22% [logo] 23%;
+    justify-items: center;
+    align-items: center;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row1 {
+    grid-row: row1;
+    grid-column: 1/-1;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row2 {
+    grid-row: row2;
+    grid-column: 1/-1;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row3 {
+    grid-row: row3;
+    grid-column: 1/-1;
+    text-align: center;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row4 {
+    grid-row: row4;
+    grid-column: 1/-1;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row5 {
+    grid-row: row5;
+    grid-column: 1/-1;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row6 {
+    grid-row: row6;
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row6 a button {
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    color: #f4f4f4;
+    background-color: #6299ff;
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px -1px #aaa;
+    font-size: 14px;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message figure {
+    grid-row: logo;
+    grid-column: 2/-2;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message figure img {
+    width: 150px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content .new-post-form,
+  #app main .content .edit-post-form {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 10px 1fr 10px;
+    grid-template-rows: [image] 25% [content] 60% [button] 15%;
+  }
+
+  #app main .content .new-post-form .form-header,
+  #app main .content .edit-post-form .form-header {
+    grid-row: image;
+    grid-column: 2/-2;
+    text-align: center;
+  }
+
+  #app main .content .new-post-form .form-header .file-area,
+  #app main .content .edit-post-form .form-header .file-area {
+    width: 100%;
+    height: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #app main .content .new-post-form .form-header .file-area .upload-file,
+  #app main .content .edit-post-form .form-header .file-area .upload-file {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     -o-object-fit: contain;
        object-fit: contain;
   }
+}
 
-  .py-4 .content #show-shoe .show-shoe-body .show-shoe-body-header figure img {
+@media (max-width: 1024px) and (max-width: 3750px) {
+  #app main .content .new-post-form .form-header .file-area .upload-file,
+  #app main .content .edit-post-form .form-header .file-area .upload-file {
+    width: 85px;
+    height: 85px;
+  }
+}
+
+@media (max-width: 1024px) and (max-width: 320px) {
+  #app main .content .new-post-form .form-header .file-area .upload-file,
+  #app main .content .edit-post-form .form-header .file-area .upload-file {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content .new-post-form .form-header .file-area .upload-file img,
+  #app main .content .edit-post-form .form-header .file-area .upload-file img {
     width: 100%;
   }
+}
 
-  .py-4 .content #show-shoe .show-shoe-body .show-shoe-body-header figcaption {
-    width: 95vw;
-    height: 4vh;
-    margin: 8vh auto 0 auto;
-    background-color: #f4f4f4;
-    border-bottom: 1px solid #aaa;
-    border-radius: 3px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 5vw;
-  }
-
-  .py-4 .content #show-shoe .show-shoe-content {
-    width: 95vw;
-    height: 58vh;
-    margin: 0 auto;
-    border-radius: 3px;
-    padding: 5vw 5vw 20vh 5vw;
-    background-color: #f4f4f4;
-    overflow: scroll;
-  }
-
-  .py-4 .content .new-post-form,
-  .py-4 .content .edit-post-form {
-    height: 90vh;
-    position: relative;
-  }
-
-  .py-4 .content .new-post-form .form-header,
-  .py-4 .content .edit-post-form .form-header {
-    height: 25%;
-    text-align: center;
-  }
-
-  .py-4 .content .new-post-form .form-header .file-area,
-  .py-4 .content .edit-post-form .form-header .file-area {
-    height: 80%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .py-4 .content .new-post-form .form-header .file-area .upload-file,
-  .py-4 .content .edit-post-form .form-header .file-area .upload-file {
-    width: 30vw;
-    height: 30vw;
+@media (max-width: 1024px) {
+  #app main .content .new-post-form .form-header .file-area .upload-file div,
+  #app main .content .edit-post-form .form-header .file-area .upload-file div {
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     border: 1px solid #aaa;
-    background-color: #f4f4f4;
   }
 
-  .py-4 .content .new-post-form .form-header .file-area .upload-file img,
-  .py-4 .content .edit-post-form .form-header .file-area .upload-file img {
+  #app main .content .new-post-form .form-header .file-area .upload-file div span,
+  #app main .content .edit-post-form .form-header .file-area .upload-file div span {
+    color: #aaa;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content .new-post-form .form-header input,
+  #app main .content .edit-post-form .form-header input {
+    height: 25%;
+    font-size: 12px;
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content .new-post-form .form-body,
+  #app main .content .edit-post-form .form-body {
+    grid-row: content;
+    grid-column: 2/-2;
+  }
+
+  #app main .content .new-post-form .form-body .new-post-title,
+  #app main .content .edit-post-form .form-body .new-post-title {
+    width: 90%;
+    height: 40px;
+    margin: 10px auto;
+    padding: 0 5px;
+    border-radius: 3px;
+    border: 1px solid rgba(201, 201, 201, 0.1);
+    box-shadow: 4px 4px 8px -1px #aaa;
+  }
+
+  #app main .content .new-post-form .form-body .new-post-title input,
+  #app main .content .edit-post-form .form-body .new-post-title input {
+    width: 100%;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  #app main .content .new-post-form .form-body .new-post-content,
+  #app main .content .edit-post-form .form-body .new-post-content {
+    width: 90%;
+    height: 75%;
+    margin: 10px auto;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid rgba(201, 201, 201, 0.1);
+    box-shadow: 4px 4px 8px -1px #aaa;
+  }
+
+  #app main .content .new-post-form .form-body .new-post-content textarea,
+  #app main .content .edit-post-form .form-body .new-post-content textarea {
+    width: calc(100% - 10px);
+    height: calc(100% - 10px);
+    font-size: 18px;
+    resize: none;
+    overflow: scroll;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content .new-post-form .submit-btn,
+  #app main .content .edit-post-form .submit-btn {
+    grid-row: button;
+    grid-column: 2/-2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #app main .content .new-post-form .submit-btn input,
+  #app main .content .edit-post-form .submit-btn input {
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    color: #f4f4f4;
+    background-color: #6299ff;
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px -1px #aaa;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content #show-shoe {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 10px 1fr 10px;
+    grid-template-rows: [head] 30px [body] auto;
+    position: relative;
+  }
+
+  #app main .content #show-shoe .new-post-btn {
+    position: fixed;
+    z-index: 1;
+    top: calc(100vh - 110px);
+    left: calc(100vw - 110px);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #402F2F;
+  }
+
+  #app main .content #show-shoe .new-post-btn button {
     width: 100%;
     height: 100%;
-    -o-object-fit: contain;
-       object-fit: contain;
+    color: #f4f4f4;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .py-4 .content .new-post-form .form-header .file-area .upload-file div,
-  .py-4 .content .edit-post-form .form-header .file-area .upload-file div {
+  #app main .content #show-shoe .new-post-btn:hover {
+    background-color: #694e4e;
+  }
+
+  #app main .content #show-shoe .show-shoe-header {
+    grid-rows: head;
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #aaa;
+  }
+
+  #app main .content #show-shoe .show-shoe-body {
+    width: 100%;
+    grid-rows: body;
+    grid-column: 2/-2;
+    display: grid;
+    grid-template-rows: [delete] 20px [image] 120px [content] auto;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .delete-btn {
+    grid-row: delete;
+    text-align: right;
     color: #aaa;
   }
 
-  .py-4 .content .new-post-form .form-header .file-area .upload-btn,
-  .py-4 .content .edit-post-form .form-header .file-area .upload-btn {
-    height: 20%;
+  #app main .content #show-shoe .show-shoe-body .delete-btn:hover {
+    opacity: 0.8;
   }
 
-  .py-4 .content .new-post-form .form-body,
-  .py-4 .content .edit-post-form .form-body {
-    height: 73%;
-    width: 95vw;
-    background-color: #f4f4f4;
-    border-radius: 3px;
-    margin: 0 auto;
+  #app main .content #show-shoe .show-shoe-body .show-shoe-body-header {
+    grid-row: image;
+    width: 100%;
+    height: 100px;
+    display: flex;
   }
 
-  .py-4 .content .new-post-form .form-body .new-post-title,
-  .py-4 .content .edit-post-form .form-body .new-post-title {
-    height: 8vh;
+  #app main .content #show-shoe .show-shoe-body .show-shoe-body-header figure {
+    width: 100px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    -o-object-fit: contain;
+       object-fit: contain;
   }
+}
 
-  .py-4 .content .new-post-form .form-body .new-post-title input,
-  .py-4 .content .edit-post-form .form-body .new-post-title input {
-    width: 80%;
-    height: 5vh;
-    padding: 3vw;
-    border-radius: 3px;
-    border: 1px solid rgba(201, 201, 201, 0.1);
-    box-shadow: 4px 4px 8px -1px #aaa;
+@media (max-width: 1024px) and (max-width: 320px) {
+  #app main .content #show-shoe .show-shoe-body .show-shoe-body-header figure {
+    width: 80px;
+    height: 80px;
   }
+}
 
-  .py-4 .content .new-post-form .form-body .new-post-content,
-  .py-4 .content .edit-post-form .form-body .new-post-content {
-    height: 45vh;
+@media (max-width: 1024px) {
+  #app main .content #show-shoe .show-shoe-body .show-shoe-body-header figure img {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content #show-shoe .show-shoe-body .show-shoe-body-header figcaption {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-flow: column;
+    padding-left: 5px;
   }
 
-  .py-4 .content .new-post-form .form-body .new-post-content textarea,
-  .py-4 .content .edit-post-form .form-body .new-post-content textarea {
-    width: 80%;
+  #app main .content #show-shoe .show-shoe-body .show-shoe-body-header figcaption p {
+    height: 50px;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-body-header figcaption .last-maintenance {
+    padding-top: 25px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content #show-shoe .show-shoe-body .show-shoe-content {
+    grid-row: content;
     height: 100%;
-    resize: none;
-    padding: 3vw;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-content p {
+    height: calc(100vh - 320px);
     overflow: scroll;
-    border-radius: 3px;
-    border: 1px solid rgba(201, 201, 201, 0.1);
-    box-shadow: 4px 4px 8px -1px #aaa;
-  }
-
-  .py-4 .content .new-post-form .submit-btn,
-  .py-4 .content .edit-post-form .submit-btn {
-    position: absolute;
-    left: 38vw;
-    bottom: 5vh;
-    height: 7%;
-    width: 25vw;
-    color: #f4f4f4;
-    background-color: #402F2F;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 3px;
-  }
-
-  .py-4 .content .new-post-form .submit-btn:hover,
-  .py-4 .content .edit-post-form .submit-btn:hover {
-    background-color: #694e4e;
+    white-space: pre-wrap;
+    padding-bottom: 150px;
   }
 }
 

@@ -10,7 +10,7 @@ body {
 }
 
 // PC Layout
-@media (min-width: 768px){
+@media (min-width: 1025px){
   header {
     position: relative;
     height: 10vh;
@@ -419,6 +419,7 @@ body {
             input {
               width: 100%;
               height: 5vh;
+              padding-left: 10px;
               border-radius: 3px;
               border: 1px solid rgb(201, 201, 201, 0.1);
               box-shadow: 4px 4px 8px -1px #aaa;
@@ -433,6 +434,7 @@ body {
               height: 25vh;
               resize: none;
               margin-top: 5vh;
+              padding: 10px;
               border-radius: 3px;
               border: 1px solid rgb(201, 201, 201, 0.1);
               box-shadow: 4px 4px 8px -1px #aaa;
@@ -462,450 +464,574 @@ body {
 }
 
 // Mobile layoute
-@media (max-width: 767px) {
-  header {
-    height: 10vh;
+@media (max-width: 1024px) {
+  body {
     width: 100vw;
-    background-color: $theme_color;
-    .header-logo {
-      height: 7vh;
-      width: 80vw;
-      text-align: center;
-      margin: 0 auto;
-      a {
-        img {
-          height: 100%;
-        }
-      }
-    }
-    .header-nav {
-      color: $white;
-      .header-nav-list {
-        width: 80vw;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-around;
-      }
-    }
+    height: 100vh;
   }
-  .py-4 {
-    height: 90vh;
-    background: url('images/live-with-background.jpg');
-    background-size: cover;
-    .content {
-      // overflow: hidden;
-      // logged in page
-      .card {
-        width: 95vw;
-        height: 80vh;
-        background-color: $white;
-        margin: 2.5vh auto;
-        border-radius: 3px;
-        .card-header {
-          font-size: 30px;
-          height: 10vh;
-          text-align: center;
-          padding-top: 5vh;
-        }
-        h1 {
-          text-align: center;
-          padding-bottom: 1vh;
-          border-bottom: 1px solid #aaa;
-        }
-        .card-body {
-          width: 95vw;
-          height: 50vh;
-          margin: 5vh auto;
-          form {
-            width: 90%;
-            margin: 0 auto;
-            .form-group {
-              .col-md-6 {
-                width: 100%;
-                margin-top: 5vh;
-                .form-control {
-                  width: 100%;
-                  border-bottom: 1px solid #aaa;
-                }
-              }
-            }
-            .mb-0 {
-              height: 15vh;
-              .col-md-8, .col-md-6 {
-                width: 100%;
-                height: 15vh;
-                div {
-                  width: 100%;
-                  text-align: left;
-                  a {
-                    line-height: 5vh;
-                    border-bottom: 1px solid #aaa;
-                  }
-                }
-                button {
-                  width: 20vw;
-                  height: 5vh;
-                  margin: 10vh 33vw;
-                  text-align: center;
-                  color: $white;
-                  background-color: rgb(98, 153, 255);
-                  border-radius: 3px;
-                  box-shadow: 3px 3px 5px -1px #aaa;
-                }
-              }
-              // register only
-
-              // register only end
-            }
-          }
-          // logged in page
-          .logged-message {
-            width: 100%;
-            margin-top: 10vh;
-            p {
-              font-size: 20px;
-              text-align: center;
-              margin-top: 3vh;
-              a {
-                line-height: 10vh;
-                border-bottom: 1px solid #aaa;
-                font-weight: bold;
-              }
-            }
-            figure {
-              height: 10vh;
-              width: 100%;
-              margin-top: 2vh;
-              text-align: center;
-              object-fit: contain;
-              img {
-                height: 100%;
-              }
-            }
-          }
-        }
+  #app {
+    display: grid;
+    grid-template-columns: 5vw 1fr 5vw;
+    grid-template-rows:
+            [head] 100px
+            [body] auto;
+    header {
+      grid-row: head;
+      grid-column: 1 / -1;
+      background-color: $theme_color;
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      align-items: center;
+      div a img {
+        width: 150px;
       }
-      // logged in page end
-      // Home page
-      #my-list {
-        position: relative;
-        // new post button
-        .new-post-btn {
-          z-index: 1;
-          display: block;
-          position: fixed;
-          width: 13vh;
-          height: 13vh;
-          border-radius: 50%;
-          background-color: $theme_color;
-          left: 70vw;
-          top: 85vh;
+      nav {
+        width: 150px;
+        height: 30px;
+        ul {
+          width: 100%;
+          height: 100%;
           display: flex;
-          justify-content: center;
-          align-items: center;
-          button {
-            color: $white;
-            font-size: 25px;
-          }
-          &:hover {
-            background-color: $theme_color_hover;
-          }
-        }
-        // guest page
-        .guest-header {
-          height: 30vh;
-          display: flex;
-          align-items: flex-end;
-          font-size: 35px;
-          border-bottom: 1px solid #aaa;
-          h1 {
-            line-height: 7vh;
-            width: 95vw;
-            background-color: $white;
+          flex-flow: row;
+          justify-content: space-around;
+          color: $white;
+          li {
+            width: 75px;
+            height: 100%;
             text-align: center;
-            margin: 0 auto;
-            border-radius: 3px 3px 0 0;
-          }
-        }
-        .guest-body {
-          height: 30vh;
-          width: 95vw;
-          margin: 0 auto;
-          padding-bottom: 5vh;
-          background-color: $white;
-          border-radius: 0 0 3px 3px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        // guest page end
-        // new post button end
-        .my-list-header {
-          height: 10vh;
-          width: 100vw;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          h1 {
-            height: 5vh;
-            width: 50vw;
-            padding-top: 5px;
-            font-size: 25px;
-            font-weight: bold;
-            padding-left: 2vw;
-            background-color: $white;
-          }
-          button {
-            height: 5vh;
-            width: 100%;
-            padding-right: 2vw;
-            background-color: $white;
-            text-align: end;
-          }
-        }
-        .shoes-list {
-          width: 94vw;
-          height: 80vh;
-          margin: 0 auto;
-          overflow: scroll;
-          ul {
-            width: 94vw;
-            height: 80vh;
-            .items-leave-active,
-            .items-enter-active {
-                transition: opacity .5s, transform .5s ease;
-            }
-            .items-leave-to,
-            .items-enter {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            .items-leave,
-            .items-enter-to {
-                opacity: 1;
-            }
-            .items-move {
-                transition: transform .5s;
-            }
-            li {
-              width: 100%;
-              height: 10vh;
-              background-color: $white;
-              border-bottom: 1px solid #aaa;
-              border-radius: 3px;
-              a button {
-                width: 100%;
-                height: 100%;
-                position: relative;
-                display: flex;
-                align-items: center;
-                margin-top: 1vh;
-                border-radius: 3px;
-                border: 1px solid rgb(201, 201, 201, 0.1);
-                box-shadow: 4px 4px 8px -1px #aaa;
-                figure {
-                  width: 9vh;
-                  height: 9vh;
-                  img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: contain;
-                  }
-                }
-                figcaption {
-                  height: 100%;
-                  padding: 2vw;
-                  p {
-                    &:first-child {
-                      font-size: 18px;
-                      font-weight: bold;
-                      overflow: hidden;
-                      height: 70%;
-                    }
-                    &:last-child {
-                      font-size: 14px;
-                      height: 30%;
-                    }
-                    &:last-child::after {
-                      position: absolute;
-                      content: "";
-                      top: 100%;
-                      left: 0;
-                      height: 17vh;
-                      width: 1px;
-                    }
-                  }
-                }
-                &:hover {
-                  opacity: 0.7;
-                  background-color: rgba(187,187,187,0.1);
-                }
-              }
-            }
+            white-space: nowrap;
+            overflow: hidden;
           }
         }
       }
-      // Details page
-      #show-shoe {
-        position: relative;
-        width: 100vw;
-        height: 80vh;
-        // edit post button
-        .new-post-btn {
-          z-index: 1;
-          display: block;
-          position: absolute;
-          width: 13vh;
-          height: 13vh;
-          border-radius: 50%;
-          background-color: $theme_color;
-          left: 70vw;
-          top: 75vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          button {
-            color: $white;
+    }
+    main {
+      grid-column: 1 / -1;
+      //Duplicate the same grid as the body
+      display: grid;
+      grid-template-columns: 5vw 1fr 5vw;
+      grid-template-rows:
+              [margin_top] 25px
+              [content_body] auto
+              [margin_bottom] 25px;
+      height: calc(100vh - 100px);
+      background: url('images/live-with-background.jpg');
+      .content {
+        grid-column: 2 / -2;
+        grid-row: content_body;
+        background-color: $white;
+        border-radius: 3px;
+        -ms-box-shadow: $box-shadow;
+        -moz-box-shadow: $box-shadow;
+        -webkit-box-shadow: $box-shadow;
+        -o-box-shadow: $box-shadow;
+        box-shadow: $box-shadow;
+        #my-list {
+          position: relative;
+          height: 100%;
+          // guest.blade.php
+          .guest-header {
+            height: 30px;
+            margin-top: 30px;
             font-size: 25px;
-          }
-          &:hover {
-            background-color: $theme_color_hover;
-          }
-        }
-        // edit post button end
-        .show-shoe-header {
-          position: absolute;
-          top: 20vh;
-          height: 3vh;
-          width: 100vw;
-          background-color: $white;
-          text-align: center;
-          font-weight: bold;
-          h1 {
-            line-height: 3vh;
-          }
-        }
-        .show-shoe-body {
-          .show-shoe-body-header {
-            padding-top: 3vh;
-            height: 30vh;
-            figure {
-              width: 30vw;
-              height: 30vw;
-              margin: 0 auto;
-              object-fit: contain;
-              img {
-                width: 100%;
-              }
-            }
-            figcaption {
-              width: 95vw;
-              height: 4vh;
-              margin: 8vh auto 0 auto;
-              background-color: $white;
-              border-bottom: 1px solid #aaa;
-              border-radius: 3px;
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              padding: 0 5vw;
-            }
-          }
-        }
-        .show-shoe-content {
-          width: 95vw;
-          height: 58vh;
-          margin: 0 auto;
-          border-radius: 3px;
-          padding: 5vw 5vw 20vh 5vw;
-          background-color: $white;
-          overflow: scroll;
-        }
-      }
-      .new-post-form, .edit-post-form {
-        height: 90vh;
-        position: relative;
-        .form-header {
-          height: 25%;
-          text-align: center;
-          .file-area {
-            height: 80%;
             display: flex;
             justify-content: center;
             align-items: center;
-            .upload-file {
-              width: 30vw;
-              height: 30vw;
+          }
+          .guest-body {
+            height: calc(100% - 60px);
+            padding-top: 5px;
+            font-size: 14px;
+            text-align: center;
+          }
+          // New button
+          .new-post-btn {
+            position: fixed;
+            z-index: 1;
+            top: calc(100vh - 110px);
+            left: calc(100vw - 110px);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: $theme_color;
+            button {
+              width: 100%;
+              height: 100%;
+              color: $white;
+              font-size: 25px;
               display: flex;
               justify-content: center;
               align-items: center;
-              border: 1px solid #aaa;
-              background-color: $white;
-              img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-              }
-              div {
-                color: #aaa;
-              }
             }
-            .upload-btn {
-              height: 20%;
+            &:hover {
+              background-color: $theme_color_hover;
+            }
+          }
+          // index.blade.php (ListRenderingComponent.vue)
+          .my-list-header {
+            height: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5px;
+            border-bottom: 1px solid #aaa;
+            h1 {
+              font-size: 18px;
+              font-weight: bold;
+            }
+          }
+          .shoes-list {
+            overflow: scroll;
+            ul {
+              height: calc(100vh - 180px);
+              .items-leave-active,
+              .items-enter-active {
+                  transition: opacity .5s, transform .5s ease;
+              }
+              .items-leave-to,
+              .items-enter {
+                  opacity: 0;
+                  transform: translateX(50px);
+              }
+              .items-leave,
+              .items-enter-to {
+                  opacity: 1;
+              }
+              .items-move {
+                  transition: transform .5s;
+              }
+              li {
+                width: 90%;
+                height: 60px;
+                margin: 10px auto;
+                border-radius: 3px;
+                border: 1px solid rgb(201, 201, 201, 0.1);
+                box-shadow: 4px 4px 8px -1px #aaa;
+                position: relative;
+                &:last-child::after {
+                  position: absolute;
+                  content: "";
+                  top: 100%;
+                  left: 0;
+                  height: 130px;
+                  width: 1px;
+                }
+                a button {
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  align-items: center;
+                  figure {
+                    img {
+                      width: 50px;
+                    }
+                  }
+                  figcaption {
+                    padding-left: 10px;
+                    .shoe-name {
+                      font-size: 18px;
+                      @media (max-width: 374px) {
+                        font-size: 15px;
+                      }
+                      font-weight: bold;
+                    }
+                    .last-maintenance {
+                      font-size: 14px;
+                      @media (max-width: 374px) {
+                        font-size: 12px;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }
-        .form-body {
-          height: 73%;
-          width: 95vw;
-          background-color: $white;
-          border-radius: 3px;
-          margin: 0 auto;
-          .new-post-title {
-            height: 8vh;
+        // login and register page
+        .card {
+          height: 100%;
+          padding-top: 20px;
+          .card-header {
+            height: 30px;
+            font-size: 25px;
+            text-align: center;
+          }
+          h1 {
+            font-size: 14px;
+            text-align: center;
+            line-height: 20px;
+          }
+          .card-body {
+            width: 90%;
+            height: calc(100% - 70px);
+            margin: 0 auto;
+            .login {
+              height: 100%;
+              .form-group {
+                width: 100%;
+                height: 50px;
+                margin-top: 10px;
+                .col-md-6 {
+                  width: 100%;
+                  height: 50px;
+                  .form-control {
+                    width: 100%;
+                    height: 30px;
+                    margin-top: 20px;
+                    border-bottom: 1px solid #aaa;
+                  }
+                }
+              }
+              .mb-0 {
+                height: calc(100% - 180px);
+                .offset-md-4 {
+                  height: 100%;
+                  display: grid;
+                  grid-template-columns: auto 70px auto;
+                  grid-template-rows:
+                          [password] 20px
+                          [button] auto;
+                  align-items: center;
+                  div {
+                    grid-row: password;
+                    grid-column: 1 / -1;
+                  }
+                  button {
+                    grid-row: button;
+                    grid-column: 2 / -2;
+                    width: 70px;
+                    height: 40px;
+                    text-align: center;
+                    color: $white;
+                    background-color: rgb(98, 153, 255);
+                    border-radius: 3px;
+                    box-shadow: 4px 4px 8px -1px #aaa;
+                  }
+                }
+              }
+            }
+            .register {
+              height: 100%;
+              .form-group {
+                width: 100%;
+                height: 50px;
+                margin-top: 10px;
+                .col-md-6 {
+                  width: 100%;
+                  height: 50px;
+                  .form-control {
+                    width: 100%;
+                    height: 30px;
+                    margin-top: 20px;
+                    border-bottom: 1px solid #aaa;
+                  }
+                }
+              }
+              .mb-0 {
+                height: calc(100% - 240px);
+                .offset-md-4 {
+                  height: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  button {
+                    width: 70px;
+                    height: 40px;
+                    text-align: center;
+                    color: $white;
+                    background-color: rgb(98, 153, 255);
+                    border-radius: 3px;
+                    box-shadow: 4px 4px 8px -1px #aaa;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .container {
+          height: 100%;
+          .justify-content-center {
+            height: 100%;
+            .col-md-8 {
+              height: 100%;
+              .card {
+                height: 100%;
+                .card-body {
+                  height: calc(100% - 30px);
+                  .logged-message {
+                    height: 100%;
+                    display: grid;
+                    grid-template-columns: auto 150px auto;
+                    grid-template-rows: 
+                          [row1] 11%
+                          [row2] 11%
+                          [row3] 11%
+                          [row4] 11%
+                          [row5] 11%
+                          [row6] 22%
+                          [logo] 23%;
+                    justify-items: center;
+                    align-items: center;
+                    .row1 {
+                      grid-row: row1;
+                      grid-column: 1 / -1;
+                    }
+                    .row2 {
+                      grid-row: row2;
+                      grid-column: 1 / -1;
+                    }
+                    .row3 {
+                      grid-row: row3;
+                      grid-column: 1 / -1;
+                      text-align: center;
+                    }
+                    .row4 {
+                      grid-row: row4;
+                      grid-column: 1 / -1;
+                    }
+                    .row5 {
+                      grid-row: row5;
+                      grid-column: 1 / -1;
+                    }
+                    .row6 {
+                      grid-row: row6;
+                      grid-column: 1 / -1;
+                      display: flex;
+                      justify-content: center;
+                      align-items: center;
+                      a button {
+                        width: 150px;
+                        height: 40px;
+                        text-align: center;
+                        color: $white;
+                        background-color: rgb(98, 153, 255);
+                        border-radius: 3px;
+                        box-shadow: 4px 4px 8px -1px #aaa;
+                        font-size: 14px;
+                      }
+                    }
+                    figure {
+                      grid-row: logo;
+                      grid-column: 2 / -2;
+                      img {
+                        width: 150px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        // new.blade.php
+        .new-post-form, .edit-post-form {
+          height: 100%;
+          display: grid;
+          grid-template-columns: 10px 1fr 10px;
+          grid-template-rows:
+                [image] 25%
+                [content] 60%
+                [button] 15%;
+          .form-header {
+            grid-row: image;
+            grid-column: 2 / -2;
+            text-align: center;
+            .file-area {
+              width: 100%;
+              height: 75%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              .upload-file {
+                width: 100px;
+                height: 100px;
+                @media (max-width: 3750px) {
+                  width: 85px;
+                  height: 85px;
+                }
+                @media (max-width: 320px) {
+                  width: 70px;
+                  height: 70px;
+                }
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                object-fit: contain;
+                img {
+                  width: 100%;
+                }
+                div {
+                  width: 100%;
+                  height: 100%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border: 1px solid #aaa;
+                  span {
+                    color: #aaa;
+                  }
+                }
+              }
+            }
+            input {
+              height: 25%;
+              font-size: 12px;
+              padding-left: 20px;
+            }
+          }
+          .form-body {
+            grid-row: content;
+            grid-column: 2 / -2;
+            .new-post-title {
+              width: 90%;
+              height: 40px;
+              margin: 10px auto;
+              padding: 0 5px;
+              border-radius: 3px;
+              border: 1px solid rgb(201, 201, 201, 0.1);
+              box-shadow: 4px 4px 8px -1px #aaa;
+              input {
+                width: 100%;
+                height: 40px;
+                font-size: 18px;
+              }
+            }
+            .new-post-content {
+              width: 90%;
+              height: 75%;
+              margin: 10px auto;
+              padding: 5px;
+              border-radius: 3px;
+              border: 1px solid rgb(201, 201, 201, 0.1);
+              box-shadow: 4px 4px 8px -1px #aaa;
+              textarea {
+                width: calc(100% - 10px);
+                height: calc(100% - 10px);
+                font-size: 18px;
+                resize: none;
+                overflow: scroll;
+              }
+            }
+          }
+          .submit-btn {
+            grid-row: button;
+            grid-column: 2 / -2;
             display: flex;
             justify-content: center;
             align-items: center;
             input {
-              width: 80%;
-              height: 5vh;
-              padding: 3vw;
+              width: 80px;
+              height: 40px;
+              text-align: center;
+              color: $white;
+              background-color: rgb(98, 153, 255);
               border-radius: 3px;
-              border: 1px solid rgb(201, 201, 201, 0.1);
-              box-shadow: 4px 4px 8px -1px #aaa;
-            }
-          }
-          .new-post-content {
-            height: 45vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            textarea {
-              width: 80%;
-              height: 100%;
-              resize: none;
-              padding: 3vw;
-              overflow: scroll;
-              border-radius: 3px;
-              border: 1px solid rgb(201, 201, 201, 0.1);
               box-shadow: 4px 4px 8px -1px #aaa;
             }
           }
         }
-        .submit-btn {
-          position: absolute;
-          left: 38vw;
-          bottom: 5vh;
-          height: 7%;
-          width: 25vw;
-          color: $white;
-          background-color: $theme_color;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          border-radius: 3px;
-          &:hover {
-            background-color: $theme_color_hover;
+        #show-shoe {
+          height: 100%;
+          display: grid;
+          grid-template-columns: 10px 1fr 10px;
+          grid-template-rows:
+                  [head] 30px
+                  [body] auto;
+          position: relative;
+          .new-post-btn {
+            position: fixed;
+            z-index: 1;
+            top: calc(100vh - 110px);
+            left: calc(100vw - 110px);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: $theme_color;
+            button {
+              width: 100%;
+              height: 100%;
+              color: $white;
+              font-size: 25px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+            }
+            &:hover {
+              background-color: $theme_color_hover;
+            }
+          }
+          .show-shoe-header {
+            grid-rows: head;
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+            border-bottom: 1px solid #aaa;
+          }
+          .show-shoe-body {
+            width: 100%;
+            grid-rows: body;
+            grid-column: 2 / -2;
+            display: grid;
+            grid-template-rows:
+                  [delete] 20px
+                  [image] 120px
+                  [content] auto;
+            .delete-btn {
+              grid-row: delete;
+              text-align: right;
+              color: #aaa;
+              &:hover {
+                opacity: 0.8;
+              }
+            }
+            .show-shoe-body-header {
+              grid-row: image;
+              width: 100%;
+              height: 100px;
+              display: flex;
+              figure {
+                width: 100px;
+                height: 100px;
+                @media (max-width: 320px) {
+                  width: 80px;
+                  height: 80px;
+                }
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                object-fit: contain;
+                img {
+                  width: 100%;
+                }
+              }
+              figcaption {
+                display: flex;
+                flex-flow: column;
+                padding-left: 5px;
+                p {
+                  height: 50px;
+                }
+                .last-maintenance {
+                  padding-top: 25px;
+                }
+              }
+            }
+            .show-shoe-content {
+              grid-row: content;
+              height: 100%;
+              p {
+                // The rationale of 320px is as follows.
+                // header 100px, margin of content-body 25 * 2, title 30px, delete 20px, image row 120px
+                height: calc(100vh - 320px);
+                overflow: scroll;
+                white-space: pre-wrap;
+                padding-bottom: 150px;
+              }
+            }
           }
         }
       }
