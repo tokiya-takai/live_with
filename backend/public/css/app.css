@@ -877,4 +877,88 @@ body {
   }
 }
 
+@media (max-width: 1024px) {
+  #app main .content .container {
+    height: 100%;
+  }
+
+  #app main .content .container .justify-content-center {
+    height: 100%;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 {
+    height: 100%;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card {
+    height: 100%;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body {
+    height: calc(100% - 30px);
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message {
+    height: 100%;
+    display: grid;
+    grid-template-columns: auto 150px auto;
+    grid-template-rows: [row1] 11% [row2] 11% [row3] 11% [row4] 11% [row5] 11% [row6] 22% [logo] 23%;
+    justify-items: center;
+    align-items: center;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row1 {
+    grid-row: row1;
+    grid-column: 1/-1;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row2 {
+    grid-row: row2;
+    grid-column: 1/-1;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row3 {
+    grid-row: row3;
+    grid-column: 1/-1;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row4 {
+    grid-row: row4;
+    grid-column: 1/-1;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row5 {
+    grid-row: row5;
+    grid-column: 1/-1;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row6 {
+    grid-row: row6;
+    grid-column: 1/-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message .row6 a button {
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    color: #f4f4f4;
+    background-color: #6299ff;
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px -1px #aaa;
+    font-size: 14px;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message figure {
+    grid-row: logo;
+    grid-column: 2/-2;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message figure img {
+    width: 150px;
+  }
+}
+
 

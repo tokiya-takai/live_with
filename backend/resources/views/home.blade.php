@@ -14,12 +14,12 @@
                         </div>
                     @endif
                     <div class="logged-message">
-                        <p>Thank you!</p>
-                        <p>Enjoy your shoe life.</p>
-                        <p>May all your dreams come true, I hope it goes well.</p>
-                        <p>I’m always on your side.</p>
-                        <p>We live with shoes.</p>
-                        <p><a href=" {{ route('index') }} "><button>Return to the home.</button></a></p>
+                        <p class="row1">Thank you!</p>
+                        <p class="row2">Enjoy your shoe life.</p>
+                        <p class="row3">May all your dreams come true, I hope it goes well.</p>
+                        <p class="row4">I’m always on your side.</p>
+                        <p class="row5">We live with shoes.</p>
+                        <p class="row6"><a href=" {{ route('index') }} "><button>Return to the HOME</button></a></p>
                         <figure><img src="{{ asset('images/livewith-sub-logo.png') }}" alt="logo"></figure>
                     </div>
                 </div>
