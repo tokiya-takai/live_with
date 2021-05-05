@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
+use App\Models\User;
 
 class PostsController extends Controller
 {
@@ -18,7 +19,9 @@ class PostsController extends Controller
             $items = Post::where('user_id',$userId)->get();
             return view("posts.index",compact('items'));
         } else {
-            return view('posts.guest');
+            // Display the number of users
+            $users = User::count();
+            return view('posts.guest', compact('users'));
         }
     }
 
