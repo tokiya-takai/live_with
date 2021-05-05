@@ -121,14 +121,18 @@ body {
   .py-4 .content #show-shoe .guest-body {
     height: 60vh;
     padding-bottom: 20vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   .py-4 .content #my-list .guest-body p,
   .py-4 .content #show-shoe .guest-body p {
+    line-height: 30vh;
+    text-align: center;
     font-size: 25px;
+  }
+
+  .py-4 .content #my-list .guest-body .number-of-users,
+  .py-4 .content #show-shoe .guest-body .number-of-users {
+    font-size: 18px;
   }
 
   .py-4 .content #my-list .my-list-header,
@@ -650,7 +654,21 @@ body {
     height: calc(100% - 60px);
     padding-top: 5px;
     font-size: 14px;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 5px 1fr 5px;
+    grid-template-rows: [margin-top] 14% [message1] 23% [message2] 23% [margin-bottom] 30%;
+    justify-items: center;
+  }
+
+  #app main .content #my-list .guest-body .guide {
+    grid-column: 2/-2;
+    grid-row: message1;
+  }
+
+  #app main .content #my-list .guest-body .number-of-users {
+    grid-column: 2/-2;
+    grid-row: message2;
+    font-size: 12px;
   }
 
   #app main .content #my-list .new-post-btn {

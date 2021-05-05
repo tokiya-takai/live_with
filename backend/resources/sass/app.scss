@@ -111,11 +111,13 @@ body {
         .guest-body {
           height: 60vh;
           padding-bottom: 20vh;
-          display: flex;
-          justify-content: center;
-          align-items: center;
           p {
+            line-height: 30vh;
+            text-align: center;
             font-size: 25px;
+          }
+          .number-of-users {
+            font-size: 18px;
           }
         }
         // Guest page end
@@ -545,7 +547,23 @@ body {
             height: calc(100% - 60px);
             padding-top: 5px;
             font-size: 14px;
-            text-align: center;
+            display: grid;
+            grid-template-columns: 5px 1fr 5px;
+            grid-template-rows:
+                    [margin-top] 14%
+                    [message1] 23%
+                    [message2] 23%
+                    [margin-bottom] 30%;
+            justify-items: center;
+            .guide {
+              grid-column: 2 / -2;
+              grid-row: message1;
+            }
+            .number-of-users {
+              grid-column: 2 / -2;
+              grid-row: message2;
+              font-size: 12px;
+            }
           }
           // New button
           .new-post-btn {
