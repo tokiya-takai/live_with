@@ -17,28 +17,34 @@
         </div>
         <div class="form-body">
             <div class="form-group">
+                <div class="post-purchase-date">
+                    <label class="post-form-label">購入日</label>
+                    <input type="date" name="purchase_date" v-model="purchase_date">
+                </div>
+            </div>
+            <div class="form-group">
                 <div class="post-title">
-                    <input type="text" name="title" placeholder="Brand name, title, etc." maxlength="50">
+                    <label class="post-form-label">ブランド名</label>
+                    <input type="text" name="title" maxlength="50" v-model="title">
+                    <strong class="error" v-for="value in errors.title">{{ value }}</strong>
                 </div>
             </div>
             <div class="form-group">
                 <div class="post-details">
-                    <textarea name="details" placeholder="Enter details" maxlength="500"></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="post-purchase-date">
-                    <input type="date" name="purchase_date">
+                    <label class="post-form-label">詳細情報</label>
+                    <textarea name="details" maxlength="500" v-model="details"></textarea>
                 </div>
             </div>
             <div class="form-group">
                 <div class="post-maintenance">
-                    <textarea name="maintenance" placeholder="" maxlength="1000"></textarea>
+                    <label class="post-form-label">メンテナンス内容</label>
+                    <textarea name="maintenance" maxlength="1000" v-model="maintenance"></textarea>
                 </div>
             </div>
             <div class="form-group">
                 <div class="post-remarks">
-                    <textarea name="remarks" placeholder="" maxlength="1000"></textarea>
+                    <label class="post-form-label">備考</label>
+                    <textarea name="remarks" maxlength="1000" v-model="remarks"></textarea>
                 </div>
             </div>
             <div class="form-group">
@@ -54,7 +60,12 @@
     export default {
         data() {
             return {
-                url:""
+                url: "",
+                purchase_date: this.old.purchase_date,
+                title: this.old.title,
+                details: this.old.details,
+                maintenance: this.old.maintenance,
+                remarks: this.old.remarks,
             }
         },
         methods:{
@@ -67,7 +78,9 @@
             csrf: {
                 type: String,
                 required: true,
-            }
+            },
+            old: Array,
+            errors: Array,
         },
     }
 </script>
