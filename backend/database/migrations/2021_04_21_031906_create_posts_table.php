@@ -17,11 +17,22 @@ class CreatePostsTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->unsignedBigInteger('user_id');
+            // ファイル情報
             $table->string('file_name')->nullable();
             $table->string('file_path')->nullable();
+            // タイトル
             $table->string('title');
-            $table->text('content')->nullable();
+            // 詳細
+            $table->string('details')->nullable();
+            // 購入日
+            $table->text('purchase_date')->nullable();
+            // メンテナンス内容
+            $table->text('maintenance')->nullable();
+            // 備考
+            $table->text('remarks')->nullable();
+            // 更新日
             $table->datetime('update_date');
+
             $table->timestamps();
 
             $table->foreign('user_id')
