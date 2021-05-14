@@ -70,7 +70,7 @@ class PostsController extends Controller
     private function savePost($request, $post)
     {
        // Validate
-       $this->validate($request, Post::$rules);
+       $this->validate($request, Post::$rules, Post::$messages);
 
        // Insert data.
        $post->title = $request->title;

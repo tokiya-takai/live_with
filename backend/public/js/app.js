@@ -2051,6 +2051,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -59488,11 +59491,11 @@ var render = function() {
           ])
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c(
-            "div",
-            { staticClass: "post-title" },
-            [
+        _c(
+          "div",
+          { staticClass: "form-group" },
+          [
+            _c("div", { staticClass: "post-title" }, [
               _c("label", { staticClass: "post-form-label" }, [
                 _vm._v("ブランド名")
               ]),
@@ -59506,7 +59509,7 @@ var render = function() {
                     expression: "title"
                   }
                 ],
-                attrs: { type: "text", name: "title", maxlength: "50" },
+                attrs: { type: "text", name: "title" },
                 domProps: { value: _vm.title },
                 on: {
                   input: function($event) {
@@ -59516,102 +59519,135 @@ var render = function() {
                     _vm.title = $event.target.value
                   }
                 }
-              }),
-              _vm._v(" "),
-              _vm._l(_vm.errors.title, function(value) {
-                return _c("strong", { staticClass: "error" }, [
-                  _vm._v(_vm._s(value))
-                ])
               })
-            ],
-            2
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("div", { staticClass: "post-details" }, [
-            _c("label", { staticClass: "post-form-label" }, [
-              _vm._v("詳細情報")
             ]),
             _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.details,
-                  expression: "details"
-                }
-              ],
-              attrs: { name: "details", maxlength: "500" },
-              domProps: { value: _vm.details },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.details = $event.target.value
-                }
-              }
+            _vm._l(_vm.errors.title, function(value) {
+              return _c("strong", { staticClass: "error" }, [
+                _vm._v(_vm._s(value))
+              ])
             })
-          ])
-        ]),
+          ],
+          2
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("div", { staticClass: "post-maintenance" }, [
-            _c("label", { staticClass: "post-form-label" }, [
-              _vm._v("メンテナンス内容")
+        _c(
+          "div",
+          { staticClass: "form-group" },
+          [
+            _c("div", { staticClass: "post-details" }, [
+              _c("label", { staticClass: "post-form-label" }, [
+                _vm._v("詳細情報")
+              ]),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.details,
+                    expression: "details"
+                  }
+                ],
+                attrs: { name: "details", maxlength: "500" },
+                domProps: { value: _vm.details },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.details = $event.target.value
+                  }
+                }
+              })
             ]),
             _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.maintenance,
-                  expression: "maintenance"
-                }
-              ],
-              attrs: { name: "maintenance", maxlength: "1000" },
-              domProps: { value: _vm.maintenance },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
-                  }
-                  _vm.maintenance = $event.target.value
-                }
-              }
+            _vm._l(_vm.errors.details, function(value) {
+              return _c("strong", { staticClass: "error" }, [
+                _vm._v(_vm._s(value))
+              ])
             })
-          ])
-        ]),
+          ],
+          2
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "form-group" }, [
-          _c("div", { staticClass: "post-remarks" }, [
-            _c("label", { staticClass: "post-form-label" }, [_vm._v("備考")]),
-            _vm._v(" "),
-            _c("textarea", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.remarks,
-                  expression: "remarks"
-                }
-              ],
-              attrs: { name: "remarks", maxlength: "1000" },
-              domProps: { value: _vm.remarks },
-              on: {
-                input: function($event) {
-                  if ($event.target.composing) {
-                    return
+        _c(
+          "div",
+          { staticClass: "form-group" },
+          [
+            _c("div", { staticClass: "post-maintenance" }, [
+              _c("label", { staticClass: "post-form-label" }, [
+                _vm._v("メンテナンス内容")
+              ]),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.maintenance,
+                    expression: "maintenance"
                   }
-                  _vm.remarks = $event.target.value
+                ],
+                attrs: { name: "maintenance", maxlength: "1000" },
+                domProps: { value: _vm.maintenance },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.maintenance = $event.target.value
+                  }
                 }
-              }
+              })
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.errors.maintenance, function(value) {
+              return _c("strong", { staticClass: "error" }, [
+                _vm._v(_vm._s(value))
+              ])
             })
-          ])
-        ]),
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "form-group" },
+          [
+            _c("div", { staticClass: "post-remarks" }, [
+              _c("label", { staticClass: "post-form-label" }, [_vm._v("備考")]),
+              _vm._v(" "),
+              _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.remarks,
+                    expression: "remarks"
+                  }
+                ],
+                attrs: { name: "remarks", maxlength: "1000" },
+                domProps: { value: _vm.remarks },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.remarks = $event.target.value
+                  }
+                }
+              })
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.errors.remarks, function(value) {
+              return _c("strong", { staticClass: "error" }, [
+                _vm._v(_vm._s(value))
+              ])
+            })
+          ],
+          2
+        ),
         _vm._v(" "),
         _vm._m(1)
       ])

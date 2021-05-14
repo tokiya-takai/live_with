@@ -26,4 +26,12 @@ class Post extends Model
         'maintenance'=> ['max:1000'],
         'remarks' => ['max:1000']
     ];
+
+    public static $messages = [
+        'title.required' => '入力必須項目です。',
+        'title.max' => '50文字まで入力可能です。',
+        'details.max' => '500文字まで入力可能です。',
+        'maintenance.max' => '1000文字まで入力可能です。',
+        'remarks.max' => '1000文字まで入力可能です。',
+    ];
 }

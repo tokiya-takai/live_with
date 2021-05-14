@@ -526,6 +526,15 @@ body {
     margin: 10px auto;
   }
 
+  .py-4 .content .post-form .form-body .form-group .error,
+  .py-4 .content .edit-post-form .form-body .form-group .error {
+    display: inline-block;
+    width: 100%;
+    height: 21px;
+    margin: 10px 0;
+    color: #ec5555;
+  }
+
   .py-4 .content .post-form .form-body .form-group .post-purchase-date,
   .py-4 .content .edit-post-form .form-body .form-group .post-purchase-date {
     display: flex;
@@ -544,15 +553,9 @@ body {
   .py-4 .content .post-form .form-body .form-group .post-title,
   .py-4 .content .edit-post-form .form-body .form-group .post-title {
     width: 100%;
-    height: 100px;
+    height: 70px;
     display: flex;
     flex-flow: column;
-  }
-
-  .py-4 .content .post-form .form-body .form-group .post-title .error,
-  .py-4 .content .edit-post-form .form-body .form-group .post-title .error {
-    margin: 5px 0;
-    color: #ec5555;
   }
 
   .py-4 .content .post-form .form-body .form-group .post-title input,
