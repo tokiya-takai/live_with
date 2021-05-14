@@ -371,7 +371,7 @@ body {
           // register only end
         }
       }
-      .post-form, .edit-post-form {
+      .post-form {
         height: 100%;
         .form-header {
           height: 40%;
@@ -559,7 +559,7 @@ body {
       grid-template-columns: 5vw 1fr 5vw;
       grid-template-rows:
               [margin_top] 25px
-              [content_body] auto
+              [content_body] calc(100vh - 100px - 50px)
               [margin_bottom] 25px;
       height: calc(100vh - 100px);
       background: url('images/live-with-background.jpg');
@@ -887,14 +887,13 @@ body {
           }
         }
         // new.blade.php
-        .new-post-form, .edit-post-form {
+        .post-form {
           height: 100%;
           display: grid;
           grid-template-columns: 10px 1fr 10px;
           grid-template-rows:
                 [image] 25%
-                [content] 60%
-                [button] 15%;
+                [content] 75%;
           .form-header {
             grid-row: image;
             grid-column: 2 / -2;
@@ -945,51 +944,52 @@ body {
           .form-body {
             grid-row: content;
             grid-column: 2 / -2;
-            .new-post-title {
-              width: 90%;
-              height: 40px;
-              margin: 10px auto;
-              padding: 0 5px;
-              border-radius: 3px;
-              border: 1px solid rgb(201, 201, 201, 0.1);
-              box-shadow: 4px 4px 8px -1px #aaa;
-              input {
-                width: 100%;
-                height: 40px;
-                font-size: 18px;
+            overflow-y: scroll;
+            .form-group {
+              margin: 10px 0;
+              .post-purchase-date {
+                margin: 10px 0;
+                display: flex;
+                flex-flow: column;
+                input {
+                  width: 200px;
+                }
               }
-            }
-            .new-post-content {
-              width: 90%;
-              height: 75%;
-              margin: 10px auto;
-              padding: 5px;
-              border-radius: 3px;
-              border: 1px solid rgb(201, 201, 201, 0.1);
-              box-shadow: 4px 4px 8px -1px #aaa;
-              textarea {
-                width: calc(100% - 10px);
-                height: calc(100% - 10px);
-                font-size: 18px;
-                resize: none;
-                overflow: scroll;
+              .post-title {
+                display: flex;
+                flex-flow: column;
+                input {
+                  height: 25px;
+                  border-bottom: 1px solid rgb(218, 218, 218);
+                }
               }
-            }
-          }
-          .submit-btn {
-            grid-row: button;
-            grid-column: 2 / -2;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            input {
-              width: 80px;
-              height: 40px;
-              text-align: center;
-              color: $white;
-              background-color: rgb(98, 153, 255);
-              border-radius: 3px;
-              box-shadow: 4px 4px 8px -1px #aaa;
+              .post-details, .post-maintenance, .post-remarks {
+                display: flex;
+                flex-flow: column;
+                textarea {
+                  height: 200px;
+                  resize: none;
+                  border: 1px solid rgb(218, 218, 218);
+                }
+              }
+              .submit-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 25px 0;
+                input {
+                  width: 80px;
+                  height: 40px;
+                  text-align: center;
+                  color: $white;
+                  background-color: rgb(98, 153, 255);
+                  border-radius: 3px;
+                  box-shadow: 4px 4px 8px -1px #aaa;
+                }
+              }
+              .post-form-label {
+                margin: 5px 0;
+              }
             }
           }
         }
@@ -1083,15 +1083,23 @@ body {
               }
             }
             .show-shoe-content {
-              grid-row: content;
-              height: 100%;
-              p {
-                // The rationale of 320px is as follows.
-                // header 100px, margin of content-body 25 * 2, title 30px, delete 20px, image row 120px
-                height: calc(100vh - 320px);
-                overflow: scroll;
-                white-space: pre-wrap;
-                padding-bottom: 150px;
+              // The rationale of 320px is as follows.
+              // header 100px, margin of content-body 25px * 2, title 30px, delete 20px, image row 120px
+              height: calc(100vh - 320px);
+              padding: 10px;
+              overflow-y: scroll;
+              position: relative;
+              .show-group {
+                margin: 30px 0;
+                p {
+                  white-space:pre-wrap;
+                }
+              }
+              .show-remarks::after {
+                content: "";
+                position: absolute;
+                width: 1px;
+                height: 100px;
               }
             }
           }

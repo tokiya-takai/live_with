@@ -449,19 +449,16 @@ body {
     height: 60vh;
   }
 
-  .py-4 .content .post-form,
-  .py-4 .content .edit-post-form {
+  .py-4 .content .post-form {
     height: 100%;
   }
 
-  .py-4 .content .post-form .form-header,
-  .py-4 .content .edit-post-form .form-header {
+  .py-4 .content .post-form .form-header {
     height: 40%;
     position: relative;
   }
 
-  .py-4 .content .post-form .form-header .form-background-img,
-  .py-4 .content .edit-post-form .form-header .form-background-img {
+  .py-4 .content .post-form .form-header .form-background-img {
     height: 50%;
     width: 100%;
     position: absolute;
@@ -469,8 +466,7 @@ body {
     background-size: cover;
   }
 
-  .py-4 .content .post-form .form-header .file-area,
-  .py-4 .content .edit-post-form .form-header .file-area {
+  .py-4 .content .post-form .form-header .file-area {
     position: absolute;
     z-index: 1;
     width: 50%;
@@ -481,8 +477,7 @@ body {
     align-items: center;
   }
 
-  .py-4 .content .post-form .form-header .file-area .upload-file,
-  .py-4 .content .edit-post-form .form-header .file-area .upload-file {
+  .py-4 .content .post-form .form-header .file-area .upload-file {
     width: 120px;
     height: 120px;
     background-color: #f4f4f4;
@@ -496,13 +491,11 @@ body {
        object-fit: contain;
   }
 
-  .py-4 .content .post-form .form-header .file-area .upload-file img,
-  .py-4 .content .edit-post-form .form-header .file-area .upload-file img {
+  .py-4 .content .post-form .form-header .file-area .upload-file img {
     width: 100%;
   }
 
-  .py-4 .content .post-form .form-header .upload-btn-area,
-  .py-4 .content .edit-post-form .form-header .upload-btn-area {
+  .py-4 .content .post-form .form-header .upload-btn-area {
     position: absolute;
     z-index: 2;
     width: 50%;
@@ -513,25 +506,21 @@ body {
     align-items: flex-end;
   }
 
-  .py-4 .content .post-form .form-header .upload-btn-area .upload-btn,
-  .py-4 .content .edit-post-form .form-header .upload-btn-area .upload-btn {
+  .py-4 .content .post-form .form-header .upload-btn-area .upload-btn {
     margin-bottom: 60px;
   }
 
-  .py-4 .content .post-form .form-body,
-  .py-4 .content .edit-post-form .form-body {
+  .py-4 .content .post-form .form-body {
     height: 60%;
     overflow-y: scroll;
   }
 
-  .py-4 .content .post-form .form-body .form-group,
-  .py-4 .content .edit-post-form .form-body .form-group {
+  .py-4 .content .post-form .form-body .form-group {
     width: 80%;
     margin: 10px auto;
   }
 
-  .py-4 .content .post-form .form-body .form-group .error,
-  .py-4 .content .edit-post-form .form-body .form-group .error {
+  .py-4 .content .post-form .form-body .form-group .error {
     display: inline-block;
     width: 100%;
     height: 21px;
@@ -539,14 +528,12 @@ body {
     color: #ec5555;
   }
 
-  .py-4 .content .post-form .form-body .form-group .post-purchase-date,
-  .py-4 .content .edit-post-form .form-body .form-group .post-purchase-date {
+  .py-4 .content .post-form .form-body .form-group .post-purchase-date {
     display: flex;
     flex-flow: column;
   }
 
-  .py-4 .content .post-form .form-body .form-group .post-purchase-date input,
-  .py-4 .content .edit-post-form .form-body .form-group .post-purchase-date input {
+  .py-4 .content .post-form .form-body .form-group .post-purchase-date input {
     width: 150px;
     height: 35px;
     border-radius: 3px;
@@ -554,16 +541,14 @@ body {
     box-shadow: 4px 4px 8px -1px #aaa;
   }
 
-  .py-4 .content .post-form .form-body .form-group .post-title,
-  .py-4 .content .edit-post-form .form-body .form-group .post-title {
+  .py-4 .content .post-form .form-body .form-group .post-title {
     width: 100%;
     height: 70px;
     display: flex;
     flex-flow: column;
   }
 
-  .py-4 .content .post-form .form-body .form-group .post-title input,
-  .py-4 .content .edit-post-form .form-body .form-group .post-title input {
+  .py-4 .content .post-form .form-body .form-group .post-title input {
     width: 100%;
     height: 35px;
     padding: 5px 0 5px 10px;
@@ -574,10 +559,7 @@ body {
 
   .py-4 .content .post-form .form-body .form-group .post-details,
   .py-4 .content .post-form .form-body .form-group .post-maintenance,
-  .py-4 .content .post-form .form-body .form-group .post-remarks,
-  .py-4 .content .edit-post-form .form-body .form-group .post-details,
-  .py-4 .content .edit-post-form .form-body .form-group .post-maintenance,
-  .py-4 .content .edit-post-form .form-body .form-group .post-remarks {
+  .py-4 .content .post-form .form-body .form-group .post-remarks {
     width: 100%;
     display: flex;
     flex-flow: column;
@@ -585,10 +567,7 @@ body {
 
   .py-4 .content .post-form .form-body .form-group .post-details textarea,
   .py-4 .content .post-form .form-body .form-group .post-maintenance textarea,
-  .py-4 .content .post-form .form-body .form-group .post-remarks textarea,
-  .py-4 .content .edit-post-form .form-body .form-group .post-details textarea,
-  .py-4 .content .edit-post-form .form-body .form-group .post-maintenance textarea,
-  .py-4 .content .edit-post-form .form-body .form-group .post-remarks textarea {
+  .py-4 .content .post-form .form-body .form-group .post-remarks textarea {
     width: 100%;
     height: 200px;
     padding: 10px;
@@ -598,13 +577,11 @@ body {
     resize: none;
   }
 
-  .py-4 .content .post-form .form-body .form-group .post-form-label,
-  .py-4 .content .edit-post-form .form-body .form-group .post-form-label {
+  .py-4 .content .post-form .form-body .form-group .post-form-label {
     margin: 5px 0;
   }
 
-  .py-4 .content .post-form .form-body .form-group .submit-btn,
-  .py-4 .content .edit-post-form .form-body .form-group .submit-btn {
+  .py-4 .content .post-form .form-body .form-group .submit-btn {
     height: 200px;
     width: 100%;
     display: flex;
@@ -612,8 +589,7 @@ body {
     align-items: center;
   }
 
-  .py-4 .content .post-form .form-body .form-group .submit-btn input,
-  .py-4 .content .edit-post-form .form-body .form-group .submit-btn input {
+  .py-4 .content .post-form .form-body .form-group .submit-btn input {
     width: 150px;
     height: 40px;
     text-align: center;
@@ -623,8 +599,7 @@ body {
     box-shadow: 4px 4px 8px -1px #aaa;
   }
 
-  .py-4 .content .post-form .form-body .form-group .submit-btn input:hover,
-  .py-4 .content .edit-post-form .form-body .form-group .submit-btn input:hover {
+  .py-4 .content .post-form .form-body .form-group .submit-btn input:hover {
     opacity: 0.7;
   }
 }
@@ -684,7 +659,7 @@ body {
     grid-column: 1/-1;
     display: grid;
     grid-template-columns: 5vw 1fr 5vw;
-    grid-template-rows: [margin_top] 25px [content_body] auto [margin_bottom] 25px;
+    grid-template-rows: [margin_top] 25px [content_body] calc(100vh - 100px - 50px) [margin_bottom] 25px;
     height: calc(100vh - 100px);
     background: url(/images/live-with-background.jpg?5b1ef75643579dba40732f58054d0b42);
   }
@@ -1064,23 +1039,20 @@ body {
 }
 
 @media (max-width: 1024px) {
-  #app main .content .new-post-form,
-  #app main .content .edit-post-form {
+  #app main .content .post-form {
     height: 100%;
     display: grid;
     grid-template-columns: 10px 1fr 10px;
-    grid-template-rows: [image] 25% [content] 60% [button] 15%;
+    grid-template-rows: [image] 25% [content] 75%;
   }
 
-  #app main .content .new-post-form .form-header,
-  #app main .content .edit-post-form .form-header {
+  #app main .content .post-form .form-header {
     grid-row: image;
     grid-column: 2/-2;
     text-align: center;
   }
 
-  #app main .content .new-post-form .form-header .file-area,
-  #app main .content .edit-post-form .form-header .file-area {
+  #app main .content .post-form .form-header .file-area {
     width: 100%;
     height: 75%;
     display: flex;
@@ -1088,8 +1060,7 @@ body {
     align-items: center;
   }
 
-  #app main .content .new-post-form .form-header .file-area .upload-file,
-  #app main .content .edit-post-form .form-header .file-area .upload-file {
+  #app main .content .post-form .form-header .file-area .upload-file {
     width: 100px;
     height: 100px;
     display: flex;
@@ -1101,31 +1072,27 @@ body {
 }
 
 @media (max-width: 1024px) and (max-width: 3750px) {
-  #app main .content .new-post-form .form-header .file-area .upload-file,
-  #app main .content .edit-post-form .form-header .file-area .upload-file {
+  #app main .content .post-form .form-header .file-area .upload-file {
     width: 85px;
     height: 85px;
   }
 }
 
 @media (max-width: 1024px) and (max-width: 320px) {
-  #app main .content .new-post-form .form-header .file-area .upload-file,
-  #app main .content .edit-post-form .form-header .file-area .upload-file {
+  #app main .content .post-form .form-header .file-area .upload-file {
     width: 70px;
     height: 70px;
   }
 }
 
 @media (max-width: 1024px) {
-  #app main .content .new-post-form .form-header .file-area .upload-file img,
-  #app main .content .edit-post-form .form-header .file-area .upload-file img {
+  #app main .content .post-form .form-header .file-area .upload-file img {
     width: 100%;
   }
 }
 
 @media (max-width: 1024px) {
-  #app main .content .new-post-form .form-header .file-area .upload-file div,
-  #app main .content .edit-post-form .form-header .file-area .upload-file div {
+  #app main .content .post-form .form-header .file-area .upload-file div {
     width: 100%;
     height: 100%;
     display: flex;
@@ -1134,15 +1101,13 @@ body {
     border: 1px solid #aaa;
   }
 
-  #app main .content .new-post-form .form-header .file-area .upload-file div span,
-  #app main .content .edit-post-form .form-header .file-area .upload-file div span {
+  #app main .content .post-form .form-header .file-area .upload-file div span {
     color: #aaa;
   }
 }
 
 @media (max-width: 1024px) {
-  #app main .content .new-post-form .form-header input,
-  #app main .content .edit-post-form .form-header input {
+  #app main .content .post-form .form-header input {
     height: 25%;
     font-size: 12px;
     padding-left: 20px;
@@ -1150,63 +1115,59 @@ body {
 }
 
 @media (max-width: 1024px) {
-  #app main .content .new-post-form .form-body,
-  #app main .content .edit-post-form .form-body {
+  #app main .content .post-form .form-body {
     grid-row: content;
     grid-column: 2/-2;
+    overflow-y: scroll;
   }
 
-  #app main .content .new-post-form .form-body .new-post-title,
-  #app main .content .edit-post-form .form-body .new-post-title {
-    width: 90%;
-    height: 40px;
-    margin: 10px auto;
-    padding: 0 5px;
-    border-radius: 3px;
-    border: 1px solid rgba(201, 201, 201, 0.1);
-    box-shadow: 4px 4px 8px -1px #aaa;
+  #app main .content .post-form .form-body .form-group {
+    margin: 10px 0;
   }
 
-  #app main .content .new-post-form .form-body .new-post-title input,
-  #app main .content .edit-post-form .form-body .new-post-title input {
-    width: 100%;
-    height: 40px;
-    font-size: 18px;
+  #app main .content .post-form .form-body .form-group .post-purchase-date {
+    margin: 10px 0;
+    display: flex;
+    flex-flow: column;
   }
 
-  #app main .content .new-post-form .form-body .new-post-content,
-  #app main .content .edit-post-form .form-body .new-post-content {
-    width: 90%;
-    height: 75%;
-    margin: 10px auto;
-    padding: 5px;
-    border-radius: 3px;
-    border: 1px solid rgba(201, 201, 201, 0.1);
-    box-shadow: 4px 4px 8px -1px #aaa;
+  #app main .content .post-form .form-body .form-group .post-purchase-date input {
+    width: 200px;
   }
 
-  #app main .content .new-post-form .form-body .new-post-content textarea,
-  #app main .content .edit-post-form .form-body .new-post-content textarea {
-    width: calc(100% - 10px);
-    height: calc(100% - 10px);
-    font-size: 18px;
+  #app main .content .post-form .form-body .form-group .post-title {
+    display: flex;
+    flex-flow: column;
+  }
+
+  #app main .content .post-form .form-body .form-group .post-title input {
+    height: 25px;
+    border-bottom: 1px solid #dadada;
+  }
+
+  #app main .content .post-form .form-body .form-group .post-details,
+  #app main .content .post-form .form-body .form-group .post-maintenance,
+  #app main .content .post-form .form-body .form-group .post-remarks {
+    display: flex;
+    flex-flow: column;
+  }
+
+  #app main .content .post-form .form-body .form-group .post-details textarea,
+  #app main .content .post-form .form-body .form-group .post-maintenance textarea,
+  #app main .content .post-form .form-body .form-group .post-remarks textarea {
+    height: 200px;
     resize: none;
-    overflow: scroll;
+    border: 1px solid #dadada;
   }
-}
 
-@media (max-width: 1024px) {
-  #app main .content .new-post-form .submit-btn,
-  #app main .content .edit-post-form .submit-btn {
-    grid-row: button;
-    grid-column: 2/-2;
+  #app main .content .post-form .form-body .form-group .submit-btn {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 25px 0;
   }
 
-  #app main .content .new-post-form .submit-btn input,
-  #app main .content .edit-post-form .submit-btn input {
+  #app main .content .post-form .form-body .form-group .submit-btn input {
     width: 80px;
     height: 40px;
     text-align: center;
@@ -1214,6 +1175,10 @@ body {
     background-color: #6299ff;
     border-radius: 3px;
     box-shadow: 4px 4px 8px -1px #aaa;
+  }
+
+  #app main .content .post-form .form-body .form-group .post-form-label {
+    margin: 5px 0;
   }
 }
 
@@ -1329,15 +1294,25 @@ body {
 
 @media (max-width: 1024px) {
   #app main .content #show-shoe .show-shoe-body .show-shoe-content {
-    grid-row: content;
-    height: 100%;
+    height: calc(100vh - 320px);
+    padding: 10px;
+    overflow-y: scroll;
+    position: relative;
   }
 
-  #app main .content #show-shoe .show-shoe-body .show-shoe-content p {
-    height: calc(100vh - 320px);
-    overflow: scroll;
+  #app main .content #show-shoe .show-shoe-body .show-shoe-content .show-group {
+    margin: 30px 0;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-content .show-group p {
     white-space: pre-wrap;
-    padding-bottom: 150px;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-content .show-remarks::after {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 100px;
   }
 }
 
