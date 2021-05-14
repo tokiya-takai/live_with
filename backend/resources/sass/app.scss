@@ -260,8 +260,11 @@ body {
         }
         .show-shoe-content {
           padding: 10px;
-          p {
-            white-space:pre-wrap;
+          .show-group {
+            margin: 30px 0;
+            p {
+              white-space:pre-wrap;
+            }
           }
         }
       }
