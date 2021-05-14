@@ -74,7 +74,10 @@ class PostsController extends Controller
 
        // Insert data.
        $post->title = $request->title;
-       $post->content = $request->content;
+       $post->details = $request->details;
+       $post->purchase_date = $request->purchase_date;
+       $post->maintenance = $request->maintenance;
+       $post->remarks = $request->remarks;
        $post->user_id = $request->user()->id;
        $post->update_date = date("Y/m/d H:i:s");
 
