@@ -1,7 +1,8 @@
 <template>
-    <form action="/posts/create" method="post" enctype="multipart/form-data" class="new-post-form">
+    <form action="/posts/create" method="post" enctype="multipart/form-data" class="post-form">
         <input type="hidden" name="_token" v-bind:value="csrf">
         <div class="form-header">
+            <div class="form-background-img"></div>
             <div class="file-area">
                 <div v-if="url" class="upload-file">
                     <img :src="url">
@@ -10,27 +11,41 @@
                     <div><span>NO IMAGE</span></div>
                 </div>
             </div>
-            <input type="file" name="file" accept="image/*" ref="preview" v-on:change="fileSelected" class="upload-btn">
+            <div class="upload-btn-area">
+                <input type="file" name="file" accept="image/*" ref="preview" v-on:change="fileSelected" class="upload-btn">
+            </div>
         </div>
         <div class="form-body">
-            <div class="post-title">
-                <input type="text" name="title" placeholder="Brand name, title, etc." maxlength="50">
+            <div class="form-group">
+                <div class="post-title">
+                    <input type="text" name="title" placeholder="Brand name, title, etc." maxlength="50">
+                </div>
             </div>
-            <div class="post-details">
-                <input type="text" name="details" placeholder="Enter details" maxlength="500">
+            <div class="form-group">
+                <div class="post-details">
+                    <textarea name="details" placeholder="Enter details" maxlength="500"></textarea>
+                </div>
             </div>
-            <div class="post-purchase-date">
-                <input type="date" name="purchase_date">
+            <div class="form-group">
+                <div class="post-purchase-date">
+                    <input type="date" name="purchase_date">
+                </div>
             </div>
-            <div class="post-maintenance">
-                <textarea name="maintenance" placeholder="" maxlength="1000"></textarea>
+            <div class="form-group">
+                <div class="post-maintenance">
+                    <textarea name="maintenance" placeholder="" maxlength="1000"></textarea>
+                </div>
             </div>
-            <div class="post-remarks">
-                <textarea name="remarks" placeholder="" maxlength="1000"></textarea>
+            <div class="form-group">
+                <div class="post-remarks">
+                    <textarea name="remarks" placeholder="" maxlength="1000"></textarea>
+                </div>
             </div>
-        </div>
-        <div class="submit-btn">
-            <input type="submit" value="SEND">
+            <div class="form-group">
+                <div class="submit-btn">
+                    <input type="submit" value="SEND">
+                </div>
+            </div>
         </div>
     </form>
 </template>
