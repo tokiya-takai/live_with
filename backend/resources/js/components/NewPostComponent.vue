@@ -13,11 +13,20 @@
             <input type="file" name="file" accept="image/*" ref="preview" v-on:change="fileSelected" class="upload-btn">
         </div>
         <div class="form-body">
-            <div class="new-post-title">
+            <div class="post-title">
                 <input type="text" name="title" placeholder="Brand name, title, etc." maxlength="50">
             </div>
-            <div class="new-post-content">
-                <textarea name="content" placeholder="Details" maxlength="1000"></textarea>
+            <div class="post-details">
+                <input type="text" name="details" placeholder="Enter details" maxlength="500">
+            </div>
+            <div class="post-purchase-date">
+                <input type="date" name="purchase_date">
+            </div>
+            <div class="post-maintenance">
+                <textarea name="maintenance" placeholder="" maxlength="1000"></textarea>
+            </div>
+            <div class="post-remarks">
+                <textarea name="remarks" placeholder="" maxlength="1000"></textarea>
             </div>
         </div>
         <div class="submit-btn">

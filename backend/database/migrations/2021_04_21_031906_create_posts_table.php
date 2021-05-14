@@ -25,7 +25,7 @@ class CreatePostsTable extends Migration
             // 詳細
             $table->string('details')->nullable();
             // 購入日
-            $table->text('purchase_date')->nullable();
+            $table->date('purchase_date')->nullable();
             // メンテナンス内容
             $table->text('maintenance')->nullable();
             // 備考

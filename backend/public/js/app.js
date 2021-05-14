@@ -2021,6 +2021,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -59437,7 +59446,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "form-body" }, [
-      _c("div", { staticClass: "new-post-title" }, [
+      _c("div", { staticClass: "post-title" }, [
         _c("input", {
           attrs: {
             type: "text",
@@ -59448,9 +59457,30 @@ var staticRenderFns = [
         })
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "new-post-content" }, [
+      _c("div", { staticClass: "post-details" }, [
+        _c("input", {
+          attrs: {
+            type: "text",
+            name: "details",
+            placeholder: "Enter details",
+            maxlength: "500"
+          }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "post-purchase-date" }, [
+        _c("input", { attrs: { type: "date", name: "purchase_date" } })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "post-maintenance" }, [
         _c("textarea", {
-          attrs: { name: "content", placeholder: "Details", maxlength: "1000" }
+          attrs: { name: "maintenance", placeholder: "", maxlength: "1000" }
+        })
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "post-remarks" }, [
+        _c("textarea", {
+          attrs: { name: "remarks", placeholder: "", maxlength: "1000" }
         })
       ])
     ])
