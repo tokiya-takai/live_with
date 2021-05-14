@@ -22,6 +22,8 @@ class Post extends Model
 
     public static $rules = [
         'title' => ['required', 'max:50'],
-        'content' => ['max:1000']
+        'details' => ['max:500'],
+        'maintenance'=> ['max:1000'],
+        'remarks' => ['max:1000']
     ];
 }
