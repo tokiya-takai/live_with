@@ -1874,29 +1874,116 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       url: "",
-      action: "/posts/update/" + this.id
+      action: "/posts/update/" + this.item.id
     };
-  },
-  methods: {
-    fileSelected: function fileSelected() {
-      var file = this.$refs.preview.files[0];
-      this.url = URL.createObjectURL(file);
-    }
   },
   props: {
     csrf: {
       type: String,
       required: true
     },
-    id: String,
-    title: String,
-    content: String,
-    path: String,
-    day: String
+    item: Array,
+    old: Array,
+    errors: Array
+  },
+  created: function created() {
+    if (this.item.file_path) {
+      this.url = this.item.file_path;
+      return;
+    }
+  },
+  methods: {
+    fileSelected: function fileSelected() {
+      var file = this.$refs.preview.files[0];
+      this.url = URL.createObjectURL(file);
+    },
+    setValue: function setValue(key) {
+      switch (key) {
+        case "purchase_date":
+          if (this.old.purchase_date) {
+            return this.old.purchase_date;
+          } else {
+            return this.item.purchase_date;
+          }
+
+          break;
+
+        case "title":
+          if (this.old.title) {
+            return this.old.title;
+          } else {
+            return this.item.title;
+          }
+
+          break;
+
+        case "details":
+          if (this.old.details) {
+            return this.old.details;
+          } else {
+            return this.item.details;
+          }
+
+          break;
+
+        case "maintenance":
+          if (this.old.maintenance) {
+            return this.old.maintenance;
+          } else {
+            return this.item.maintenance;
+          }
+
+          break;
+
+        case "remarks":
+          if (this.old.remarks) {
+            return this.old.remarks;
+          } else {
+            return this.item.remarks;
+          }
+
+          break;
+
+        default:
+          break;
+      }
+    }
   }
 });
 
@@ -59244,7 +59331,7 @@ var render = function() {
   return _c(
     "form",
     {
-      staticClass: "edit-post-form",
+      staticClass: "post-form",
       attrs: {
         action: _vm.action,
         method: "post",
@@ -59258,52 +59345,134 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("div", { staticClass: "form-header" }, [
+        _c("div", { staticClass: "form-background-img" }),
+        _vm._v(" "),
         _c("div", { staticClass: "file-area" }, [
           _vm.url
             ? _c("div", { staticClass: "upload-file" }, [
                 _c("img", { attrs: { src: _vm.url } })
               ])
-            : _c("div", { staticClass: "upload-file" }, [
-                _vm.path == ""
-                  ? _c("div", [_c("span", [_vm._v("NO IMAGE")])])
-                  : _c("img", { attrs: { src: _vm.path } })
-              ])
+            : _c("div", { staticClass: "upload-file" }, [_vm._m(0)])
         ]),
         _vm._v(" "),
-        _c("input", {
-          ref: "preview",
-          staticClass: "upload-btn",
-          attrs: { type: "file", name: "file", accept: "image/*" },
-          on: { change: _vm.fileSelected }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "form-body" }, [
-        _c("div", { staticClass: "new-post-title" }, [
+        _c("div", { staticClass: "upload-btn-area" }, [
           _c("input", {
-            attrs: {
-              type: "text",
-              name: "title",
-              placeholder: "Brand name, title, etc.",
-              maxlength: "30"
-            },
-            domProps: { value: _vm.title }
-          })
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "new-post-content" }, [
-          _c("textarea", {
-            attrs: {
-              name: "content",
-              placeholder: "Details",
-              maxlength: "1000"
-            },
-            domProps: { value: _vm.content }
+            ref: "preview",
+            staticClass: "upload-btn",
+            attrs: { type: "file", name: "file", accept: "image/*" },
+            on: { change: _vm.fileSelected }
           })
         ])
       ]),
       _vm._v(" "),
-      _vm._m(0)
+      _c("div", { staticClass: "form-body" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c("div", { staticClass: "post-purchase-date" }, [
+            _c("label", { staticClass: "post-form-label" }, [_vm._v("購入日")]),
+            _vm._v(" "),
+            _c("input", {
+              attrs: { type: "date", name: "purchase_date" },
+              domProps: { value: _vm.setValue("purchase_date") }
+            })
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "form-group" },
+          [
+            _c("div", { staticClass: "post-title" }, [
+              _c("label", { staticClass: "post-form-label" }, [
+                _vm._v("ブランド名")
+              ]),
+              _vm._v(" "),
+              _c("input", {
+                attrs: { type: "text", name: "title" },
+                domProps: { value: _vm.setValue("title") }
+              })
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.errors.title, function(value) {
+              return _c("strong", { staticClass: "error" }, [
+                _vm._v(_vm._s(value))
+              ])
+            })
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "form-group" },
+          [
+            _c("div", { staticClass: "post-details" }, [
+              _c("label", { staticClass: "post-form-label" }, [
+                _vm._v("詳細情報")
+              ]),
+              _vm._v(" "),
+              _c("textarea", {
+                attrs: { name: "details", maxlength: "500" },
+                domProps: { value: _vm.setValue("details") }
+              })
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.errors.details, function(value) {
+              return _c("strong", { staticClass: "error" }, [
+                _vm._v(_vm._s(value))
+              ])
+            })
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "form-group" },
+          [
+            _c("div", { staticClass: "post-maintenance" }, [
+              _c("label", { staticClass: "post-form-label" }, [
+                _vm._v("メンテナンス内容")
+              ]),
+              _vm._v(" "),
+              _c("textarea", {
+                attrs: { name: "maintenance", maxlength: "1000" },
+                domProps: { value: _vm.setValue("maintenance") }
+              })
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.errors.maintenance, function(value) {
+              return _c("strong", { staticClass: "error" }, [
+                _vm._v(_vm._s(value))
+              ])
+            })
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "form-group" },
+          [
+            _c("div", { staticClass: "post-remarks" }, [
+              _c("label", { staticClass: "post-form-label" }, [_vm._v("備考")]),
+              _vm._v(" "),
+              _c("textarea", {
+                attrs: { name: "remarks", maxlength: "1000" },
+                domProps: { value: _vm.setValue("remarks") }
+              })
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.errors.remarks, function(value) {
+              return _c("strong", { staticClass: "error" }, [
+                _vm._v(_vm._s(value))
+              ])
+            })
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
     ]
   )
 }
@@ -59312,8 +59481,16 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "submit-btn" }, [
-      _c("input", { attrs: { type: "submit", value: "SEND" } })
+    return _c("div", [_c("span", [_vm._v("NO IMAGE")])])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "form-group" }, [
+      _c("div", { staticClass: "submit-btn" }, [
+        _c("input", { attrs: { type: "submit", value: "SEND" } })
+      ])
     ])
   }
 ]
