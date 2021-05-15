@@ -25,4 +25,5 @@ Route::post('/posts/delete/{id}',[App\Http\Controllers\PostsController::class, '
 
 // UsersController
 Route::get('/users/{id}',[App\Http\Controllers\UsersController::class, 'index'])->name('user.index');
+Route::post('/users/update/{id}',[App\Http\Controllers\UsersController::class, 'update']);
 

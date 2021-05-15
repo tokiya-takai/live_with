@@ -2240,17 +2240,68 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      isActive: false,
+      url: '/users/update/' + this.user.id,
+      name: "",
+      email: ""
+    };
+  },
   props: {
     csrf: {
       type: String,
       required: true
     },
-    user: Object
+    user: Object,
+    old: Array,
+    errors: Array
+  },
+  mounted: function mounted() {
+    this.name = this.user.name;
+    this.email = this.user.email;
+
+    if (this.old.name) {
+      this.name = this.old.name;
+    }
+
+    if (this.old.email) {
+      this.email = this.old.email;
+    }
+
+    if (this.errors.password) {
+      this.isActive = true;
+    }
   },
   methods: {
     inputPassword: function inputPassword() {
-      console.log('inputPassword');
+      if (this.isActive) {
+        this.isActive = false;
+      } else {
+        this.isActive = true;
+      }
+
+      this.errors.success = "";
+    },
+    cancelPassword: function cancelPassword() {
+      if (this.isActive) {
+        this.isActive = false;
+      } else {
+        this.isActive = true;
+      }
+
+      this.errors.password = "";
     }
   }
 });
@@ -59751,27 +59802,31 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "user-info" }, [
-    _c("form", { attrs: { action: "", method: "post" } }, [
-      _c("div", { staticClass: "user-form-group" }, [
-        _c("label", [_vm._v("ユーザー名")]),
+    _c(
+      "form",
+      { staticClass: "user-form", attrs: { action: "", method: "post" } },
+      [
+        _c("div", { staticClass: "user-form-group" }, [
+          _c("label", [_vm._v("ユーザー名")]),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "text", name: "name" },
+            domProps: { value: _vm.user.name }
+          })
+        ]),
         _vm._v(" "),
-        _c("input", {
-          attrs: { type: "text", name: "name" },
-          domProps: { value: _vm.user.name }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "user-form-group" }, [
-        _c("label", [_vm._v("メールアドレス")]),
+        _c("div", { staticClass: "user-form-group" }, [
+          _c("label", [_vm._v("メールアドレス")]),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "email", name: "email" },
+            domProps: { value: _vm.user.email }
+          })
+        ]),
         _vm._v(" "),
-        _c("input", {
-          attrs: { type: "email", name: "email" },
-          domProps: { value: _vm.user.email }
-        })
-      ]),
-      _vm._v(" "),
-      _vm._m(0)
-    ])
+        _vm._m(0)
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -59780,7 +59835,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "user-form-group" }, [
-      _c("div", { staticClass: "dummy-send-button" }, [_vm._v("SEND")])
+      _c("div", { staticClass: "dummy-send-button" }, [_vm._v("SAVE")])
     ])
   }
 ]
@@ -60162,56 +60217,169 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "user-info" }, [
-    _c("form", { attrs: { action: "", method: "post" } }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _c("div", { staticClass: "user-form-group" }, [
-        _c("label", [_vm._v("ユーザー名")]),
-        _vm._v(" "),
+    _c(
+      "form",
+      { staticClass: "user-form", attrs: { action: _vm.url, method: "post" } },
+      [
         _c("input", {
-          attrs: { type: "text", name: "name" },
-          domProps: { value: _vm.user.name }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "user-form-group" }, [
-        _c("label", [_vm._v("メールアドレス")]),
+          attrs: { type: "hidden", name: "_token" },
+          domProps: { value: _vm.csrf }
+        }),
         _vm._v(" "),
-        _c("input", {
-          attrs: { type: "email", name: "email" },
-          domProps: { value: _vm.user.email }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "user-form-group" }, [
+        _c(
+          "div",
+          { class: { passAreaOn: _vm.isActive, passAreaOff: !_vm.isActive } },
+          [
+            _c("p", [_vm._v("パスワードを入力")]),
+            _vm._v(" "),
+            _c("input", {
+              staticClass: "input-password",
+              attrs: { type: "password", name: "password" }
+            }),
+            _vm._v(" "),
+            _vm._l(_vm.errors.password, function(value) {
+              return _c("strong", { staticClass: "error" }, [
+                _vm._v(_vm._s(value))
+              ])
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "buttons" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "cancel-btn",
+                  on: {
+                    click: function($event) {
+                      return _vm.cancelPassword()
+                    }
+                  }
+                },
+                [_vm._v("CANCEL")]
+              ),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "submit-btn",
+                attrs: { type: "submit", value: "SAVE" }
+              })
+            ])
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _vm._l(_vm.errors.success, function(value) {
+          return _c("strong", { staticClass: "success" }, [
+            _vm._v(_vm._s(value))
+          ])
+        }),
+        _vm._v(" "),
         _c(
           "div",
           {
-            staticClass: "dummy-send-button",
-            on: {
-              click: function($event) {
-                return _vm.inputPassword()
-              }
-            }
+            staticClass: "user-form-group name",
+            class: { events: _vm.isActive }
           },
-          [_vm._v("SEND")]
+          [
+            _c("label", [_vm._v("ユーザー名")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.name,
+                  expression: "name"
+                }
+              ],
+              class: { events: _vm.isActive },
+              attrs: { type: "text", name: "name" },
+              domProps: { value: _vm.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.name = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm._l(_vm.errors.name, function(value) {
+              return _c("strong", { staticClass: "error" }, [
+                _vm._v(_vm._s(value))
+              ])
+            })
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "user-form-group email",
+            class: { events: _vm.isActive }
+          },
+          [
+            _c("label", [_vm._v("メールアドレス")]),
+            _vm._v(" "),
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.email,
+                  expression: "email"
+                }
+              ],
+              class: { events: _vm.isActive },
+              attrs: { type: "email", name: "email" },
+              domProps: { value: _vm.email },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.email = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _vm._l(_vm.errors.email, function(value) {
+              return _c("strong", { staticClass: "error" }, [
+                _vm._v(_vm._s(value))
+              ])
+            })
+          ],
+          2
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "user-form-group send-btn",
+            class: { events: _vm.isActive }
+          },
+          [
+            _c(
+              "div",
+              {
+                staticClass: "dummy-send-button",
+                class: { events: _vm.isActive },
+                on: {
+                  click: function($event) {
+                    return _vm.inputPassword()
+                  }
+                }
+              },
+              [_vm._v("SAVE")]
+            )
+          ]
         )
-      ])
-    ])
+      ],
+      2
+    )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "password-area" }, [
-      _c("p", [_vm._v("パスワードを入力")]),
-      _vm._v(" "),
-      _c("input", { attrs: { type: "password" } })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

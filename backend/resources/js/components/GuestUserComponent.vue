@@ -1,6 +1,6 @@
 <template>
   <div class="user-info">
-    <form action="" method="post">
+    <form action="" method="post" class="user-form">
       <div class="user-form-group">
         <label>ユーザー名</label>
         <input type="text" name="name" :value="user.name">
@@ -10,7 +10,7 @@
         <input type="email" name="email" :value="user.email">
       </div>
       <div class="user-form-group">
-        <div class="dummy-send-button">SEND</div>
+        <div class="dummy-send-button">SAVE</div>
       </div>
     </form>
   </div>
