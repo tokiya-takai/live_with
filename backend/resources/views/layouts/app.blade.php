@@ -17,7 +17,7 @@
 </head>
 <body>
     <div id="app">
-        <header>
+        <header class="header">
             <div class="header-logo"><a href="/"><img src="{{ asset('images/header-logo.png') }}?<?php echo date("YmdHis");?>" alt="LiveWith"></a></div>
             <nav class="header-nav">
                 <ul class="header-nav-list">
@@ -36,7 +36,7 @@
                         @endif
                     @else
                         <li>
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('user.index', ['id' => Auth::id()]) }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}</a>
                         </li>
                         <li>

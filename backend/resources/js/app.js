@@ -22,6 +22,9 @@
  Vue.component('new-post-component', require('./components/NewPostComponent.vue').default);
  Vue.component('edit-post-component', require('./components/EditPostComponent.vue').default);
  Vue.component('list-rendering-component', require('./components/ListRenderingComponent.vue').default);
+//  Vue.component('user-information-component', require('./components/UserInformationComponent.vue').default);
+ Vue.component('guest-user-component', require('./components/GuestUserComponent.vue').default);
+ Vue.component('user-component', require('./components/UserComponent.vue').default);
  /**
   * Next, we will create a fresh Vue application instance and attach it to
   * the page. Then, you may begin adding components to this application
