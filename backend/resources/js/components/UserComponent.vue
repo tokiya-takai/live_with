@@ -9,7 +9,6 @@
         <div class="buttons">
           <div class="cancel-btn" @click="cancelPassword()">CANCEL</div>
           <input type="submit" value="SAVE" class="submit-btn">
-          <!-- <div class="submit-btn" @click="sendNewUserData()">SAVE</div> -->
         </div>
       </div>
       <strong class="success" v-for="value in errors.success">{{ value }}</strong>
