@@ -333,6 +333,10 @@ body {
     white-space: pre-wrap;
   }
 
+  .py-4 .content .invalid-feedback {
+    color: #ec5555;
+  }
+
   .py-4 .content .card {
     width: 60vw;
     height: 80vh;
