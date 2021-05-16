@@ -12,17 +12,16 @@ use Illuminate\Validation\ValidationException;
 class UsersController extends Controller
 {
     public function index(Request $reauest){
+
         $user = User::find($reauest->id);
         // Authenticate user
-        if($user){
-            $this->isCorrectUser($user->id);
-        } else {
+        if(! ($user && $this->isCorrectUser($user->id))){
             return redirect('/');
         }
 
-        $guest = $this->isGuest($user->email);
+        $isGuest = $this->isGuest($user->email);
 
-        return view('users/index', ['guest'=>$guest, 'user'=>$user]);
+        return view('users/index', ['isGuest'=>$isGuest, 'user'=>$user]);
     }
 
     public function update(Request $request)
@@ -65,17 +64,18 @@ class UsersController extends Controller
     private function isCorrectUser($id)
     {
         if ($id != Auth::id()){
-            return redirect('/');
+            return false;
         }
+        return true;
     }
 
     private function isGuest($email)
     {
         if($email == 'guest@test.co.jp') {
-            $guest = true;
+            $result = true;
         } else {
-            $guest = false;
+            $result = false;
         }
-        return $guest;
+        return $result;
     }
 }

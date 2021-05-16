@@ -2015,12 +2015,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      url: '/',
+      name: "",
+      email: ""
+    };
+  },
   props: {
     user: Object
+  },
+  mounted: function mounted() {
+    this.name = this.user.name;
+    this.email = this.user.email;
   }
 });
 
@@ -59803,41 +59811,62 @@ var render = function() {
   return _c("div", { staticClass: "user-info" }, [
     _c(
       "form",
-      { staticClass: "user-form", attrs: { action: "", method: "post" } },
+      { staticClass: "user-form", attrs: { action: _vm.url, method: "post" } },
       [
-        _c("div", { staticClass: "user-form-group" }, [
+        _c("div", { staticClass: "user-form-group name" }, [
           _c("label", [_vm._v("ユーザー名")]),
           _vm._v(" "),
           _c("input", {
-            attrs: { type: "text", name: "name" },
-            domProps: { value: _vm.user.name }
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.name,
+                expression: "name"
+              }
+            ],
+            attrs: { type: "text", name: "name", readonly: "true" },
+            domProps: { value: _vm.name },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.name = $event.target.value
+              }
+            }
           })
         ]),
         _vm._v(" "),
-        _c("div", { staticClass: "user-form-group" }, [
+        _c("div", { staticClass: "user-form-group email" }, [
           _c("label", [_vm._v("メールアドレス")]),
           _vm._v(" "),
           _c("input", {
-            attrs: { type: "email", name: "email" },
-            domProps: { value: _vm.user.email }
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.email,
+                expression: "email"
+              }
+            ],
+            attrs: { type: "email", name: "email", readonly: "true" },
+            domProps: { value: _vm.email },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.email = $event.target.value
+              }
+            }
           })
-        ]),
-        _vm._v(" "),
-        _vm._m(0)
+        ])
       ]
     )
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "user-form-group" }, [
-      _c("div", { staticClass: "dummy-send-button" }, [_vm._v("SAVE")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
