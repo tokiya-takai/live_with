@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth; 
 use Illuminate\Support\Facades\Hash;
-use Illuminate\validation\Rule;
+use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
 
 class UsersController extends Controller
