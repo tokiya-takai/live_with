@@ -453,6 +453,10 @@ body {
     height: 60vh;
   }
 
+  .py-4 .content .card .alert-success {
+    color: #2ada2a;
+  }
+
   .py-4 .content .post-form {
     height: 100%;
   }
@@ -1197,6 +1201,44 @@ body {
 
   #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message figure img {
     width: 150px;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body form {
+    height: 50%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: [email] 50% [send-btn] 50%;
+    align-items: center;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body form .col-md-6 {
+    width: 100%;
+    height: 30px;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body form .col-md-6 input {
+    width: 100%;
+    height: 100%;
+    border-bottom: 1px solid #aaa;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body form .col-md-6 button {
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    color: #f4f4f4;
+    background-color: #6299ff;
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px -1px #aaa;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body form .mb-0 .col-md-6 {
+    display: flex;
+    justify-content: center;
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .alert-success {
+    color: #2ada2a;
   }
 }
 
