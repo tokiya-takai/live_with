@@ -374,6 +374,42 @@
                       }
                     }
                   }
+                  form {
+                    height: 50%;
+                    display: grid;
+                    grid-template-columns: auto;
+                    grid-template-rows:
+                          [email] 50%
+                          [send-btn] 50%;
+                    align-items: center;
+                    .col-md-6 {
+                      width: 100%;
+                      height: 30px;
+                      input {
+                        width: 100%;
+                        height: 100%;
+                        border-bottom: 1px solid #aaa;
+                      }
+                      button {
+                        width: 100px;
+                        height: 40px;
+                        text-align: center;
+                        color: $white;
+                        background-color: rgb(98, 153, 255);
+                        border-radius: 3px;
+                        box-shadow: 4px 4px 8px -1px #aaa;
+                      }
+                    }
+                    .mb-0 {
+                      .col-md-6 {
+                        display: flex;
+                        justify-content: center;
+                      }
+                    }
+                  }
+                  .alert-success {
+                    color: rgb(42, 218, 42);
+                  }
                 }
               }
             }
