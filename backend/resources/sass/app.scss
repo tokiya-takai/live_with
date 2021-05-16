@@ -503,6 +503,142 @@ body {
           }
         }
       }
+      .user-info {
+        height: 100%;
+        width: 100%;
+        .user-form {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          display: grid;
+          grid-template-columns: 30px 1fr 30px;
+          grid-template-rows:
+          [name] 33%
+          [email] 33%
+          [send-btn] 34%;
+
+          .success {
+            grid-column: 2 / -2;
+            grid-row: name;
+            color: rgb(42, 218, 42);
+            margin: 10px 0;
+          }
+          .user-form-group {
+            height: 100%;
+            label {
+              display: inline-block;
+              height: 30%;
+            }
+            input {
+              height: 30%;
+              border-bottom: 1px solid #aaa;
+            }
+            .error {
+              display: inline-block;
+              width: 100%;
+              height: 21px;
+              margin: 10px 0;
+              color: rgb(236, 85, 85);
+            }
+          }
+          .name {
+            grid-column: 2 / -2;
+            grid-row: name;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+          }
+          .email {
+            grid-column: 2 / -2;
+            grid-row: email;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+          }
+          .send-btn {
+            grid-column: 2 / -2;
+            grid-row: send-btn;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .dummy-send-button {
+              cursor: pointer;
+              width: 80px;
+              height: 40px;
+              text-align: center;
+              color: $white;
+              background-color: rgb(98, 153, 255);
+              border-radius: 3px;
+              box-shadow: 4px 4px 8px -1px #aaa;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              &:hover {
+                opacity: 0.7;
+              }
+            }
+          }
+          .passAreaOff {
+            display: none;
+          }
+          .passAreaOn {
+            position: absolute;
+            z-index: 1;
+            box-shadow: 4px 4px 8px -1px #aaa;
+            width: 50%;
+            height: 30%;
+            left: 25%;
+            top: 30%;
+            background-color: $white;
+            border: 1px solid #aaa;
+            // padding: 3% 0 5% 0;
+
+            display: flex;
+            flex-flow: column;
+            justify-content: space-around;
+            align-items: center;
+            .error {
+              display: inline-block;
+              text-align: center;
+              width: 100%;
+              height: 21px;
+              color: rgb(236, 85, 85);
+            }
+            .input-password {
+              border-bottom: 1px solid #aaa;
+              width: 80%;
+            }
+            .buttons {
+              width: 100%;
+              display: flex;
+              justify-content: space-around;
+              align-items: center;
+              .cancel-btn {
+                cursor: pointer;
+                &:hover {
+                  opacity: 0.7;
+                }
+              }
+              .submit-btn {
+                width: 80px;
+                height: 40px;
+                text-align: center;
+                color: $white;
+                background-color: rgb(98, 153, 255);
+                border-radius: 3px;
+                box-shadow: 4px 4px 8px -1px #aaa;
+                &:hover {
+                  opacity: 0.7;
+                }
+              }
+            }
+          }
+          .events {
+            pointer-events: none;
+            opacity: 0.5;
+          }
+        }
+      }
     }
   }
 }
