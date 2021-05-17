@@ -1,6 +1,6 @@
 <template>
   <div class="user-info">
-    <form :action="url" method="post" class="user-form">
+    <form :action="toUpdateUrl" method="post" class="user-form">
       <input type="hidden" name="_token" v-bind:value="csrf">
       <div v-bind:class="{passAreaOn: isActive, passAreaOff: !isActive}">
         <p>パスワードを入力</p>
@@ -22,6 +22,9 @@
         <input type="email" name="email" v-model="email" v-bind:class="{events: isActive}">
         <strong class="error" v-for="value in errors.email">{{ value }}</strong>
       </div>
+      <div class="to-password">
+        <p><a :href="toPasswordUrl">パスワードを変更</a></p>
+      </div>
       <div class="user-form-group send-btn" v-bind:class="{events: isActive}">
         <div class="dummy-send-button" @click="inputPassword()" v-bind:class="{events: isActive}">SAVE</div>
       </div>
@@ -34,7 +37,8 @@
     data() {
       return {
         isActive: false,
-        url: '/users/update/'+this.user.id,
+        toUpdateUrl: '/users/update/'+this.user.id,
+        toPasswordUrl: '/password/index/'+this.user.id,
         name: "",
         email: "",
       }

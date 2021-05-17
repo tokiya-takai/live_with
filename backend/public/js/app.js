@@ -2257,11 +2257,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       isActive: false,
-      url: '/users/update/' + this.user.id,
+      toUpdateUrl: '/users/update/' + this.user.id,
+      toPasswordUrl: '/password/index/' + this.user.id,
       name: "",
       email: ""
     };
@@ -60247,7 +60251,10 @@ var render = function() {
   return _c("div", { staticClass: "user-info" }, [
     _c(
       "form",
-      { staticClass: "user-form", attrs: { action: _vm.url, method: "post" } },
+      {
+        staticClass: "user-form",
+        attrs: { action: _vm.toUpdateUrl, method: "post" }
+      },
       [
         _c("input", {
           attrs: { type: "hidden", name: "_token" },
@@ -60379,6 +60386,14 @@ var render = function() {
           ],
           2
         ),
+        _vm._v(" "),
+        _c("div", { staticClass: "to-password" }, [
+          _c("p", [
+            _c("a", { attrs: { href: _vm.toPasswordUrl } }, [
+              _vm._v("パスワードを変更")
+            ])
+          ])
+        ]),
         _vm._v(" "),
         _c(
           "div",

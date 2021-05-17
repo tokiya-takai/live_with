@@ -507,9 +507,10 @@
           display: grid;
           grid-template-columns: 30px 1fr 30px;
           grid-template-rows:
-          [name] 33%
-          [email] 33%
-          [send-btn] 34%;
+          [name] 30%
+          [email] 30%
+          [to-password] 10%
+          [send-btn] 30%;
 
           .success {
             grid-column: 2 / -2;
@@ -536,6 +537,7 @@
             }
           }
           .name {
+            height: 100%;
             grid-column: 2 / -2;
             grid-row: name;
             display: flex;
@@ -543,13 +545,26 @@
             justify-content: center;
           }
           .email {
+            height: 100%;
             grid-column: 2 / -2;
             grid-row: email;
             display: flex;
             flex-flow: column;
             justify-content: center;
           }
+          .to-password {
+            height: 100%;
+            grid-column: 2 / -2;
+            grid-row: to-password;
+            p a {
+              border-bottom: 1px solid #aaa;
+              &:hover {
+                opacity: 0.7;
+              }
+            }
+          }
           .send-btn {
+            height: 100%;
             grid-column: 2 / -2;
             grid-row: send-btn;
             display: flex;
