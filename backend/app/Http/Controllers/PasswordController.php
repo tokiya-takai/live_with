@@ -15,7 +15,7 @@ class PasswordController extends Controller
     public function index(Request $request)
     {
         $user = User::find($request->id);
-        if(! $this->isCorrectUser($user->id)){
+        if(! ($user && $this->isCorrectUser($user->id))){
             return redirect('/');
         }
         return view('users/password',compact('user'));
@@ -32,7 +32,7 @@ class PasswordController extends Controller
             'password.required'=>'入力必須項目です。',
             'password.string'=>'有効ではありません。',
             'password.min:8'=>'8文字以上である必要があります。',
-            'password.confirmed'=>'確認用パスワードが一致しません。'
+            'password.confirmed'=>'確認用パスワードと一致しません。'
         ];
 
         $this->validate($request, $rules, $messages);

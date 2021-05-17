@@ -634,5 +634,113 @@
         }
       }
     }
+    #change-password {
+      width: 100%;
+      height: 100%;
+      display: grid;
+      grid-template-columns: 50px 1fr 50px;
+      grid-template-rows:
+              [header] 10%
+              [form] 90%;
+      align-items: center;
+      .header {
+        grid-row: header;
+        grid-column: 1 / -1;
+        height: 100%;
+        border-bottom: 1px solid #aaa;
+        display: flex;
+        align-items: center;
+        h1 {
+          margin-left: 50px;
+          font-size: 20px;
+          font-weight: bold;
+        }
+      }
+      form {
+        grid-row: form;
+        grid-column: 2 / -2;
+        height: 90%;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows:
+              [current] 28%
+              [new] 28%
+              [confirm] 28%
+              [send-btn] 16%;
+        align-items: center;
+        .current-password {
+          height: 100%;
+          grid-row: current;
+          grid-column: 1 / -1;
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          label {
+            display: inline-block;
+            height: 25%;
+          }
+          input {
+            height: 25%;
+          }
+        }
+        .new-password {
+          height: 100%;
+          grid-row: new;
+          grid-column: 1 / -1;
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          label {
+            display: inline-block;
+            height: 25%;
+          }
+          input {
+            height: 25%;
+          }
+        }
+        .confirmation {
+          height: 100%;
+          grid-row: confirm;
+          grid-column: 1 / -1;
+          display: flex;
+          flex-flow: column;
+          justify-content: center;
+          label {
+            display: inline-block;
+            height: 25%;
+          }
+          input {
+            height: 25%;
+          }
+        }
+        .f-ct input {
+          width: 50%;
+          border-bottom: 1px solid #aaa;
+        }
+        .password-submit {
+          height: 100%;
+          grid-column: 2 / -2;
+          grid-row: send-btn;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          input {
+            width: 80px;
+            height: 40px;
+            text-align: center;
+            color: $white;
+            background-color: rgb(98, 153, 255);
+            border-radius: 3px;
+            box-shadow: 4px 4px 8px -1px #aaa;
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+        }
+        .error {
+          color: rgb(236, 85, 85);
+        }
+      }
+    }
   }
 }

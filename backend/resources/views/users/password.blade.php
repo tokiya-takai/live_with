@@ -2,30 +2,26 @@
 
 @section('content')
   <div id="change-password">
-    @if(count($errors)>0)
-    <ul>
-      {{-- @foreach ($errors->password as $error)
-          <li>{{ $error }}</li>
-      @endforeach --}}
-      @foreach ($errors->all() as $error)
-        <li>{{ $error }}</li>
-      @endforeach
-    </ul>
-    @endif
     <div class="header">
-      <h1>パスワードを変更</h1>
+      <h1>Change Password</h1>
     </div>
     <form action="{{ route('password.update', ['id'=>$user->id]) }}" method="post">
       @csrf
-      <div class="current-password">
+      <div class="current-password f-ct">
         <label>現在のパスワード</label>
         <input type="password" name="current_password">
+        @error('current_password')
+          <div class="error">{{ $message }}</div>
+        @enderror
       </div>
-      <div class="new_password">
+      <div class="new-password f-ct">
         <label>新しいパスワード</label>
         <input type="password" name="password">
+        @error('password')
+          <div class="error">{{ $message }}</div>
+        @enderror
       </div>
-      <div class="confirmation">
+      <div class="confirmation f-ct">
         <label>パスワード(確認)</label>
         <input type="password" name="password_confirmation">
       </div>
