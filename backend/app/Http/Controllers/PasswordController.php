@@ -29,10 +29,6 @@ class PasswordController extends Controller
     public function update(Request $request)
     {
 
-        if($this->isGuest($user->email)){
-            redirect('/');
-        }
-
         $rules = [
             'current_password' => new Current(),
             'password' => ['required', 'string', 'min:8', 'confirmed',]
