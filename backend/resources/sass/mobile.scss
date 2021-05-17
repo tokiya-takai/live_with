@@ -491,6 +491,9 @@
                   height: 25px;
                   border-bottom: 1px solid rgb(218, 218, 218);
                 }
+                p {
+                  text-align: right;
+                }
               }
               .post-details, .post-maintenance, .post-remarks {
                 display: flex;
@@ -499,6 +502,9 @@
                   height: 200px;
                   resize: none;
                   border: 1px solid rgb(218, 218, 218);
+                }
+                p {
+                  text-align: right;
                 }
               }
               .submit-btn {

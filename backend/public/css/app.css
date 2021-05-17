@@ -1501,6 +1501,10 @@ body {
     border-bottom: 1px solid #dadada;
   }
 
+  #app main .content .post-form .form-body .form-group .post-title p {
+    text-align: right;
+  }
+
   #app main .content .post-form .form-body .form-group .post-details,
   #app main .content .post-form .form-body .form-group .post-maintenance,
   #app main .content .post-form .form-body .form-group .post-remarks {
@@ -1514,6 +1518,12 @@ body {
     height: 200px;
     resize: none;
     border: 1px solid #dadada;
+  }
+
+  #app main .content .post-form .form-body .form-group .post-details p,
+  #app main .content .post-form .form-body .form-group .post-maintenance p,
+  #app main .content .post-form .form-body .form-group .post-remarks p {
+    text-align: right;
   }
 
   #app main .content .post-form .form-body .form-group .submit-btn {
