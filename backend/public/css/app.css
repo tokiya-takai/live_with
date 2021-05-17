@@ -800,7 +800,7 @@ body {
 
   .py-4 #change-password .header h1 {
     margin-left: 50px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
   }
 
@@ -1535,7 +1535,7 @@ body {
     height: 100%;
     display: grid;
     grid-template-columns: 30px 1fr 30px;
-    grid-template-rows: [name] 33% [email] 33% [send-btn] 34%;
+    grid-template-rows: [name] 30% [email] 30% [to-password] 10% [send-btn] 30%;
   }
 
   #app main .content .user-info .user-form .success {
@@ -1581,6 +1581,20 @@ body {
     display: flex;
     flex-flow: column;
     justify-content: center;
+  }
+
+  #app main .content .user-info .user-form .to-password {
+    height: 100%;
+    grid-column: 2/-2;
+    grid-row: to-password;
+  }
+
+  #app main .content .user-info .user-form .to-password p a {
+    border-bottom: 1px solid #aaa;
+  }
+
+  #app main .content .user-info .user-form .to-password p a:hover {
+    opacity: 0.7;
   }
 
   #app main .content .user-info .user-form .send-btn {
@@ -1834,7 +1848,7 @@ body {
   #app main .content #change-password .header h1 {
     width: 100%;
     text-align: center;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
   }
 
