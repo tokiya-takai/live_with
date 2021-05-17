@@ -250,6 +250,10 @@
           padding: 10px;
           .show-group {
             margin: 30px 0;
+            .label {
+              font-weight: bold;
+              border-bottom: 1px solid rgb(231, 231, 231);
+            }
             p {
               white-space:pre-wrap;
             }
@@ -457,6 +461,9 @@
                 border: 1px solid rgb(201, 201, 201, 0.1);
                 box-shadow: 4px 4px 8px -1px #aaa;
               }
+              p {
+                text-align: right;
+              }
             }
             .post-details, .post-maintenance, .post-remarks {
               width: 100%;
@@ -470,6 +477,9 @@
                 border: 1px solid rgb(201, 201, 201, 0.1);
                 box-shadow: 4px 4px 8px -1px #aaa;
                 resize: none;
+              }
+              p {
+                text-align: right;
               }
             }
             .post-form-label {

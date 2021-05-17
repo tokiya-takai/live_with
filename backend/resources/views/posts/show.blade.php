@@ -27,23 +27,23 @@
       </div>
       <div class="show-shoe-content">
         <div class="show-purchase-date show-group">
-          <p>購入日</p>
+          <p class="label">購入日</p>
           <p>{{ $item->purchase_date }}</p>
         </div>
         <div class="show-title show-group">
-          <p>ブランド名</p>
+          <p class="label">ブランド名</p>
           <p>{{ $item->title }}</p>
         </div>
         <div class="show-details show-group">
-          <p>詳細情報</p>
+          <p class="label">詳細情報</p>
           <p>{{ $item->details }}</p>
         </div>
         <div class="show-maintenance show-group">
-          <p>メンテナンス内容</p>
+          <p class="label">メンテナンス内容</p>
           <p>{{ $item->maintenance }}</p>
         </div>
         <div class="show-remarks show-group">
-          <p>備考</p>
+          <p class="label">備考</p>
           <p>{{ $item->remarks }}</p>
         </div>
       </div>

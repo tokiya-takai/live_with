@@ -25,7 +25,8 @@
             <div class="form-group">
                 <div class="post-title">
                     <label class="post-form-label">ブランド名</label>
-                    <input type="text" name="title" v-model="title">
+                    <input type="text" name="title" v-model="title" maxlength="50">
+                    <p>{{ title.length }}/50</p>
                 </div>
                 <strong class="error" v-for="value in errors.title">{{ value }}</strong>
             </div>
@@ -33,6 +34,7 @@
                 <div class="post-details">
                     <label class="post-form-label">詳細情報</label>
                     <textarea name="details" maxlength="500" v-model="details"></textarea>
+                    <p>{{ details.length }}/500</p>
                 </div>
                 <strong class="error" v-for="value in errors.details">{{ value }}</strong>
             </div>
@@ -40,6 +42,7 @@
                 <div class="post-maintenance">
                     <label class="post-form-label">メンテナンス内容</label>
                     <textarea name="maintenance" maxlength="1000" v-model="maintenance"></textarea>
+                    <p>{{ maintenance.length }}/1000</p>
                 </div>
                 <strong class="error" v-for="value in errors.maintenance">{{ value }}</strong>
             </div>
@@ -47,6 +50,7 @@
                 <div class="post-remarks">
                     <label class="post-form-label">備考</label>
                     <textarea name="remarks" maxlength="1000" v-model="remarks"></textarea>
+                    <p>{{ remarks.length }}/1000</p>
                 </div>
                 <strong class="error" v-for="value in errors.remarks">{{ value }}</strong>
             </div>
@@ -64,17 +68,11 @@
         data() {
             return {
                 url: "",
-                purchase_date: this.old.purchase_date,
-                title: this.old.title,
-                details: this.old.details,
-                maintenance: this.old.maintenance,
-                remarks: this.old.remarks,
-            }
-        },
-        methods:{
-            fileSelected(){
-                const file = this.$refs.preview.files[0];
-                this.url = URL.createObjectURL(file)
+                purchase_date: null,
+                title: null,
+                details: null,
+                maintenance: null,
+                remarks: null,
             }
         },
         props:  {
@@ -84,6 +82,39 @@
             },
             old: Array,
             errors: Array,
+        },
+        mounted() {
+            if(this.old.purchase_date){
+                this.purchase_date = this.old.purchase_date;
+            } else {
+                this.purchase_date = "";
+            }
+            if(this.old.title){
+                this.title = this.old.title;
+            } else {
+                this.title = "";
+            }
+            if(this.old.details){
+                this.details = this.old.details;
+            } else {
+                this.details = "";
+            }
+            if(this.old.maintenance){
+                this.maintenance = this.old.maintenance;
+            } else {
+                this.maintenance = "";
+            }
+            if(this.old.remarks){
+                this.remarks = this.old.remarks;
+            } else {
+                this.remarks = "";
+            }
+        },
+        methods:{
+            fileSelected(){
+                const file = this.$refs.preview.files[0];
+                this.url = URL.createObjectURL(file)
+            }
         },
     }
 </script>

@@ -329,6 +329,11 @@ body {
     margin: 30px 0;
   }
 
+  .py-4 .content .show-shoe-body .show-shoe-content .show-group .label {
+    font-weight: bold;
+    border-bottom: 1px solid #e7e7e7;
+  }
+
   .py-4 .content .show-shoe-body .show-shoe-content .show-group p {
     white-space: pre-wrap;
   }
@@ -565,6 +570,10 @@ body {
     box-shadow: 4px 4px 8px -1px #aaa;
   }
 
+  .py-4 .content .post-form .form-body .form-group .post-title p {
+    text-align: right;
+  }
+
   .py-4 .content .post-form .form-body .form-group .post-details,
   .py-4 .content .post-form .form-body .form-group .post-maintenance,
   .py-4 .content .post-form .form-body .form-group .post-remarks {
@@ -583,6 +592,12 @@ body {
     border: 1px solid rgba(201, 201, 201, 0.1);
     box-shadow: 4px 4px 8px -1px #aaa;
     resize: none;
+  }
+
+  .py-4 .content .post-form .form-body .form-group .post-details p,
+  .py-4 .content .post-form .form-body .form-group .post-maintenance p,
+  .py-4 .content .post-form .form-body .form-group .post-remarks p {
+    text-align: right;
   }
 
   .py-4 .content .post-form .form-body .form-group .post-form-label {
@@ -1486,6 +1501,10 @@ body {
     border-bottom: 1px solid #dadada;
   }
 
+  #app main .content .post-form .form-body .form-group .post-title p {
+    text-align: right;
+  }
+
   #app main .content .post-form .form-body .form-group .post-details,
   #app main .content .post-form .form-body .form-group .post-maintenance,
   #app main .content .post-form .form-body .form-group .post-remarks {
@@ -1499,6 +1518,12 @@ body {
     height: 200px;
     resize: none;
     border: 1px solid #dadada;
+  }
+
+  #app main .content .post-form .form-body .form-group .post-details p,
+  #app main .content .post-form .form-body .form-group .post-maintenance p,
+  #app main .content .post-form .form-body .form-group .post-remarks p {
+    text-align: right;
   }
 
   #app main .content .post-form .form-body .form-group .submit-btn {
@@ -1811,6 +1836,11 @@ body {
 
   #app main .content #show-shoe .show-shoe-body .show-shoe-content .show-group {
     margin: 30px 0;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-content .show-group .label {
+    font-weight: bold;
+    border-bottom: 1px solid #e7e7e7;
   }
 
   #app main .content #show-shoe .show-shoe-body .show-shoe-content .show-group p {
