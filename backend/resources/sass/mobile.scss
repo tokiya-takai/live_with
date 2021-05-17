@@ -768,6 +768,10 @@
               position: relative;
               .show-group {
                 margin: 30px 0;
+                .label {
+                  font-weight: bold;
+                  border-bottom: 1px solid rgb(231, 231, 231);
+                }
                 p {
                   white-space:pre-wrap;
                 }
