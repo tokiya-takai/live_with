@@ -1906,11 +1906,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       url: "",
-      action: "/posts/update/" + this.item.id
+      action: "/posts/update/" + this.item.id,
+      purchase_date: "",
+      title: "",
+      details: "",
+      maintenance: "",
+      remarks: ""
     };
   },
   props: {
@@ -1928,61 +1937,57 @@ __webpack_require__.r(__webpack_exports__);
       return;
     }
   },
+  mounted: function mounted() {
+    if (this.old.purchase_date) {
+      this.purchase_date = this.old.purchase_date;
+    } else {
+      if (this.item.purchase_date != null) {
+        this.purchase_date = this.item.purchase_date;
+      } else {
+        this.purchase_date = "";
+      }
+    }
+
+    if (this.old.title) {
+      this.title = this.old.title;
+    } else {
+      this.title = this.item.title;
+    }
+
+    if (this.old.details) {
+      this.details = this.old.details;
+    } else {
+      if (this.item.details != null) {
+        this.details = this.item.details;
+      } else {
+        this.details = "";
+      }
+    }
+
+    if (this.old.maintenance) {
+      this.maintenance = this.old.maintenance;
+    } else {
+      if (this.item.maintenance != null) {
+        this.maintenance = this.item.maintenance;
+      } else {
+        this.maintenance = "";
+      }
+    }
+
+    if (this.old.remarks) {
+      this.remarks = this.old.remarks;
+    } else {
+      if (this.item.remarks != null) {
+        this.remarks = this.item.remarks;
+      } else {
+        this.remarks = "";
+      }
+    }
+  },
   methods: {
     fileSelected: function fileSelected() {
       var file = this.$refs.preview.files[0];
       this.url = URL.createObjectURL(file);
-    },
-    setValue: function setValue(key) {
-      switch (key) {
-        case "purchase_date":
-          if (this.old.purchase_date) {
-            return this.old.purchase_date;
-          } else {
-            return this.item.purchase_date;
-          }
-
-          break;
-
-        case "title":
-          if (this.old.title) {
-            return this.old.title;
-          } else {
-            return this.item.title;
-          }
-
-          break;
-
-        case "details":
-          if (this.old.details) {
-            return this.old.details;
-          } else {
-            return this.item.details;
-          }
-
-          break;
-
-        case "maintenance":
-          if (this.old.maintenance) {
-            return this.old.maintenance;
-          } else {
-            return this.item.maintenance;
-          }
-
-          break;
-
-        case "remarks":
-          if (this.old.remarks) {
-            return this.old.remarks;
-          } else {
-            return this.item.remarks;
-          }
-
-          break;
-
-        default:
-          break;
-      }
     }
   }
 });
@@ -2186,22 +2191,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       url: "",
-      purchase_date: this.old.purchase_date,
-      title: this.old.title,
-      details: this.old.details,
-      maintenance: this.old.maintenance,
-      remarks: this.old.remarks
+      purchase_date: null,
+      title: null,
+      details: null,
+      maintenance: null,
+      remarks: null
     };
-  },
-  methods: {
-    fileSelected: function fileSelected() {
-      var file = this.$refs.preview.files[0];
-      this.url = URL.createObjectURL(file);
-    }
   },
   props: {
     csrf: {
@@ -2210,6 +2213,43 @@ __webpack_require__.r(__webpack_exports__);
     },
     old: Array,
     errors: Array
+  },
+  mounted: function mounted() {
+    if (this.old.purchase_date) {
+      this.purchase_date = this.old.purchase_date;
+    } else {
+      this.purchase_date = "";
+    }
+
+    if (this.old.title) {
+      this.title = this.old.title;
+    } else {
+      this.title = "";
+    }
+
+    if (this.old.details) {
+      this.details = this.old.details;
+    } else {
+      this.details = "";
+    }
+
+    if (this.old.maintenance) {
+      this.maintenance = this.old.maintenance;
+    } else {
+      this.maintenance = "";
+    }
+
+    if (this.old.remarks) {
+      this.remarks = this.old.remarks;
+    } else {
+      this.remarks = "";
+    }
+  },
+  methods: {
+    fileSelected: function fileSelected() {
+      var file = this.$refs.preview.files[0];
+      this.url = URL.createObjectURL(file);
+    }
   }
 });
 
@@ -59667,8 +59707,24 @@ var render = function() {
             _c("label", { staticClass: "post-form-label" }, [_vm._v("購入日")]),
             _vm._v(" "),
             _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.purchase_date,
+                  expression: "purchase_date"
+                }
+              ],
               attrs: { type: "date", name: "purchase_date" },
-              domProps: { value: _vm.setValue("purchase_date") }
+              domProps: { value: _vm.purchase_date },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.purchase_date = $event.target.value
+                }
+              }
             })
           ])
         ]),
@@ -59683,9 +59739,27 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("input", {
-                attrs: { type: "text", name: "title" },
-                domProps: { value: _vm.setValue("title") }
-              })
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.title,
+                    expression: "title"
+                  }
+                ],
+                attrs: { type: "text", name: "title", maxlength: "50" },
+                domProps: { value: _vm.title },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.title = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(_vm.title.length) + "/50")])
             ]),
             _vm._v(" "),
             _vm._l(_vm.errors.title, function(value) {
@@ -59707,9 +59781,27 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.details,
+                    expression: "details"
+                  }
+                ],
                 attrs: { name: "details", maxlength: "500" },
-                domProps: { value: _vm.setValue("details") }
-              })
+                domProps: { value: _vm.details },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.details = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(_vm.details.length) + "/500")])
             ]),
             _vm._v(" "),
             _vm._l(_vm.errors.details, function(value) {
@@ -59731,9 +59823,27 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.maintenance,
+                    expression: "maintenance"
+                  }
+                ],
                 attrs: { name: "maintenance", maxlength: "1000" },
-                domProps: { value: _vm.setValue("maintenance") }
-              })
+                domProps: { value: _vm.maintenance },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.maintenance = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(_vm.maintenance.length) + "/1000")])
             ]),
             _vm._v(" "),
             _vm._l(_vm.errors.maintenance, function(value) {
@@ -59753,9 +59863,27 @@ var render = function() {
               _c("label", { staticClass: "post-form-label" }, [_vm._v("備考")]),
               _vm._v(" "),
               _c("textarea", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.remarks,
+                    expression: "remarks"
+                  }
+                ],
                 attrs: { name: "remarks", maxlength: "1000" },
-                domProps: { value: _vm.setValue("remarks") }
-              })
+                domProps: { value: _vm.remarks },
+                on: {
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.remarks = $event.target.value
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(_vm.remarks.length) + "/1000")])
             ]),
             _vm._v(" "),
             _vm._l(_vm.errors.remarks, function(value) {
@@ -60063,7 +60191,7 @@ var render = function() {
                     expression: "title"
                   }
                 ],
-                attrs: { type: "text", name: "title" },
+                attrs: { type: "text", name: "title", maxlength: "50" },
                 domProps: { value: _vm.title },
                 on: {
                   input: function($event) {
@@ -60073,7 +60201,9 @@ var render = function() {
                     _vm.title = $event.target.value
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(_vm.title.length) + "/50")])
             ]),
             _vm._v(" "),
             _vm._l(_vm.errors.title, function(value) {
@@ -60113,7 +60243,9 @@ var render = function() {
                     _vm.details = $event.target.value
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(_vm.details.length) + "/500")])
             ]),
             _vm._v(" "),
             _vm._l(_vm.errors.details, function(value) {
@@ -60153,7 +60285,9 @@ var render = function() {
                     _vm.maintenance = $event.target.value
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(_vm.maintenance.length) + "/1000")])
             ]),
             _vm._v(" "),
             _vm._l(_vm.errors.maintenance, function(value) {
@@ -60191,7 +60325,9 @@ var render = function() {
                     _vm.remarks = $event.target.value
                   }
                 }
-              })
+              }),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(_vm.remarks.length) + "/1000")])
             ]),
             _vm._v(" "),
             _vm._l(_vm.errors.remarks, function(value) {

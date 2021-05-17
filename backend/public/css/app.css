@@ -570,6 +570,10 @@ body {
     box-shadow: 4px 4px 8px -1px #aaa;
   }
 
+  .py-4 .content .post-form .form-body .form-group .post-title p {
+    text-align: right;
+  }
+
   .py-4 .content .post-form .form-body .form-group .post-details,
   .py-4 .content .post-form .form-body .form-group .post-maintenance,
   .py-4 .content .post-form .form-body .form-group .post-remarks {
@@ -588,6 +592,12 @@ body {
     border: 1px solid rgba(201, 201, 201, 0.1);
     box-shadow: 4px 4px 8px -1px #aaa;
     resize: none;
+  }
+
+  .py-4 .content .post-form .form-body .form-group .post-details p,
+  .py-4 .content .post-form .form-body .form-group .post-maintenance p,
+  .py-4 .content .post-form .form-body .form-group .post-remarks p {
+    text-align: right;
   }
 
   .py-4 .content .post-form .form-body .form-group .post-form-label {
