@@ -23,7 +23,7 @@ class CreatePostsTable extends Migration
             // タイトル
             $table->string('title');
             // 詳細
-            $table->string('details')->nullable();
+            $table->text('details')->nullable();
             // 購入日
             $table->date('purchase_date')->nullable();
             // メンテナンス内容
