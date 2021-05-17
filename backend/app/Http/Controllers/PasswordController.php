@@ -18,11 +18,21 @@ class PasswordController extends Controller
         if(! ($user && $this->isCorrectUser($user->id))){
             return redirect('/');
         }
+
+        if($this->isGuest($user->email)){
+            return redirect('/');
+        }
+
         return view('users/password',compact('user'));
     }
 
     public function update(Request $request)
     {
+
+        if($this->isGuest($user->email)){
+            redirect('/');
+        }
+
         $rules = [
             'current_password' => new Current(),
             'password' => ['required', 'string', 'min:8', 'confirmed',]
@@ -50,5 +60,14 @@ class PasswordController extends Controller
             return false;
         }
         return true;
+    }
+
+    private function isGuest($email)
+    {
+        if($email == 'guest@test.co.jp') {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
