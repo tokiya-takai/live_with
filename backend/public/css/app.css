@@ -779,13 +779,21 @@ body {
   }
 
   .py-4 .content .user-info .user-form .others .is-private .public-or-private {
-    display: flex;
-    align-items: center;
+    height: 100%;
+    width: calc(100% - 45px);
   }
 
   .py-4 .content .user-info .user-form .others .is-private .public-or-private input {
-    margin-right: 10px;
-    cursor: pointer;
+    display: none;
+  }
+
+  .py-4 .content .user-info .user-form .others .is-private .public-or-private div {
+    height: 100%;
+    width: 100%;
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .py-4 .content .user-info .user-form .send-btn {
@@ -1729,7 +1737,7 @@ body {
   #app main .content .user-info .user-form .others .is-private .key-image-container {
     width: 30px;
     height: 30px;
-    margin-left: 10px;
+    margin-left: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1791,12 +1799,22 @@ body {
   }
 
   #app main .content .user-info .user-form .others .is-private .public-or-private {
+    height: 100%;
+    width: calc(100% - 60px);
     display: flex;
     align-items: center;
   }
 
   #app main .content .user-info .user-form .others .is-private .public-or-private input {
-    margin: 0 10px;
+    display: none;
+  }
+
+  #app main .content .user-info .user-form .others .is-private .public-or-private div {
+    height: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   #app main .content .user-info .user-form .send-btn {

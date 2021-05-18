@@ -608,7 +608,7 @@
                 .key-image-container {
                   width: 30px;
                   height: 30px;
-                  margin-left: 10px;
+                  margin-left: 30px;
                   display: flex;
                   justify-content: center;
                   align-items: center;
@@ -656,10 +656,19 @@
                   }
                 }
                 .public-or-private {
+                  height: 100%;
+                  width: calc(100% - 60px);
                   display: flex;
                   align-items: center;
                   input {
-                    margin: 0 10px;
+                    display: none;
+                  }
+                  div {
+                    height: 30px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
                   }
                 }
               }

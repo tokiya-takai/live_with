@@ -23,23 +23,19 @@
         <strong class="error" v-for="value in errors.email">{{ value }}</strong>
       </div>
       <div class="others">
-        <p class="to-password"><a :href="toPasswordUrl">パスワードを変更</a></p>
+        <p class="to-password"><a :href="toPasswordUrl" v-bind:class="{events: isActive}">パスワードを変更</a></p>
         <div class="is-private">
           <div class="key-image-container">
             <transition name="privateKeyImage">
-                <p v-if="isPrivate" class="private"><img src="/images/private.png"></p>
+                <button v-if="isPrivate" class="private" v-bind:class="{events: isActive}" type="button" v-on:click="changeKey()"><img src="/images/private.png"></button>
             </transition>
             <transition name="publicKeyImage">
-                <p v-if="!isPrivate" class="public"><img src="/images/public.png"></p>
+                <button v-if="!isPrivate" class="public" v-bind:class="{events: isActive}" type="button" v-on:click="changeKey()"><img src="/images/public.png"></button>
             </transition>
           </div>
-          <div v-if="isPrivate" class="public-or-private">
-              <input type="checkbox" checked="true" v-on:click="changeKey()" value="1" >
-              <span>{{ publicOrPrivate }}</span>
-          </div>
-          <div v-else class="public-or-private">
-              <input type="checkbox" checked="false" v-on:click="changeKey()" value="0">
-              <span>{{ publicOrPrivate }}</span>
+          <div class="public-or-private">
+              <input type="number" :value="isPrivateValue" name="isprivate" readonly="true">
+              <div v-bind:class="{events: isActive}">{{ publicOrPrivate }}</div>
           </div>
         </div>
       </div>
@@ -63,6 +59,7 @@
         privateWidth: 27,
         publicWidth: 0,
         publicOrPrivate: String,
+        isPrivateValue: Number,
       }
     },
     props: {
@@ -82,8 +79,10 @@
       this.isPrivate = this.user.isprivate;
       if(this.isPrivate){
         this.publicOrPrivate = "非公開";
+        this.isPrivateValue = 1;
       } else {
         this.publicOrPrivate = "公開";
+        this.isPrivateValue = 0;
       }
       
       // In case of error
@@ -118,8 +117,10 @@
       changeKey() {
         if(this.isPrivate){
           this.publicOrPrivate = "公開";
+          this.isPrivateValue = 0;
         } else {
           this.publicOrPrivate = "非公開";
+          this.isPrivateValue = 1;
         }
         this.isPrivate = !this.isPrivate;
       }
