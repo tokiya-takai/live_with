@@ -33,12 +33,14 @@
                 <p v-if="!isPrivate" class="public"><img src="/images/public.png"></p>
             </transition>
           </div>
-          <p v-if="isPrivate">
-              <input type="checkbox" checked="true" v-on:click="isPrivate = !isPrivate">
-          </p>
-          <p v-else>
-              <input type="checkbox" checked="false" v-on:click="isPrivate = !isPrivate">
-          </p>
+          <div v-if="isPrivate" class="public-or-private">
+              <input type="checkbox" checked="true" v-on:click="changeKey()">
+              <span>{{ publicOrPrivate }}</span>
+          </div>
+          <div v-else class="public-or-private">
+              <input type="checkbox" checked="false" v-on:click="changeKey()">
+              <span>{{ publicOrPrivate }}</span>
+          </div>
         </div>
       </div>
       <div class="user-form-group send-btn" v-bind:class="{events: isActive}">
@@ -60,6 +62,7 @@
         isPrivate: Boolean,
         privateWidth: 27,
         publicWidth: 0,
+        publicOrPrivate: String,
       }
     },
     props: {
@@ -72,9 +75,18 @@
       errors: Array,
     },
     mounted() {
+      // initial value
       this.name = this.user.name;
       this.email = this.user.email;
 
+      this.isPrivate = this.user.isprivate;
+      if(this.isPrivate){
+        this.publicOrPrivate = "非公開";
+      } else {
+        this.publicOrPrivate = "公開";
+      }
+      
+      // In case of error
       if(this.old.name){
         this.name = this.old.name;
       }
@@ -85,8 +97,6 @@
       if(this.errors.password){
         this.isActive = true;
       }
-
-      this.isPrivate = this.user.isprivate;
     },
     methods: {
       inputPassword() {
@@ -105,6 +115,14 @@
         }
         this.errors.password = "";
       },
+      changeKey() {
+        if(this.isPrivate){
+          this.publicOrPrivate = "公開";
+        } else {
+          this.publicOrPrivate = "非公開";
+        }
+        this.isPrivate = !this.isPrivate;
+      }
     }
   }
 </script>

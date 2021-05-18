@@ -2316,6 +2316,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2326,7 +2328,8 @@ __webpack_require__.r(__webpack_exports__);
       email: "",
       isPrivate: Boolean,
       privateWidth: 27,
-      publicWidth: 0
+      publicWidth: 0,
+      publicOrPrivate: String
     };
   },
   props: {
@@ -2339,8 +2342,17 @@ __webpack_require__.r(__webpack_exports__);
     errors: Array
   },
   mounted: function mounted() {
+    // initial value
     this.name = this.user.name;
     this.email = this.user.email;
+    this.isPrivate = this.user.isprivate;
+
+    if (this.isPrivate) {
+      this.publicOrPrivate = "非公開";
+    } else {
+      this.publicOrPrivate = "公開";
+    } // In case of error
+
 
     if (this.old.name) {
       this.name = this.old.name;
@@ -2353,8 +2365,6 @@ __webpack_require__.r(__webpack_exports__);
     if (this.errors.password) {
       this.isActive = true;
     }
-
-    this.isPrivate = this.user.isprivate;
   },
   methods: {
     inputPassword: function inputPassword() {
@@ -2374,6 +2384,15 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.errors.password = "";
+    },
+    changeKey: function changeKey() {
+      if (this.isPrivate) {
+        this.publicOrPrivate = "公開";
+      } else {
+        this.publicOrPrivate = "非公開";
+      }
+
+      this.isPrivate = !this.isPrivate;
     }
   }
 });
@@ -60576,25 +60595,29 @@ var render = function() {
             ),
             _vm._v(" "),
             _vm.isPrivate
-              ? _c("p", [
+              ? _c("div", { staticClass: "public-or-private" }, [
                   _c("input", {
                     attrs: { type: "checkbox", checked: "true" },
                     on: {
                       click: function($event) {
-                        _vm.isPrivate = !_vm.isPrivate
+                        return _vm.changeKey()
                       }
                     }
-                  })
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(_vm.publicOrPrivate))])
                 ])
-              : _c("p", [
+              : _c("div", { staticClass: "public-or-private" }, [
                   _c("input", {
                     attrs: { type: "checkbox", checked: "false" },
                     on: {
                       click: function($event) {
-                        _vm.isPrivate = !_vm.isPrivate
+                        return _vm.changeKey()
                       }
                     }
-                  })
+                  }),
+                  _vm._v(" "),
+                  _c("span", [_vm._v(_vm._s(_vm.publicOrPrivate))])
                 ])
           ])
         ]),

@@ -632,6 +632,13 @@
                   opacity: 0;
                 }
               }
+              .public-or-private {
+                display: flex;
+                align-items: center;
+                input {
+                  margin-right: 10px;
+                }
+              }
             }
           }
           .send-btn {

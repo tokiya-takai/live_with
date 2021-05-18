@@ -778,6 +778,15 @@ body {
     opacity: 0;
   }
 
+  .py-4 .content .user-info .user-form .others .is-private .public-or-private {
+    display: flex;
+    align-items: center;
+  }
+
+  .py-4 .content .user-info .user-form .others .is-private .public-or-private input {
+    margin-right: 10px;
+  }
+
   .py-4 .content .user-info .user-form .send-btn {
     height: 100%;
     grid-column: 2/-2;
