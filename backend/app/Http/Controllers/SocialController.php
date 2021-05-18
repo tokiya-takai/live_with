@@ -10,5 +10,6 @@ class SocialController extends Controller
     public function index(){
         $users = User::where('isprivate', 0)
                 ->with('posts');
+        return view('social.index');
     }
 }
