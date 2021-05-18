@@ -30,7 +30,8 @@ class UsersController extends Controller
     {
         $rules = [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(Auth::id())]
+            'email' => ['required', 'string', 'email', 'max:255', Rule::unique('users')->ignore(Auth::id())],
+            'isprivate' => ['boolean'],
         ];
         $messages = [
             'name.required' => '入力必須項目です。',
@@ -41,6 +42,7 @@ class UsersController extends Controller
             'email.email' => 'メールアドレスが必要です。',
             'email.max' => '255字以内です。',
             'email.unique' => 'このメールアドレスは既に利用されています。',
+            'isprivate.boolean' => '真偽値(true, false, 1, 0)のみ有効です。',
         ];
 
         $this->validate($request, $rules, $messages);
@@ -55,6 +57,7 @@ class UsersController extends Controller
         if (Auth::check()) {
             Auth::user()->name = $request->name;
             Auth::user()->email = $request->email;
+            Auth::user()->isprivate = $request->isprivate;
             Auth::user()->save();
 
             // This is not an error, it is used as an alternative to flash.

@@ -22,8 +22,22 @@
         <input type="email" name="email" v-model="email" v-bind:class="{events: isActive}">
         <strong class="error" v-for="value in errors.email">{{ value }}</strong>
       </div>
-      <div class="to-password">
-        <p><a :href="toPasswordUrl">パスワードを変更</a></p>
+      <div class="others">
+        <p class="to-password"><a :href="toPasswordUrl" v-bind:class="{events: isActive}">パスワードを変更</a></p>
+        <div class="is-private">
+          <div class="key-image-container">
+            <transition name="privateKeyImage">
+                <button v-if="isPrivate" class="private" v-bind:class="{events: isActive}" type="button" v-on:click="changeKey()"><img src="/images/private.png"></button>
+            </transition>
+            <transition name="publicKeyImage">
+                <button v-if="!isPrivate" class="public" v-bind:class="{events: isActive}" type="button" v-on:click="changeKey()"><img src="/images/public.png"></button>
+            </transition>
+          </div>
+          <div class="public-or-private">
+              <input type="number" :value="isPrivateValue" name="isprivate" readonly="true">
+              <div v-bind:class="{events: isActive}">{{ publicOrPrivate }}</div>
+          </div>
+        </div>
       </div>
       <div class="user-form-group send-btn" v-bind:class="{events: isActive}">
         <div class="dummy-send-button" @click="inputPassword()" v-bind:class="{events: isActive}">SAVE</div>
@@ -41,6 +55,11 @@
         toPasswordUrl: '/password/index/'+this.user.id,
         name: "",
         email: "",
+        isPrivate: Boolean,
+        privateWidth: 27,
+        publicWidth: 0,
+        publicOrPrivate: String,
+        isPrivateValue: Number,
       }
     },
     props: {
@@ -53,9 +72,20 @@
       errors: Array,
     },
     mounted() {
+      // initial value
       this.name = this.user.name;
       this.email = this.user.email;
 
+      this.isPrivate = this.user.isprivate;
+      if(this.isPrivate){
+        this.publicOrPrivate = "非公開";
+        this.isPrivateValue = 1;
+      } else {
+        this.publicOrPrivate = "公開";
+        this.isPrivateValue = 0;
+      }
+      
+      // In case of error
       if(this.old.name){
         this.name = this.old.name;
       }
@@ -84,6 +114,16 @@
         }
         this.errors.password = "";
       },
+      changeKey() {
+        if(this.isPrivate){
+          this.publicOrPrivate = "公開";
+          this.isPrivateValue = 0;
+        } else {
+          this.publicOrPrivate = "非公開";
+          this.isPrivateValue = 1;
+        }
+        this.isPrivate = !this.isPrivate;
+      }
     }
   }
 </script>
