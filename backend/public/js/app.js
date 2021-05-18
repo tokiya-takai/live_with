@@ -60245,7 +60245,11 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("SOCIAL")])]),
+              _c("li", [
+                _c("a", { attrs: { href: "/social/index" } }, [
+                  _vm._v("SOCIAL")
+                ])
+              ]),
               _vm._v(" "),
               _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("項目4")])]),
               _vm._v(" "),

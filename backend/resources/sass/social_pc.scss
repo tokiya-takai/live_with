@@ -1,0 +1,10 @@
+.social {
+  background: url('/images/wooden-wall.jpg');
+  background-size: contain;
+  background-attachment: fixed;
+  .social-content {
+    width: 60%;
+    margin: 0 auto;
+    background-color: $white;
+  }
+}

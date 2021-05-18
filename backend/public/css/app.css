@@ -2067,7 +2067,7 @@ body {
   }
 
   #app main .content #show-shoe .show-shoe-header {
-    grid-rows: head;
+    grid-row: head;
     grid-column: 1/-1;
     display: flex;
     justify-content: center;
@@ -2079,7 +2079,7 @@ body {
 
   #app main .content #show-shoe .show-shoe-body {
     width: 100%;
-    grid-rows: body;
+    grid-row: body;
     grid-column: 2/-2;
     display: grid;
     grid-template-rows: [delete] 20px [image] 120px [content] auto;
@@ -2293,6 +2293,18 @@ body {
   #app main .content #change-password form .error {
     color: #ec5555;
   }
+}
+
+.social {
+  background: url("/images/wooden-wall.jpg");
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+.social .social-content {
+  width: 60%;
+  margin: 0 auto;
+  background-color: #f4f4f4;
 }
 
 
