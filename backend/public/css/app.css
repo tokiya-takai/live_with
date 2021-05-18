@@ -1,6 +1,125 @@
+@charset "UTF-8";
+
 body {
   font-family: "Playfair Display", serif;
   color: #1f1f1f;
+}
+
+.hamburger {
+  position: fixed;
+  right: 0;
+  width: 70px;
+  height: 72px;
+  z-index: 100;
+  /*サイドバー*/
+}
+
+@media (min-width: 1025px) {
+  .hamburger {
+    top: calc(10vh);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hamburger {
+    top: 90px;
+  }
+}
+
+.hamburger .hamburger-btn {
+  width: 100%;
+  height: 100%;
+}
+
+.hamburger .hamburger-btn .line {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 32px;
+  height: 2px;
+  background: #f4f4f4;
+  text-align: center;
+}
+
+.hamburger .hamburger-btn .line1 {
+  top: 16px;
+  transition: 0.4s ease;
+}
+
+.hamburger .hamburger-btn .line2 {
+  top: 26px;
+  transition: 0.4s ease;
+}
+
+.hamburger .hamburger-btn .line3 {
+  top: 36px;
+  transition: 0.4s ease;
+}
+
+.hamburger .btn-line1 {
+  transform: translateY(10px) rotate(-45deg);
+  transition: 0.4s ease;
+}
+
+.hamburger .btn-line2 {
+  transition: 0.4s ease;
+  opacity: 0;
+}
+
+.hamburger .btn-line3 {
+  transform: translateY(-10px) rotate(45deg);
+  transition: 0.4s ease;
+}
+
+.hamburger .menu-enter-active,
+.hamburger .menu-leave-active {
+  transition-duration: 0.4s;
+  transition-property: opacity;
+}
+
+.hamburger .menu-enter,
+.hamburger .menu-leave-to {
+  opacity: 0;
+}
+
+.hamburger .menu-leave,
+.hamburger .menu-enter-to {
+  opacity: 1;
+}
+
+.hamburger .menu li {
+  list-style: none;
+  line-height: 1;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.hamburger .menu li:hover {
+  background-color: #402F2F;
+  transition-duration: 0.4s;
+}
+
+.hamburger .menu {
+  background-color: rgba(97, 79, 79, 0.85);
+  z-index: -1;
+  padding: 2rem 1rem;
+  position: fixed;
+  width: 20rem;
+  height: 80rem;
+  top: 0;
+  right: 0;
+}
+
+.hamburger .menu a {
+  color: #f4f4f4;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 0 2rem;
+}
+
+.hamburger .menu ul {
+  margin: 1rem;
+  padding: 0;
 }
 
 @media (min-width: 1025px) {
@@ -48,6 +167,7 @@ body {
   }
 
   .py-4 {
+    position: relative;
     height: 90vh;
     background: url(/images/live-with-background.jpg?5b1ef75643579dba40732f58054d0b42);
     background-size: cover;
@@ -1063,10 +1183,11 @@ body {
   }
 
   #app main {
+    position: relative;
     grid-column: 1/-1;
     display: grid;
     grid-template-columns: 5vw 1fr 5vw;
-    grid-template-rows: [margin_top] 25px [content_body] calc(100vh - 100px - 50px) [margin_bottom] 25px;
+    grid-template-rows: [margin_top] 35px [content_body] calc(100vh - 100px - 60px) [margin_bottom] 25px;
     height: calc(100vh - 100px);
     background: url(/images/live-with-background.jpg?5b1ef75643579dba40732f58054d0b42);
   }

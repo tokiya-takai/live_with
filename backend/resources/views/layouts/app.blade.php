@@ -56,6 +56,14 @@
         </header>
 
         <main class="py-4">
+            @guest
+                <!-- Not login -->
+                <hamburger-component :user="{{ -1 }}"></hamburger-component>
+            @else
+                <!-- Logged in -->
+                <hamburger-component :user="{{ Auth::id() }}"></hamburger-component>
+            @endguest
+
             <div class="content">
                 @yield('content')
             </div>
