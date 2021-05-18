@@ -34,11 +34,11 @@
             </transition>
           </div>
           <div v-if="isPrivate" class="public-or-private">
-              <input type="checkbox" checked="true" v-on:click="changeKey()">
+              <input type="checkbox" checked="true" v-on:click="changeKey()" value="1" >
               <span>{{ publicOrPrivate }}</span>
           </div>
           <div v-else class="public-or-private">
-              <input type="checkbox" checked="false" v-on:click="changeKey()">
+              <input type="checkbox" checked="false" v-on:click="changeKey()" value="0">
               <span>{{ publicOrPrivate }}</span>
           </div>
         </div>

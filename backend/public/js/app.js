@@ -60597,7 +60597,7 @@ var render = function() {
             _vm.isPrivate
               ? _c("div", { staticClass: "public-or-private" }, [
                   _c("input", {
-                    attrs: { type: "checkbox", checked: "true" },
+                    attrs: { type: "checkbox", checked: "true", value: "1" },
                     on: {
                       click: function($event) {
                         return _vm.changeKey()
@@ -60609,7 +60609,7 @@ var render = function() {
                 ])
               : _c("div", { staticClass: "public-or-private" }, [
                   _c("input", {
-                    attrs: { type: "checkbox", checked: "false" },
+                    attrs: { type: "checkbox", checked: "false", value: "0" },
                     on: {
                       click: function($event) {
                         return _vm.changeKey()
