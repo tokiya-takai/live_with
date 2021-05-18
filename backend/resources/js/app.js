@@ -19,10 +19,10 @@
  // const files = require.context('./', true, /\.vue$/i)
  // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
  
+Vue.component('hamburger-component', require('./components/HamburgerComponent.vue').default);
  Vue.component('new-post-component', require('./components/NewPostComponent.vue').default);
  Vue.component('edit-post-component', require('./components/EditPostComponent.vue').default);
  Vue.component('list-rendering-component', require('./components/ListRenderingComponent.vue').default);
-//  Vue.component('user-information-component', require('./components/UserInformationComponent.vue').default);
  Vue.component('guest-user-component', require('./components/GuestUserComponent.vue').default);
  Vue.component('user-component', require('./components/UserComponent.vue').default);
  /**

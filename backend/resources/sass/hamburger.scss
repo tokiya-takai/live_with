@@ -1,0 +1,95 @@
+.hamburger {
+  position: fixed;
+  @media (min-width: 1025px){
+    top: calc(10vh);
+  }
+  @media (max-width: 1024px) {
+    top: 90px
+  }
+  right: 0;
+  width: 70px;
+  height: 72px;
+  z-index: 100;
+  .hamburger-btn {
+    width: 100%;
+    height: 100%;
+    .line {
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 32px;
+      height: 2px;
+      background: $white;
+      text-align: center;
+    }
+    .line1 {
+      top: 16px;
+      transition: 0.4s ease;
+    }
+    .line2 {
+      top: 26px;
+      transition: 0.4s ease;
+    }
+    .line3 {
+      top: 36px;
+      transition: 0.4s ease;
+    }
+  }
+
+
+  .btn-line1 {
+    transform: translateY(10px) rotate(-45deg);
+    transition: 0.4s ease;
+  }
+  .btn-line2 {
+    transition: 0.4s ease;
+    opacity: 0;
+  }
+  .btn-line3 {
+    transform: translateY(-10px) rotate(45deg);
+    transition: 0.4s ease;
+  }
+
+  /*サイドバー*/
+  .menu-enter-active, .menu-leave-active {
+    transition-duration: .4s;
+    transition-property: opacity;
+  }
+  .menu-enter, .menu-leave-to {
+    opacity: 0;
+  }
+  .menu-leave, .menu-enter-to{
+    opacity: 1;
+  }
+
+  .menu li {
+    list-style: none;
+    line-height: 1;
+    padding: 1rem;
+    cursor: pointer;
+    &:hover {
+      background-color: $theme_color;
+      transition-duration: .4s;
+    }
+  }
+  .menu {
+    background-color: rgba(97, 79, 79, 0.85);
+    z-index: -1;
+    padding: 2rem 1rem;
+    position: fixed;
+    width: 20rem;
+    height: 80rem;
+    top: 0;
+    right: 0;
+  }
+  .menu a {
+    color: $white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0 2rem;
+  }
+  .menu ul{
+    margin: 1rem;
+    padding: 0;
+  }
+}

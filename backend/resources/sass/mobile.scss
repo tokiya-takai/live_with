@@ -43,13 +43,14 @@
       }
     }
     main {
+      position: relative;
       grid-column: 1 / -1;
       //Duplicate the same grid as the body
       display: grid;
       grid-template-columns: 5vw 1fr 5vw;
       grid-template-rows:
-              [margin_top] 25px
-              [content_body] calc(100vh - 100px - 50px)
+              [margin_top] 35px
+              [content_body] calc(100vh - 100px - 60px)
               [margin_bottom] 25px;
       height: calc(100vh - 100px);
       background: url('images/live-with-background.jpg');
