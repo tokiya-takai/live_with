@@ -519,7 +519,7 @@
           grid-template-rows:
           [name] 30%
           [email] 30%
-          [to-password] 10%
+          [others] 10%
           [send-btn] 30%;
 
           .success {
@@ -562,14 +562,75 @@
             flex-flow: column;
             justify-content: center;
           }
-          .to-password {
+          .others {
             height: 100%;
             grid-column: 2 / -2;
-            grid-row: to-password;
-            p a {
-              border-bottom: 1px solid #aaa;
-              &:hover {
-                opacity: 0.7;
+            grid-row: others;
+            display: flex;
+            .to-password{
+              width: 50%;
+              height: 35px;
+              a {
+                border-bottom: 1px solid #aaa;
+                &:hover {
+                  opacity: 0.7;
+                }
+              }
+            }
+            .is-private {
+              width: 50%;
+              height: 35px;
+              display: flex;
+              align-items: center;
+              .key-image-container {
+                width: 35px;
+                height: 35px;
+                margin-right: 10px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                position: relative;
+                .private {
+                  position: absolute;
+                  width: 35px;
+                  height: 35px;
+                  opacity: 1;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+                .privateKeyImage-enter-active, .privateKeyImage-leave-active {
+                  transition-duration: .5s;
+                  transition-property:width , opacity;
+                }
+                .privateKeyImage-enter, .privateKeyImage-leave-to {
+                  width: 0;
+                  opacity: 0;
+                }
+                .public {
+                  position: absolute;
+                  width: 35px;
+                  height: 35px;
+                  opacity: 0.7;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                  }
+                }
+                .publicKeyImage-enter-active, .publicKeyImage-leave-active {
+                  transition-duration: .5s;
+                  transition-property:width, opacity;
+                }
+                .publicKeyImage-enter-to, .publicKeyImage-leave {
+                  width: 35px;
+                  opacity: 0.7;
+                }
+                .publicKeyImage-enter, .publicKeyImage-leave-to {
+                  width: 0;
+                  opacity: 0;
+                }
               }
             }
           }

@@ -540,7 +540,7 @@
             grid-template-rows:
             [name] 30%
             [email] 30%
-            [to-password] 10%
+            [others] 10%
             [send-btn] 30%;
   
             .success {
@@ -581,10 +581,10 @@
               flex-flow: column;
               justify-content: center;
             }
-            .to-password {
+            .others {
               height: 100%;
               grid-column: 2 / -2;
-              grid-row: to-password;
+              grid-row: others;
               p a {
                 border-bottom: 1px solid #aaa;
                 &:hover {

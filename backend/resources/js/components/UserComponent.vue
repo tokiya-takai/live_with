@@ -22,8 +22,24 @@
         <input type="email" name="email" v-model="email" v-bind:class="{events: isActive}">
         <strong class="error" v-for="value in errors.email">{{ value }}</strong>
       </div>
-      <div class="to-password">
-        <p><a :href="toPasswordUrl">パスワードを変更</a></p>
+      <div class="others">
+        <p class="to-password"><a :href="toPasswordUrl">パスワードを変更</a></p>
+        <div class="is-private">
+          <div class="key-image-container">
+            <transition name="privateKeyImage">
+                <p v-if="isPrivate" class="private"><img src="/images/private.png"></p>
+            </transition>
+            <transition name="publicKeyImage">
+                <p v-if="!isPrivate" class="public"><img src="/images/public.png"></p>
+            </transition>
+          </div>
+          <p v-if="isPrivate">
+              <input type="checkbox" checked="true" v-on:click="isPrivate = !isPrivate">
+          </p>
+          <p v-else>
+              <input type="checkbox" checked="false" v-on:click="isPrivate = !isPrivate">
+          </p>
+        </div>
       </div>
       <div class="user-form-group send-btn" v-bind:class="{events: isActive}">
         <div class="dummy-send-button" @click="inputPassword()" v-bind:class="{events: isActive}">SAVE</div>
@@ -41,6 +57,9 @@
         toPasswordUrl: '/password/index/'+this.user.id,
         name: "",
         email: "",
+        isPrivate: Boolean,
+        privateWidth: 27,
+        publicWidth: 0,
       }
     },
     props: {
@@ -66,6 +85,8 @@
       if(this.errors.password){
         this.isActive = true;
       }
+
+      this.isPrivate = this.user.isprivate;
     },
     methods: {
       inputPassword() {
