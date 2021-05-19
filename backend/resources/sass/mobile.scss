@@ -315,6 +315,10 @@
                 height: 100%;
                 .card-body {
                   height: calc(100% - 30px);
+                  .alert-success {
+                    height: 25px;
+                    text-align: center;
+                  }
                   .logged-message {
                     height: 100%;
                     display: grid;

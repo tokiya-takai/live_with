@@ -484,9 +484,14 @@ body {
     margin: 5vh auto;
   }
 
+  .py-4 .content .card .card-body .alert-success {
+    height: 25px;
+    text-align: center;
+  }
+
   .py-4 .content .card .card-body .logged-message {
     width: 100%;
-    margin-top: 10vh;
+    margin-top: 3vh;
   }
 
   .py-4 .content .card .card-body .logged-message p {
@@ -1506,6 +1511,11 @@ body {
 
   #app main .content .container .justify-content-center .col-md-8 .card .card-body {
     height: calc(100% - 30px);
+  }
+
+  #app main .content .container .justify-content-center .col-md-8 .card .card-body .alert-success {
+    height: 25px;
+    text-align: center;
   }
 
   #app main .content .container .justify-content-center .col-md-8 .card .card-body .logged-message {

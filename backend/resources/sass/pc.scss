@@ -281,10 +281,14 @@
           width: 50vw;
           height: 50vh;
           margin: 5vh auto;
+          .alert-success {
+            height: 25px;
+            text-align: center;
+          }
           // logged in page
           .logged-message {
             width: 100%;
-            margin-top: 10vh;
+            margin-top: 3vh;
             p {
               font-size: 20px;
               text-align: center;
