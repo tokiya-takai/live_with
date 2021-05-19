@@ -19,6 +19,7 @@ class Post extends Model
     
     protected $table = "posts";
     protected $fillable = ["file_name","file_path"];
+    protected $dates = ['update_date'];
 
     public static $rules = [
         'title' => ['required', 'max:50'],

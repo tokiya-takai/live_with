@@ -66,7 +66,7 @@
         <div class="social-content">
           <ul class="social-list">
             @foreach ($users as $user)
-                <a href="#">
+                <a href="{{ route('posts.show',['id'=>$user->post_id]) }}">
                   <li>
                     <div class="social-img-container">
                       <div class="social-img-frame">

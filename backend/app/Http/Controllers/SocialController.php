@@ -12,6 +12,7 @@ class SocialController extends Controller
         // $users = User::where('isprivate', 0)->get();
         // return view('social.index', ['users'=>$users]);
         $users = DB::table('users')
+            ->select('*', 'posts.id AS post_id')
             ->join('posts','users.id','=','posts.user_id')
             ->where('isprivate', 0)
             ->orderBy('update_date', 'desc')

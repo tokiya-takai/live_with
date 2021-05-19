@@ -22,7 +22,7 @@
           @endif
         </figure>
         <figcaption>
-          <p class="last-maintenance">最後のメンテンナンス</p><p>{{ $item->created_at->format('Y/m/d') }}</p>
+          <p class="last-maintenance">最後のメンテンナンス</p><p>{{ $item->update_date->format('Y/m/d') }}</p>
         </figcaption>
       </div>
       <div class="show-shoe-content">
