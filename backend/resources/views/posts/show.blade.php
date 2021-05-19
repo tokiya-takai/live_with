@@ -2,7 +2,9 @@
 
 @section('content')
   <div id="show-shoe">
-    <a href=" {{ route('posts.edit', ['id'=>$item->id]) }}" class="new-post-btn"><button>Edit</button></a>
+    @if($item->id == Auth::id())
+      <a href=" {{ route('posts.edit', ['id'=>$item->id]) }}" class="new-post-btn"><button>Edit</button></a>
+    @endif
     <div class="show-shoe-header">
       <h1>{{ $item->title }}</h1>
     </div>
