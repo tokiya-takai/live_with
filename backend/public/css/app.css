@@ -2306,7 +2306,7 @@ body {
     width: 60%;
     min-height: 90vh;
     margin: 0 auto;
-    background-color: #f4f4f4;
+    background-color: rgba(244, 244, 244, 0.85);
   }
 
   .social .social-content .social-list {
@@ -2317,6 +2317,7 @@ body {
   .social .social-content .social-list li {
     width: 100%;
     height: 130px;
+    background-color: rgba(244, 244, 244, 0.5);
     border-bottom: 1px solid #aaa;
     display: grid;
     grid-template-columns: 200px auto;
