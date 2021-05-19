@@ -64,13 +64,27 @@
 
       <div class="social">
         <div class="social-content">
-          <div style="height: 200px;">test</div>
-          <div style="height: 200px;">test2</div>
-          <div style="height: 200px;">test3</div>
-          <div style="height: 200px;">test4</div>
-          <div style="height: 200px;">test5</div>
-          <div style="height: 200px;">test6</div>
-          <div style="height: 200px;">test7</div>
+          <ul class="social-list">
+            @foreach ($users as $user)
+                <a href="#">
+                  <li>
+                    <div class="social-img-container">
+                      <div class="social-img-frame">
+                        @if($user->file_path)
+                          <img src="{{ $user->file_path }}" alt="{{ $user->title }}">
+                        @else
+                          <div class="no-image">NO IMAGE</div>
+                        @endif
+                      </div>
+                    </div>
+                    <div class="social-post-content">
+                      <div class="title">{{ $user->title }}</div>
+                      <div class="update-info">{{ $user->name }}さんが更新しました。</div>
+                    </div>
+                  </li>
+                </a>
+            @endforeach
+          </ul>
         </div>
       </div>
     </div>

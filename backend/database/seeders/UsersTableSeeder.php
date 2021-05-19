@@ -21,7 +21,54 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('guest123'),
             'isprivate' => 0,
         ];
+        DB::table('users')->insert($param);
 
+        $param = [
+            'name' => 'test-public1',
+            'email' => 'test1@test.co.jp',
+            'password' => Hash::make('guest123'),
+            'isprivate' => 0,
+        ];
+        DB::table('users')->insert($param);
+
+        $param = [
+            'name' => 'test-public2',
+            'email' => 'test2@test.co.jp',
+            'password' => Hash::make('guest123'),
+            'isprivate' => 0,
+        ];
+        DB::table('users')->insert($param);
+
+        $param = [
+            'name' => 'test-public3',
+            'email' => 'test3@test.co.jp',
+            'password' => Hash::make('guest123'),
+            'isprivate' => 0,
+        ];
+        DB::table('users')->insert($param);
+
+        $param = [
+            'name' => 'test-private1',
+            'email' => 'test4@test.co.jp',
+            'password' => Hash::make('guest123'),
+            'isprivate' => 1,
+        ];
+        DB::table('users')->insert($param);
+
+        $param = [
+            'name' => 'test-private2',
+            'email' => 'test5@test.co.jp',
+            'password' => Hash::make('guest123'),
+            'isprivate' => 1,
+        ];
+        DB::table('users')->insert($param);
+
+        $param = [
+            'name' => 'test-private3',
+            'email' => 'test6@test.co.jp',
+            'password' => Hash::make('guest123'),
+            'isprivate' => 1,
+        ];
         DB::table('users')->insert($param);
     }
 }
