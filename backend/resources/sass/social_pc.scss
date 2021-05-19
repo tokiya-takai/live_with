@@ -17,6 +17,11 @@
         display: grid;
         grid-template-columns: 200px auto;
         grid-template-rows: [list] 130px;
+        &:hover {
+          background-color: rgb(226, 226, 226);
+          transition-duration: .4s;
+          transition-property: background-color;
+        }
         .social-img-container {
           grid-column: 1 / -2;
           grid-row: list;

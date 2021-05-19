@@ -2322,6 +2322,12 @@ body {
   grid-template-rows: [list] 130px;
 }
 
+.social .social-content .social-list li:hover {
+  background-color: #e2e2e2;
+  transition-duration: 0.4s;
+  transition-property: background-color;
+}
+
 .social .social-content .social-list li .social-img-container {
   grid-column: 1/-2;
   grid-row: list;
