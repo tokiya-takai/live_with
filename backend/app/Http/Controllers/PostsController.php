@@ -30,7 +30,7 @@ class PostsController extends Controller
         $item = Post::find($id);
 
         // Check if the post is public.
-        if(! $this->isPrivate($item)){
+        if($this->isPrivate($item) && !$this->isCorrectUser($item)){
             return redirect('/');
         }
 
@@ -119,8 +119,8 @@ class PostsController extends Controller
     {
         $user = User::find($item->user_id);
         if($user->isprivate){
-            return false;
+            return true;
         }
-        return true;
+        return false;
     }
 }
