@@ -2,7 +2,7 @@
 
 @section('content')
   <div id="show-shoe">
-    @if($item->id == Auth::id())
+    @if($item->user_id == Auth::id())
       <a href=" {{ route('posts.edit', ['id'=>$item->id]) }}" class="new-post-btn"><button>Edit</button></a>
     @endif
     <div class="show-shoe-header">
@@ -10,7 +10,7 @@
     </div>
     <div class="show-shoe-body">
       <div class="delete-btn">
-        @if($item->id == Auth::id())
+        @if($item->user_id == Auth::id())
           <form action="{{ route('posts.delete', ['id'=>$item->id]) }}" method="post" id="delete">
             @csrf
             <input type="submit" value="削除">
