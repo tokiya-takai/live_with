@@ -84,6 +84,7 @@
                   </li>
                 </a>
             @endforeach
+            <div class="list-margin"></div>
           </ul>
         </div>
       </div>

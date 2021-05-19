@@ -1,39 +1,47 @@
-@media (min-width: 1025px){
+@media (max-width: 1024px) {
   .social {
-    background: url('/images/wooden-wall.jpg');
-    background-size: contain;
+    background: url('/images/wooden-wall2.jpg');
+    background-size: cover;
     background-attachment: fixed;
+    height: calc(100vh - 100px);
+    width: 100vw;
+    overflow-y: scroll;
     .social-content {
-      width: 60%;
-      min-height: 90vh;
-      margin: 0 auto;
-      background-color: $white;
+      width: 100%;
+      height: 100%;
       .social-list {
         width: 100%;
         height: 100%;
+        &:last-child::after {
+          position: absolute;
+          content: "";
+          top: 100%;
+          left: 0;
+          height: 130px;
+          width: 1px;
+        }
         li {
           width: 100%;
-          height: 130px;
-          border-bottom: 1px solid #aaa;
+          height: 100px;
+          margin: 10px 0;
+          background-color: rgba(228, 228, 228, 0.85);
           display: grid;
-          grid-template-columns: 200px auto;
-          grid-template-rows: [list] 130px;
+          grid-template-columns: 100px auto;
+          grid-template-rows: [list] 100px;
           &:hover {
-            background-color: rgb(226, 226, 226);
-            transition-duration: .4s;
-            transition-property: background-color;
+            opacity: 0.7;
           }
           .social-img-container {
             grid-column: 1 / -2;
             grid-row: list;
-            width: 200px;
+            width: 100px;
             height: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
             .social-img-frame {
-              width: 100px;
-              height: 100px;
+              width: 80px;
+              height: 80px;
               border: 1px solid #aaa;
               object-fit: contain;
               display: flex;
@@ -64,20 +72,20 @@
             .title {
               grid-column: 1 / -1;
               grid-row: title;
-              font-size: 25px;
+              font-size: 20px;
               overflow: hidden;
             }
             .update-info {
               grid-column: 1 / -1;
               grid-row: update-info;
-              font-size: 18px;
+              font-size: 15px;
             }
           }
         }
-        .list-margin {
-          width: 1px;
-          height: 200px;
-        }
+      }
+      .list-margin {
+        width: 1px;
+        height: 200px;
       }
     }
   }
