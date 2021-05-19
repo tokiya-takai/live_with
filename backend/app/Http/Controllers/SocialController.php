@@ -15,7 +15,6 @@ class SocialController extends Controller
             ->join('posts','users.id','=','posts.user_id')
             ->where('isprivate', 0)
             ->orderBy('update_date', 'desc')
-            ->limit(1)
             ->get();
         return view('/social/index', compact('users'));
         // dd($users->toSql(), $users->getBindings());
