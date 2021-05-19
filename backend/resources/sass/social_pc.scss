@@ -1,0 +1,73 @@
+.social {
+  background: url('/images/wooden-wall.jpg');
+  background-size: contain;
+  background-attachment: fixed;
+  .social-content {
+    width: 60%;
+    min-height: 90vh;
+    margin: 0 auto;
+    background-color: $white;
+    .social-list {
+      width: 100%;
+      height: 100%;
+      li {
+        width: 100%;
+        height: 130px;
+        border-bottom: 1px solid #aaa;
+        display: grid;
+        grid-template-columns: 200px auto;
+        grid-template-rows: [list] 130px;
+        .social-img-container {
+          grid-column: 1 / -2;
+          grid-row: list;
+          width: 200px;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          .social-img-frame {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #aaa;
+            object-fit: contain;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              width: 100%;
+            }
+            .no-image {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              background-color: rgb(216, 216, 216);
+              color: $white;
+            }
+          }
+        }
+        .social-post-content {
+          display: grid;
+          grid-template-columns: auto;
+          grid-template-rows:
+                  [title] 50%
+                  [update-info] 50%;
+          align-items: center;
+          overflow: hidden;
+          .title {
+            grid-column: 1 / -1;
+            grid-row: title;
+            font-size: 25px;
+            overflow: hidden;
+          }
+          .update-info {
+            grid-column: 1 / -1;
+            grid-row: update-info;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+}

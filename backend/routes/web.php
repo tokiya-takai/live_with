@@ -30,6 +30,9 @@ Route::middleware('auth')->group(function() {
 
   Route::get('/password/index/{id}', [App\Http\Controllers\PasswordController::class, 'index']);
   Route::post('/password/update/{id}', [App\Http\Controllers\PasswordController::class, 'update'])->name('password.update');
+
+  // SocialController
+  Route::get('/social/index', [App\Http\Controllers\SocialController::class, 'index']);
 });
 
 

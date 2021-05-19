@@ -77,10 +77,8 @@ class UsersController extends Controller
     private function isGuest($email)
     {
         if($email == 'guest@test.co.jp') {
-            $result = true;
-        } else {
-            $result = false;
+            return true;
         }
-        return $result;
+        return false;
     }
 }

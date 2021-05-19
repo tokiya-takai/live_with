@@ -2067,7 +2067,7 @@ body {
   }
 
   #app main .content #show-shoe .show-shoe-header {
-    grid-rows: head;
+    grid-row: head;
     grid-column: 1/-1;
     display: flex;
     justify-content: center;
@@ -2079,7 +2079,7 @@ body {
 
   #app main .content #show-shoe .show-shoe-body {
     width: 100%;
-    grid-rows: body;
+    grid-row: body;
     grid-column: 2/-2;
     display: grid;
     grid-template-rows: [delete] 20px [image] 120px [content] auto;
@@ -2293,6 +2293,89 @@ body {
   #app main .content #change-password form .error {
     color: #ec5555;
   }
+}
+
+.social {
+  background: url("/images/wooden-wall.jpg");
+  background-size: contain;
+  background-attachment: fixed;
+}
+
+.social .social-content {
+  width: 60%;
+  min-height: 90vh;
+  margin: 0 auto;
+  background-color: #f4f4f4;
+}
+
+.social .social-content .social-list {
+  width: 100%;
+  height: 100%;
+}
+
+.social .social-content .social-list li {
+  width: 100%;
+  height: 130px;
+  border-bottom: 1px solid #aaa;
+  display: grid;
+  grid-template-columns: 200px auto;
+  grid-template-rows: [list] 130px;
+}
+
+.social .social-content .social-list li .social-img-container {
+  grid-column: 1/-2;
+  grid-row: list;
+  width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social .social-content .social-list li .social-img-container .social-img-frame {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #aaa;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social .social-content .social-list li .social-img-container .social-img-frame img {
+  width: 100%;
+}
+
+.social .social-content .social-list li .social-img-container .social-img-frame .no-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #d8d8d8;
+  color: #f4f4f4;
+}
+
+.social .social-content .social-list li .social-post-content {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: [title] 50% [update-info] 50%;
+  align-items: center;
+  overflow: hidden;
+}
+
+.social .social-content .social-list li .social-post-content .title {
+  grid-column: 1/-1;
+  grid-row: title;
+  font-size: 25px;
+  overflow: hidden;
+}
+
+.social .social-content .social-list li .social-post-content .update-info {
+  grid-column: 1/-1;
+  grid-row: update-info;
+  font-size: 18px;
 }
 
 

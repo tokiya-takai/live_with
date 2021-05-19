@@ -28,7 +28,12 @@ class PostsController extends Controller
     public function show($id)
     {
         $item = Post::find($id);
-        $this->isCorrectUser($item);
+
+        // Check if the post is public.
+        if(! $this->isPrivate($item)){
+            return redirect('/');
+        }
+
         return view("posts.show", compact('item'));
     }
 
@@ -47,14 +52,18 @@ class PostsController extends Controller
     public function edit($id)
     {
         $item = Post::find($id);
-        $this->isCorrectUser($item);
+        if(! $this->isCorrectUser($item)){
+            return redirect('/');
+        }
         return view('posts.edit', ['item'=>$item]);
     }
 
     public function update(Request $request)
     {
         $post = Post::find($request->id);
-        $this->isCorrectUser($post);
+        if(! $this->isCorrectUser($post)){
+            return redirect('/');
+        }
 
         $this->savePost($request, $post);
         return redirect('/');
@@ -63,6 +72,9 @@ class PostsController extends Controller
     public function delete($id)
     {
         $post = Post::find($id);
+        if(! $this->isCorrectUser($post)){
+            return redirect('/');
+        }
         $post->delete();
         return redirect('/');
     }
@@ -98,7 +110,17 @@ class PostsController extends Controller
     private function isCorrectUser($item)
     {
         if ($item->user_id != Auth::id()){
-            return redirect('/');
+            return false;
         }
+        return true;
+    }
+
+    private function isPrivate($item)
+    {
+        $user = User::find($item->user_id);
+        if($user->isprivate){
+            return false;
+        }
+        return true;
     }
 }

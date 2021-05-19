@@ -2072,7 +2072,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -60245,11 +60244,15 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("RESORT")])]),
+              _c("li", [
+                _c("a", { attrs: { href: "/social/index" } }, [
+                  _vm._v("SOCIAL")
+                ])
+              ]),
               _vm._v(" "),
-              _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("項目4")])]),
-              _vm._v(" "),
-              _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("項目5")])])
+              _c("li", [
+                _c("a", { attrs: { href: "/posts/new" } }, [_vm._v("NEW POST")])
+              ])
             ])
           ]
         )

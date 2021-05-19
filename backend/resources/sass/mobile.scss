@@ -789,7 +789,7 @@
             }
           }
           .show-shoe-header {
-            grid-rows: head;
+            grid-row: head;
             grid-column: 1 / -1;
             display: flex;
             justify-content: center;
@@ -800,7 +800,7 @@
           }
           .show-shoe-body {
             width: 100%;
-            grid-rows: body;
+            grid-row: body;
             grid-column: 2 / -2;
             display: grid;
             grid-template-rows:

@@ -12,9 +12,8 @@
             <ul>
                 <li><a href="/">HOME</a></li>
                 <li><a :href="toMyPageUrl">MY PAGE</a></li>
-                <li><a href="#">RESORT</a></li>
-                <li><a href="#">項目4</a></li>
-                <li><a href="#">項目5</a></li>
+                <li><a href="/social/index">SOCIAL</a></li>
+                <li><a href="/posts/new">NEW POST</a></li>
             </ul>
         </div>
     </transition>
