@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert($param);
 
         $param = [
-            'name' => 'test-public1',
+            'name' => 'YOASOBI',
             'email' => 'test1@test.co.jp',
             'password' => Hash::make('guest123'),
             'isprivate' => 0,
@@ -32,7 +32,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert($param);
 
         $param = [
-            'name' => 'test-public2',
+            'name' => 'Ado',
             'email' => 'test2@test.co.jp',
             'password' => Hash::make('guest123'),
             'isprivate' => 0,
@@ -40,7 +40,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert($param);
 
         $param = [
-            'name' => 'test-public3',
+            'name' => '髭',
             'email' => 'test3@test.co.jp',
             'password' => Hash::make('guest123'),
             'isprivate' => 0,

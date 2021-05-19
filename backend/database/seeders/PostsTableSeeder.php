@@ -16,10 +16,49 @@ class PostsTableSeeder extends Seeder
     {
         $param = [
             'user_id' => 1,
-            'file_name' => "",
-            'file_path' => "",
-            'title' => "Guest's shoes",
-            'details' => "Guest",
+            'file_name' => "チャーチ",
+            'file_path' => "/images/churchs.jpeg",
+            'title' => "チャーチ",
+            'details' => "",
+            'purchase_date' => "2021-05-01",
+            'maintenance' => "maintenance",
+            'remarks' => "remarks",
+            'update_date' => date("Y/m/d H:i:s"),
+        ];
+        DB::table('posts')->insert($param);
+
+        $param = [
+            'user_id' => 1,
+            'file_name' => "スコッチグレイン",
+            'file_path' => "/images/scotchgrain.jpeg",
+            'title' => "スコッチグレイン",
+            'details' => "",
+            'purchase_date' => "2021-05-01",
+            'maintenance' => "maintenance",
+            'remarks' => "remarks",
+            'update_date' => date("Y/m/d H:i:s"),
+        ];
+        DB::table('posts')->insert($param);
+
+        $param = [
+            'user_id' => 1,
+            'file_name' => "シェットランドフォックス",
+            'file_path' => "/images/shetlandfox.jpeg",
+            'title' => "シェットランドフォックス",
+            'details' => "",
+            'purchase_date' => "2021-05-01",
+            'maintenance' => "maintenance",
+            'remarks' => "remarks",
+            'update_date' => date("Y/m/d H:i:s"),
+        ];
+        DB::table('posts')->insert($param);
+
+        $param = [
+            'user_id' => 1,
+            'file_name' => "トリッカーズ",
+            'file_path' => "/images/trickers.jpeg",
+            'title' => "トリッカーズ",
+            'details' => "",
             'purchase_date' => "2021-05-01",
             'maintenance' => "maintenance",
             'remarks' => "remarks",
@@ -30,8 +69,8 @@ class PostsTableSeeder extends Seeder
         $param = [
             'user_id' => 2,
             'file_name' => "",
-            'file_path' => "",
-            'title' => "test-public1's shoes",
+            'file_path' => "/images/crockettandjones.jpeg",
+            'title' => "クロケット＆ジョーンズ",
             'details' => "test-public1",
             'purchase_date' => "2021-05-02",
             'maintenance' => "maintenance",
@@ -43,8 +82,8 @@ class PostsTableSeeder extends Seeder
         $param = [
             'user_id' => 3,
             'file_name' => "",
-            'file_path' => "",
-            'title' => "test-public12's shoes",
+            'file_path' => "/images/grenson.jpeg",
+            'title' => "グレンソン",
             'details' => "test-public1",
             'purchase_date' => "2021-05-03",
             'maintenance' => "maintenance",
@@ -56,8 +95,8 @@ class PostsTableSeeder extends Seeder
         $param = [
             'user_id' => 4,
             'file_name' => "",
-            'file_path' => "",
-            'title' => "test-public3's shoes",
+            'file_path' => "/images/johnlobb.jpeg",
+            'title' => "ジョンロブ",
             'details' => "test-public3",
             'purchase_date' => "2021-05-04",
             'maintenance' => "maintenance",
