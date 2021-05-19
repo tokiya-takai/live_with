@@ -5,7 +5,7 @@
     <div class="header">
       <h1>Change Password</h1>
     </div>
-    <form action="{{ route('password.update', ['id'=>$user->id]) }}" method="post">
+    <form action="{{ route('password.manual-update', ['id'=>$user->id]) }}" method="post">
       @csrf
       <div class="current-password f-ct">
         <label>現在のパスワード</label>
