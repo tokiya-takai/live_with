@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    {{-- favicon --}}
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <!-- Styles -->
     <link href="/css/destyle.css" rel="stylesheet">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
