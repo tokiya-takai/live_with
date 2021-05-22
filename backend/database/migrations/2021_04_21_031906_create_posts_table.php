@@ -15,7 +15,7 @@ class CreatePostsTable extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->engine = 'InnoDB';
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             // ファイル情報
             $table->string('file_name')->nullable();
@@ -49,6 +49,10 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
+        Schema::table('likes', function (Blueprint $table)
+        {
+            $table->dropForeign('likes_post_id_foreign');
+        });
         Schema::dropIfExists('posts');
     }
 }
