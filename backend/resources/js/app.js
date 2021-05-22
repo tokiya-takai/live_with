@@ -49,13 +49,21 @@ function deletePost() {
 }
 window.addEventListener('load', deletePost);
 
-const setFillHeight = () => {
-    const vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
+function stopParentClickEvent() {
+    const likeButtonParent = document.querySelector('.like-button-parent');
+    document.querySelectorAll('.like-btn').addEventListener('click', () => {
+        likeButtonParent.preventDefalut();
+    });
 }
+window.addEventListener('load', stopParentClickEvent);
+
+// const setFillHeight = () => {
+//     const vh = window.innerHeight * 0.01;
+//     document.documentElement.style.setProperty('--vh', `${vh}px`);
+// }
       
-// 画面のサイズ変動があった時に高さを再計算する
-window.addEventListener('resize', setFillHeight);
+// // 画面のサイズ変動があった時に高さを再計算する
+// window.addEventListener('resize', setFillHeight);
       
-// 初期化
-setFillHeight();
+// // 初期化
+// setFillHeight();

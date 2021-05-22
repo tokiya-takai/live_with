@@ -300,6 +300,13 @@ body {
     display: none;
   }
 
+  .py-4 .content #my-list .my-list-header .count-mobile,
+  .py-4 .content #my-list .show-shoe-header .count-mobile,
+  .py-4 .content #show-shoe .my-list-header .count-mobile,
+  .py-4 .content #show-shoe .show-shoe-header .count-mobile {
+    display: none;
+  }
+
   .py-4 .content #my-list .shoes-list,
   .py-4 .content #show-shoe .shoes-list {
     height: 90%;
@@ -2116,7 +2123,7 @@ body {
   #app main .content #show-shoe .show-shoe-header .likes {
     position: fixed;
     z-index: 2;
-    top: calc(100vh - 170px);
+    top: calc(100vh - 190px);
     left: calc(100vw - 85px);
     width: 50px;
     height: 50px;
@@ -2139,6 +2146,13 @@ body {
 
   #app main .content #show-shoe .show-shoe-header .likes .count {
     display: none;
+  }
+
+  #app main .content #show-shoe .show-shoe-header .count-mobile {
+    position: fixed;
+    z-index: 3;
+    top: calc(100vh - 140px);
+    left: calc(100vw - 62px);
   }
 
   #app main .content #show-shoe .show-shoe-body {
@@ -2231,7 +2245,7 @@ body {
     content: "";
     position: absolute;
     width: 1px;
-    height: 100px;
+    height: 250px;
   }
 }
 
@@ -2432,7 +2446,7 @@ body {
   .social .social-content .social-list li .social-post-content {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: [title] 50% [update-info] 50%;
+    grid-template-rows: [title] 50% [others] 50%;
     align-items: center;
     overflow: hidden;
   }
@@ -2444,10 +2458,40 @@ body {
     overflow: hidden;
   }
 
-  .social .social-content .social-list li .social-post-content .update-info {
+  .social .social-content .social-list li .social-post-content .others {
     grid-column: 1/-1;
-    grid-row: update-info;
+    grid-row: others;
     font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .social .social-content .social-list li .social-post-content .others p {
+    width: 50%;
+  }
+
+  .social .social-content .social-list li .social-post-content .others .likes {
+    width: 50%;
+    padding-right: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .social .social-content .social-list li .social-post-content .others .likes form {
+    width: 34px;
+    height: 34px;
+    margin-right: 10px;
+  }
+
+  .social .social-content .social-list li .social-post-content .others .likes form .like-btn img {
+    width: 34px;
+    height: 34px;
+  }
+
+  .social .social-content .social-list li .social-post-content .others .likes form .like-btn input {
+    display: none;
   }
 
   .social .social-content .social-list .list-margin {
@@ -2537,7 +2581,7 @@ body {
   .social .social-content .social-list li .social-post-content {
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: [title] 50% [update-info] 50%;
+    grid-template-rows: [title] 50% [others] 50%;
     align-items: center;
     overflow: hidden;
   }
@@ -2549,10 +2593,40 @@ body {
     overflow: hidden;
   }
 
-  .social .social-content .social-list li .social-post-content .update-info {
+  .social .social-content .social-list li .social-post-content .others {
     grid-column: 1/-1;
-    grid-row: update-info;
+    grid-row: others;
     font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .social .social-content .social-list li .social-post-content .others p {
+    width: 50%;
+  }
+
+  .social .social-content .social-list li .social-post-content .others .likes {
+    width: 50%;
+    padding-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .social .social-content .social-list li .social-post-content .others .likes form {
+    width: 24px;
+    height: 24px;
+    margin-right: 3px;
+  }
+
+  .social .social-content .social-list li .social-post-content .others .likes form .like-btn img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .social .social-content .social-list li .social-post-content .others .likes form .like-btn input {
+    display: none;
   }
 
   .social .social-content .list-margin {

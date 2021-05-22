@@ -32,7 +32,7 @@ Route::middleware('auth')->group(function() {
   Route::post('/password/manual/update/{id}', [App\Http\Controllers\PasswordController::class, 'update'])->name('password.manual-update');
 
   // SocialController
-  Route::get('/social/index', [App\Http\Controllers\SocialController::class, 'index']);
+  Route::get('/social/index', [App\Http\Controllers\SocialController::class, 'index'])->name('social.index');
 
   // LikesController
   Route::post('/posts/{id}/likes', [App\Http\Controllers\LikesController::class, 'store'])->name('like');
