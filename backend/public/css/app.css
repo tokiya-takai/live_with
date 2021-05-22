@@ -275,6 +275,31 @@ body {
     font-weight: bold;
   }
 
+  .py-4 .content #my-list .my-list-header .likes,
+  .py-4 .content #my-list .show-shoe-header .likes,
+  .py-4 .content #show-shoe .my-list-header .likes,
+  .py-4 .content #show-shoe .show-shoe-header .likes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .py-4 .content #my-list .my-list-header .likes form button .like-mark,
+  .py-4 .content #my-list .show-shoe-header .likes form button .like-mark,
+  .py-4 .content #show-shoe .my-list-header .likes form button .like-mark,
+  .py-4 .content #show-shoe .show-shoe-header .likes form button .like-mark {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+  }
+
+  .py-4 .content #my-list .my-list-header .likes form button input,
+  .py-4 .content #my-list .show-shoe-header .likes form button input,
+  .py-4 .content #show-shoe .my-list-header .likes form button input,
+  .py-4 .content #show-shoe .show-shoe-header .likes form button input {
+    display: none;
+  }
+
   .py-4 .content #my-list .shoes-list,
   .py-4 .content #show-shoe .shoes-list {
     height: 90%;
@@ -2085,6 +2110,35 @@ body {
     font-size: 18px;
     font-weight: bold;
     border-bottom: 1px solid #aaa;
+    position: relative;
+  }
+
+  #app main .content #show-shoe .show-shoe-header .likes {
+    position: fixed;
+    z-index: 2;
+    top: calc(100vh - 170px);
+    left: calc(100vw - 85px);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #aaa;
+    border-radius: 50%;
+    background-color: #f4f4f4;
+  }
+
+  #app main .content #show-shoe .show-shoe-header .likes form button img {
+    width: 34px;
+    height: 34px;
+  }
+
+  #app main .content #show-shoe .show-shoe-header .likes form button input {
+    display: none;
+  }
+
+  #app main .content #show-shoe .show-shoe-header .likes .count {
+    display: none;
   }
 
   #app main .content #show-shoe .show-shoe-body {

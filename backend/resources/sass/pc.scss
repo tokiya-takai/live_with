@@ -123,6 +123,23 @@
             font-size: 25px;
             font-weight: bold;
           }
+          .likes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            form {
+              button {
+                .like-mark {
+                  width: 30px;
+                  height: 30px;
+                  margin-right: 10px;
+                }
+                input {
+                  display: none;
+                }
+              }
+            }
+          }
         }
         .shoes-list {
           height: 90%;

@@ -12,7 +12,7 @@
         <form action="{{ route('unlike', ['id'=>$item->id]) }}" method="POST">
           @csrf
           <button>
-            <img src="/images/like-on.png" alt="liked">
+            <img src="/images/like-on.png" alt="liked" class="like-mark">
             <input type="submit">
           </button>
         </form>
@@ -20,7 +20,7 @@
         <form action="{{ route('like', ['id'=>$item->id]) }}" method="POST">
           @csrf
           <button>
-            <img src="/images/like-off.png" alt="unlike">
+            <img src="/images/like-off.png" alt="unlike" class="like-mark">
             <input type="submit">
           </button>
         </form>
