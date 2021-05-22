@@ -31,10 +31,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::table('likes', function (Blueprint $table)
-        {
-            $table->dropForeign('likes_user_id_foreign');
-        });
         Schema::dropIfExists('users');
     }
 }

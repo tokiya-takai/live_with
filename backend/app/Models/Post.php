@@ -15,9 +15,9 @@ class Post extends Model
         return $this->belongsTo('App\Models\User');
     }
 
-    public function users()
+    public function likes()
     {
-        return $this->belongsToMany('App\Models\User')->withTimestamps();
+        return $this->hasMany('App\Models\Like');
     }
 
     protected $guarded = array('id','content','file_name','file_path');

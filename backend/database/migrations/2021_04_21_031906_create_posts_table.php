@@ -49,10 +49,6 @@ class CreatePostsTable extends Migration
      */
     public function down()
     {
-        Schema::table('likes', function (Blueprint $table)
-        {
-            $table->dropForeign('likes_post_id_foreign');
-        });
         Schema::dropIfExists('posts');
     }
 }

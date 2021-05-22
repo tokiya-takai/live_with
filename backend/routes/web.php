@@ -35,8 +35,8 @@ Route::middleware('auth')->group(function() {
   Route::get('/social/index', [App\Http\Controllers\SocialController::class, 'index']);
 
   // LikesController
-  Route::post('posts/{post}/likes', [App\Http\Controllers\LikesController::class, 'store'])->name('likes');
-  Route::post('posts/{post}/unlikes', [App\Http\Controllers\LikesController::class, 'destroy'])->name('unlikes');
+  Route::post('/posts/{id}/likes', [App\Http\Controllers\LikesController::class, 'store'])->name('like');
+  Route::post('/posts/{id}/unlikes', [App\Http\Controllers\LikesController::class, 'destroy'])->name('unlike');
 });
 
 
