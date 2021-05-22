@@ -7,7 +7,8 @@
     @endif
     <div class="show-shoe-header">
       <h1>{{ $item->title }}</h1>
-      @if ($isLike)
+      <div class="likes">
+        @if ($isLike)
         <form action="{{ route('unlike', ['id'=>$item->id]) }}" method="POST">
           @csrf
           <button>
@@ -15,7 +16,7 @@
             <input type="submit">
           </button>
         </form>
-      @else
+        @else
         <form action="{{ route('like', ['id'=>$item->id]) }}" method="POST">
           @csrf
           <button>
@@ -23,7 +24,9 @@
             <input type="submit">
           </button>
         </form>
-      @endif
+        @endif
+        <p class="count">{{ $count }}</p>
+      </div>
     </div>
     <div class="show-shoe-body">
       <div class="delete-btn">
