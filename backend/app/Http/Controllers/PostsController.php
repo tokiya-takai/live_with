@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth; 
+use Illuminate\Support\Facades\DB; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PostRequest;
@@ -34,7 +35,10 @@ class PostsController extends Controller
             return redirect('/');
         }
 
-        return view("posts.show", compact('item'));
+        $isLike = DB::table('likes')->where('user_id', Auth::id())->where('post_id', $item->id)->exists();
+        $count = DB::table('likes')->where('post_id', $item->id)->count();
+        // dd($isLike->toSql(), $isLike->getBindings());
+        return view("posts.show", ['item'=>$item, 'isLike'=>$isLike, 'count'=>$count]);
     }
 
     public function new()

@@ -33,6 +33,10 @@ Route::middleware('auth')->group(function() {
 
   // SocialController
   Route::get('/social/index', [App\Http\Controllers\SocialController::class, 'index']);
+
+  // LikesController
+  Route::post('/posts/{id}/likes', [App\Http\Controllers\LikesController::class, 'store'])->name('like');
+  Route::post('/posts/{id}/unlikes', [App\Http\Controllers\LikesController::class, 'destroy'])->name('unlike');
 });
 
 

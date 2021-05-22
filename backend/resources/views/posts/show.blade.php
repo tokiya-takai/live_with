@@ -7,6 +7,26 @@
     @endif
     <div class="show-shoe-header">
       <h1>{{ $item->title }}</h1>
+      <div class="likes">
+        @if ($isLike)
+        <form action="{{ route('unlike', ['id'=>$item->id]) }}" method="POST">
+          @csrf
+          <button>
+            <img src="/images/like-on.png" alt="liked" class="like-mark">
+            <input type="submit">
+          </button>
+        </form>
+        @else
+        <form action="{{ route('like', ['id'=>$item->id]) }}" method="POST">
+          @csrf
+          <button>
+            <img src="/images/like-off.png" alt="unlike" class="like-mark">
+            <input type="submit">
+          </button>
+        </form>
+        @endif
+        <p class="count">{{ $count }}</p>
+      </div>
     </div>
     <div class="show-shoe-body">
       <div class="delete-btn">
