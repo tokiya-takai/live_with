@@ -15,6 +15,11 @@ class Post extends Model
         return $this->belongsTo('App\Models\User');
     }
 
+    public function users()
+    {
+        return $this->belongsToMany('App\Models\User')->withTimestamps();
+    }
+
     protected $guarded = array('id','content','file_name','file_path');
     
     protected $table = "posts";

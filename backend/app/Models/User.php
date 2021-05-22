@@ -16,6 +16,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Post');
     }
 
+    public function likes()
+    {
+        return $this->belongsToMany('App\Models\Post')->withTimestamps();
+    }
+
     /**
      * The attributes that are mass assignable.
      *
