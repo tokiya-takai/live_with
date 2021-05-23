@@ -53,7 +53,7 @@
         </figcaption>
       </div>
       <div class="show-shoe-links">
-        <links-component></links-component>
+        <links-component :links="{{ $links }}"></links-component>
       </div>
       <div class="show-shoe-content">
         <div class="show-purchase-date show-group">

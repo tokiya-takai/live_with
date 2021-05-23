@@ -20,6 +20,11 @@ class Post extends Model
         return $this->hasMany('App\Models\Like');
     }
 
+    public function links()
+    {
+        return $this->hasMany('App\Models\Link');
+    }
+
     protected $guarded = array('id','content','file_name','file_path');
     
     protected $table = "posts";
