@@ -839,8 +839,10 @@
               left: calc(100vw - 62px);
             }
           }
+          
           .show-shoe-body {
             width: 100%;
+            overflow-y: scroll;
             grid-row: body;
             grid-column: 2 / -2;
             display: grid;
@@ -888,12 +890,82 @@
                 }
               }
             }
+            .show-shoe-links {
+              .links {
+                .links-area-btn {
+                  width: 30px;
+                  height: 30px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  img {
+                    width: 30px;
+                    height: 30px;
+                    &:hover {
+                      width: 28px;
+                      height: 28px;
+                    }
+                  }
+                }
+                .links-area {
+                  height: calc(100% - 30px);
+                  padding-left: 5px;
+                  // My show page
+                  form {
+                    .link-group {
+                      margin: 10px 0;
+                      height: 25px;
+                      display: flex;
+                      .add-link-btn {
+                        button {
+                          img {
+                            width: 25px;
+                            height: 25px;
+                          }
+                        }
+                      }
+                      .input-link {
+                        display: flex;
+                        img {
+                          width: 25px;
+                          height: 25px;
+                        }
+                        input {
+                          height: 25px;
+                          border-bottom: 1px solid #aaa;
+                          margin-left: 15px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+              // Others show page
+              .others-links {
+                .others-links-area {
+                  .link-group {
+                    display: flex;
+                    margin: 10px 0;
+                    img {
+                      width: 25px;
+                      height: 25px;
+                      margin: 0 25px ;
+                    }
+                    a {
+                      text-decoration: underline #aaa;
+                      &:hover {
+                        opacity: 0.7;
+                      }
+                    }
+                  }
+                }
+              }
+            }
             .show-shoe-content {
               // The rationale of 320px is as follows.
               // header 100px, margin of content-body 25px * 2, title 30px, delete 20px, image row 120px
               height: calc(100vh - 320px);
               padding: 10px;
-              overflow-y: scroll;
               position: relative;
               .show-group {
                 margin: 30px 0;

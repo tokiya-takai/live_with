@@ -2288,7 +2288,7 @@ __webpack_require__.r(__webpack_exports__);
 
     if (this.links.link1 != "") {
       this.isAdded01 = true;
-      this.inputWidth01 = 300;
+      this.inputWidth01 = 160;
       this.imageDisplay01 = "inline;";
       this.setImage01();
       this.url = '/links/update/' + this.id;
@@ -2298,7 +2298,7 @@ __webpack_require__.r(__webpack_exports__);
 
     if (this.links.link2 != "") {
       this.isAdded02 = true;
-      this.inputWidth02 = 300;
+      this.inputWidth02 = 160;
       this.imageDisplay02 = "inline;";
       this.setImage02();
       this.url = '/links/update/' + this.id;
@@ -2308,7 +2308,7 @@ __webpack_require__.r(__webpack_exports__);
 
     if (this.links.link3 != "") {
       this.isAdded03 = true;
-      this.inputWidth03 = 300;
+      this.inputWidth03 = 160;
       this.imageDisplay03 = "inline;";
       this.setImage03();
       this.url = '/links/update/' + this.id;
@@ -2318,7 +2318,7 @@ __webpack_require__.r(__webpack_exports__);
 
     if (this.links.link4 != "") {
       this.isAdded04 = true;
-      this.inputWidth04 = 300;
+      this.inputWidth04 = 160;
       this.imageDisplay04 = "inline;";
       this.setImage04();
       this.url = '/links/update/' + this.id;
@@ -2328,7 +2328,7 @@ __webpack_require__.r(__webpack_exports__);
 
     if (this.links.link5 != "") {
       this.isAdded05 = true;
-      this.inputWidth05 = 300;
+      this.inputWidth05 = 160;
       this.imageDisplay05 = "inline;";
       this.setImage05();
       this.url = '/links/update/' + this.id;
@@ -2450,7 +2450,7 @@ __webpack_require__.r(__webpack_exports__);
       switch (key) {
         case 1:
           this.isAdded01 = true;
-          this.inputWidth01 = 300;
+          this.inputWidth01 = 160;
           this.imageDisplay01 = "inline;";
 
           if (this.link02 == "") {
@@ -2481,7 +2481,7 @@ __webpack_require__.r(__webpack_exports__);
 
         case 2:
           this.isAdded02 = true;
-          this.inputWidth02 = 300;
+          this.inputWidth02 = 160;
           this.imageDisplay02 = "inline;";
 
           if (this.link01 == "") {
@@ -2512,7 +2512,7 @@ __webpack_require__.r(__webpack_exports__);
 
         case 3:
           this.isAdded03 = true;
-          this.inputWidth03 = 300;
+          this.inputWidth03 = 160;
           this.imageDisplay03 = "inline;";
 
           if (this.link01 == "") {
@@ -2543,7 +2543,7 @@ __webpack_require__.r(__webpack_exports__);
 
         case 4:
           this.isAdded04 = true;
-          this.inputWidth04 = 300;
+          this.inputWidth04 = 160;
           this.imageDisplay04 = "inline;";
 
           if (this.link01 == "") {
@@ -2574,7 +2574,7 @@ __webpack_require__.r(__webpack_exports__);
 
         case 5:
           this.isAdded05 = true;
-          this.inputWidth05 = 300;
+          this.inputWidth05 = 160;
           this.imageDisplay05 = "inline;";
 
           if (this.link01 == "") {
@@ -2952,35 +2952,35 @@ __webpack_require__.r(__webpack_exports__);
     this.link01 = this.links.link1;
 
     if (this.links.link1 != "") {
-      this.inputWidth01 = 300;
+      this.inputWidth01 = 160;
       this.setImage01();
     }
 
     this.link02 = this.links.link2;
 
     if (this.links.link2 != "") {
-      this.inputWidth02 = 300;
+      this.inputWidth02 = 160;
       this.setImage02();
     }
 
     this.link03 = this.links.link3;
 
     if (this.links.link3 != "") {
-      this.inputWidth03 = 300;
+      this.inputWidth03 = 160;
       this.setImage03();
     }
 
     this.link04 = this.links.link4;
 
     if (this.links.link4 != "") {
-      this.inputWidth04 = 300;
+      this.inputWidth04 = 160;
       this.setImage04();
     }
 
     this.link05 = this.links.link5;
 
     if (this.links.link5 != "") {
-      this.inputWidth05 = 300;
+      this.inputWidth05 = 160;
       this.setImage05();
     }
   },
