@@ -9,15 +9,29 @@ class LinksController extends Controller
 {
     public function register(Request $request)
     {
-        $this.validate($request, Like::$rules);
+        $this->validate($request, Link::$rules);
         
-        $link = Link::find($request->id);
-        if(is_null($link)){
-            $link = new Link;
-        } else {
-            $isAdded = true;
-        }
+        $link = new Link;
+
         $link->post_id = $request->id;
+        $link = $this->setData($link, $request);
+        $link->save();
+
+        return redirect()->route('posts.show', ['id'=>$request->id]);
+    }
+
+    public function update(Request $request)
+    {
+        $this->validate($request, Link::$rules);
+
+        $link = Link::find($request->id);
+        $link = $this->setData($link, $request);
+        $link->update();
+
+        return redirect()->route('posts.show', ['id'=>$request->id]);
+    }
+
+    private function setData($link, $request) {
 
         $link->link1 = $request->link1;
         if(is_null($request->link1)){
@@ -44,12 +58,6 @@ class LinksController extends Controller
             $link->link5 = "";
         }
 
-        if($isAdded){
-            $link->update();
-        }else{
-            $link->save();
-        }
-
-        return redirect()->route('posts.show', ['id'=>$request->id]);
+        return $link;
     }
 }

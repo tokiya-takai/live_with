@@ -41,6 +41,7 @@ Route::middleware('auth')->group(function() {
 
   // LinksController
   Route::post('/links/{id}', [App\Http\Controllers\LinksController::class, 'register']);
+  Route::post('/links/update/{id}', [App\Http\Controllers\LinksController::class, 'update']);
 });
 
 
