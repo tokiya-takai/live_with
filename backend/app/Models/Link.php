@@ -13,4 +13,12 @@ class Link extends Model
     {
         return $this->belongsTo('App\Models\Post');
     }
+
+    public static $rules = [
+        'link1' => ['url'],
+        'link2' => ['url'],
+        'link3' => ['url'],
+        'link4' => ['url'],
+        'link5' => ['url'],
+    ];
 }

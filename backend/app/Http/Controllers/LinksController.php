@@ -9,6 +9,8 @@ class LinksController extends Controller
 {
     public function register(Request $request)
     {
+        $this.validate($request, Like::$rules);
+        
         $link = Link::find($request->id);
         if(is_null($link)){
             $link = new Link;
