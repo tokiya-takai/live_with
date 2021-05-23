@@ -2211,10 +2211,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      height: 30,
+      areaHeight: 30,
+      inputWidth01: 0,
+      inputWidth02: 0,
+      inputWidth03: 0,
+      inputWidth04: 0,
+      inputWidth05: 0,
       isActive: false,
       opacity: 0,
       link01: "",
@@ -2227,23 +2256,95 @@ __webpack_require__.r(__webpack_exports__);
       isAdded03: false,
       isAdded04: false,
       isAdded05: false,
-      inputType01: "hidden",
-      inputType02: "hidden",
-      inputType03: "hidden",
-      inputType04: "hidden",
-      inputType05: "hidden"
+      imageDisplay01: "none;",
+      imageDisplay02: "none;",
+      imageDisplay03: "none;",
+      imageDisplay04: "none;",
+      imageDisplay05: "none;",
+      urlImage01: "",
+      urlImage02: "",
+      urlImage03: "",
+      urlImage04: "",
+      urlImage05: "",
+      instagram: "https://www.instagram.com",
+      twitter: "https://twitter.com"
     };
   },
   props: {
     links: Array
   },
   methods: {
+    setImage01: function setImage01() {
+      this.urlImage01 = "";
+
+      if (this.link01.indexOf(this.instagram) === 0) {
+        this.urlImage01 = "/images/instagram.png";
+        return;
+      }
+
+      if (this.link01.indexOf(this.twitter) === 0) {
+        this.urlImage01 = "/images/twitter.png";
+        return;
+      }
+    },
+    setImage02: function setImage02() {
+      this.urlImage02 = "";
+
+      if (this.link02.indexOf(this.instagram) === 0) {
+        this.urlImage02 = "/images/instagram.png";
+        return;
+      }
+
+      if (this.link02.indexOf(this.twitter) === 0) {
+        this.urlImage02 = "/images/twitter.png";
+        return;
+      }
+    },
+    setImage03: function setImage03() {
+      this.urlImage03 = "";
+
+      if (this.link03.indexOf(this.instagram) === 0) {
+        this.urlImage03 = "/images/instagram.png";
+        return;
+      }
+
+      if (this.link03.indexOf(this.twitter) === 0) {
+        this.urlImage03 = "/images/twitter.png";
+        return;
+      }
+    },
+    setImage04: function setImage04() {
+      this.urlImage04 = "";
+
+      if (this.link04.indexOf(this.instagram) === 0) {
+        this.urlImage04 = "/images/instagram.png";
+        return;
+      }
+
+      if (this.link04.indexOf(this.twitter) === 0) {
+        this.urlImage04 = "/images/twitter.png";
+        return;
+      }
+    },
+    setImage05: function setImage05() {
+      this.urlImage05 = "";
+
+      if (this.link05.indexOf(this.instagram) === 0) {
+        this.urlImage05 = "/images/instagram.png";
+        return;
+      }
+
+      if (this.link05.indexOf(this.twitter) === 0) {
+        this.urlImage05 = "/images/twitter.png";
+        return;
+      }
+    },
     openLinksArea: function openLinksArea() {
       if (this.isActive) {
-        this.height = 30;
+        this.areaHeight = 30;
         this.opacity = 0;
       } else {
-        this.height = 200;
+        this.areaHeight = 250;
         this.opacity = 1;
       }
 
@@ -2252,131 +2353,156 @@ __webpack_require__.r(__webpack_exports__);
     showInput: function showInput(key) {
       switch (key) {
         case 1:
-          this.inputType01 = "url";
           this.isAdded01 = true;
+          this.inputWidth01 = 300;
+          this.imageDisplay01 = "inline;";
 
           if (this.link02 == "") {
-            this.inputType02 = "hidden";
             this.isAdded02 = false;
+            this.inputWidth02 = 0;
+            this.imageDisplay02 = "none;";
           }
 
           if (this.link03 == "") {
-            this.inputType03 = "hidden";
             this.isAdded03 = false;
+            this.inputWidth03 = 0;
+            this.imageDisplay03 = "none;";
           }
 
           if (this.link04 == "") {
-            this.inputType04 = "hidden";
             this.isAdded04 = false;
+            this.inputWidth04 = 0;
+            this.imageDisplay04 = "none;";
           }
 
           if (this.link05 == "") {
-            this.inputType05 = "hidden";
             this.isAdded05 = false;
+            this.inputWidth05 = 0;
+            this.imageDisplay05 = "none;";
           }
 
           break;
 
         case 2:
-          this.inputType02 = "url";
           this.isAdded02 = true;
+          this.inputWidth02 = 300;
+          this.imageDisplay02 = "inline;";
 
           if (this.link01 == "") {
-            this.inputType01 = "hidden";
             this.isAdded01 = false;
+            this.inputWidth01 = 0;
+            this.imageDisplay01 = "none;";
           }
 
           if (this.link03 == "") {
-            this.inputType03 = "hidden";
             this.isAdded03 = false;
+            this.inputWidth03 = 0;
+            this.imageDisplay03 = "none;";
           }
 
           if (this.link04 == "") {
-            this.inputType04 = "hidden";
             this.isAdded04 = false;
+            this.inputWidth04 = 0;
+            this.imageDisplay04 = "none;";
           }
 
           if (this.link05 == "") {
-            this.inputType05 = "hidden";
             this.isAdded05 = false;
+            this.inputWidth05 = 0;
+            this.imageDisplay05 = "none;";
           }
 
           break;
 
         case 3:
-          this.inputType03 = "url";
           this.isAdded03 = true;
+          this.inputWidth03 = 300;
+          this.imageDisplay03 = "inline;";
 
           if (this.link01 == "") {
-            this.inputType01 = "hidden";
             this.isAdded01 = false;
+            this.inputWidth01 = 0;
+            this.imageDisplay01 = "none;";
           }
 
           if (this.link02 == "") {
-            this.inputType02 = "hidden";
             this.isAdded02 = false;
+            this.inputWidth02 = 0;
+            this.imageDisplay02 = "none;";
           }
 
           if (this.link04 == "") {
-            this.inputType04 = "hidden";
             this.isAdded04 = false;
+            this.inputWidth04 = 0;
+            this.imageDisplay04 = "none;";
           }
 
           if (this.link05 == "") {
-            this.inputType05 = "hidden";
             this.isAdded05 = false;
+            this.inputWidth05 = 0;
+            this.imageDisplay05 = "none;";
           }
 
           break;
 
         case 4:
-          this.inputType04 = "url";
           this.isAdded04 = true;
+          this.inputWidth04 = 300;
+          this.imageDisplay04 = "inline;";
 
           if (this.link01 == "") {
-            this.inputType01 = "hidden";
             this.isAdded01 = false;
+            this.inputWidth01 = 0;
+            this.imageDisplay01 = "none;";
           }
 
           if (this.link02 == "") {
-            this.inputType02 = "hidden";
             this.isAdded02 = false;
+            this.inputWidth02 = 0;
+            this.imageDisplay02 = "none;";
           }
 
           if (this.link03 == "") {
-            this.inputType03 = "hidden";
             this.isAdded03 = false;
+            this.inputWidth03 = 0;
+            this.imageDisplay03 = "none;";
           }
 
           if (this.link05 == "") {
-            this.inputType05 = "hidden";
             this.isAdded05 = false;
+            this.inputWidth05 = 0;
+            this.imageDisplay05 = "none;";
           }
 
           break;
 
         case 5:
-          this.inputType05 = "url";
           this.isAdded05 = true;
+          this.inputWidth05 = 300;
+          this.imageDisplay05 = "inline;";
 
           if (this.link01 == "") {
-            this.inputType01 = "hidden";
             this.isAdded01 = false;
+            this.inputWidth01 = 0;
+            this.imageDisplay01 = "none;";
           }
 
           if (this.link02 == "") {
-            this.inputType02 = "hidden";
             this.isAdded02 = false;
+            this.inputWidth02 = 0;
+            this.imageDisplay02 = "none;";
           }
 
           if (this.link03 == "") {
-            this.inputType03 = "hidden";
             this.isAdded03 = false;
+            this.inputWidth03 = 0;
+            this.imageDisplay03 = "none;";
           }
 
           if (this.link04 == "") {
-            this.inputType04 = "hidden";
             this.isAdded04 = false;
+            this.inputWidth04 = 0;
+            this.imageDisplay04 = "none;";
           }
 
           break;
@@ -2390,7 +2516,8 @@ __webpack_require__.r(__webpack_exports__);
         case 1:
           if (this.link01 == '') {
             this.isAdded01 = false;
-            this.inputType01 = "hidden";
+            this.inputWidth01 = 0;
+            this.imageDisplay01 = "none;";
           }
 
           break;
@@ -2398,7 +2525,8 @@ __webpack_require__.r(__webpack_exports__);
         case 2:
           if (this.link02 == '') {
             this.isAdded02 = false;
-            this.inputType02 = "hidden";
+            this.inputWidth02 = 0;
+            this.imageDisplay02 = "none;";
           }
 
           break;
@@ -2406,7 +2534,8 @@ __webpack_require__.r(__webpack_exports__);
         case 3:
           if (this.link03 == '') {
             this.isAdded03 = false;
-            this.inputType03 = "hidden";
+            this.inputWidth03 = 0;
+            this.imageDisplay03 = "none;";
           }
 
           break;
@@ -2414,7 +2543,8 @@ __webpack_require__.r(__webpack_exports__);
         case 4:
           if (this.link04 == '') {
             this.isAdded04 = false;
-            this.inputType04 = "hidden";
+            this.inputWidth04 = 0;
+            this.imageDisplay04 = "none;";
           }
 
           break;
@@ -2422,7 +2552,8 @@ __webpack_require__.r(__webpack_exports__);
         case 5:
           if (this.link05 == '') {
             this.isAdded05 = false;
-            this.inputType05 = "hidden";
+            this.inputWidth05 = 0;
+            this.imageDisplay05 = "none;";
           }
 
           break;
@@ -7373,7 +7504,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.links {\n  transition-property: height;\n  transition-duration: .6s;\n}\n.links-area {\n  transition-property: opacity;\n  transition-duration: .6s;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.links {\n  transition-property: height;\n  transition-duration: .5s;\n}\n.links-area {\n  transition-property: opacity;\n  transition-duration: .5s;\n}\n.input {\n  transition-property: width;\n  transition-duration: .5s;\n}\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -60984,7 +61115,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "links", style: "height:" + _vm.height + "px;" },
+    { staticClass: "links", style: "height:" + _vm.areaHeight + "px;" },
     [
       _c(
         "button",
@@ -60997,16 +61128,22 @@ var render = function() {
             }
           }
         },
-        [_c("img", { attrs: { src: "/images/link.png" } })]
+        [
+          !_vm.isActive
+            ? _c("img", { attrs: { src: "/images/link.png" } })
+            : _c("img", { attrs: { src: "/images/close.png" } })
+        ]
       ),
       _vm._v(" "),
       _c(
         "div",
         { staticClass: "links-area", style: "opacity:" + _vm.opacity + ";" },
         [
+          _c("p", [_vm._v("Add URL")]),
+          _vm._v(" "),
           _c("div", { staticClass: "link-group" }, [
             !_vm.isAdded01 && _vm.link01 == ""
-              ? _c("div", [
+              ? _c("div", { staticClass: "add-link-btn" }, [
                   _c(
                     "button",
                     {
@@ -61021,99 +61158,50 @@ var render = function() {
                 ])
               : _vm._e(),
             _vm._v(" "),
-            _vm.inputType01 === "checkbox"
-              ? _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link01,
-                      expression: "link01"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: "checkbox" },
-                  domProps: {
-                    checked: Array.isArray(_vm.link01)
-                      ? _vm._i(_vm.link01, null) > -1
-                      : _vm.link01
-                  },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(1)
-                    },
-                    change: function($event) {
-                      var $$a = _vm.link01,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = null,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.link01 = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.link01 = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.link01 = $$c
-                      }
-                    }
+            _c("div", { staticClass: "input-link" }, [
+              _vm.urlImage01 == ""
+                ? _c("img", {
+                    style: "display:" + _vm.imageDisplay01,
+                    attrs: { src: "/images/not-sns.png" }
+                  })
+                : _c("img", { attrs: { src: _vm.urlImage01 } }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.link01,
+                    expression: "link01"
                   }
-                })
-              : _vm.inputType01 === "radio"
-              ? _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link01,
-                      expression: "link01"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: "radio" },
-                  domProps: { checked: _vm._q(_vm.link01, null) },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(1)
-                    },
-                    change: function($event) {
-                      _vm.link01 = null
-                    }
-                  }
-                })
-              : _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link01,
-                      expression: "link01"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: _vm.inputType01 },
-                  domProps: { value: _vm.link01 },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(1)
-                    },
-                    input: function($event) {
+                ],
+                staticClass: "input",
+                style: "width:" + _vm.inputWidth01 + "px;",
+                attrs: { type: "url" },
+                domProps: { value: _vm.link01 },
+                on: {
+                  input: [
+                    function($event) {
                       if ($event.target.composing) {
                         return
                       }
                       _vm.link01 = $event.target.value
+                    },
+                    function($event) {
+                      return _vm.setImage01()
                     }
+                  ],
+                  blur: function($event) {
+                    return _vm.isEmpty(1)
                   }
-                })
+                }
+              })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "link-group" }, [
             !_vm.isAdded02 && _vm.link02 == ""
-              ? _c("div", [
+              ? _c("div", { staticClass: "add-link-btn" }, [
                   _c(
                     "button",
                     {
@@ -61128,99 +61216,50 @@ var render = function() {
                 ])
               : _vm._e(),
             _vm._v(" "),
-            _vm.inputType02 === "checkbox"
-              ? _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link02,
-                      expression: "link02"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: "checkbox" },
-                  domProps: {
-                    checked: Array.isArray(_vm.link02)
-                      ? _vm._i(_vm.link02, null) > -1
-                      : _vm.link02
-                  },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(2)
-                    },
-                    change: function($event) {
-                      var $$a = _vm.link02,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = null,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.link02 = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.link02 = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.link02 = $$c
-                      }
-                    }
+            _c("div", { staticClass: "input-link" }, [
+              _vm.urlImage02 == ""
+                ? _c("img", {
+                    style: "display:" + _vm.imageDisplay02,
+                    attrs: { src: "/images/not-sns.png" }
+                  })
+                : _c("img", { attrs: { src: _vm.urlImage02 } }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.link02,
+                    expression: "link02"
                   }
-                })
-              : _vm.inputType02 === "radio"
-              ? _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link02,
-                      expression: "link02"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: "radio" },
-                  domProps: { checked: _vm._q(_vm.link02, null) },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(2)
-                    },
-                    change: function($event) {
-                      _vm.link02 = null
-                    }
-                  }
-                })
-              : _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link02,
-                      expression: "link02"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: _vm.inputType02 },
-                  domProps: { value: _vm.link02 },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(2)
-                    },
-                    input: function($event) {
+                ],
+                staticClass: "input",
+                style: "width:" + _vm.inputWidth02 + "px;",
+                attrs: { type: "url" },
+                domProps: { value: _vm.link02 },
+                on: {
+                  input: [
+                    function($event) {
                       if ($event.target.composing) {
                         return
                       }
                       _vm.link02 = $event.target.value
+                    },
+                    function($event) {
+                      return _vm.setImage02()
                     }
+                  ],
+                  blur: function($event) {
+                    return _vm.isEmpty(2)
                   }
-                })
+                }
+              })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "link-group" }, [
             !_vm.isAdded03 && _vm.link03 == ""
-              ? _c("div", [
+              ? _c("div", { staticClass: "add-link-btn" }, [
                   _c(
                     "button",
                     {
@@ -61235,99 +61274,50 @@ var render = function() {
                 ])
               : _vm._e(),
             _vm._v(" "),
-            _vm.inputType03 === "checkbox"
-              ? _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link03,
-                      expression: "link03"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: "checkbox" },
-                  domProps: {
-                    checked: Array.isArray(_vm.link03)
-                      ? _vm._i(_vm.link03, null) > -1
-                      : _vm.link03
-                  },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(3)
-                    },
-                    change: function($event) {
-                      var $$a = _vm.link03,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = null,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.link03 = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.link03 = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.link03 = $$c
-                      }
-                    }
+            _c("div", { staticClass: "input-link" }, [
+              _vm.urlImage03 == ""
+                ? _c("img", {
+                    style: "display:" + _vm.imageDisplay03,
+                    attrs: { src: "/images/not-sns.png" }
+                  })
+                : _c("img", { attrs: { src: _vm.urlImage03 } }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.link03,
+                    expression: "link03"
                   }
-                })
-              : _vm.inputType03 === "radio"
-              ? _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link03,
-                      expression: "link03"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: "radio" },
-                  domProps: { checked: _vm._q(_vm.link03, null) },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(3)
-                    },
-                    change: function($event) {
-                      _vm.link03 = null
-                    }
-                  }
-                })
-              : _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link03,
-                      expression: "link03"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: _vm.inputType03 },
-                  domProps: { value: _vm.link03 },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(3)
-                    },
-                    input: function($event) {
+                ],
+                staticClass: "input",
+                style: "width:" + _vm.inputWidth03 + "px;",
+                attrs: { type: "url" },
+                domProps: { value: _vm.link03 },
+                on: {
+                  input: [
+                    function($event) {
                       if ($event.target.composing) {
                         return
                       }
                       _vm.link03 = $event.target.value
+                    },
+                    function($event) {
+                      return _vm.setImage03()
                     }
+                  ],
+                  blur: function($event) {
+                    return _vm.isEmpty(3)
                   }
-                })
+                }
+              })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "link-group" }, [
             !_vm.isAdded04 && _vm.link04 == ""
-              ? _c("div", [
+              ? _c("div", { staticClass: "add-link-btn" }, [
                   _c(
                     "button",
                     {
@@ -61342,99 +61332,50 @@ var render = function() {
                 ])
               : _vm._e(),
             _vm._v(" "),
-            _vm.inputType04 === "checkbox"
-              ? _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link04,
-                      expression: "link04"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: "checkbox" },
-                  domProps: {
-                    checked: Array.isArray(_vm.link04)
-                      ? _vm._i(_vm.link04, null) > -1
-                      : _vm.link04
-                  },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(4)
-                    },
-                    change: function($event) {
-                      var $$a = _vm.link04,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = null,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.link04 = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.link04 = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.link04 = $$c
-                      }
-                    }
+            _c("div", { staticClass: "input-link" }, [
+              _vm.urlImage04 == ""
+                ? _c("img", {
+                    style: "display:" + _vm.imageDisplay04,
+                    attrs: { src: "/images/not-sns.png" }
+                  })
+                : _c("img", { attrs: { src: _vm.urlImage04 } }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.link04,
+                    expression: "link04"
                   }
-                })
-              : _vm.inputType04 === "radio"
-              ? _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link04,
-                      expression: "link04"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: "radio" },
-                  domProps: { checked: _vm._q(_vm.link04, null) },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(4)
-                    },
-                    change: function($event) {
-                      _vm.link04 = null
-                    }
-                  }
-                })
-              : _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link04,
-                      expression: "link04"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: _vm.inputType04 },
-                  domProps: { value: _vm.link04 },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(4)
-                    },
-                    input: function($event) {
+                ],
+                staticClass: "input",
+                style: "width:" + _vm.inputWidth04 + "px;",
+                attrs: { type: "url" },
+                domProps: { value: _vm.link04 },
+                on: {
+                  input: [
+                    function($event) {
                       if ($event.target.composing) {
                         return
                       }
                       _vm.link04 = $event.target.value
+                    },
+                    function($event) {
+                      return _vm.setImage04()
                     }
+                  ],
+                  blur: function($event) {
+                    return _vm.isEmpty(4)
                   }
-                })
+                }
+              })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "link-group" }, [
             !_vm.isAdded05 && _vm.link05 == ""
-              ? _c("div", [
+              ? _c("div", { staticClass: "add-link-btn" }, [
                   _c(
                     "button",
                     {
@@ -61449,94 +61390,45 @@ var render = function() {
                 ])
               : _vm._e(),
             _vm._v(" "),
-            _vm.inputType05 === "checkbox"
-              ? _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link05,
-                      expression: "link05"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: "checkbox" },
-                  domProps: {
-                    checked: Array.isArray(_vm.link05)
-                      ? _vm._i(_vm.link05, null) > -1
-                      : _vm.link05
-                  },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(5)
-                    },
-                    change: function($event) {
-                      var $$a = _vm.link05,
-                        $$el = $event.target,
-                        $$c = $$el.checked ? true : false
-                      if (Array.isArray($$a)) {
-                        var $$v = null,
-                          $$i = _vm._i($$a, $$v)
-                        if ($$el.checked) {
-                          $$i < 0 && (_vm.link05 = $$a.concat([$$v]))
-                        } else {
-                          $$i > -1 &&
-                            (_vm.link05 = $$a
-                              .slice(0, $$i)
-                              .concat($$a.slice($$i + 1)))
-                        }
-                      } else {
-                        _vm.link05 = $$c
-                      }
-                    }
+            _c("div", { staticClass: "input-link" }, [
+              _vm.urlImage05 == ""
+                ? _c("img", {
+                    style: "display:" + _vm.imageDisplay05,
+                    attrs: { src: "/images/not-sns.png" }
+                  })
+                : _c("img", { attrs: { src: _vm.urlImage05 } }),
+              _vm._v(" "),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.link05,
+                    expression: "link05"
                   }
-                })
-              : _vm.inputType05 === "radio"
-              ? _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link05,
-                      expression: "link05"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: "radio" },
-                  domProps: { checked: _vm._q(_vm.link05, null) },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(5)
-                    },
-                    change: function($event) {
-                      _vm.link05 = null
-                    }
-                  }
-                })
-              : _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.link05,
-                      expression: "link05"
-                    }
-                  ],
-                  staticStyle: { "border-bottom": "1px solid #aaa" },
-                  attrs: { type: _vm.inputType05 },
-                  domProps: { value: _vm.link05 },
-                  on: {
-                    blur: function($event) {
-                      return _vm.isEmpty(5)
-                    },
-                    input: function($event) {
+                ],
+                staticClass: "input",
+                style: "width:" + _vm.inputWidth05 + "px;",
+                attrs: { type: "url" },
+                domProps: { value: _vm.link05 },
+                on: {
+                  input: [
+                    function($event) {
                       if ($event.target.composing) {
                         return
                       }
                       _vm.link05 = $event.target.value
+                    },
+                    function($event) {
+                      return _vm.setImage05()
                     }
+                  ],
+                  blur: function($event) {
+                    return _vm.isEmpty(5)
                   }
-                })
+                }
+              })
+            ])
           ])
         ]
       )

@@ -272,12 +272,46 @@
             .links-area-btn {
               width: 30px;
               height: 30px;
-              &:hover {
-                opacity: 0.7;
-              }
+              display: flex;
+              justify-content: center;
+              align-items: center;
               img {
                 width: 30px;
                 height: 30px;
+                &:hover {
+                  width: 28px;
+                  height: 28px;
+                }
+              }
+            }
+            .links-area {
+              height: calc(100% - 30px);
+              padding-left: 30px;
+              .link-group {
+                margin: 10px 0;
+                height: 25px;
+                display: flex;
+                .add-link-btn {
+                  button {
+                    img {
+                      width: 25px;
+                      height: 25px;
+                    }
+                  }
+                }
+                .input-link {
+                  display: flex;
+                  img {
+                    width: 25px;
+                    height: 25px;
+                    margin-left: 25px;
+                  }
+                  input {
+                    height: 25px;
+                    border-bottom: 1px solid #aaa;
+                    margin-left: 15px;
+                  }
+                }
               }
             }
           }

@@ -1,26 +1,50 @@
 <template>
-  <div class="links" :style="'height:' + height + 'px;'">
-    <button class="links-area-btn" v-bind:class="{active: isActive}" @click="openLinksArea()"><img src="/images/link.png"></button>
+  <div class="links" :style="'height:' + areaHeight + 'px;'">
+    <button class="links-area-btn" v-bind:class="{active: isActive}" @click="openLinksArea()">
+      <img v-if="!isActive" src="/images/link.png">
+      <img v-else src="/images/close.png">
+    </button>
     <div class="links-area" :style="'opacity:'+opacity+';'">
+      <p>Add URL</p>
       <div class="link-group">
-        <div v-if="! isAdded01 && link01 == ''"><button @click="showInput(1)"><img src="/images/add-link.png"></button></div>
-        <input :type="inputType01" v-model="link01" v-on:blur="isEmpty(1)" style="border-bottom: 1px solid #aaa">
+        <div v-if="! isAdded01 && link01 == ''" class="add-link-btn"><button @click="showInput(1)"><img src="/images/add-link.png"></button></div>
+        <div class="input-link">
+          <img v-if="urlImage01 == ''" src="/images/not-sns.png" :style="'display:'+imageDisplay01">
+          <img v-else :src="urlImage01">
+          <input type="url" v-model="link01" @input="setImage01()" v-on:blur="isEmpty(1)" class="input" :style="'width:' + inputWidth01 + 'px;'">
+        </div>
       </div>
       <div class="link-group">
-        <div v-if="! isAdded02 && link02 == ''"><button @click="showInput(2)"><img src="/images/add-link.png"></button></div>
-        <input :type="inputType02" v-model="link02" v-on:blur="isEmpty(2)" style="border-bottom: 1px solid #aaa">
+        <div v-if="! isAdded02 && link02 == ''" class="add-link-btn"><button @click="showInput(2)"><img src="/images/add-link.png"></button></div>
+        <div class="input-link">
+          <img v-if="urlImage02 == ''" src="/images/not-sns.png" :style="'display:'+imageDisplay02">
+          <img v-else :src="urlImage02">
+          <input type="url" v-model="link02" @input="setImage02()" v-on:blur="isEmpty(2)" class="input" :style="'width:' + inputWidth02 + 'px;'">
+        </div>
       </div>
       <div class="link-group">
-        <div v-if="! isAdded03 && link03 == ''"><button @click="showInput(3)"><img src="/images/add-link.png"></button></div>
-        <input :type="inputType03" v-model="link03" v-on:blur="isEmpty(3)" style="border-bottom: 1px solid #aaa">
+        <div v-if="! isAdded03 && link03 == ''" class="add-link-btn"><button @click="showInput(3)"><img src="/images/add-link.png"></button></div>
+        <div class="input-link">
+          <img v-if="urlImage03 == ''" src="/images/not-sns.png" :style="'display:'+imageDisplay03">
+          <img v-else :src="urlImage03">
+          <input type="url" v-model="link03" @input="setImage03()" v-on:blur="isEmpty(3)" class="input" :style="'width:' + inputWidth03 + 'px;'">
+        </div>
       </div>
       <div class="link-group">
-        <div v-if="! isAdded04 && link04 == ''"><button @click="showInput(4)"><img src="/images/add-link.png"></button></div>
-        <input :type="inputType04" v-model="link04" v-on:blur="isEmpty(4)" style="border-bottom: 1px solid #aaa">
+        <div v-if="! isAdded04 && link04 == ''" class="add-link-btn"><button @click="showInput(4)"><img src="/images/add-link.png"></button></div>
+        <div class="input-link">
+          <img v-if="urlImage04 == ''" src="/images/not-sns.png" :style="'display:'+imageDisplay04">
+          <img v-else :src="urlImage04">
+          <input type="url" v-model="link04" @input="setImage04()" v-on:blur="isEmpty(4)" class="input" :style="'width:' + inputWidth04 + 'px;'">
+        </div>
       </div>
       <div class="link-group">
-        <div v-if="! isAdded05 && link05 == ''"><button @click="showInput(5)"><img src="/images/add-link.png"></button></div>
-        <input :type="inputType05" v-model="link05" v-on:blur="isEmpty(5)" style="border-bottom: 1px solid #aaa">
+        <div v-if="! isAdded05 && link05 == ''" class="add-link-btn"><button @click="showInput(5)"><img src="/images/add-link.png"></button></div>
+        <div class="input-link">
+          <img v-if="urlImage05 == ''" src="/images/not-sns.png" :style="'display:'+imageDisplay05">
+          <img v-else :src="urlImage05">
+          <input type="url" v-model="link05" @input="setImage05()" v-on:blur="isEmpty(5)" class="input" :style="'width:' + inputWidth05 + 'px;'">
+        </div>
       </div>
       
     </div>
@@ -31,7 +55,12 @@
 export default {
   data() {
     return {
-      height: 30,
+      areaHeight: 30,
+      inputWidth01: 0,
+      inputWidth02: 0,
+      inputWidth03: 0,
+      inputWidth04: 0,
+      inputWidth05: 0,
       isActive: false,
       opacity: 0,
       link01: "",
@@ -44,23 +73,85 @@ export default {
       isAdded03: false,
       isAdded04: false,
       isAdded05: false,
-      inputType01: "hidden",
-      inputType02: "hidden",
-      inputType03: "hidden",
-      inputType04: "hidden",
-      inputType05: "hidden",
+      imageDisplay01: "none;",
+      imageDisplay02: "none;",
+      imageDisplay03: "none;",
+      imageDisplay04: "none;",
+      imageDisplay05: "none;",
+      urlImage01: "",
+      urlImage02: "",
+      urlImage03: "",
+      urlImage04: "",
+      urlImage05: "",
+      instagram: "https://www.instagram.com",
+      twitter: "https://twitter.com",
     }
   },
   props: {
     links: Array,
   },
   methods: {
+    setImage01 () {
+      this.urlImage01 = "";
+      if(this.link01.indexOf(this.instagram) === 0){
+        this.urlImage01 = "/images/instagram.png";
+        return;
+      }
+      if(this.link01.indexOf(this.twitter) === 0){
+        this.urlImage01 = "/images/twitter.png";
+        return;
+      }
+    },
+    setImage02 () {
+      this.urlImage02 = "";
+      if(this.link02.indexOf(this.instagram) === 0){
+        this.urlImage02 = "/images/instagram.png";
+        return;
+      }
+      if(this.link02.indexOf(this.twitter) === 0){
+        this.urlImage02 = "/images/twitter.png";
+        return;
+      }
+    },
+    setImage03 () {
+      this.urlImage03 = "";
+      if(this.link03.indexOf(this.instagram) === 0){
+        this.urlImage03 = "/images/instagram.png";
+        return;
+      }
+      if(this.link03.indexOf(this.twitter) === 0){
+        this.urlImage03 = "/images/twitter.png";
+        return;
+      }
+    },
+    setImage04 () {
+      this.urlImage04 = "";
+      if(this.link04.indexOf(this.instagram) === 0){
+        this.urlImage04 = "/images/instagram.png";
+        return;
+      }
+      if(this.link04.indexOf(this.twitter) === 0){
+        this.urlImage04 = "/images/twitter.png";
+        return;
+      }
+    },
+    setImage05 () {
+      this.urlImage05 = "";
+      if(this.link05.indexOf(this.instagram) === 0){
+        this.urlImage05 = "/images/instagram.png";
+        return;
+      }
+      if(this.link05.indexOf(this.twitter) === 0){
+        this.urlImage05 = "/images/twitter.png";
+        return;
+      }
+    },
     openLinksArea() {
       if(this.isActive){
-        this.height = 30;
+        this.areaHeight = 30;
         this.opacity = 0;
       } else {
-        this.height = 200;
+        this.areaHeight = 250;
         this.opacity = 1;
       }
       this.isActive = ! this.isActive;
@@ -68,103 +159,128 @@ export default {
     showInput(key) {
       switch (key) {
         case 1:
-          this.inputType01 = "url";
           this.isAdded01 = true;
+          this.inputWidth01 = 300;
+          this.imageDisplay01 = "inline;"
           if(this.link02 == ""){
-            this.inputType02 = "hidden";
             this.isAdded02 = false;
+            this.inputWidth02 = 0;
+            this.imageDisplay02 = "none;";
           }
           if(this.link03 == ""){
-            this.inputType03 = "hidden";
             this.isAdded03 = false;
+            this.inputWidth03 = 0;
+            this.imageDisplay03 = "none;";
           }
           if(this.link04 == ""){
-            this.inputType04 = "hidden";
             this.isAdded04 = false;
+            this.inputWidth04 = 0;
+            this.imageDisplay04 = "none;";
           }
           if(this.link05 == ""){
-            this.inputType05 = "hidden";
             this.isAdded05 = false;
+            this.inputWidth05 = 0;
+            this.imageDisplay05 = "none;";
           }
           break;
         case 2:
-          this.inputType02 = "url";
           this.isAdded02 = true;
+          this.inputWidth02 = 300;
+          this.imageDisplay02 = "inline;"
           if(this.link01 == ""){
-            this.inputType01 = "hidden";
             this.isAdded01 = false;
+            this.inputWidth01 = 0;
+            this.imageDisplay01 = "none;";
           }
           if(this.link03 == ""){
-            this.inputType03 = "hidden";
             this.isAdded03 = false;
+            this.inputWidth03 = 0;
+            this.imageDisplay03 = "none;";
           }
           if(this.link04 == ""){
-            this.inputType04 = "hidden";
             this.isAdded04 = false;
+            this.inputWidth04 = 0;
+            this.imageDisplay04 = "none;";
           }
           if(this.link05 == ""){
-            this.inputType05 = "hidden";
             this.isAdded05 = false;
+            this.inputWidth05 = 0;
+            this.imageDisplay05 = "none;";
           }
           break;
         case 3:
-          this.inputType03 = "url";
           this.isAdded03 = true;
+          this.inputWidth03 = 300;
+          this.imageDisplay03 = "inline;"
           if(this.link01 == ""){
-            this.inputType01 = "hidden";
             this.isAdded01 = false;
+            this.inputWidth01 = 0;
+            this.imageDisplay01 = "none;";
           }
           if(this.link02 == ""){
-            this.inputType02 = "hidden";
             this.isAdded02 = false;
+            this.inputWidth02 = 0;
+            this.imageDisplay02 = "none;";
           }
           if(this.link04 == ""){
-            this.inputType04 = "hidden";
             this.isAdded04 = false;
+            this.inputWidth04 = 0;
+            this.imageDisplay04 = "none;";
           }
           if(this.link05 == ""){
-            this.inputType05 = "hidden";
             this.isAdded05 = false;
+            this.inputWidth05 = 0;
+            this.imageDisplay05 = "none;";
           }
           break;
         case 4:
-          this.inputType04 = "url";
           this.isAdded04 = true;
+          this.inputWidth04 = 300;
+          this.imageDisplay04 = "inline;"
           if(this.link01 == ""){
-            this.inputType01 = "hidden";
             this.isAdded01 = false;
+            this.inputWidth01 = 0;
+            this.imageDisplay01 = "none;";
           }
           if(this.link02 == ""){
-            this.inputType02 = "hidden";
             this.isAdded02 = false;
+            this.inputWidth02 = 0;
+            this.imageDisplay02 = "none;";
           }
           if(this.link03 == ""){
-            this.inputType03 = "hidden";
             this.isAdded03 = false;
+            this.inputWidth03 = 0;
+            this.imageDisplay03 = "none;";
           }
           if(this.link05 == ""){
-            this.inputType05 = "hidden";
             this.isAdded05 = false;
+            this.inputWidth05 = 0;
+            this.imageDisplay05 = "none;";
           }
           break;
         case 5:
-          this.inputType05 = "url";
           this.isAdded05 = true;
+          this.inputWidth05 = 300;
+          this.imageDisplay05 = "inline;"
           if(this.link01 == ""){
-            this.inputType01 = "hidden";
             this.isAdded01 = false;
+            this.inputWidth01 = 0;
+            this.imageDisplay01 = "none;";
           }
           if(this.link02 == ""){
-            this.inputType02 = "hidden";
             this.isAdded02 = false;
+            this.inputWidth02 = 0;
+            this.imageDisplay02 = "none;";
           }
           if(this.link03 == ""){
-            this.inputType03 = "hidden";
             this.isAdded03 = false;
+            this.inputWidth03 = 0;
+            this.imageDisplay03 = "none;";
           }
           if(this.link04 == ""){
-            this.inputType04 = "hidden";
             this.isAdded04 = false;
+            this.inputWidth04 = 0;
+            this.imageDisplay04 = "none;";
           }
           break;
         default:
@@ -176,31 +292,36 @@ export default {
         case 1:
           if(this.link01 == ''){
             this.isAdded01 = false;
-            this.inputType01 = "hidden";
+            this.inputWidth01 = 0;
+            this.imageDisplay01 = "none;";
           }
           break;
         case 2:
           if(this.link02 == ''){
             this.isAdded02 = false;
-            this.inputType02 = "hidden";
+            this.inputWidth02 = 0;
+            this.imageDisplay02 = "none;";
           }
           break;
         case 3:
           if(this.link03 == ''){
             this.isAdded03 = false;
-            this.inputType03 = "hidden";
+            this.inputWidth03 = 0;
+            this.imageDisplay03 = "none;";
           }
           break;
         case 4:
           if(this.link04 == ''){
             this.isAdded04 = false;
-            this.inputType04 = "hidden";
+            this.inputWidth04 = 0;
+            this.imageDisplay04 = "none;";
           }
           break;
         case 5:
           if(this.link05 == ''){
             this.isAdded05 = false;
-            this.inputType05 = "hidden";
+            this.inputWidth05 = 0;
+            this.imageDisplay05 = "none;";
           }
           break;
       
@@ -215,10 +336,14 @@ export default {
 <style>
 .links {
   transition-property: height;
-  transition-duration: .6s;
+  transition-duration: .5s;
 }
 .links-area {
   transition-property: opacity;
-  transition-duration: .6s;
+  transition-duration: .5s;
+}
+.input {
+  transition-property: width;
+  transition-duration: .5s;
 }
 </style>
