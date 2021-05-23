@@ -496,28 +496,28 @@ body {
     padding-left: 30px;
   }
 
-  .py-4 .content .show-shoe-body .show-shoe-links .links .links-area .link-group {
+  .py-4 .content .show-shoe-body .show-shoe-links .links .links-area form .link-group {
     margin: 10px 0;
     height: 25px;
     display: flex;
   }
 
-  .py-4 .content .show-shoe-body .show-shoe-links .links .links-area .link-group .add-link-btn button img {
+  .py-4 .content .show-shoe-body .show-shoe-links .links .links-area form .link-group .add-link-btn button img {
     width: 25px;
     height: 25px;
   }
 
-  .py-4 .content .show-shoe-body .show-shoe-links .links .links-area .link-group .input-link {
+  .py-4 .content .show-shoe-body .show-shoe-links .links .links-area form .link-group .input-link {
     display: flex;
   }
 
-  .py-4 .content .show-shoe-body .show-shoe-links .links .links-area .link-group .input-link img {
+  .py-4 .content .show-shoe-body .show-shoe-links .links .links-area form .link-group .input-link img {
     width: 25px;
     height: 25px;
     margin-left: 25px;
   }
 
-  .py-4 .content .show-shoe-body .show-shoe-links .links .links-area .link-group .input-link input {
+  .py-4 .content .show-shoe-body .show-shoe-links .links .links-area form .link-group .input-link input {
     height: 25px;
     border-bottom: 1px solid #aaa;
     margin-left: 15px;

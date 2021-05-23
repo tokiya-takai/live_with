@@ -2235,9 +2235,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
+      url: "/links/" + this.id,
       areaHeight: 30,
       inputWidth01: 0,
       inputWidth02: 0,
@@ -2271,7 +2275,53 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   props: {
-    links: Array
+    csrf: {
+      type: String,
+      required: true
+    },
+    links: Object,
+    id: Number
+  },
+  mounted: function mounted() {
+    this.link01 = this.links.link1;
+
+    if (this.links.link1 != "") {
+      this.isAdded01 = true;
+      this.inputWidth01 = 300;
+      this.setImage01();
+    }
+
+    this.link02 = this.links.link2;
+
+    if (this.links.link2 != "") {
+      this.isAdded02 = true;
+      this.inputWidth02 = 300;
+      this.setImage02();
+    }
+
+    this.link03 = this.links.link3;
+
+    if (this.links.link3 != "") {
+      this.isAdded03 = true;
+      this.inputWidth03 = 300;
+      this.setImage03();
+    }
+
+    this.link04 = this.links.link4;
+
+    if (this.links.link4 != "") {
+      this.isAdded04 = true;
+      this.inputWidth04 = 300;
+      this.setImage04();
+    }
+
+    this.link05 = this.links.link5;
+
+    if (this.links.link5 != "") {
+      this.isAdded05 = true;
+      this.inputWidth05 = 300;
+      this.setImage05();
+    }
   },
   methods: {
     setImage01: function setImage01() {
@@ -61139,296 +61189,305 @@ var render = function() {
         "div",
         { staticClass: "links-area", style: "opacity:" + _vm.opacity + ";" },
         [
-          _c("p", [_vm._v("Add URL")]),
-          _vm._v(" "),
-          _c("div", { staticClass: "link-group" }, [
-            !_vm.isAdded01 && _vm.link01 == ""
-              ? _c("div", { staticClass: "add-link-btn" }, [
-                  _c(
-                    "button",
-                    {
-                      on: {
-                        click: function($event) {
-                          return _vm.showInput(1)
-                        }
-                      }
-                    },
-                    [_c("img", { attrs: { src: "/images/add-link.png" } })]
-                  )
-                ])
-              : _vm._e(),
+          _c("form", { attrs: { action: _vm.url, method: "post" } }, [
+            _c("input", {
+              attrs: { type: "hidden", name: "_token" },
+              domProps: { value: _vm.csrf }
+            }),
             _vm._v(" "),
-            _c("div", { staticClass: "input-link" }, [
-              _vm.urlImage01 == ""
-                ? _c("img", {
-                    style: "display:" + _vm.imageDisplay01,
-                    attrs: { src: "/images/not-sns.png" }
-                  })
-                : _c("img", { attrs: { src: _vm.urlImage01 } }),
+            _c("p", [_vm._v("Add URL")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "link-group" }, [
+              !_vm.isAdded01 && _vm.link01 == ""
+                ? _c("div", { staticClass: "add-link-btn" }, [
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.showInput(1)
+                          }
+                        }
+                      },
+                      [_c("img", { attrs: { src: "/images/add-link.png" } })]
+                    )
+                  ])
+                : _vm._e(),
               _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.link01,
-                    expression: "link01"
-                  }
-                ],
-                staticClass: "input",
-                style: "width:" + _vm.inputWidth01 + "px;",
-                attrs: { type: "url" },
-                domProps: { value: _vm.link01 },
-                on: {
-                  input: [
-                    function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.link01 = $event.target.value
-                    },
-                    function($event) {
-                      return _vm.setImage01()
+              _c("div", { staticClass: "input-link" }, [
+                _vm.urlImage01 == ""
+                  ? _c("img", {
+                      style: "display:" + _vm.imageDisplay01,
+                      attrs: { src: "/images/not-sns.png" }
+                    })
+                  : _c("img", { attrs: { src: _vm.urlImage01 } }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.link01,
+                      expression: "link01"
                     }
                   ],
-                  blur: function($event) {
-                    return _vm.isEmpty(1)
-                  }
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "link-group" }, [
-            !_vm.isAdded02 && _vm.link02 == ""
-              ? _c("div", { staticClass: "add-link-btn" }, [
-                  _c(
-                    "button",
-                    {
-                      on: {
-                        click: function($event) {
-                          return _vm.showInput(2)
+                  staticClass: "input",
+                  style: "width:" + _vm.inputWidth01 + "px;",
+                  attrs: { type: "url", name: "link1" },
+                  domProps: { value: _vm.link01 },
+                  on: {
+                    input: [
+                      function($event) {
+                        if ($event.target.composing) {
+                          return
                         }
+                        _vm.link01 = $event.target.value
+                      },
+                      function($event) {
+                        return _vm.setImage01()
                       }
-                    },
-                    [_c("img", { attrs: { src: "/images/add-link.png" } })]
-                  )
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _c("div", { staticClass: "input-link" }, [
-              _vm.urlImage02 == ""
-                ? _c("img", {
-                    style: "display:" + _vm.imageDisplay02,
-                    attrs: { src: "/images/not-sns.png" }
-                  })
-                : _c("img", { attrs: { src: _vm.urlImage02 } }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.link02,
-                    expression: "link02"
+                    ],
+                    blur: function($event) {
+                      return _vm.isEmpty(1)
+                    }
                   }
-                ],
-                staticClass: "input",
-                style: "width:" + _vm.inputWidth02 + "px;",
-                attrs: { type: "url" },
-                domProps: { value: _vm.link02 },
-                on: {
-                  input: [
-                    function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.link02 = $event.target.value
-                    },
-                    function($event) {
-                      return _vm.setImage02()
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "link-group" }, [
+              !_vm.isAdded02 && _vm.link02 == ""
+                ? _c("div", { staticClass: "add-link-btn" }, [
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.showInput(2)
+                          }
+                        }
+                      },
+                      [_c("img", { attrs: { src: "/images/add-link.png" } })]
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-link" }, [
+                _vm.urlImage02 == ""
+                  ? _c("img", {
+                      style: "display:" + _vm.imageDisplay02,
+                      attrs: { src: "/images/not-sns.png" }
+                    })
+                  : _c("img", { attrs: { src: _vm.urlImage02 } }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.link02,
+                      expression: "link02"
                     }
                   ],
-                  blur: function($event) {
-                    return _vm.isEmpty(2)
-                  }
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "link-group" }, [
-            !_vm.isAdded03 && _vm.link03 == ""
-              ? _c("div", { staticClass: "add-link-btn" }, [
-                  _c(
-                    "button",
-                    {
-                      on: {
-                        click: function($event) {
-                          return _vm.showInput(3)
+                  staticClass: "input",
+                  style: "width:" + _vm.inputWidth02 + "px;",
+                  attrs: { type: "url", name: "link2" },
+                  domProps: { value: _vm.link02 },
+                  on: {
+                    input: [
+                      function($event) {
+                        if ($event.target.composing) {
+                          return
                         }
+                        _vm.link02 = $event.target.value
+                      },
+                      function($event) {
+                        return _vm.setImage02()
                       }
-                    },
-                    [_c("img", { attrs: { src: "/images/add-link.png" } })]
-                  )
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _c("div", { staticClass: "input-link" }, [
-              _vm.urlImage03 == ""
-                ? _c("img", {
-                    style: "display:" + _vm.imageDisplay03,
-                    attrs: { src: "/images/not-sns.png" }
-                  })
-                : _c("img", { attrs: { src: _vm.urlImage03 } }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.link03,
-                    expression: "link03"
+                    ],
+                    blur: function($event) {
+                      return _vm.isEmpty(2)
+                    }
                   }
-                ],
-                staticClass: "input",
-                style: "width:" + _vm.inputWidth03 + "px;",
-                attrs: { type: "url" },
-                domProps: { value: _vm.link03 },
-                on: {
-                  input: [
-                    function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.link03 = $event.target.value
-                    },
-                    function($event) {
-                      return _vm.setImage03()
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "link-group" }, [
+              !_vm.isAdded03 && _vm.link03 == ""
+                ? _c("div", { staticClass: "add-link-btn" }, [
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.showInput(3)
+                          }
+                        }
+                      },
+                      [_c("img", { attrs: { src: "/images/add-link.png" } })]
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-link" }, [
+                _vm.urlImage03 == ""
+                  ? _c("img", {
+                      style: "display:" + _vm.imageDisplay03,
+                      attrs: { src: "/images/not-sns.png" }
+                    })
+                  : _c("img", { attrs: { src: _vm.urlImage03 } }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.link03,
+                      expression: "link03"
                     }
                   ],
-                  blur: function($event) {
-                    return _vm.isEmpty(3)
-                  }
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "link-group" }, [
-            !_vm.isAdded04 && _vm.link04 == ""
-              ? _c("div", { staticClass: "add-link-btn" }, [
-                  _c(
-                    "button",
-                    {
-                      on: {
-                        click: function($event) {
-                          return _vm.showInput(4)
+                  staticClass: "input",
+                  style: "width:" + _vm.inputWidth03 + "px;",
+                  attrs: { type: "url", name: "link3" },
+                  domProps: { value: _vm.link03 },
+                  on: {
+                    input: [
+                      function($event) {
+                        if ($event.target.composing) {
+                          return
                         }
+                        _vm.link03 = $event.target.value
+                      },
+                      function($event) {
+                        return _vm.setImage03()
                       }
-                    },
-                    [_c("img", { attrs: { src: "/images/add-link.png" } })]
-                  )
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _c("div", { staticClass: "input-link" }, [
-              _vm.urlImage04 == ""
-                ? _c("img", {
-                    style: "display:" + _vm.imageDisplay04,
-                    attrs: { src: "/images/not-sns.png" }
-                  })
-                : _c("img", { attrs: { src: _vm.urlImage04 } }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.link04,
-                    expression: "link04"
+                    ],
+                    blur: function($event) {
+                      return _vm.isEmpty(3)
+                    }
                   }
-                ],
-                staticClass: "input",
-                style: "width:" + _vm.inputWidth04 + "px;",
-                attrs: { type: "url" },
-                domProps: { value: _vm.link04 },
-                on: {
-                  input: [
-                    function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.link04 = $event.target.value
-                    },
-                    function($event) {
-                      return _vm.setImage04()
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "link-group" }, [
+              !_vm.isAdded04 && _vm.link04 == ""
+                ? _c("div", { staticClass: "add-link-btn" }, [
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.showInput(4)
+                          }
+                        }
+                      },
+                      [_c("img", { attrs: { src: "/images/add-link.png" } })]
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-link" }, [
+                _vm.urlImage04 == ""
+                  ? _c("img", {
+                      style: "display:" + _vm.imageDisplay04,
+                      attrs: { src: "/images/not-sns.png" }
+                    })
+                  : _c("img", { attrs: { src: _vm.urlImage04 } }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.link04,
+                      expression: "link04"
                     }
                   ],
-                  blur: function($event) {
-                    return _vm.isEmpty(4)
-                  }
-                }
-              })
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "link-group" }, [
-            !_vm.isAdded05 && _vm.link05 == ""
-              ? _c("div", { staticClass: "add-link-btn" }, [
-                  _c(
-                    "button",
-                    {
-                      on: {
-                        click: function($event) {
-                          return _vm.showInput(5)
+                  staticClass: "input",
+                  style: "width:" + _vm.inputWidth04 + "px;",
+                  attrs: { type: "url", name: "link4" },
+                  domProps: { value: _vm.link04 },
+                  on: {
+                    input: [
+                      function($event) {
+                        if ($event.target.composing) {
+                          return
                         }
+                        _vm.link04 = $event.target.value
+                      },
+                      function($event) {
+                        return _vm.setImage04()
                       }
-                    },
-                    [_c("img", { attrs: { src: "/images/add-link.png" } })]
-                  )
-                ])
-              : _vm._e(),
-            _vm._v(" "),
-            _c("div", { staticClass: "input-link" }, [
-              _vm.urlImage05 == ""
-                ? _c("img", {
-                    style: "display:" + _vm.imageDisplay05,
-                    attrs: { src: "/images/not-sns.png" }
-                  })
-                : _c("img", { attrs: { src: _vm.urlImage05 } }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.link05,
-                    expression: "link05"
+                    ],
+                    blur: function($event) {
+                      return _vm.isEmpty(4)
+                    }
                   }
-                ],
-                staticClass: "input",
-                style: "width:" + _vm.inputWidth05 + "px;",
-                attrs: { type: "url" },
-                domProps: { value: _vm.link05 },
-                on: {
-                  input: [
-                    function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.link05 = $event.target.value
-                    },
-                    function($event) {
-                      return _vm.setImage05()
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "link-group" }, [
+              !_vm.isAdded05 && _vm.link05 == ""
+                ? _c("div", { staticClass: "add-link-btn" }, [
+                    _c(
+                      "button",
+                      {
+                        on: {
+                          click: function($event) {
+                            return _vm.showInput(5)
+                          }
+                        }
+                      },
+                      [_c("img", { attrs: { src: "/images/add-link.png" } })]
+                    )
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _c("div", { staticClass: "input-link" }, [
+                _vm.urlImage05 == ""
+                  ? _c("img", {
+                      style: "display:" + _vm.imageDisplay05,
+                      attrs: { src: "/images/not-sns.png" }
+                    })
+                  : _c("img", { attrs: { src: _vm.urlImage05 } }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.link05,
+                      expression: "link05"
                     }
                   ],
-                  blur: function($event) {
-                    return _vm.isEmpty(5)
+                  staticClass: "input",
+                  style: "width:" + _vm.inputWidth05 + "px;",
+                  attrs: { type: "url", name: "link5" },
+                  domProps: { value: _vm.link05 },
+                  on: {
+                    input: [
+                      function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.link05 = $event.target.value
+                      },
+                      function($event) {
+                        return _vm.setImage05()
+                      }
+                    ],
+                    blur: function($event) {
+                      return _vm.isEmpty(5)
+                    }
                   }
-                }
-              })
-            ])
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c("input", { attrs: { type: "submit", value: "Register" } })
           ])
         ]
       )

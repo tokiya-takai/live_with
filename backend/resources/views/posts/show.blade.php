@@ -53,7 +53,10 @@
         </figcaption>
       </div>
       <div class="show-shoe-links">
-        <links-component :links="{{ $links }}"></links-component>
+        <links-component
+          :links="{{ $links }}" :id="{{ $item->id }}"
+          :csrf="{{json_encode(csrf_token())}}"
+        ></links-component>
       </div>
       <div class="show-shoe-content">
         <div class="show-purchase-date show-group">

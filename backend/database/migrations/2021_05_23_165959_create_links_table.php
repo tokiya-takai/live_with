@@ -10,7 +10,12 @@ class CreateLinksTable extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('post_id');
+            $table->unsignedBigInteger('post_id')->unique();
+            $table->text('link1')->default("");
+            $table->text('link2')->default("");
+            $table->text('link3')->default("");
+            $table->text('link4')->default("");
+            $table->text('link5')->default("");
             $table->timestamps();
 
             $table->foreign('post_id')

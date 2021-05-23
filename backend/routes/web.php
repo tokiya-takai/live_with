@@ -38,6 +38,9 @@ Route::middleware('auth')->group(function() {
   // LikesController
   Route::post('/posts/{id}/likes', [App\Http\Controllers\LikesController::class, 'store'])->name('like');
   Route::post('/posts/{id}/unlikes', [App\Http\Controllers\LikesController::class, 'destroy'])->name('unlike');
+
+  // LinksController
+  Route::post('/links/{id}', [App\Http\Controllers\LinksController::class, 'register']);
 });
 
 

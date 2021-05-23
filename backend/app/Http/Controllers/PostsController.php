@@ -42,7 +42,7 @@ class PostsController extends Controller
         $count = DB::table('likes')->where('post_id', $item->id)->count();
 
         // Get the link associated with the post.
-        $links = Link::where('post_id', $item->id)->get();
+        $links = Link::find($item->id);
 
         return view("posts.show", ['item'=>$item, 'isLike'=>$isLike, 'count'=>$count, 'links'=>$links]);
     }
