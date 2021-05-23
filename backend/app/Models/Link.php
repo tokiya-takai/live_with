@@ -15,10 +15,10 @@ class Link extends Model
     }
 
     public static $rules = [
-        'link1' => ['url'],
-        'link2' => ['url'],
-        'link3' => ['url'],
-        'link4' => ['url'],
-        'link5' => ['url'],
+        'link1' => ['nullable','url'],
+        'link2' => ['nullable','url'],
+        'link3' => ['nullable','url'],
+        'link4' => ['nullable','url'],
+        'link5' => ['nullable','url'],
     ];
 }

@@ -106,35 +106,45 @@ export default {
     if(this.links.link1 != ""){
       this.isAdded01 = true;
       this.inputWidth01 = 300;
+      this.imageDisplay01 = "inline;"
       this.setImage01();
+      this.url = '/links/update/' + this.id;
     }
 
     this.link02 = this.links.link2;
     if(this.links.link2 != ""){
       this.isAdded02 = true;
       this.inputWidth02 = 300;
+      this.imageDisplay02 = "inline;"
       this.setImage02();
+      this.url = '/links/update/' + this.id;
     }
 
     this.link03 = this.links.link3;
     if(this.links.link3 != ""){
       this.isAdded03 = true;
       this.inputWidth03 = 300;
+      this.imageDisplay03 = "inline;"
       this.setImage03();
+      this.url = '/links/update/' + this.id;
     }
 
     this.link04 = this.links.link4;
     if(this.links.link4 != ""){
       this.isAdded04 = true;
       this.inputWidth04 = 300;
+      this.imageDisplay04 = "inline;"
       this.setImage04();
+      this.url = '/links/update/' + this.id;
     }
 
     this.link05 = this.links.link5;
     if(this.links.link5 != ""){
       this.isAdded05 = true;
       this.inputWidth05 = 300;
+      this.imageDisplay05 = "inline;"
       this.setImage05();
+      this.url = '/links/update/' + this.id;
     }
   },
   methods: {
