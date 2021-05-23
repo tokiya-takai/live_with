@@ -52,6 +52,12 @@
           <p class="last-maintenance">最後のメンテンナンス</p><p>{{ $item->update_date->format('Y/m/d') }}</p>
         </figcaption>
       </div>
+      <div class="show-shoe-links">
+        <links-component
+          :links="{{ $links }}" :id="{{ $item->id }}"
+          :csrf="{{json_encode(csrf_token())}}"
+        ></links-component>
+      </div>
       <div class="show-shoe-content">
         <div class="show-purchase-date show-group">
           <p class="label">購入日</p>

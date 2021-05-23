@@ -26,6 +26,7 @@ Vue.component('list-rendering-component', require('./components/ListRenderingCom
 Vue.component('guest-user-component', require('./components/GuestUserComponent.vue').default);
 Vue.component('user-component', require('./components/UserComponent.vue').default);
 Vue.component('liked-posts-component', require('./components/LikedPostsComponent.vue').default);
+Vue.component('links-component', require('./components/LinksComponent.vue').default);
  /**
   * Next, we will create a fresh Vue application instance and attach it to
   * the page. Then, you may begin adding components to this application

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Link;
 
 class PostsController extends Controller
 {
@@ -35,10 +36,15 @@ class PostsController extends Controller
             return redirect('/');
         }
 
+        // Is registered to favorite?
         $isLike = DB::table('likes')->where('user_id', Auth::id())->where('post_id', $item->id)->exists();
+        // Count all likes
         $count = DB::table('likes')->where('post_id', $item->id)->count();
-        // dd($isLike->toSql(), $isLike->getBindings());
-        return view("posts.show", ['item'=>$item, 'isLike'=>$isLike, 'count'=>$count]);
+
+        // Get the link associated with the post.
+        $links = Link::find($item->id);
+
+        return view("posts.show", ['item'=>$item, 'isLike'=>$isLike, 'count'=>$count, 'links'=>$links]);
     }
 
     public function new()
