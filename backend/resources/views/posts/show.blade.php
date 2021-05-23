@@ -53,10 +53,15 @@
         </figcaption>
       </div>
       <div class="show-shoe-links">
-        <links-component
-          :links="{{ $links }}" :id="{{ $item->id }}"
-          :csrf="{{json_encode(csrf_token())}}"
-        ></links-component>
+        @if($item->user_id == Auth::id())
+          <links-component
+            :links="{{ $links }}"
+            :id="{{ $item->id }}"
+            :csrf="{{json_encode(csrf_token())}}"
+          ></links-component>
+        @else
+          <others-links-component :links="{{ $links }}"></others-links-component>
+        @endif
       </div>
       <div class="show-shoe-content">
         <div class="show-purchase-date show-group">

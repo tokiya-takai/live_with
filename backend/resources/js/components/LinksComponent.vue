@@ -12,7 +12,7 @@
           <div v-if="! isAdded01 && link01 == ''" class="add-link-btn"><button @click="showInput(1)"><img src="/images/add-link.png"></button></div>
           <div class="input-link">
             <img v-if="urlImage01 == ''" src="/images/not-sns.png" :style="'display:'+imageDisplay01">
-            <img v-else :src="urlImage01">
+            <img v-else :src="urlImage01" :style="'display:'+imageDisplay01">
             <input type="url" name="link1" v-model="link01" @input="setImage01()" v-on:blur="isEmpty(1)" class="input" :style="'width:' + inputWidth01 + 'px;'">
           </div>
         </div>
@@ -20,7 +20,7 @@
           <div v-if="! isAdded02 && link02 == ''" class="add-link-btn"><button @click="showInput(2)"><img src="/images/add-link.png"></button></div>
           <div class="input-link">
             <img v-if="urlImage02 == ''" src="/images/not-sns.png" :style="'display:'+imageDisplay02">
-            <img v-else :src="urlImage02">
+            <img v-else :src="urlImage02" :style="'display:'+imageDisplay02">
             <input type="url" name="link2" v-model="link02" @input="setImage02()" v-on:blur="isEmpty(2)" class="input" :style="'width:' + inputWidth02 + 'px;'">
           </div>
         </div>
@@ -28,7 +28,7 @@
           <div v-if="! isAdded03 && link03 == ''" class="add-link-btn"><button @click="showInput(3)"><img src="/images/add-link.png"></button></div>
           <div class="input-link">
             <img v-if="urlImage03 == ''" src="/images/not-sns.png" :style="'display:'+imageDisplay03">
-            <img v-else :src="urlImage03">
+            <img v-else :src="urlImage03" :style="'display:'+imageDisplay03">
             <input type="url" name="link3" v-model="link03" @input="setImage03()" v-on:blur="isEmpty(3)" class="input" :style="'width:' + inputWidth03 + 'px;'">
           </div>
         </div>
@@ -36,7 +36,7 @@
           <div v-if="! isAdded04 && link04 == ''" class="add-link-btn"><button @click="showInput(4)"><img src="/images/add-link.png"></button></div>
           <div class="input-link">
             <img v-if="urlImage04 == ''" src="/images/not-sns.png" :style="'display:'+imageDisplay04">
-            <img v-else :src="urlImage04">
+            <img v-else :src="urlImage04" :style="'display:'+imageDisplay04">
             <input type="url" name="link4" v-model="link04" @input="setImage04()" v-on:blur="isEmpty(4)" class="input" :style="'width:' + inputWidth04 + 'px;'">
           </div>
         </div>
@@ -44,7 +44,7 @@
           <div v-if="! isAdded05 && link05 == ''" class="add-link-btn"><button @click="showInput(5)"><img src="/images/add-link.png"></button></div>
           <div class="input-link">
             <img v-if="urlImage05 == ''" src="/images/not-sns.png" :style="'display:'+imageDisplay05">
-            <img v-else :src="urlImage05">
+            <img v-else :src="urlImage05" :style="'display:'+imageDisplay05">
             <input type="url" name="link5" v-model="link05" @input="setImage05()" v-on:blur="isEmpty(5)" class="input" :style="'width:' + inputWidth05 + 'px;'">
           </div>
         </div>

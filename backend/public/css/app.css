@@ -523,6 +523,26 @@ body {
     margin-left: 15px;
   }
 
+  .py-4 .content .show-shoe-body .show-shoe-links .others-links .others-links-area .link-group {
+    display: flex;
+    margin: 10px 0;
+  }
+
+  .py-4 .content .show-shoe-body .show-shoe-links .others-links .others-links-area .link-group img {
+    width: 25px;
+    height: 25px;
+    margin: 0 25px;
+  }
+
+  .py-4 .content .show-shoe-body .show-shoe-links .others-links .others-links-area .link-group a {
+    -webkit-text-decoration: underline #aaa;
+            text-decoration: underline #aaa;
+  }
+
+  .py-4 .content .show-shoe-body .show-shoe-links .others-links .others-links-area .link-group a:hover {
+    opacity: 0.7;
+  }
+
   .py-4 .content .show-shoe-body .show-shoe-content {
     padding: 10px;
   }
