@@ -43,6 +43,15 @@ class PostsController extends Controller
 
         // Get the link associated with the post.
         $links = Link::find($item->id);
+        if(is_null($links)){
+            $links = new Link;
+            $links->post_id = "";
+            $links->link1 = "";
+            $links->link2 = "";
+            $links->link3 = "";
+            $links->link4 = "";
+            $links->link5 = "";
+        }
 
         return view("posts.show", ['item'=>$item, 'isLike'=>$isLike, 'count'=>$count, 'links'=>$links]);
     }

@@ -287,6 +287,7 @@
             .links-area {
               height: calc(100% - 30px);
               padding-left: 30px;
+              // My show page
               form {
                 .link-group {
                   margin: 10px 0;
@@ -312,6 +313,26 @@
                       border-bottom: 1px solid #aaa;
                       margin-left: 15px;
                     }
+                  }
+                }
+              }
+            }
+          }
+          // Others show page
+          .others-links {
+            .others-links-area {
+              .link-group {
+                display: flex;
+                margin: 10px 0;
+                img {
+                  width: 25px;
+                  height: 25px;
+                  margin: 0 25px ;
+                }
+                a {
+                  text-decoration: underline #aaa;
+                  &:hover {
+                    opacity: 0.7;
                   }
                 }
               }
