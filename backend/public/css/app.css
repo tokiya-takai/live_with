@@ -2364,6 +2364,7 @@ body {
 
   #app main .content #show-shoe .show-shoe-body {
     width: 100%;
+    overflow-y: scroll;
     grid-row: body;
     grid-column: 2/-2;
     display: grid;
@@ -2428,10 +2429,80 @@ body {
 }
 
 @media (max-width: 1024px) {
+  #app main .content #show-shoe .show-shoe-body .show-shoe-links .links .links-area-btn {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-links .links .links-area-btn img {
+    width: 30px;
+    height: 30px;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-links .links .links-area-btn img:hover {
+    width: 28px;
+    height: 28px;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-links .links .links-area {
+    height: calc(100% - 30px);
+    padding-left: 5px;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-links .links .links-area form .link-group {
+    margin: 10px 0;
+    height: 25px;
+    display: flex;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-links .links .links-area form .link-group .add-link-btn button img {
+    width: 25px;
+    height: 25px;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-links .links .links-area form .link-group .input-link {
+    display: flex;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-links .links .links-area form .link-group .input-link img {
+    width: 25px;
+    height: 25px;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-links .links .links-area form .link-group .input-link input {
+    height: 25px;
+    border-bottom: 1px solid #aaa;
+    margin-left: 15px;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-links .others-links .others-links-area .link-group {
+    display: flex;
+    margin: 10px 0;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-links .others-links .others-links-area .link-group img {
+    width: 25px;
+    height: 25px;
+    margin: 0 25px;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-links .others-links .others-links-area .link-group a {
+    -webkit-text-decoration: underline #aaa;
+            text-decoration: underline #aaa;
+  }
+
+  #app main .content #show-shoe .show-shoe-body .show-shoe-links .others-links .others-links-area .link-group a:hover {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 1024px) {
   #app main .content #show-shoe .show-shoe-body .show-shoe-content {
     height: calc(100vh - 320px);
     padding: 10px;
-    overflow-y: scroll;
     position: relative;
   }
 

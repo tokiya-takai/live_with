@@ -60,31 +60,31 @@ export default {
   mounted() {
     this.link01 = this.links.link1;
     if(this.links.link1 != ""){
-      this.inputWidth01 = 300;
+      this.inputWidth01 = 160;
       this.setImage01();
     }
 
     this.link02 = this.links.link2;
     if(this.links.link2 != ""){
-      this.inputWidth02 = 300;
+      this.inputWidth02 = 160;
       this.setImage02();
     }
 
     this.link03 = this.links.link3;
     if(this.links.link3 != ""){
-      this.inputWidth03 = 300;
+      this.inputWidth03 = 160;
       this.setImage03();
     }
 
     this.link04 = this.links.link4;
     if(this.links.link4 != ""){
-      this.inputWidth04 = 300;
+      this.inputWidth04 = 160;
       this.setImage04();
     }
 
     this.link05 = this.links.link5;
     if(this.links.link5 != ""){
-      this.inputWidth05 = 300;
+      this.inputWidth05 = 160;
       this.setImage05();
     }
   },
