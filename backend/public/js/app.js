@@ -2072,11 +2072,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       ActiveBtn: false,
-      toMyPageUrl: String
+      toMyPageUrl: String,
+      toMyLikesUrl: String
     };
   },
   props: {
@@ -2085,8 +2087,10 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     if (this.user < 0) {
       this.toMyPageUrl = "/";
+      this.toMyLikesUrl = "/";
     } else {
       this.toMyPageUrl = "/users/" + this.user;
+      this.toMyLikesUrl = "/users/" + this.user + "/show";
     }
   }
 });
@@ -2130,14 +2134,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      action: "/posts/show/"
+      action: "/posts/show/",
+      sortOrder: 1,
+      filter: "Update Order"
     };
   },
   props: {
     items: Array
+  },
+  computed: {
+    sortedItemsByUpdateDate: function sortedItemsByUpdateDate() {
+      var _this = this;
+
+      return this.items.sort(function (a, b) {
+        return a.update_date < b.update_date ? -_this.sortOrder : a.update_date > b.update_date ? _this.sortOrder : 0;
+      });
+      ;
+    }
+  },
+  methods: {
+    changeOrder: function changeOrder() {
+      this.sortOrder = this.sortOrder > 0 ? -1 : 1;
+
+      if (this.sortOrder < 1) {
+        this.filter = "Registration order";
+      } else {
+        this.filter = "New Order";
+      }
+    }
   }
 });
 
@@ -60372,6 +60400,12 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("li", [
+                _c("a", { attrs: { href: _vm.toMyLikesUrl } }, [
+                  _vm._v("MY LIKES")
+                ])
+              ]),
+              _vm._v(" "),
+              _c("li", [
                 _c("a", { attrs: { href: "/social/index" } }, [
                   _vm._v("SOCIAL")
                 ])
@@ -60412,15 +60446,60 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { attrs: { id: "my-likes" } }, [
-    _c("div", { staticClass: "likes-list" }, [
-      _c(
-        "ul",
-        _vm._l(_vm.items, function(item) {
-          return _c("li", [_c("p", [_vm._v(_vm._s(item.name))])])
-        }),
-        0
-      )
-    ])
+    _c("div", { staticClass: "likes-list-title" }, [
+      _c("h1", [_vm._v("My Likes")]),
+      _vm._v(" "),
+      _c("button", { staticClass: "filter", on: { click: _vm.changeOrder } }, [
+        _vm._v(_vm._s(_vm.filter))
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "likes-list" },
+      [
+        _c(
+          "transition-group",
+          { attrs: { name: "items", tag: "ul" } },
+          _vm._l(_vm.sortedItemsByUpdateDate, function(item) {
+            return _c("li", { key: item.post_id }, [
+              _c(
+                "a",
+                { attrs: { href: _vm.action + item.post_id.toFixed() } },
+                [
+                  _c("button", [
+                    _c("figure", [
+                      _c("div", [
+                        item.file_path == null
+                          ? _c("img", {
+                              attrs: {
+                                src: "images/no-image.jpg",
+                                alt: "no image"
+                              }
+                            })
+                          : _c("img", { attrs: { src: item.file_path } })
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("figcaption", [
+                      _c("p", { staticClass: "shoe-name" }, [
+                        _vm._v(_vm._s(item.title))
+                      ]),
+                      _vm._v(" "),
+                      _c("p", { staticClass: "owner-name" }, [
+                        _vm._v("OWNER : " + _vm._s(item.name))
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            ])
+          }),
+          0
+        )
+      ],
+      1
+    )
   ])
 }
 var staticRenderFns = []

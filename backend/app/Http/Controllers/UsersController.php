@@ -72,7 +72,7 @@ class UsersController extends Controller
     {
         // $items =  Like::with(['post', 'user'])->where('user_id', Auth::id())->get();
         $items = DB::table('posts')
-                ->select('name','title','isprivate','likes.user_id as likes_user_id')
+                ->select('*','likes.user_id as likes_user_id')
                 ->join('users', 'posts.user_id', '=', 'users.id')
                 ->join('likes', 'posts.id', '=', 'likes.post_id')
                 ->where('isprivate', 0)
