@@ -20,11 +20,12 @@
  // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
  
 Vue.component('hamburger-component', require('./components/HamburgerComponent.vue').default);
- Vue.component('new-post-component', require('./components/NewPostComponent.vue').default);
- Vue.component('edit-post-component', require('./components/EditPostComponent.vue').default);
- Vue.component('list-rendering-component', require('./components/ListRenderingComponent.vue').default);
- Vue.component('guest-user-component', require('./components/GuestUserComponent.vue').default);
- Vue.component('user-component', require('./components/UserComponent.vue').default);
+Vue.component('new-post-component', require('./components/NewPostComponent.vue').default);
+Vue.component('edit-post-component', require('./components/EditPostComponent.vue').default);
+Vue.component('list-rendering-component', require('./components/ListRenderingComponent.vue').default);
+Vue.component('guest-user-component', require('./components/GuestUserComponent.vue').default);
+Vue.component('user-component', require('./components/UserComponent.vue').default);
+Vue.component('liked-posts-component', require('./components/LikedPostsComponent.vue').default);
  /**
   * Next, we will create a fresh Vue application instance and attach it to
   * the page. Then, you may begin adding components to this application
@@ -49,13 +50,13 @@ function deletePost() {
 }
 window.addEventListener('load', deletePost);
 
-function stopParentClickEvent() {
-    const likeButtonParent = document.querySelector('.like-button-parent');
-    document.querySelectorAll('.like-btn').addEventListener('click', () => {
-        likeButtonParent.preventDefalut();
-    });
-}
-window.addEventListener('load', stopParentClickEvent);
+// function stopParentClickEvent() {
+//     const likeButtonParent = document.querySelector('.like-button-parent');
+//     document.querySelectorAll('.like-btn').addEventListener('click', () => {
+//         likeButtonParent.preventDefalut();
+//     });
+// }
+// window.addEventListener('load', stopParentClickEvent);
 
 // const setFillHeight = () => {
 //     const vh = window.innerHeight * 0.01;

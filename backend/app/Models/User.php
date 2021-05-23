@@ -18,7 +18,14 @@ class User extends Authenticatable
 
     public function likes()
     {
-        return $this->hasMany('App\Models\Like');
+        return $this->hasManyThrough(
+            'App\Models\Post', //最終モデル
+            'App\Models\Like', //中間モデル
+            'user_id', //Likeの外部キー
+            'id', //Postの外部キー
+            null, //Usersのローカルキー
+            'post_id' //LikeとPostを結ぶキー
+        );
     }
 
     /**

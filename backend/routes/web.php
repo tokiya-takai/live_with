@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function() {
   // UsersController
   Route::get('/users/{id}',[App\Http\Controllers\UsersController::class, 'index'])->name('user.index');
   Route::post('/users/update/{id}',[App\Http\Controllers\UsersController::class, 'update']);
+  Route::get('/users/{id}/show',[App\Http\Controllers\UsersController::class, 'show'])->name('user.show');
 
   Route::get('/password/index/{id}', [App\Http\Controllers\PasswordController::class, 'index']);
   Route::post('/password/manual/update/{id}', [App\Http\Controllers\PasswordController::class, 'update'])->name('password.manual-update');
