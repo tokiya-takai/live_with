@@ -38,7 +38,7 @@
                         @endif
                     @else
                         <li>
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('user.index', ['id' => Auth::id()]) }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('user.show', ['id' => Auth::id()]) }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                                 {{ Auth::user()->name }}</a>
                         </li>
                         <li>

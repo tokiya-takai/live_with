@@ -806,7 +806,7 @@
             .likes {
               position: fixed;
               z-index: 2;
-              top: calc(100vh - 170px);
+              top: calc(100vh - 190px);
               left: calc(100vw - 85px);
 
               width: 50px;
@@ -831,6 +831,12 @@
               .count {
                 display: none;
               }
+            }
+            .count-mobile {
+              position: fixed;
+              z-index: 3;
+              top: calc(100vh - 140px);
+              left: calc(100vw - 62px);
             }
           }
           .show-shoe-body {
@@ -903,7 +909,7 @@
                 content: "";
                 position: absolute;
                 width: 1px;
-                height: 100px;
+                height: 250px;
               }
             }
           }
@@ -1018,6 +1024,7 @@
             }
           }
         }
+        @import "./likes_mobile.scss";
       }
     }
   }

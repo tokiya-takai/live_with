@@ -59,7 +59,7 @@
             grid-template-columns: auto;
             grid-template-rows:
                     [title] 50%
-                    [update-info] 50%;
+                    [others] 50%;
             align-items: center;
             overflow: hidden;
             .title {
@@ -68,10 +68,37 @@
               font-size: 25px;
               overflow: hidden;
             }
-            .update-info {
+            .others {
               grid-column: 1 / -1;
-              grid-row: update-info;
+              grid-row: others;
               font-size: 18px;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              p {
+                width: 50%;
+              }
+              .likes {
+                width: 50%;
+                padding-right: 30px;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                form {
+                  width: 34px;
+                  height: 34px;
+                  margin-right: 10px;
+                  .like-btn {
+                    img {
+                      width: 34px;
+                      height: 34px;
+                    }
+                    input {
+                      display: none;
+                    }
+                  }
+                }
+              }
             }
           }
         }

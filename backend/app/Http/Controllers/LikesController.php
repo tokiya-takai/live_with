@@ -17,12 +17,20 @@ class LikesController extends Controller
         $like->user_id = Auth::id();
         $like->post_id = $request->id;
         $like->save();
-        return redirect()->route('posts.show', ['id'=>$request->id]);
+        if($request->source == 'show'){
+            return redirect()->route('posts.show', ['id'=>$request->id]);
+        } else {
+            return redirect()->route('social.index');
+        }
     }
 
     public function destroy(Request $request)
     {
         DB::table('likes')->where('user_id', Auth::id())->where('post_id', $request->id)->delete();
-        return redirect()->route('posts.show', ['id'=>$request->id]);
+        if($request->source == 'show'){
+            return redirect()->route('posts.show', ['id'=>$request->id]);
+        } else {
+            return redirect()->route('social.index');
+        }
     }
 }

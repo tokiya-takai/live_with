@@ -43,7 +43,7 @@
                     @endif
                 @else
                     <li>
-                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('user.index', ['id' => Auth::id()]) }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
+                        <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('user.show', ['id' => Auth::id()]) }}" role="button" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}</a>
                     </li>
                     <li>
@@ -66,7 +66,7 @@
         <div class="social-content">
           <ul class="social-list">
             @foreach ($users as $user)
-                <a href="{{ route('posts.show',['id'=>$user->post_id]) }}">
+                <a href="{{ route('posts.show',['id'=>$user->post_id]) }}" class="like-button-parent">
                   <li>
                     <div class="social-img-container">
                       <div class="social-img-frame">
@@ -79,7 +79,31 @@
                     </div>
                     <div class="social-post-content">
                       <div class="title">{{ $user->title }}</div>
-                      <div class="update-info">{{ $user->name }}さんが更新しました。</div>
+                      <div class="others">
+                        <p>{{ $user->name }}さんが更新しました。</p>
+                        <div class="likes">
+                          @if (DB::table('likes')->where('user_id', Auth::id())->where('post_id', $user->post_id)->exists())
+                            <form action="{{ route('unlike', ['id'=>$user->post_id]) }}" method="POST">
+                              @csrf
+                              <button class="like-btn">
+                                <img src="/images/like-on.png" alt="liked" class="like-mark">
+                                <input type="hidden" name="source" value="social">
+                                <input type="submit">
+                              </button>
+                            </form>
+                          @else
+                            <form action="{{ route('like', ['id'=>$user->post_id]) }}" method="POST">
+                              @csrf
+                              <button class="like-btn">
+                                <img src="/images/like-off.png" alt="unlike" class="like-mark">
+                                <input type="hidden" name="source" value="social">
+                                <input type="submit">
+                              </button>
+                            </form>
+                          @endif
+                          <span class="count">{{ DB::table('likes')->where('post_id', $user->post_id)->count() }}</span>
+                        </div>
+                      </div>
                     </div>
                   </li>
                 </a>

@@ -7,7 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\DB;
 use App\Models\User;
+use App\Models\Like;
 use App\Lib\Current;
 
 
@@ -64,6 +66,21 @@ class UsersController extends Controller
             throw ValidationException::withMessages(['success' => '変更しました。']);
             return redirect($url);
         }
+    }
+
+    public function show($id)
+    {
+        // $items =  Like::with(['post', 'user'])->where('user_id', Auth::id())->get();
+        $items = DB::table('posts')
+                ->select('*','likes.user_id as likes_user_id')
+                ->join('users', 'posts.user_id', '=', 'users.id')
+                ->join('likes', 'posts.id', '=', 'likes.post_id')
+                ->where('isprivate', 0)
+                ->where('likes.user_id', Auth::id())
+                ->get();
+        // var_dump($items);
+        // dd($items->toSql(), $items->getBindings());
+        return view('users.show', ['items'=>$items]);
     }
 
     private function isCorrectUser($id)

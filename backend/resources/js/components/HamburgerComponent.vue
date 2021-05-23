@@ -12,6 +12,7 @@
             <ul>
                 <li><a href="/">HOME</a></li>
                 <li><a :href="toMyPageUrl">MY PAGE</a></li>
+                <li><a :href="toMyLikesUrl">MY LIKES</a></li>
                 <li><a href="/social/index">SOCIAL</a></li>
                 <li><a href="/posts/new">NEW POST</a></li>
             </ul>
@@ -26,6 +27,7 @@ export default {
     return {
       ActiveBtn: false,
       toMyPageUrl: String,
+      toMyLikesUrl: String,
     }
   },
   props: {
@@ -34,8 +36,10 @@ export default {
   mounted() {
     if(this.user < 0){
       this.toMyPageUrl = "/";
+      this.toMyLikesUrl = "/";
     } else {
       this.toMyPageUrl = "/users/"+this.user;
+      this.toMyLikesUrl = "/users/"+this.user+"/show";
     }
   },
 }

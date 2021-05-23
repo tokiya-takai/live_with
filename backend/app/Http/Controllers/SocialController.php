@@ -17,6 +17,7 @@ class SocialController extends Controller
             ->where('isprivate', 0)
             ->orderBy('update_date', 'desc')
             ->get();
+
         return view('/social/index', compact('users'));
         // dd($users->toSql(), $users->getBindings());
     }

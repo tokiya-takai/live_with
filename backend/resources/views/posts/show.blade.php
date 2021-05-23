@@ -13,6 +13,7 @@
           @csrf
           <button>
             <img src="/images/like-on.png" alt="liked" class="like-mark">
+            <input type="hidden" name="source" value="show">
             <input type="submit">
           </button>
         </form>
@@ -21,12 +22,14 @@
           @csrf
           <button>
             <img src="/images/like-off.png" alt="unlike" class="like-mark">
+            <input type="hidden" name="source" value="show">
             <input type="submit">
           </button>
         </form>
         @endif
         <p class="count">{{ $count }}</p>
       </div>
+      <p class="count-mobile">{{ $count }}</p>
     </div>
     <div class="show-shoe-body">
       <div class="delete-btn">
