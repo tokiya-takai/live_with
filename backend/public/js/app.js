@@ -2271,7 +2271,8 @@ __webpack_require__.r(__webpack_exports__);
       urlImage04: "",
       urlImage05: "",
       instagram: "https://www.instagram.com",
-      twitter: "https://twitter.com"
+      twitter: "https://twitter.com",
+      facebook: "https://www.facebook.com"
     };
   },
   props: {
@@ -2336,6 +2337,13 @@ __webpack_require__.r(__webpack_exports__);
         this.urlImage01 = "/images/twitter.png";
         return;
       }
+
+      if (this.link01.indexOf(this.facebook) === 0) {
+        this.urlImage01 = "/images/facebook.png";
+        return;
+      } else {
+        this.urlImage01 = "/images/not-sns.png";
+      }
     },
     setImage02: function setImage02() {
       this.urlImage02 = "";
@@ -2348,6 +2356,13 @@ __webpack_require__.r(__webpack_exports__);
       if (this.link02.indexOf(this.twitter) === 0) {
         this.urlImage02 = "/images/twitter.png";
         return;
+      }
+
+      if (this.link02.indexOf(this.facebook) === 0) {
+        this.urlImage02 = "/images/facebook.png";
+        return;
+      } else {
+        this.urlImage02 = "/images/not-sns.png";
       }
     },
     setImage03: function setImage03() {
@@ -2362,6 +2377,13 @@ __webpack_require__.r(__webpack_exports__);
         this.urlImage03 = "/images/twitter.png";
         return;
       }
+
+      if (this.link03.indexOf(this.facebook) === 0) {
+        this.urlImage03 = "/images/facebook.png";
+        return;
+      } else {
+        this.urlImage03 = "/images/not-sns.png";
+      }
     },
     setImage04: function setImage04() {
       this.urlImage04 = "";
@@ -2375,6 +2397,13 @@ __webpack_require__.r(__webpack_exports__);
         this.urlImage04 = "/images/twitter.png";
         return;
       }
+
+      if (this.link04.indexOf(this.facebook) === 0) {
+        this.urlImage04 = "/images/facebook.png";
+        return;
+      } else {
+        this.urlImage04 = "/images/not-sns.png";
+      }
     },
     setImage05: function setImage05() {
       this.urlImage05 = "";
@@ -2387,6 +2416,13 @@ __webpack_require__.r(__webpack_exports__);
       if (this.link05.indexOf(this.twitter) === 0) {
         this.urlImage05 = "/images/twitter.png";
         return;
+      }
+
+      if (this.link05.indexOf(this.facebook) === 0) {
+        this.urlImage05 = "/images/facebook.png";
+        return;
+      } else {
+        this.urlImage05 = "/images/not-sns.png";
       }
     },
     openLinksArea: function openLinksArea() {

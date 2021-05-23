@@ -89,6 +89,7 @@ export default {
       urlImage05: "",
       instagram: "https://www.instagram.com",
       twitter: "https://twitter.com",
+      facebook: "https://www.facebook.com",
     }
   },
   props: {
@@ -147,6 +148,12 @@ export default {
         this.urlImage01 = "/images/twitter.png";
         return;
       }
+      if(this.link01.indexOf(this.facebook) === 0){
+        this.urlImage01 = "/images/facebook.png";
+        return;
+      } else {
+        this.urlImage01 = "/images/not-sns.png";
+      }
     },
     setImage02 () {
       this.urlImage02 = "";
@@ -157,6 +164,12 @@ export default {
       if(this.link02.indexOf(this.twitter) === 0){
         this.urlImage02 = "/images/twitter.png";
         return;
+      }
+      if(this.link02.indexOf(this.facebook) === 0){
+        this.urlImage02 = "/images/facebook.png";
+        return;
+      } else {
+        this.urlImage02 = "/images/not-sns.png";
       }
     },
     setImage03 () {
@@ -169,6 +182,12 @@ export default {
         this.urlImage03 = "/images/twitter.png";
         return;
       }
+      if(this.link03.indexOf(this.facebook) === 0){
+        this.urlImage03 = "/images/facebook.png";
+        return;
+      } else {
+        this.urlImage03 = "/images/not-sns.png";
+      }
     },
     setImage04 () {
       this.urlImage04 = "";
@@ -180,6 +199,12 @@ export default {
         this.urlImage04 = "/images/twitter.png";
         return;
       }
+      if(this.link04.indexOf(this.facebook) === 0){
+        this.urlImage04 = "/images/facebook.png";
+        return;
+      } else {
+        this.urlImage04 = "/images/not-sns.png";
+      }
     },
     setImage05 () {
       this.urlImage05 = "";
@@ -190,6 +215,12 @@ export default {
       if(this.link05.indexOf(this.twitter) === 0){
         this.urlImage05 = "/images/twitter.png";
         return;
+      }
+      if(this.link05.indexOf(this.facebook) === 0){
+        this.urlImage05 = "/images/facebook.png";
+        return;
+      } else {
+        this.urlImage05 = "/images/not-sns.png";
       }
     },
     openLinksArea() {
