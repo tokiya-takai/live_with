@@ -61081,29 +61081,40 @@ var render = function() {
     ),
     _vm._v(" "),
     _c("div", { staticClass: "post-comment-area" }, [
-      _c("form", { attrs: { action: _vm.url, method: "post" } }, [
-        _c("input", {
-          attrs: { type: "hidden", name: "_token" },
-          domProps: { value: _vm.csrf }
-        }),
-        _vm._v(" "),
-        _c("div", [
-          _c("textarea", {
-            directives: [
-              {
-                name: "mode",
-                rawName: "v-mode:value",
-                value: _vm.content,
-                expression: "content",
-                arg: "value"
-              }
-            ],
-            attrs: { name: "content", maxlength: "140", required: "" }
-          })
-        ]),
-        _vm._v(" "),
-        _vm._m(0)
-      ])
+      _c(
+        "form",
+        { attrs: { action: _vm.url, method: "post" } },
+        [
+          _c("input", {
+            attrs: { type: "hidden", name: "_token" },
+            domProps: { value: _vm.csrf }
+          }),
+          _vm._v(" "),
+          _c("div", [
+            _c("textarea", {
+              directives: [
+                {
+                  name: "mode",
+                  rawName: "v-mode:value",
+                  value: _vm.content,
+                  expression: "content",
+                  arg: "value"
+                }
+              ],
+              attrs: { name: "content", maxlength: "140", required: "" }
+            })
+          ]),
+          _vm._v(" "),
+          _vm._l(_vm.errors.content, function(value) {
+            return _c("strong", { staticClass: "error" }, [
+              _vm._v(_vm._s(value))
+            ])
+          }),
+          _vm._v(" "),
+          _vm._m(0)
+        ],
+        2
+      )
     ])
   ])
 }
