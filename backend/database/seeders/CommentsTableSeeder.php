@@ -31,7 +31,7 @@ class CommentsTableSeeder extends Seeder
         $param = [
             'post_id'=>1,
             'user_id'=>4,
-            'content'=>"ありがとうございます！",
+            'content'=>"エイジングが楽しみですね。",
             'created_at' => new DateTime(),
             'updated_at' => new DateTime(),
         ];
