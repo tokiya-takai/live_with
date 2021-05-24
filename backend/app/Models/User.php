@@ -28,6 +28,18 @@ class User extends Authenticatable
         );
     }
 
+    public function comments()
+    {
+        return $this->hasManyThrough(
+            'App\Models\Post',
+            'App\Models\Comment',
+            'user_id',
+            'id',
+            null,
+            'post_id'
+        );
+    }
+
     /**
      * The attributes that are mass assignable.
      *
