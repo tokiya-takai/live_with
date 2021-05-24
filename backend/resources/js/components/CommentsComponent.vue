@@ -2,7 +2,11 @@
   <div id="comments">
     <ul class="comment-list">
       <li v-for="comment in comments">
-        <p>{{ comment.content }}</p>
+        <div class="comment-info">
+          <p class="user-name">{{ comment.name }}</p>
+          <p class="created-at">{{ comment.created_at | moment }}</p>
+        </div>
+        <div class="comment-body"><p class="comment-content">{{ comment.content }}</p></div>
       </li>
       <div class="comment-margin"></div>
     </ul>
@@ -20,6 +24,7 @@
 </template>
 
 <script>
+import moment from 'moment';
 export default {
   data() {
     return {
@@ -43,6 +48,11 @@ export default {
     comments: Array,
     old: Array,
     errors: Array,
+  },
+  filters: {
+    moment: function (date) {
+      return moment(date).format('YYYY/MM/DD HH:mm');
+    },
   }
 }
 </script>

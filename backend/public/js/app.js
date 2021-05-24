@@ -1845,6 +1845,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -1866,6 +1868,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -1889,6 +1896,11 @@ __webpack_require__.r(__webpack_exports__);
     comments: Array,
     old: Array,
     errors: Array
+  },
+  filters: {
+    moment: function moment(date) {
+      return moment__WEBPACK_IMPORTED_MODULE_0___default()(date).format('YYYY/MM/DD HH:mm');
+    }
   }
 });
 
@@ -61082,7 +61094,23 @@ var render = function() {
       { staticClass: "comment-list" },
       [
         _vm._l(_vm.comments, function(comment) {
-          return _c("li", [_c("p", [_vm._v(_vm._s(comment.content))])])
+          return _c("li", [
+            _c("div", { staticClass: "comment-info" }, [
+              _c("p", { staticClass: "user-name" }, [
+                _vm._v(_vm._s(comment.name))
+              ]),
+              _vm._v(" "),
+              _c("p", { staticClass: "created-at" }, [
+                _vm._v(_vm._s(_vm._f("moment")(comment.created_at)))
+              ])
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "comment-body" }, [
+              _c("p", { staticClass: "comment-content" }, [
+                _vm._v(_vm._s(comment.content))
+              ])
+            ])
+          ])
         }),
         _vm._v(" "),
         _c("div", { staticClass: "comment-margin" })

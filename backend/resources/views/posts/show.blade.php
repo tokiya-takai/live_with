@@ -91,7 +91,7 @@
       <comments-component
           :csrf="{{json_encode(csrf_token())}}"
           :id="{{ $item->id }}"
-          :comments="{{ $item->comments }}"
+          :comments="{{ $comments }}"
           :old="{{ json_encode(Session::getOldInput()) }}"
           :errors= "{{ $errors }}"
       ></comments-component>
