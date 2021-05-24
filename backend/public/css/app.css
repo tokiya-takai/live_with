@@ -627,6 +627,10 @@ body {
     transition-duration: 0.4s;
   }
 
+  .py-4 .content .comment-btn-container button:hover {
+    opacity: 0.8;
+  }
+
   .py-4 .content .comment-area {
     display: none;
     width: 80%;
@@ -697,9 +701,15 @@ body {
   .py-4 .content .comment-area #comments .post-comment-area form .textarea textarea {
     width: 100%;
     height: 42px;
+    resize: vertical;
     padding: 10px;
     border: 1px solid #aaa;
     border-radius: 3px;
+  }
+
+  .py-4 .content .comment-area #comments .post-comment-area form .textarea p {
+    width: 100%;
+    text-align: right;
   }
 
   .py-4 .content .comment-area #comments .post-comment-area form .submit-btn {

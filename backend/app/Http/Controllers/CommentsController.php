@@ -22,7 +22,7 @@ class CommentsController extends Controller
 
         $comment->save();
 
-        return back()->withInput();
+        return redirect()->route('posts.show', ['id'=>$request->id]);
     }
 
     public function delete() {

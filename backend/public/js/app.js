@@ -1872,6 +1872,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
@@ -61132,15 +61133,26 @@ var render = function() {
             _c("textarea", {
               directives: [
                 {
-                  name: "mode",
-                  rawName: "v-mode:value",
+                  name: "model",
+                  rawName: "v-model:value",
                   value: _vm.content,
                   expression: "content",
                   arg: "value"
                 }
               ],
-              attrs: { name: "content", maxlength: "140", required: "" }
-            })
+              attrs: { name: "content", maxlength: "140", required: "" },
+              domProps: { value: _vm.content },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.content = $event.target.value
+                }
+              }
+            }),
+            _vm._v(" "),
+            _c("p", [_vm._v(_vm._s(_vm.content.length) + "/140")])
           ]),
           _vm._v(" "),
           _vm._l(_vm.errors.content, function(value) {

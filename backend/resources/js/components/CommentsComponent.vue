@@ -14,7 +14,8 @@
       <form :action="url" method="post">
         <input type="hidden" name="_token" v-bind:value="csrf">
         <div class="textarea">
-          <textarea name="content" maxlength="140" required v-mode:value="content"></textarea>
+          <textarea name="content" maxlength="140" required v-model:value="content"></textarea>
+          <p>{{ content.length }}/140</p>
         </div>
         <strong class="error" v-for="value in errors.content">{{ value }}</strong>
         <div class="submit-btn"><button><input type="submit" value="SEND"></button></div>
