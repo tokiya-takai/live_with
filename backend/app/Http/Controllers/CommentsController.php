@@ -25,7 +25,7 @@ class CommentsController extends Controller
         return redirect()->route('posts.show', ['id'=>$request->id]);
     }
 
-    public function delete() {
-
+    public function delete($id) {
+        var_dump($id);
     }
 }

@@ -45,6 +45,7 @@ Route::middleware('auth')->group(function() {
 
   // CommentsController
   Route::post('/comments/{id}', [App\Http\Controllers\CommentsController::class, 'create']);
+  Route::post('/comments/delete/{id}', [App\Http\Controllers\CommentsController::class, 'delete']);
 });
 
 

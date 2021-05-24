@@ -90,7 +90,8 @@
     <div class="comment-area">
       <comments-component
           :csrf="{{json_encode(csrf_token())}}"
-          :id="{{ $item->id }}"
+          :post_id="{{ $item->id }}"
+          :my_id="{{ Auth::id() }}"
           :comments="{{ $comments }}"
           :old="{{ json_encode(Session::getOldInput()) }}"
           :errors= "{{ $errors }}"

@@ -31,6 +31,24 @@ function deletePost() {
 }
 window.addEventListener('load', deletePost);
 
+function deleteComment() {
+    const forms = document.querySelectorAll('.delete-comment');
+
+    forms.forEach(function (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (window.confirm('削除された内容は元に戻せません。\n削除しますか？')) {
+                form.submit();
+                return;
+            } else {
+                return;
+            }
+        });
+    })
+
+}
+window.addEventListener('load', deleteComment);
+
 function showComment() {
     const commentButton = document.getElementById('comment-btn');
     const showShoe = document.getElementById('show-shoe');
