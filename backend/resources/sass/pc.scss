@@ -236,12 +236,45 @@
           float: left;
           position: absolute;
           width: 100%;
-          text-align: right;
-          form input {
-            color: #aaa;
-            margin-right: 5%;
-            &:hover {
-              opacity: 0.8;
+          height: 30px;
+          form {
+            width: 100%;
+            height: 100%;
+            padding-right: 5px;
+            button {
+              width: 80px;
+              height: 100%;
+              margin-left: calc(100% - 80px);
+              position: relative;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img {
+                width: 25px;
+                height: 25px;
+              }
+              .dust-hover {
+                position: absolute;
+                z-index: 1;
+              }
+              .dust {
+                position: absolute;
+                z-index: 2;
+                opacity: 1;
+              }
+              input {
+                display: none;
+              }
+              &:hover {
+                background-color: #ff3e48;
+                transition-property: background-color;
+                transition-duration: .5s;
+                .dust {
+                  opacity: 0;
+                  transition-property: opacity;
+                  transition-duration: .3s;
+                }
+              }
             }
           }
         }

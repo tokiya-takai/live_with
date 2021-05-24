@@ -36,7 +36,7 @@
         @if($item->user_id == Auth::id())
           <form action="{{ route('posts.delete', ['id'=>$item->id]) }}" method="post" id="delete">
             @csrf
-            <input type="submit" value="削除">
+            <button><img src="/images/dust-box-hover.png" class="dust-hover"><img src="/images/dust-box.png" class="dust"><input type="submit"></button>
           </form>
         @endif
       </div>
