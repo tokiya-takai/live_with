@@ -86,7 +86,7 @@
         </div>
       </div>
     </div>
-    <button id="comment-btn">コメントを表示</button>
+    <div class="comment-btn-container"><button id="comment-btn">コメントを表示<img src="/images/comment.png" class="comment-open-btn"></button></div>
     <div class="comment-area">
       <comments-component
           :csrf="{{json_encode(csrf_token())}}"

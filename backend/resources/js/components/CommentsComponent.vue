@@ -4,13 +4,16 @@
       <li v-for="comment in comments">
         <p>{{ comment.content }}</p>
       </li>
+      <div class="comment-margin"></div>
     </ul>
     <div class="post-comment-area">
       <form :action="url" method="post">
         <input type="hidden" name="_token" v-bind:value="csrf">
-        <div><textarea name="content" maxlength="140" required v-mode:value="content"></textarea></div>
+        <div class="textarea">
+          <textarea name="content" maxlength="140" required v-mode:value="content"></textarea>
+        </div>
         <strong class="error" v-for="value in errors.content">{{ value }}</strong>
-        <div><button><input type="submit" value="SEND"></button></div>
+        <div class="submit-btn"><button><input type="submit" value="SEND"></button></div>
       </form>
     </div>
   </div>

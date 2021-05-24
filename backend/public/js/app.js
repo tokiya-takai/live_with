@@ -1863,6 +1863,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -3335,17 +3338,20 @@ function showComment() {
   var commentButton = document.getElementById('comment-btn');
   var showShoe = document.getElementById('show-shoe');
   var commentArea = document.querySelector('.comment-area');
+  var commentOpenButton = document.querySelector('.comment-open-btn');
   commentButton.addEventListener('click', function () {
     if (showShoe.classList.contains('open-comment')) {
       showShoe.classList.remove('open-comment');
       showShoe.classList.add('close-comment');
       commentArea.style.height = "0px";
       commentArea.style.display = "none";
+      commentOpenButton.style.transform = "rotate(0deg)";
     } else {
       showShoe.classList.remove('close-comment');
       showShoe.classList.add('open-comment');
       commentArea.style.height = "auto";
       commentArea.style.display = "block";
+      commentOpenButton.style.transform = "rotate(180deg)";
     }
   });
 }
@@ -61074,10 +61080,14 @@ var render = function() {
     _c(
       "ul",
       { staticClass: "comment-list" },
-      _vm._l(_vm.comments, function(comment) {
-        return _c("li", [_c("p", [_vm._v(_vm._s(comment.content))])])
-      }),
-      0
+      [
+        _vm._l(_vm.comments, function(comment) {
+          return _c("li", [_c("p", [_vm._v(_vm._s(comment.content))])])
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "comment-margin" })
+      ],
+      2
     ),
     _vm._v(" "),
     _c("div", { staticClass: "post-comment-area" }, [
@@ -61090,7 +61100,7 @@ var render = function() {
             domProps: { value: _vm.csrf }
           }),
           _vm._v(" "),
-          _c("div", [
+          _c("div", { staticClass: "textarea" }, [
             _c("textarea", {
               directives: [
                 {
@@ -61123,7 +61133,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
+    return _c("div", { staticClass: "submit-btn" }, [
       _c("button", [_c("input", { attrs: { type: "submit", value: "SEND" } })])
     ])
   }

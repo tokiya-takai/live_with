@@ -35,6 +35,7 @@ function showComment() {
     const commentButton = document.getElementById('comment-btn');
     const showShoe = document.getElementById('show-shoe');
     const commentArea = document.querySelector('.comment-area');
+    const commentOpenButton = document.querySelector('.comment-open-btn');
 
     commentButton.addEventListener('click', () => {
         if (showShoe.classList.contains('open-comment')) {
@@ -42,11 +43,13 @@ function showComment() {
             showShoe.classList.add('close-comment');
             commentArea.style.height = "0px";
             commentArea.style.display = "none";
+            commentOpenButton.style.transform = "rotate(0deg)";
         } else {
             showShoe.classList.remove('close-comment');
             showShoe.classList.add('open-comment');
             commentArea.style.height = "auto";
             commentArea.style.display = "block";
+            commentOpenButton.style.transform = "rotate(180deg)";
         }
     });
 }
