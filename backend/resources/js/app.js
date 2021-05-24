@@ -11,6 +11,7 @@ Vue.component('user-component', require('./components/UserComponent.vue').defaul
 Vue.component('liked-posts-component', require('./components/LikedPostsComponent.vue').default);
 Vue.component('links-component', require('./components/LinksComponent.vue').default);
 Vue.component('others-links-component', require('./components/OthersLinksComponent.vue').default);
+Vue.component('comments-component', require('./components/CommentsComponent.vue').default);
  
  const app = new Vue({
      el: '#app',
@@ -39,11 +40,9 @@ function showComment() {
         if (showShoe.classList.contains('open-comment')) {
             showShoe.classList.remove('open-comment');
             showShoe.classList.add('close-comment');
-            commentArea.style.height = "0px";
         } else {
             showShoe.classList.remove('close-comment');
             showShoe.classList.add('open-comment');
-            commentArea.style.height = "200px";
         }
     });
 }

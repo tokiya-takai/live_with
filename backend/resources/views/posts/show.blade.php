@@ -88,9 +88,11 @@
     </div>
     <button id="comment-btn">コメントを表示</button>
     <div class="comment-area">
-      @foreach ($item->comments as $comment)
-          <p>{{ $comment->content }}</p>
-      @endforeach
+      <comments-component
+          :csrf="{{json_encode(csrf_token())}}"
+          :id="{{ $item->id }}"
+          :comments="{{ $item->comments }}"
+      ></comments-component>
     </div>
   </div>
 @endsection
