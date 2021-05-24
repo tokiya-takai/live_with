@@ -1,23 +1,6 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-
  require('./bootstrap');
 
  window.Vue = require('vue').default;
- 
- /**
-  * The following block of code may be used to automatically register your
-  * Vue components. It will recursively scan this directory for the Vue
-  * components and automatically register them with their "basename".
-  *
-  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
-  */
- 
- // const files = require.context('./', true, /\.vue$/i)
- // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
  
 Vue.component('hamburger-component', require('./components/HamburgerComponent.vue').default);
 Vue.component('new-post-component', require('./components/NewPostComponent.vue').default);
@@ -28,11 +11,7 @@ Vue.component('user-component', require('./components/UserComponent.vue').defaul
 Vue.component('liked-posts-component', require('./components/LikedPostsComponent.vue').default);
 Vue.component('links-component', require('./components/LinksComponent.vue').default);
 Vue.component('others-links-component', require('./components/OthersLinksComponent.vue').default);
- /**
-  * Next, we will create a fresh Vue application instance and attach it to
-  * the page. Then, you may begin adding components to this application
-  * or customize the JavaScript scaffolding to fit your unique needs.
-  */
+Vue.component('comments-component', require('./components/CommentsComponent.vue').default);
  
  const app = new Vue({
      el: '#app',
@@ -52,21 +31,26 @@ function deletePost() {
 }
 window.addEventListener('load', deletePost);
 
-// function stopParentClickEvent() {
-//     const likeButtonParent = document.querySelector('.like-button-parent');
-//     document.querySelectorAll('.like-btn').addEventListener('click', () => {
-//         likeButtonParent.preventDefalut();
-//     });
-// }
-// window.addEventListener('load', stopParentClickEvent);
+function showComment() {
+    const commentButton = document.getElementById('comment-btn');
+    const showShoe = document.getElementById('show-shoe');
+    const commentArea = document.querySelector('.comment-area');
+    const commentOpenButton = document.querySelector('.comment-open-btn');
 
-// const setFillHeight = () => {
-//     const vh = window.innerHeight * 0.01;
-//     document.documentElement.style.setProperty('--vh', `${vh}px`);
-// }
-      
-// // 画面のサイズ変動があった時に高さを再計算する
-// window.addEventListener('resize', setFillHeight);
-      
-// // 初期化
-// setFillHeight();
+    commentButton.addEventListener('click', () => {
+        if (showShoe.classList.contains('open-comment')) {
+            showShoe.classList.remove('open-comment');
+            showShoe.classList.add('close-comment');
+            commentArea.style.height = "0px";
+            commentArea.style.display = "none";
+            commentOpenButton.style.transform = "rotate(0deg)";
+        } else {
+            showShoe.classList.remove('close-comment');
+            showShoe.classList.add('open-comment');
+            commentArea.style.height = "auto";
+            commentArea.style.display = "block";
+            commentOpenButton.style.transform = "rotate(180deg)";
+        }
+    });
+}
+window.addEventListener('load', showComment);

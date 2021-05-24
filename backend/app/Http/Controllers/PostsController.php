@@ -55,7 +55,21 @@ class PostsController extends Controller
             $links->link5 = "";
         }
 
-        return view("posts.show", ['item'=>$item, 'isLike'=>$isLike, 'count'=>$count, 'links'=>$links]);
+        // Get comments and users
+        $comments = DB::table('comments')
+                    ->select(
+                        'comments.id',
+                        'post_id',
+                        'user_id',
+                        'content',
+                        'comments.created_at',
+                        'name',
+                        'isprivate'
+                        )
+                    ->leftJoin('users', 'comments.user_id', '=', 'users.id')
+                    ->where('post_id', $item->id)
+                    ->get();
+        return view("posts.show", ['item'=>$item, 'isLike'=>$isLike, 'count'=>$count, 'links'=>$links, 'comments'=>$comments]);
     }
 
     public function new()

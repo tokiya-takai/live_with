@@ -25,6 +25,11 @@ class Post extends Model
         return $this->hasMany('App\Models\Link');
     }
 
+    public function comments()
+    {
+        return $this->hasMany('App\Models\Comment');
+    }
+
     protected $guarded = array('id','content','file_name','file_path');
     
     protected $table = "posts";

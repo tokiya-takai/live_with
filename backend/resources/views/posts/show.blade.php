@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div id="show-shoe">
+  <div id="show-shoe" class="close-comment">
     @if($item->user_id == Auth::id())
       <a href=" {{ route('posts.edit', ['id'=>$item->id]) }}" class="new-post-btn"><button>Edit</button></a>
     @endif
@@ -85,6 +85,16 @@
           <p>{{ $item->remarks }}</p>
         </div>
       </div>
+    </div>
+    <div class="comment-btn-container"><button id="comment-btn">コメントを表示<img src="/images/comment.png" class="comment-open-btn"></button></div>
+    <div class="comment-area">
+      <comments-component
+          :csrf="{{json_encode(csrf_token())}}"
+          :id="{{ $item->id }}"
+          :comments="{{ $comments }}"
+          :old="{{ json_encode(Session::getOldInput()) }}"
+          :errors= "{{ $errors }}"
+      ></comments-component>
     </div>
   </div>
 @endsection

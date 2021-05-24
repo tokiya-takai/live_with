@@ -197,13 +197,13 @@ body {
   .py-4 .content #show-shoe .new-post-btn {
     z-index: 1;
     display: block;
-    position: absolute;
+    position: fixed;
     width: 8vw;
     height: 8vw;
     border-radius: 50%;
     background-color: #402F2F;
-    left: 51vw;
-    top: 60vh;
+    left: calc(100vw - 150px);
+    top: calc(100vh - 150px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -417,6 +417,14 @@ body {
     padding-top: 3vh;
   }
 
+  .py-4 .content .close-comment {
+    overflow-y: hidden;
+  }
+
+  .py-4 .content .open-comment {
+    overflow-y: scroll;
+  }
+
   .py-4 .content .show-shoe-body {
     width: 80%;
     height: 60vh;
@@ -597,6 +605,140 @@ body {
 
   .py-4 .content .show-shoe-body .show-shoe-content .show-group p {
     white-space: pre-wrap;
+  }
+
+  .py-4 .content .comment-btn-container {
+    width: 80%;
+    margin: 15px auto;
+    display: flex;
+  }
+
+  .py-4 .content .comment-btn-container button {
+    height: 20px;
+    display: flex;
+    align-items: center;
+  }
+
+  .py-4 .content .comment-btn-container button img {
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+    transform: rotate(0deg);
+    transition-duration: 0.4s;
+  }
+
+  .py-4 .content .comment-btn-container button:hover {
+    opacity: 0.8;
+  }
+
+  .py-4 .content .comment-area {
+    display: none;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .py-4 .content .comment-area #comments {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 200px;
+  }
+
+  .py-4 .content .comment-area #comments .comment-list {
+    width: 100%;
+  }
+
+  .py-4 .content .comment-area #comments .comment-list li {
+    width: 90%;
+    min-height: 80px;
+    margin: 0 auto;
+    padding: 10px;
+    border-bottom: 1px solid #aaa;
+    display: grid;
+    grid-template-rows: [info] 30px [body] auto;
+  }
+
+  .py-4 .content .comment-area #comments .comment-list li .comment-info {
+    grid-row: info;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .py-4 .content .comment-area #comments .comment-list li .comment-info .user-name {
+    font-weight: bold;
+  }
+
+  .py-4 .content .comment-area #comments .comment-list li .comment-body {
+    grid-row: body;
+  }
+
+  .py-4 .content .comment-area #comments .comment-list li .comment-body .comment-content {
+    font-size: 13px;
+    white-space: pre-wrap;
+    line-height: 2em;
+  }
+
+  .py-4 .content .comment-area #comments .comment-list .comment-margin {
+    height: 80px;
+    width: 1px;
+  }
+
+  .py-4 .content .comment-area #comments .post-comment-area {
+    width: 100%;
+    height: 100px;
+  }
+
+  .py-4 .content .comment-area #comments .post-comment-area form {
+    width: 100%;
+    height: 100%;
+  }
+
+  .py-4 .content .comment-area #comments .post-comment-area form .textarea {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .py-4 .content .comment-area #comments .post-comment-area form .textarea textarea {
+    width: 100%;
+    height: 42px;
+    resize: vertical;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+  }
+
+  .py-4 .content .comment-area #comments .post-comment-area form .textarea p {
+    width: 100%;
+    text-align: right;
+  }
+
+  .py-4 .content .comment-area #comments .post-comment-area form .submit-btn {
+    width: 100%;
+    height: 30px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .py-4 .content .comment-area #comments .post-comment-area form .submit-btn button {
+    width: 70px;
+    height: 30px;
+    margin: 0 auto;
+  }
+
+  .py-4 .content .comment-area #comments .post-comment-area form .submit-btn button input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #f4f4f4;
+    background-color: #6299ff;
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px -1px #aaa;
+  }
+
+  .py-4 .content .comment-area #comments .post-comment-area form .submit-btn button input:hover {
+    opacity: 0.7;
   }
 
   .py-4 .content .invalid-feedback {
@@ -2325,8 +2467,8 @@ body {
     height: 100%;
     display: grid;
     grid-template-columns: 10px 1fr 10px;
-    grid-template-rows: [head] 30px [body] auto;
-    position: relative;
+    grid-template-rows: [head] 30px [body] auto [comment-btn] 30px [comments] auto;
+    overflow-y: scroll;
   }
 
   #app main .content #show-shoe .new-post-btn {
@@ -2403,7 +2545,6 @@ body {
 
   #app main .content #show-shoe .show-shoe-body {
     width: 100%;
-    overflow-y: scroll;
     grid-row: body;
     grid-column: 2/-2;
     display: grid;
@@ -2606,6 +2747,153 @@ body {
     position: absolute;
     width: 1px;
     height: 250px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content #show-shoe .comment-btn-container {
+    grid-row: comment-btn;
+    grid-column: 2/-2;
+    width: 100%;
+    height: 30px;
+  }
+
+  #app main .content #show-shoe .comment-btn-container button {
+    width: 200px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  #app main .content #show-shoe .comment-btn-container button img {
+    width: 25px;
+    height: 25px;
+    margin-left: 5px;
+    transform: rotate(0deg);
+    transition-duration: 0.4s;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content #show-shoe .comment-area {
+    display: none;
+    grid-row: comments;
+    grid-column: 2/-2;
+  }
+
+  #app main .content #show-shoe .comment-area #comments {
+    width: 100%;
+    height: 100%;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .comment-list {
+    width: 100%;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .comment-list li {
+    width: 90%;
+    min-height: 80px;
+    margin: 0 auto;
+    padding: 10px;
+    border-bottom: 1px solid #aaa;
+    display: grid;
+    grid-template-rows: [info] 30px [body] auto;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .comment-list li .comment-info {
+    grid-row: info;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .comment-list li .comment-info .user-name {
+    font-weight: bold;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .comment-list li .comment-body {
+    grid-row: body;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .comment-list li .comment-body .comment-content {
+    font-size: 13px;
+    white-space: pre-wrap;
+    line-height: 2em;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .comment-list .comment-margin {
+    height: 80px;
+    width: 1px;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .post-comment-area {
+    width: 100%;
+    height: 250px;
+    margin-bottom: 200px;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .post-comment-area form {
+    width: 100%;
+    height: 100%;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .post-comment-area form .textarea {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .post-comment-area form .textarea textarea {
+    width: 100%;
+    height: 180px;
+    resize: none;
+    padding: 10px;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .post-comment-area form .textarea p {
+    width: 100%;
+    text-align: right;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .post-comment-area form .submit-btn {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .post-comment-area form .submit-btn button {
+    width: 70px;
+    height: 30px;
+    margin: 0 auto;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .post-comment-area form .submit-btn button input {
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #f4f4f4;
+    background-color: #6299ff;
+    border-radius: 3px;
+    box-shadow: 4px 4px 8px -1px #aaa;
+  }
+
+  #app main .content #show-shoe .comment-area #comments .post-comment-area form .submit-btn button input:hover {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content .close-comment {
+    overflow-y: hidden;
+  }
+}
+
+@media (max-width: 1024px) {
+  #app main .content .open-comment {
+    overflow-y: scroll;
   }
 }
 
