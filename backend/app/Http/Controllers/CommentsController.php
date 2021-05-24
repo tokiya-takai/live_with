@@ -25,7 +25,14 @@ class CommentsController extends Controller
         return redirect()->route('posts.show', ['id'=>$request->id]);
     }
 
-    public function delete($id) {
-        var_dump($id);
+    public function delete(Request $request, $id) {
+        $comment = Comment::find($id);
+
+        if($comment->user_id != Auth::id()){
+            return;
+        }
+
+        $comment->delete();
+        return back();
     }
 }
