@@ -44,7 +44,8 @@ Route::middleware('auth')->group(function() {
   Route::post('/links/update/{id}', [App\Http\Controllers\LinksController::class, 'update']);
 
   // CommentsController
-  Route::post('/comments/{id}', [App\Http\Controllers\CommentsController::class, 'create']);
+  Route::post('/comments/{id}', [App\Http\Controllers\CommentsController::class, 'create']); // id == post id
+  Route::post('/comments/delete/{id}', [App\Http\Controllers\CommentsController::class, 'delete']); // id == comment id
 });
 
 

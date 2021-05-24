@@ -1873,11 +1873,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      url: "/comments/" + this.id,
+      postCommentUrl: "/comments/" + this.post_id,
+      deleteCommentUrl: "/comments/delete/",
       content: null
     };
   },
@@ -1893,7 +1900,8 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       required: true
     },
-    id: Number,
+    post_id: Number,
+    my_id: Number,
     comments: Array,
     old: Array,
     errors: Array
@@ -3346,6 +3354,24 @@ function deletePost() {
 }
 
 window.addEventListener('load', deletePost);
+
+function deleteComment() {
+  var forms = document.querySelectorAll('.delete-comment');
+  forms.forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      if (window.confirm('削除された内容は元に戻せません。\n削除しますか？')) {
+        form.submit();
+        return;
+      } else {
+        return;
+      }
+    });
+  });
+}
+
+window.addEventListener('load', deleteComment);
 
 function showComment() {
   var commentButton = document.getElementById('comment-btn');
@@ -61103,7 +61129,30 @@ var render = function() {
               _vm._v(" "),
               _c("p", { staticClass: "created-at" }, [
                 _vm._v(_vm._s(_vm._f("moment")(comment.created_at)))
-              ])
+              ]),
+              _vm._v(" "),
+              comment.user_id == _vm.my_id
+                ? _c("div", { staticClass: "comment-delete" }, [
+                    _c(
+                      "form",
+                      {
+                        staticClass: "delete-comment",
+                        attrs: {
+                          action: _vm.deleteCommentUrl + comment.id,
+                          method: "post"
+                        }
+                      },
+                      [
+                        _c("input", {
+                          attrs: { type: "hidden", name: "_token" },
+                          domProps: { value: _vm.csrf }
+                        }),
+                        _vm._v(" "),
+                        _vm._m(0, true)
+                      ]
+                    )
+                  ])
+                : _vm._e()
             ]),
             _vm._v(" "),
             _c("div", { staticClass: "comment-body" }, [
@@ -61122,7 +61171,7 @@ var render = function() {
     _c("div", { staticClass: "post-comment-area" }, [
       _c(
         "form",
-        { attrs: { action: _vm.url, method: "post" } },
+        { attrs: { action: _vm.postCommentUrl, method: "post" } },
         [
           _c("input", {
             attrs: { type: "hidden", name: "_token" },
@@ -61161,7 +61210,7 @@ var render = function() {
             ])
           }),
           _vm._v(" "),
-          _vm._m(0)
+          _vm._m(1)
         ],
         2
       )
@@ -61169,6 +61218,18 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("button", [
+      _c("img", { attrs: { src: "/images/dust-box.png" } }),
+      _c("input", {
+        staticClass: "my-comment-delete-submit",
+        attrs: { type: "submit" }
+      })
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
