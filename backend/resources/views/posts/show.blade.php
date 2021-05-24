@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  <div id="show-shoe">
+  <div id="show-shoe" class="close-comment">
     @if($item->user_id == Auth::id())
       <a href=" {{ route('posts.edit', ['id'=>$item->id]) }}" class="new-post-btn"><button>Edit</button></a>
     @endif
@@ -85,6 +85,9 @@
           <p>{{ $item->remarks }}</p>
         </div>
       </div>
+    </div>
+    <button id="comment-btn">コメントを表示</button>
+    <div class="comment-area">
     </div>
   </div>
 @endsection

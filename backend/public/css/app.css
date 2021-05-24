@@ -417,6 +417,14 @@ body {
     padding-top: 3vh;
   }
 
+  .py-4 .content .close-comment {
+    overflow-y: hidden;
+  }
+
+  .py-4 .content .open-comment {
+    overflow-y: scroll;
+  }
+
   .py-4 .content .show-shoe-body {
     width: 80%;
     height: 60vh;

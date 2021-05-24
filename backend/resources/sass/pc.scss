@@ -221,6 +221,12 @@
           }
         }
       }
+      .close-comment {
+        overflow-y: hidden;
+      }
+      .open-comment {
+        overflow-y: scroll;
+      }
       //Details page
       .show-shoe-body {
         width: 80%;

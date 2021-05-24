@@ -3241,24 +3241,9 @@ __webpack_require__.r(__webpack_exports__);
   \*****************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm.js").default;
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
-
 Vue.component('hamburger-component', __webpack_require__(/*! ./components/HamburgerComponent.vue */ "./resources/js/components/HamburgerComponent.vue").default);
 Vue.component('new-post-component', __webpack_require__(/*! ./components/NewPostComponent.vue */ "./resources/js/components/NewPostComponent.vue").default);
 Vue.component('edit-post-component', __webpack_require__(/*! ./components/EditPostComponent.vue */ "./resources/js/components/EditPostComponent.vue").default);
@@ -3268,12 +3253,6 @@ Vue.component('user-component', __webpack_require__(/*! ./components/UserCompone
 Vue.component('liked-posts-component', __webpack_require__(/*! ./components/LikedPostsComponent.vue */ "./resources/js/components/LikedPostsComponent.vue").default);
 Vue.component('links-component', __webpack_require__(/*! ./components/LinksComponent.vue */ "./resources/js/components/LinksComponent.vue").default);
 Vue.component('others-links-component', __webpack_require__(/*! ./components/OthersLinksComponent.vue */ "./resources/js/components/OthersLinksComponent.vue").default);
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
-
 var app = new Vue({
   el: '#app'
 });
@@ -3292,21 +3271,26 @@ function deletePost() {
   });
 }
 
-window.addEventListener('load', deletePost); // function stopParentClickEvent() {
-//     const likeButtonParent = document.querySelector('.like-button-parent');
-//     document.querySelectorAll('.like-btn').addEventListener('click', () => {
-//         likeButtonParent.preventDefalut();
-//     });
-// }
-// window.addEventListener('load', stopParentClickEvent);
-// const setFillHeight = () => {
-//     const vh = window.innerHeight * 0.01;
-//     document.documentElement.style.setProperty('--vh', `${vh}px`);
-// }
-// // 画面のサイズ変動があった時に高さを再計算する
-// window.addEventListener('resize', setFillHeight);
-// // 初期化
-// setFillHeight();
+window.addEventListener('load', deletePost);
+
+function showComment() {
+  var commentButton = document.getElementById('comment-btn');
+  var showShoe = document.getElementById('show-shoe');
+  var commentArea = document.querySelector('.comment-area');
+  commentButton.addEventListener('click', function () {
+    if (showShoe.classList.contains('open-comment')) {
+      showShoe.classList.remove('open-comment');
+      showShoe.classList.add('close-comment');
+      commentArea.style.height = "0px";
+    } else {
+      showShoe.classList.remove('close-comment');
+      showShoe.classList.add('open-comment');
+      commentArea.style.height = "200px";
+    }
+  });
+}
+
+window.addEventListener('load', showComment);
 
 /***/ }),
 
