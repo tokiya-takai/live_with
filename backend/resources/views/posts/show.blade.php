@@ -88,6 +88,9 @@
     </div>
     <button id="comment-btn">コメントを表示</button>
     <div class="comment-area">
+      @foreach ($item->comments as $comment)
+          <p>{{ $comment->content }}</p>
+      @endforeach
     </div>
   </div>
 @endsection
