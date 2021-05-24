@@ -1866,8 +1866,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      url: "/comments/" + this.id
+      url: "/comments/" + this.id,
+      content: null
     };
+  },
+  mounted: function mounted() {
+    if (this.old.content) {
+      this.content = this.old.content;
+    } else {
+      this.content = "";
+    }
   },
   props: {
     csrf: {
@@ -1875,7 +1883,9 @@ __webpack_require__.r(__webpack_exports__);
       required: true
     },
     id: Number,
-    comments: Array
+    comments: Array,
+    old: Array,
+    errors: Array
   }
 });
 
@@ -61077,24 +61087,27 @@ var render = function() {
           domProps: { value: _vm.csrf }
         }),
         _vm._v(" "),
-        _vm._m(0),
+        _c("div", [
+          _c("textarea", {
+            directives: [
+              {
+                name: "mode",
+                rawName: "v-mode:value",
+                value: _vm.content,
+                expression: "content",
+                arg: "value"
+              }
+            ],
+            attrs: { name: "content", maxlength: "140", required: "" }
+          })
+        ]),
         _vm._v(" "),
-        _vm._m(1)
+        _vm._m(0)
       ])
     ])
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("textarea", {
-        attrs: { name: "content", maxlength: "140", required: "" }
-      })
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement

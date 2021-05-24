@@ -8,7 +8,7 @@
     <div class="post-comment-area">
       <form :action="url" method="post">
         <input type="hidden" name="_token" v-bind:value="csrf">
-        <div><textarea name="content" maxlength="140" required></textarea></div>
+        <div><textarea name="content" maxlength="140" required v-mode:value="content"></textarea></div>
         <!-- <strong class="error" v-for="value in errors.content">{{ value }}</strong> -->
         <div><button><input type="submit" value="SEND"></button></div>
       </form>
@@ -21,6 +21,14 @@ export default {
   data() {
     return {
       url: "/comments/" + this.id,
+      content: null,
+    }
+  },
+  mounted() {
+    if(this.old.content){
+        this.content = this.old.content;
+    } else {
+        this.content = "";
     }
   },
   props: {
@@ -30,6 +38,8 @@ export default {
     },
     id: Number,
     comments: Array,
+    old: Array,
+    errors: Array,
   }
 }
 </script>
