@@ -768,8 +768,10 @@
           grid-template-columns: 10px 1fr 10px;
           grid-template-rows:
                   [head] 30px
-                  [body] auto;
-          position: relative;
+                  [body] auto
+                  [comment-btn] 30px
+                  [comments] auto;
+          overflow-y: scroll;
           .new-post-btn {
             position: fixed;
             z-index: 1;
@@ -842,7 +844,6 @@
           
           .show-shoe-body {
             width: 100%;
-            overflow-y: scroll;
             grid-row: body;
             grid-column: 2 / -2;
             display: grid;
@@ -1021,6 +1022,124 @@
               }
             }
           }
+          .comment-btn-container {
+            grid-row: comment-btn;
+            grid-column: 2 / -2;
+            width: 100%;
+            height: 30px;
+            button {
+              width: 200px;
+              height: 30px;
+              display: flex;
+              align-items: center;
+              img {
+                width: 25px;
+                height: 25px;
+                margin-left: 5px;
+                transform:rotate(0deg);
+                transition-duration: .4s;
+              }
+            }
+          }
+          .comment-area {
+            display: none;
+            grid-row: comments;
+            grid-column: 2 / -2;
+            #comments {
+              width: 100%;
+              height: 100%;
+              .comment-list {
+                width: 100%;
+                li {
+                  width: 90%;
+                  min-height: 80px;
+                  margin: 0 auto;
+                  padding: 10px;
+                  border-bottom: 1px solid #aaa;
+                  display: grid;
+                  grid-template-rows:
+                        [info] 30px
+                        [body] auto;
+                  .comment-info {
+                    grid-row: info;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .user-name {
+                      font-weight: bold;
+                    }
+                  }
+                  .comment-body {
+                    grid-row: body;
+                    .comment-content {
+                      font-size: 13px;
+                      white-space: pre-wrap;
+                      line-height: 2.0em;
+                    }
+                  }
+                }
+                .comment-margin {
+                  height: 80px;
+                  width: 1px;
+                }
+              }
+              .post-comment-area {
+                width: 100%;
+                height: 250px;
+                margin-bottom: 200px;
+                form {
+                  width: 100%;
+                  height: 100%;
+                  .textarea {
+                    width: 90%;
+                    margin: 0 auto;
+                    textarea {
+                      width: 100%;
+                      height: 180px;
+                      resize: none;
+                      padding: 10px;
+                      border: 1px solid #aaa;
+                      border-radius: 3px;
+                    }
+                    p {
+                      width: 100%;
+                      text-align: right;
+                    }
+                  }
+                  .submit-btn {
+                    width: 100%;
+                    height: 30px;
+                    display: flex;
+                    justify-content: center;
+                    button {
+                      width: 70px;
+                      height: 30px;
+                      margin: 0 auto;
+                      input {
+                        width: 100%;
+                        height: 100%;
+                        text-align: center;
+                        font-size: 14px;
+                        color: $white;
+                        background-color: rgb(98, 153, 255);
+                        border-radius: 3px;
+                        box-shadow: 4px 4px 8px -1px #aaa;
+                        &:hover {
+                          opacity: 0.7;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+        .close-comment {
+          overflow-y: hidden;
+        }
+        .open-comment {
+          overflow-y: scroll;
         }
         #change-password {
           width: 100%;
