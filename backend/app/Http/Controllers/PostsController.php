@@ -29,7 +29,7 @@ class PostsController extends Controller
 
     public function show($id)
     {
-        $item = Post::find($id);
+        $item = Post::with('comments')->find($id);
 
         // Check if the post is public.
         if($this->isPrivate($item) && !$this->isCorrectUser($item)){
