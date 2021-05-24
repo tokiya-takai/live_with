@@ -1848,14 +1848,34 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      url: "/comments/" + this.id
+    };
+  },
   props: {
     csrf: {
       type: String,
       required: true
     },
     id: Number,
-    comments: Object
+    comments: Array
   }
 });
 
@@ -3309,9 +3329,13 @@ function showComment() {
     if (showShoe.classList.contains('open-comment')) {
       showShoe.classList.remove('open-comment');
       showShoe.classList.add('close-comment');
+      commentArea.style.height = "0px";
+      commentArea.style.display = "none";
     } else {
       showShoe.classList.remove('close-comment');
       showShoe.classList.add('open-comment');
+      commentArea.style.height = "auto";
+      commentArea.style.display = "block";
     }
   });
 }
@@ -61036,9 +61060,50 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div")
+  return _c("div", { attrs: { id: "comments" } }, [
+    _c(
+      "ul",
+      { staticClass: "comment-list" },
+      _vm._l(_vm.comments, function(comment) {
+        return _c("li", [_c("p", [_vm._v(_vm._s(comment.content))])])
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _c("div", { staticClass: "post-comment-area" }, [
+      _c("form", { attrs: { action: _vm.url, method: "post" } }, [
+        _c("input", {
+          attrs: { type: "hidden", name: "_token" },
+          domProps: { value: _vm.csrf }
+        }),
+        _vm._v(" "),
+        _vm._m(0),
+        _vm._v(" "),
+        _vm._m(1)
+      ])
+    ])
+  ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("textarea", {
+        attrs: { name: "content", maxlength: "140", required: "" }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", [
+      _c("button", [_c("input", { attrs: { type: "submit", value: "SEND" } })])
+    ])
+  }
+]
 render._withStripped = true
 
 

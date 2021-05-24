@@ -40,9 +40,13 @@ function showComment() {
         if (showShoe.classList.contains('open-comment')) {
             showShoe.classList.remove('open-comment');
             showShoe.classList.add('close-comment');
+            commentArea.style.height = "0px";
+            commentArea.style.display = "none";
         } else {
             showShoe.classList.remove('close-comment');
             showShoe.classList.add('open-comment');
+            commentArea.style.height = "auto";
+            commentArea.style.display = "block";
         }
     });
 }
