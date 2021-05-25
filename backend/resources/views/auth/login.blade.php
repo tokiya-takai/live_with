@@ -5,7 +5,7 @@
     <div class="card-header">{{ __('Login') }}</div>
     <h1>Hey, how is going? I’m happy to see you again. </h1>
     <div class="card-body">
-        <form method="POST" action="{{ route('login') }}" class="login">
+        <form method="POST" action="{{ route('login') }}" class="login" id="login">
             @csrf
 
             <div class="form-group row">
@@ -42,6 +42,10 @@
                         </label>
                     </div>
                 </div>
+            </div>
+
+            <div class="guest-login">
+                <button id="guest-login">Login with <b>GUEST</b> account</button>
             </div>
 
             <div class="form-group row mb-0">

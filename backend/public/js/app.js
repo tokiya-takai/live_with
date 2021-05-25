@@ -3339,6 +3339,24 @@ var app = new Vue({
   el: '#app'
 });
 
+function guestLogin() {
+  var loginButton = document.getElementById('guest-login');
+  loginButton.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    if (window.confirm('ゲストアカウントでログインしますか？')) {
+      document.getElementById('email').value = "guest@test.co.jp";
+      document.getElementById('password').value = "guest123";
+      document.getElementById('login').submit();
+      return;
+    } else {
+      return;
+    }
+  });
+}
+
+window.addEventListener('load', guestLogin);
+
 function deletePost() {
   var form = document.getElementById('delete');
   form.addEventListener('submit', function (e) {

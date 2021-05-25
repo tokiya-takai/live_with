@@ -17,6 +17,23 @@ Vue.component('comments-component', require('./components/CommentsComponent.vue'
      el: '#app',
  });
 
+function guestLogin() {
+    const loginButton = document.getElementById('guest-login');
+    
+    loginButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (window.confirm('ゲストアカウントでログインしますか？')) {
+            document.getElementById('email').value = "guest@test.co.jp";
+            document.getElementById('password').value = "guest123";
+            document.getElementById('login').submit();
+            return;
+        } else {
+            return;
+        }
+    })
+}
+window.addEventListener('load',guestLogin);
+
 function deletePost() {
     const form = document.getElementById('delete');
     form.addEventListener('submit', (e) => {
@@ -45,7 +62,6 @@ function deleteComment() {
             }
         });
     })
-
 }
 window.addEventListener('load', deleteComment);
 
