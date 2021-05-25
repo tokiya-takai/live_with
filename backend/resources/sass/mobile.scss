@@ -1001,7 +1001,6 @@
             .show-shoe-content {
               // The rationale of 320px is as follows.
               // header 100px, margin of content-body 25px * 2, title 30px, delete 20px, image row 120px
-              height: calc(100vh - 320px);
               padding: 10px;
               position: relative;
               .show-group {
@@ -1026,7 +1025,7 @@
             grid-row: comment-btn;
             grid-column: 2 / -2;
             width: 100%;
-            height: 30px;
+            height: 100%;
             button {
               width: 200px;
               height: 30px;
