@@ -17,6 +17,10 @@ class ResponseHeader
         // Setting not to use iframe
         $response->header('X-Frame-Options', 'DENY');
 
+        // XSS measures
+        // -- Same as the default, but explicitly stated. --
+        $response->header('Content-Type', 'charset=UTF-8');
+
         return $response;
     }
 }
