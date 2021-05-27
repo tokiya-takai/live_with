@@ -47,6 +47,11 @@ class UsersController extends Controller
             'isprivate.boolean' => '真偽値(true, false, 1, 0)のみ有効です。',
         ];
 
+        // For guest or other person's user ID
+        if($this->isGuest($request->id) || ! $this->isCorrectUser($request->id)){
+            return back();
+        }
+
         $this->validate($request, $rules, $messages);
 
         $password = $request->password;
@@ -70,7 +75,6 @@ class UsersController extends Controller
 
     public function show($id)
     {
-        // $items =  Like::with(['post', 'user'])->where('user_id', Auth::id())->get();
         $items = DB::table('posts')
                 ->select('*','likes.user_id as likes_user_id')
                 ->join('users', 'posts.user_id', '=', 'users.id')
