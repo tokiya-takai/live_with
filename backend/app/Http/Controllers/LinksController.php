@@ -35,7 +35,7 @@ class LinksController extends Controller
         $link = $this->setData($link, $request);
         $link->update();
 
-        return redirect()->route('posts.show', ['id'=>$request->id]);
+        return redirect()->route('posts.show', ['id'=>$link->post_id]);
     }
 
     private function isCorrectUser($request)
