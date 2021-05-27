@@ -40,8 +40,8 @@ Route::middleware('auth')->group(function() {
   Route::post('/posts/{id}/unlikes', [App\Http\Controllers\LikesController::class, 'destroy'])->name('unlike');
 
   // LinksController
-  Route::post('/links/{id}', [App\Http\Controllers\LinksController::class, 'register']);
-  Route::post('/links/update/{id}', [App\Http\Controllers\LinksController::class, 'update']);
+  Route::post('/links/{id}', [App\Http\Controllers\LinksController::class, 'register']); // id == post id
+  Route::post('/links/update/{id}', [App\Http\Controllers\LinksController::class, 'update']); // id == links id
 
   // CommentsController
   Route::post('/comments/{id}', [App\Http\Controllers\CommentsController::class, 'create']); // id == post id

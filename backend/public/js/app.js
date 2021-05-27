@@ -2330,7 +2330,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      url: "/links/" + this.id,
+      url: null,
       areaHeight: 30,
       inputWidth01: 0,
       inputWidth02: 0,
@@ -2373,6 +2373,12 @@ __webpack_require__.r(__webpack_exports__);
     id: Number
   },
   mounted: function mounted() {
+    if (this.links.id == null) {
+      this.url = "/links/" + this.id;
+    } else {
+      this.url = "/links/" + this.links.id;
+    }
+
     this.link01 = this.links.link1;
 
     if (this.links.link1 != "") {
@@ -2380,7 +2386,7 @@ __webpack_require__.r(__webpack_exports__);
       this.inputWidth01 = 160;
       this.imageDisplay01 = "inline;";
       this.setImage01();
-      this.url = '/links/update/' + this.id;
+      this.url = '/links/update/' + this.links.id;
     }
 
     this.link02 = this.links.link2;
@@ -2390,7 +2396,7 @@ __webpack_require__.r(__webpack_exports__);
       this.inputWidth02 = 160;
       this.imageDisplay02 = "inline;";
       this.setImage02();
-      this.url = '/links/update/' + this.id;
+      this.url = '/links/update/' + this.links.id;
     }
 
     this.link03 = this.links.link3;
@@ -2400,7 +2406,7 @@ __webpack_require__.r(__webpack_exports__);
       this.inputWidth03 = 160;
       this.imageDisplay03 = "inline;";
       this.setImage03();
-      this.url = '/links/update/' + this.id;
+      this.url = '/links/update/' + this.links.id;
     }
 
     this.link04 = this.links.link4;
@@ -2410,7 +2416,7 @@ __webpack_require__.r(__webpack_exports__);
       this.inputWidth04 = 160;
       this.imageDisplay04 = "inline;";
       this.setImage04();
-      this.url = '/links/update/' + this.id;
+      this.url = '/links/update/' + this.links.id;
     }
 
     this.link05 = this.links.link5;
@@ -2420,7 +2426,7 @@ __webpack_require__.r(__webpack_exports__);
       this.inputWidth05 = 160;
       this.imageDisplay05 = "inline;";
       this.setImage05();
-      this.url = '/links/update/' + this.id;
+      this.url = '/links/update/' + this.links.id;
     }
   },
   methods: {
