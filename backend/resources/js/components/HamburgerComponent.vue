@@ -9,12 +9,15 @@
       <!--Side bar-->
       <transition name="menu">
         <div class="menu" v-show="ActiveBtn">
-            <ul>
+            <ul v-if="user > 0">
                 <li><a href="/">HOME</a></li>
                 <li><a :href="toMyPageUrl">MY PAGE</a></li>
                 <li><a :href="toMyLikesUrl">MY LIKES</a></li>
                 <li><a href="/social/index">SOCIAL</a></li>
                 <li><a href="/posts/new">NEW POST</a></li>
+            </ul>
+            <ul v-else>
+                <li><a href="/login">LOGIN</a></li>
             </ul>
         </div>
     </transition>
@@ -32,6 +35,10 @@ export default {
   },
   props: {
     user: Number,
+    csrf: {
+      type: String,
+      required: true,
+    },
   },
   mounted() {
     if(this.user < 0){

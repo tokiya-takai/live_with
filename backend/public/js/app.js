@@ -2155,6 +2155,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -2164,7 +2167,11 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   props: {
-    user: Number
+    user: Number,
+    csrf: {
+      type: String,
+      required: true
+    }
   },
   mounted: function mounted() {
     if (this.user < 0) {
@@ -61696,31 +61703,41 @@ var render = function() {
             staticClass: "menu"
           },
           [
-            _c("ul", [
-              _c("li", [_c("a", { attrs: { href: "/" } }, [_vm._v("HOME")])]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: _vm.toMyPageUrl } }, [
-                  _vm._v("MY PAGE")
+            _vm.user > 0
+              ? _c("ul", [
+                  _c("li", [
+                    _c("a", { attrs: { href: "/" } }, [_vm._v("HOME")])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: _vm.toMyPageUrl } }, [
+                      _vm._v("MY PAGE")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: _vm.toMyLikesUrl } }, [
+                      _vm._v("MY LIKES")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "/social/index" } }, [
+                      _vm._v("SOCIAL")
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("li", [
+                    _c("a", { attrs: { href: "/posts/new" } }, [
+                      _vm._v("NEW POST")
+                    ])
+                  ])
                 ])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: _vm.toMyLikesUrl } }, [
-                  _vm._v("MY LIKES")
+              : _c("ul", [
+                  _c("li", [
+                    _c("a", { attrs: { href: "/login" } }, [_vm._v("LOGIN")])
+                  ])
                 ])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "/social/index" } }, [
-                  _vm._v("SOCIAL")
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "/posts/new" } }, [_vm._v("NEW POST")])
-              ])
-            ])
           ]
         )
       ])
