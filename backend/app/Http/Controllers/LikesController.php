@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth; 
-use Illuminate\Support\Facades\DB; 
 use App\Models\Post;
 use App\Models\Like;
 
@@ -26,7 +25,7 @@ class LikesController extends Controller
 
     public function destroy(Request $request)
     {
-        DB::table('likes')->where('user_id', Auth::id())->where('post_id', $request->id)->delete();
+        Like::where('user_id', Auth::id())->where('post_id', $request->id)->delete();
         if($request->source == 'show'){
             return redirect()->route('posts.show', ['id'=>$request->id]);
         } else {

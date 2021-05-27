@@ -19,7 +19,7 @@ class ResponseHeader
 
         // XSS measures
         // -- Same as the default, but explicitly stated. --
-        $response->header('Content-Type', 'charset=UTF-8');
+        // $response->header('Content-Type', 'charset=UTF-8');
 
         return $response;
     }
