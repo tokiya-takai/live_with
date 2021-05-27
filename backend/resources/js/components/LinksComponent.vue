@@ -58,7 +58,7 @@
 export default {
   data() {
     return {
-      url: "/links/" + this.id,
+      url: null,
       areaHeight: 30,
       inputWidth01: 0,
       inputWidth02: 0,
@@ -102,13 +102,19 @@ export default {
     
   },
   mounted() {
+    if(this.links.id == null){
+      this.url = "/links/" + this.id
+    } else {
+      this.url = "/links/" + this.links.id
+    }
+
     this.link01 = this.links.link1;
     if(this.links.link1 != ""){
       this.isAdded01 = true;
       this.inputWidth01 = 160;
       this.imageDisplay01 = "inline;"
       this.setImage01();
-      this.url = '/links/update/' + this.id;
+      this.url = '/links/update/' + this.links.id;
     }
 
     this.link02 = this.links.link2;
@@ -117,7 +123,7 @@ export default {
       this.inputWidth02 = 160;
       this.imageDisplay02 = "inline;"
       this.setImage02();
-      this.url = '/links/update/' + this.id;
+      this.url = '/links/update/' + this.links.id;
     }
 
     this.link03 = this.links.link3;
@@ -126,7 +132,7 @@ export default {
       this.inputWidth03 = 160;
       this.imageDisplay03 = "inline;"
       this.setImage03();
-      this.url = '/links/update/' + this.id;
+      this.url = '/links/update/' + this.links.id;
     }
 
     this.link04 = this.links.link4;
@@ -135,7 +141,7 @@ export default {
       this.inputWidth04 = 160;
       this.imageDisplay04 = "inline;"
       this.setImage04();
-      this.url = '/links/update/' + this.id;
+      this.url = '/links/update/' + this.links.id;
     }
 
     this.link05 = this.links.link5;
@@ -144,7 +150,7 @@ export default {
       this.inputWidth05 = 160;
       this.imageDisplay05 = "inline;"
       this.setImage05();
-      this.url = '/links/update/' + this.id;
+      this.url = '/links/update/' + this.links.id;
     }
   },
   methods: {
