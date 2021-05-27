@@ -15,11 +15,7 @@ class PasswordController extends Controller
     public function index(Request $request)
     {
         $user = User::find($request->id);
-        if(! ($user && $this->isCorrectUser($user->id))){
-            return redirect('/');
-        }
-
-        if($this->isGuest($user->email)){
+        if(! isset($user) || ! $this->isCorrectUser($user->id) || $user->isguest){
             return redirect('/');
         }
 
@@ -41,6 +37,11 @@ class PasswordController extends Controller
             'password.confirmed'=>'確認用パスワードと一致しません。'
         ];
 
+        $user = User::find($request->id);
+        if(! isset($user) || ! $this->isCorrectUser($user->id) || $user->isguest){
+            return redirect('/');
+        }
+
         $this->validate($request, $rules, $messages);
 
         $request->user()->fill([
@@ -58,9 +59,9 @@ class PasswordController extends Controller
         return true;
     }
 
-    private function isGuest($email)
+    private function isGuest($isguest)
     {
-        if($email == 'guest@test.co.jp') {
+        if($isguest == 1) {
             return true;
         } else {
             return false;

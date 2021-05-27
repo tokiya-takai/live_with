@@ -19,13 +19,11 @@ class UsersController extends Controller
 
         $user = User::find($reauest->id);
         // Authenticate user
-        if(! ($user && $this->isCorrectUser($user->id))){
+        if(! isset($user) || ! $this->isCorrectUser($user->id)){
             return redirect('/');
         }
 
-        $isGuest = $this->isGuest($user->isguest);
-
-        return view('users/index', ['isGuest'=>$isGuest, 'user'=>$user]);
+        return view('users/index', ['user'=>$user]);
     }
 
     public function update(Request $request)
@@ -48,8 +46,9 @@ class UsersController extends Controller
         ];
 
         // For guest or other person's user ID
-        if($this->isGuest($request->id) || ! $this->isCorrectUser($request->id)){
-            return back();
+        $user = User::find($request->id);
+        if($user->isguest || ! $this->isCorrectUser($request->id)){
+            return redirect('/');
         }
 
         $this->validate($request, $rules, $messages);
@@ -75,6 +74,11 @@ class UsersController extends Controller
 
     public function show($id)
     {
+
+        if(! $this->isCorrectUser($id)){
+            return redirect('/');
+        }
+
         $items = DB::table('posts')
                 ->select('*','likes.user_id as likes_user_id')
                 ->join('users', 'posts.user_id', '=', 'users.id')
@@ -93,13 +97,5 @@ class UsersController extends Controller
             return false;
         }
         return true;
-    }
-
-    private function isGuest($isguest)
-    {
-        if($isguest == 1) {
-            return true;
-        }
-        return false;
     }
 }

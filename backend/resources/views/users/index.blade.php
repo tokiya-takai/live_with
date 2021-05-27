@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-  @if($isGuest)
+  @if($user->isguest)
     <guest-user-component :user="{{ $user }}"></guest-user-component>
   @else
     <user-component

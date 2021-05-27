@@ -15,12 +15,12 @@ class PostsController extends Controller
 {
     public function index()
     {
-        $userSignedIn = Auth::check();
-        if ($userSignedIn){
-            $userId = Auth::id();
-            $items = Post::where('user_id',$userId)->get();
+        if (Auth::check()){
+            // View myself shoes information to logged in user.
+            $items = Post::where('user_id',Auth::id())->get();
             return view("posts.index",compact('items'));
         } else {
+            // Not logged in user move to top page.
             // Display the number of users
             $users = User::count();
             return view('posts.guest', compact('users'));
@@ -31,7 +31,7 @@ class PostsController extends Controller
     {
         $item = Post::find($id);
 
-        // Check if the post is public.
+        // Check if the post is public and whether it belongs to myself.
         if($this->isPrivate($item) && !$this->isCorrectUser($item)){
             return redirect('/');
         }
@@ -87,6 +87,8 @@ class PostsController extends Controller
     public function edit($id)
     {
         $item = Post::find($id);
+
+        // Whether it belongs to myself.
         if(! $this->isCorrectUser($item)){
             return redirect('/');
         }
@@ -96,6 +98,8 @@ class PostsController extends Controller
     public function update(Request $request)
     {
         $post = Post::find($request->id);
+
+        // Whether it belongs to myself.
         if(! $this->isCorrectUser($post)){
             return redirect('/');
         }
@@ -107,6 +111,8 @@ class PostsController extends Controller
     public function delete($id)
     {
         $post = Post::find($id);
+
+        // Whether it belongs to myself.
         if(! $this->isCorrectUser($post)){
             return redirect('/');
         }
