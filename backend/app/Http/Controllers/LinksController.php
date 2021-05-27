@@ -19,6 +19,11 @@ class LinksController extends Controller
         $link = $this->setData($link, $request);
         $link->save();
 
+        // Update date update
+        $post = Post::find($request->id);
+        $post->update_date = date("Y/m/d H:i:s");
+        $post->update();
+
         return redirect()->route('posts.show', ['id'=>$request->id]);
     }
 
@@ -34,6 +39,11 @@ class LinksController extends Controller
         $link = Link::find($request->id);
         $link = $this->setData($link, $request);
         $link->update();
+
+        // Update date update
+        $post = Post::find($link->post_id);
+        $post->update_date = date("Y/m/d H:i:s");
+        $post->update();
 
         return redirect()->route('posts.show', ['id'=>$link->post_id]);
     }
