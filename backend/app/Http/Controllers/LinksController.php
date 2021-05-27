@@ -49,29 +49,34 @@ class LinksController extends Controller
 
     private function setData($link, $request) {
 
-        $link->link1 = $request->link1;
         if(is_null($request->link1)){
             $link->link1 = "";
+        } else {
+            $link->link1 = $request->link1;
         }
         
-        $link->link2 = $request->link2;
         if(is_null($request->link2)){
             $link->link2 = "";
+        } else {
+            $link->link2 = $request->link2;
         }
         
-        $link->link3 = $request->link3;
         if(is_null($request->link3)){
             $link->link3 = "";
+        } else {
+            $link->link3 = $request->link3;
         }
 
-        $link->link4 = $request->link4;
         if(is_null($request->link4)){
             $link->link4 = "";
+        } else {
+            $link->link4 = $request->link4;
         }
         
-        $link->link5 = $request->link5;
         if(is_null($request->link5)){
             $link->link5 = "";
+        } else {
+            $link->link5 = $request->link5;
         }
 
         return $link;
