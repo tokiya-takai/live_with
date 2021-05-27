@@ -23,7 +23,7 @@ class PostsTableSeeder extends Seeder
             'purchase_date' => "2021-05-01",
             'maintenance' => "maintenance",
             'remarks' => "remarks",
-            'update_date' => date("Y/m/d H:i:s", strtotime("1 day")),
+            'update_date' => date("Y/m/d H:i:s", strtotime("-10 day")),
         ];
         DB::table('posts')->insert($param);
 
@@ -36,7 +36,7 @@ class PostsTableSeeder extends Seeder
             'purchase_date' => "2021-05-01",
             'maintenance' => "maintenance",
             'remarks' => "remarks",
-            'update_date' => date("Y/m/d H:i:s", strtotime("2 day")),
+            'update_date' => date("Y/m/d H:i:s", strtotime("-9 day")),
         ];
         DB::table('posts')->insert($param);
 
@@ -49,7 +49,7 @@ class PostsTableSeeder extends Seeder
             'purchase_date' => "2021-05-01",
             'maintenance' => "maintenance",
             'remarks' => "remarks",
-            'update_date' => date("Y/m/d H:i:s", strtotime("3 day")),
+            'update_date' => date("Y/m/d H:i:s", strtotime("-8 day")),
         ];
         DB::table('posts')->insert($param);
 
@@ -62,7 +62,7 @@ class PostsTableSeeder extends Seeder
             'purchase_date' => "2021-05-01",
             'maintenance' => "maintenance",
             'remarks' => "remarks",
-            'update_date' => date("Y/m/d H:i:s", strtotime("4 day")),
+            'update_date' => date("Y/m/d H:i:s", strtotime("-7 day")),
         ];
         DB::table('posts')->insert($param);
 
@@ -75,7 +75,7 @@ class PostsTableSeeder extends Seeder
             'purchase_date' => "2021-05-02",
             'maintenance' => "maintenance",
             'remarks' => "remarks",
-            'update_date' => date("Y/m/d H:i:s", strtotime("5 day")),
+            'update_date' => date("Y/m/d H:i:s", strtotime("-6 day")),
         ];
         DB::table('posts')->insert($param);
 
@@ -88,7 +88,7 @@ class PostsTableSeeder extends Seeder
             'purchase_date' => "2021-05-03",
             'maintenance' => "maintenance",
             'remarks' => "remarks",
-            'update_date' => date("Y/m/d H:i:s", strtotime("6 day")),
+            'update_date' => date("Y/m/d H:i:s", strtotime("-5 day")),
         ];
         DB::table('posts')->insert($param);
 
@@ -101,7 +101,7 @@ class PostsTableSeeder extends Seeder
             'purchase_date' => "2021-05-04",
             'maintenance' => "maintenance",
             'remarks' => "remarks",
-            'update_date' => date("Y/m/d H:i:s", strtotime("7 day")),
+            'update_date' => date("Y/m/d H:i:s", strtotime("-4 day")),
         ];
         DB::table('posts')->insert($param);
 
@@ -114,7 +114,7 @@ class PostsTableSeeder extends Seeder
             'purchase_date' => "2021-05-05",
             'maintenance' => "maintenance",
             'remarks' => "remarks",
-            'update_date' => date("Y/m/d H:i:s", strtotime("8 day")),
+            'update_date' => date("Y/m/d H:i:s", strtotime("-3 day")),
         ];
         DB::table('posts')->insert($param);
 
@@ -127,7 +127,7 @@ class PostsTableSeeder extends Seeder
             'purchase_date' => "2021-05-06",
             'maintenance' => "maintenance",
             'remarks' => "remarks",
-            'update_date' => date("Y/m/d H:i:s", strtotime("8 day")),
+            'update_date' => date("Y/m/d H:i:s", strtotime("-2 day")),
         ];
         DB::table('posts')->insert($param);
 
@@ -140,7 +140,7 @@ class PostsTableSeeder extends Seeder
             'purchase_date' => "2021-05-07",
             'maintenance' => "maintenance",
             'remarks' => "remarks",
-            'update_date' => date("Y/m/d H:i:s", strtotime("9 day")),
+            'update_date' => date("Y/m/d H:i:s", strtotime("-1 day")),
         ];
         DB::table('posts')->insert($param);
     }
