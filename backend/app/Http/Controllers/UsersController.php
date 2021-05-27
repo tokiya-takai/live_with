@@ -23,7 +23,7 @@ class UsersController extends Controller
             return redirect('/');
         }
 
-        $isGuest = $this->isGuest($user->email);
+        $isGuest = $this->isGuest($user->isguest);
 
         return view('users/index', ['isGuest'=>$isGuest, 'user'=>$user]);
     }
@@ -91,9 +91,9 @@ class UsersController extends Controller
         return true;
     }
 
-    private function isGuest($email)
+    private function isGuest($isguest)
     {
-        if($email == 'guest@test.co.jp') {
+        if($isguest == 1) {
             return true;
         }
         return false;
