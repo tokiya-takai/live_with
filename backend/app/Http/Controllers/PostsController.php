@@ -3,13 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Auth; 
-use Illuminate\Support\Facades\DB; 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Like;
 use App\Models\Link;
+use App\Models\Comment;
 
 class PostsController extends Controller
 {
@@ -37,9 +38,9 @@ class PostsController extends Controller
         }
 
         // Is registered to favorite?
-        $isLike = DB::table('likes')->where('user_id', Auth::id())->where('post_id', $item->id)->exists();
+        $isLike = Like::where('user_id', Auth::id())->where('post_id', $item->id)->exists();
         // Count all likes
-        $count = DB::table('likes')->where('post_id', $item->id)->count();
+        $count = Like::where('post_id', $item->id)->count();
 
         // Get the link associated with the post.
         $islinks = Link::where('post_id', $item->id)->exists();
@@ -56,8 +57,7 @@ class PostsController extends Controller
         }
 
         // Get comments and users
-        $comments = DB::table('comments')
-                    ->select(
+        $comments = Comment::select(
                         'comments.id',
                         'post_id',
                         'user_id',

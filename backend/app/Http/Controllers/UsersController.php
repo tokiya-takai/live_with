@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Illuminate\Validation\ValidationException;
-use Illuminate\Support\Facades\DB;
 use App\Models\User;
 use App\Models\Like;
+use App\Models\Post;
 use App\Lib\Current;
 
 
@@ -79,8 +79,7 @@ class UsersController extends Controller
             return redirect('/');
         }
 
-        $items = DB::table('posts')
-                ->select('*','likes.user_id as likes_user_id')
+        $items = Post::select('*','likes.user_id as likes_user_id')
                 ->join('users', 'posts.user_id', '=', 'users.id')
                 ->join('likes', 'posts.id', '=', 'likes.post_id')
                 ->where('isprivate', 0)
