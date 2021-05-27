@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Link;
+use App\Models\Post;
 
 class LinksController extends Controller
 {
@@ -24,11 +25,25 @@ class LinksController extends Controller
     {
         $this->validate($request, Link::$rules);
 
+        // Whether it belongs to myself.
+        if(! $this->isCorrectUser($request)){
+            return redirect('/');
+        }
+
         $link = Link::find($request->id);
         $link = $this->setData($link, $request);
         $link->update();
 
         return redirect()->route('posts.show', ['id'=>$request->id]);
+    }
+
+    private function isCorrectUser($request)
+    {
+        $post = Post::find($request->id)
+        if ($post->user_id != Auth::id()){
+            return false;
+        }
+        return true;
     }
 
     private function setData($link, $request) {

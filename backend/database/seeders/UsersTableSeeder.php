@@ -8,11 +8,6 @@ use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         $param = [
@@ -20,6 +15,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'guest@test.co.jp',
             'password' => Hash::make('guest123'),
             'isprivate' => 0,
+            'isguest' => 1,
         ];
         DB::table('users')->insert($param);
 
@@ -28,6 +24,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'test1@test.co.jp',
             'password' => Hash::make('guest123'),
             'isprivate' => 0,
+            'isguest' => 1,
         ];
         DB::table('users')->insert($param);
 
@@ -36,6 +33,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'test2@test.co.jp',
             'password' => Hash::make('guest123'),
             'isprivate' => 0,
+            'isguest' => 1,
         ];
         DB::table('users')->insert($param);
 
@@ -44,6 +42,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'test3@test.co.jp',
             'password' => Hash::make('guest123'),
             'isprivate' => 0,
+            'isguest' => 1,
         ];
         DB::table('users')->insert($param);
 
@@ -52,6 +51,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'test4@test.co.jp',
             'password' => Hash::make('guest123'),
             'isprivate' => 1,
+            'isguest' => 1,
         ];
         DB::table('users')->insert($param);
 
@@ -60,6 +60,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'test5@test.co.jp',
             'password' => Hash::make('guest123'),
             'isprivate' => 1,
+            'isguest' => 1,
         ];
         DB::table('users')->insert($param);
 
@@ -68,6 +69,7 @@ class UsersTableSeeder extends Seeder
             'email' => 'test6@test.co.jp',
             'password' => Hash::make('guest123'),
             'isprivate' => 1,
+            'isguest' => 1,
         ];
         DB::table('users')->insert($param);
     }

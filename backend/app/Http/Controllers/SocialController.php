@@ -9,8 +9,6 @@ use Illuminate\Support\Facades\DB;
 class SocialController extends Controller
 {
     public function index(){
-        // $users = User::where('isprivate', 0)->get();
-        // return view('social.index', ['users'=>$users]);
         $users = DB::table('users')
             ->select('*', 'posts.id AS post_id')
             ->join('posts','users.id','=','posts.user_id')

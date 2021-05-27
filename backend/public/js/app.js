@@ -2101,6 +2101,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
@@ -61556,6 +61557,18 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "user-info" }, [
+    _c(
+      "p",
+      {
+        staticStyle: {
+          width: "100%",
+          "text-align": "center",
+          "margin-top": "10px"
+        }
+      },
+      [_vm._v("ゲストユーザーは変更ができません。")]
+    ),
+    _vm._v(" "),
     _c(
       "form",
       { staticClass: "user-form", attrs: { action: _vm.url, method: "post" } },

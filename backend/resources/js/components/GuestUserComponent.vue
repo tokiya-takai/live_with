@@ -1,5 +1,6 @@
 <template>
   <div class="user-info">
+    <p style="width:100%; text-align:center; margin-top: 10px;">ゲストユーザーは変更ができません。</p>
     <form :action="url" method="post" class="user-form">
       <div class="user-form-group name">
         <label>ユーザー名</label>
