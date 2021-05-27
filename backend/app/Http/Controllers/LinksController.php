@@ -39,7 +39,7 @@ class LinksController extends Controller
 
     private function isCorrectUser($request)
     {
-        $post = Post::find($request->id)
+        $post = Post::find($request->id);
         if ($post->user_id != Auth::id()){
             return false;
         }
