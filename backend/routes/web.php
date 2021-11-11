@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Auth::routes();
+Auth::route();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // PostsController
